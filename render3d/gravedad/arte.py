@@ -12,11 +12,13 @@ import sys
 
 STYLE = "highly detailed digital painting, realistic illustration, soft cinematic lighting, sharp focus"
 PLATES = {
-    "calle": ("wide city street in the morning seen from the sidewalk, tall old buildings with windows and balconies, "
-              "traffic light, street lamps, a stone fountain, empty road, no people, no cars, vertical composition", 896, 512, 11),
-    "despues": ("the same city street after a disaster, crashed cars piled on top of each other, broken glass, "
-                "huge puddles, scattered debris, dust in the air, no people, vertical composition", 896, 512, 12),
-    "cielo": ("view looking up between tall city buildings into a bright blue morning sky with soft clouds, vertical composition", 896, 512, 13),
+    "calle": ("sunny wide avenue in a spanish city at morning, elegant old buildings with balconies and cream facades, "
+              "a plaza with a big stone fountain in the middle distance, palm trees, clear blue sky with a few clouds, "
+              "warm golden sunlight, empty sidewalk in the foreground, no people, no cars, vertical composition", 896, 512, 41),
+    "despues": ("the same sunny spanish city avenue after a disaster, crashed cars piled on top of each other, broken glass, "
+                "flooded pavement, scattered debris, smoke and dust in the air, no people, vertical composition", 896, 512, 42),
+    "cielo": ("looking straight up between elegant old spanish buildings with balconies and palm trees into a bright blue "
+              "sky with white clouds, sunny, vertical composition", 896, 512, 43),
 }
 SPRITES = {
     "hombre": ("a businessman in a grey suit walking, full body, side view", 704, 384, 21),

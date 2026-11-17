@@ -17,6 +17,8 @@ import time
 import numpy as np
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter
 
+from fondo_vivo import Ambient, LivingPlate
+
 W, H = 1080, 1920
 FPS = 30
 GROUND = 1700  # línea de la acera en pantalla
@@ -85,6 +87,14 @@ class Animator:
         self.nar = nar
         L = lambda n: Image.open(os.path.join(arte, n + ".png"))  # noqa: E731
         self.plate = {k: L(k).convert("RGB").resize((int(W * 1.18), int(H * 1.18)), Image.LANCZOS) for k in ("calle", "despues", "cielo")}
+        dep = lambda n: Image.open(os.path.join(arte, n + "_depth.png")) if os.path.exists(os.path.join(arte, n + "_depth.png")) else None  # noqa: E731
+        self.live = {
+            "calle": LivingPlate(self.plate["calle"], dep("calle"), seed=1, clouds=0.45, cloud_speed=14, shadows=0.17, rays=1.0),
+            "despues": LivingPlate(self.plate["despues"], dep("despues"), seed=2, clouds=0.35, cloud_speed=9),
+            "cielo": LivingPlate(self.plate["cielo"], dep("cielo"), seed=3, clouds=0.6, cloud_speed=32),
+        }
+        self.amb = Ambient(W, H)
+        self.cur_par = (0.0, 0.0)
         self.sp = {k: L(k).convert("RGBA") for k in ("hombre", "mujer", "nino", "abuelo", "perro", "coche_rojo", "taxi", "furgoneta", "papelera", "bicicleta")}
         r = random.Random(5)
         self.rnd = r
@@ -115,13 +125,14 @@ class Animator:
         self.vignette = (1 - 0.42 * np.clip(rr - 0.5, 0, 1) ** 1.3)[..., None]
 
     # ───── cámara sobre el fondo ─────
-    def view(self, name, zoom, px=0.0, py=0.0):
-        im = self.plate[name]
-        bw, bh = im.size
-        cw, ch = bw / zoom, bh / zoom
-        cx = bw / 2 + px * (bw - cw) / 2
-        cy = bh / 2 + py * (bh - ch) / 2
-        return im.resize((W, H), Image.BILINEAR, box=(cx - cw / 2, cy - ch / 2, cx + cw / 2, cy + ch / 2))
+    @staticmethod
+    def parallax(t, k=1.0):
+        """Cámara en mano que se desliza: desplazamiento (px) que se aplica según la profundidad."""
+        return (k * (36 * math.sin(0.23 * t + 0.5) + 10 * math.sin(0.71 * t)), k * (14 * math.sin(0.19 * t) + 6 * math.sin(0.53 * t + 1)))
+
+    def view(self, name, zoom, px=0.0, py=0.0, t=0.0, k=1.0):
+        self.cur_par = self.parallax(t, k)
+        return self.live[name].render(W, H, zoom, px, py, t, self.cur_par)
 
     # ───── posición de cada personaje/objeto ─────
     def float_lift(self, a, t):
@@ -179,19 +190,23 @@ class Animator:
             zoom = 1.0 + 0.06 * smooth(0, tl.t_float, t) + 0.05 * smooth(tl.t_water, tl.t_return, t)
             in_sky = tl.t_sky <= t < tl.t_water
             if in_sky:
-                img = self.view("cielo", 1.0 + 0.1 * smooth(tl.t_sky, tl.t_water, t), 0, -0.4 + 0.8 * smooth(tl.t_sky, tl.t_water, t))
+                img = self.view("cielo", 1.0 + 0.1 * smooth(tl.t_sky, tl.t_water, t), 0, -0.4 + 0.8 * smooth(tl.t_sky, tl.t_water, t), t, 1.6)
             else:
-                img = self.view("calle", zoom, 0.0, -up)
+                img = self.view("calle", zoom, 0.0, -up, t)
             scene_offset = up * (self.plate["calle"].height / zoom - H) / 2 * 1.0
             img = img.convert("RGBA")
             d = ImageDraw.Draw(img, "RGBA")
             if in_sky:
+                self.amb.birds_layer(img, t, ymax=H, scale=1.6)
                 self.draw_sky_flyers(img, d, t)
             else:
+                self.amb.birds_layer(img, t, ymax=760 + scene_offset * 0.3)
                 self.draw_street(img, d, t, scene_offset)
+            fl = smooth(tl.t_float, tl.t_float + 2, t) * (1 - smooth(tl.t_return, tl.t_return + 0.4, t))
+            self.amb.motes_layer(img, t, rise=fl)
         else:
             u = (t - tl.t_after) / (tl.duration - tl.t_after)
-            img = self.view("despues", 1.0 + 0.12 * u, 0.15 * math.sin(u * 2), 0.1).convert("RGBA")
+            img = self.view("despues", 1.0 + 0.12 * u, 0.15 * math.sin(u * 2), 0.1, t, 0.8).convert("RGBA")
             d = ImageDraw.Draw(img, "RGBA")
             self.draw_aftermath(img, d, t)
         out = img.convert("RGB")
@@ -215,7 +230,8 @@ class Animator:
     def draw_street(self, img, d, t, scene_offset):
         tl = self.tl
         # farola (la usarán para agarrarse)
-        lx = 900
+        pdx, pdy = self.cur_par
+        lx = 900 + pdx * 0.9
         if t >= tl.t_water:
             d.rectangle([lx - 12, GROUND - 900 + scene_offset, lx + 12, GROUND + 60 + scene_offset], fill=(35, 38, 45, 255))
             d.ellipse([lx - 40, GROUND - 930 + scene_offset, lx + 40, GROUND - 880 + scene_offset], fill=(255, 230, 160, 255))
@@ -234,9 +250,11 @@ class Animator:
         states = []
         for a in sorted(self.actors, key=lambda q: q.depth):
             x, lift, rot, bob = self.actor_state(a, t)
-            g = a.ground + scene_offset * a.depth
+            dv = 0.6 + 0.4 * min(1.0, max(0.0, (a.depth - 0.55) / 0.5))
+            g = a.ground + scene_offset * a.depth + pdy * dv
             if a is self.actors[6] and t >= tl.t_grip and t < tl.t_return:  # agarrada a la farola
-                x, lift, rot = lx - 30, 380, -78 + 6 * math.sin(t * 3)
+                x, lift, rot = lx - 30 - pdx * dv, 380, -78 + 6 * math.sin(t * 3)
+            x += pdx * dv
             states.append((a, x, lift, rot, bob, g))
             sh = max(0.0, 1 - lift / 700)
             sw = a.img.width * a.scale * 0.45 * (0.5 + 0.5 * sh)

@@ -16,3 +16,15 @@ python montaje.py --narracion trabajo --arte arte --frames trabajo/frames --out 
 
 Voces disponibles: `em_alex`, `em_santa`, `ef_dora` (Kokoro) o `--motor piper`.
 Las ilustraciones son contenido generado con IA: márcalo así al publicar.
+
+## Fondos vivos (`fondo_vivo.py`)
+
+Los fondos ya no son fotos fijas. A partir de cada ilustración y de su mapa de profundidad
+(Depth Anything V2 Small, Apache 2.0; `python fondo_vivo.py arte/` lo genera como `<fondo>_depth.png`):
+
+- cámara en mano con **parallax**: lo cercano se desplaza más que lo lejano (y los personajes acompañan);
+- **nubes** que avanzan y **sombras de nubes** que barren la calle;
+- **rayos de sol** que respiran, **pájaros** que cruzan el cielo y **motas de polvo** que suben al desaparecer la gravedad.
+
+Fondo actual: avenida soleada de ciudad española con palmeras; el «después» se genera por img2img
+a partir de la misma calle para que sea la misma avenida destrozada.
