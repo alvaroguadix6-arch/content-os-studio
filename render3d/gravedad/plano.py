@@ -286,7 +286,7 @@ class World:
             lit = [[r.random() < 0.45 for _ in range(6)] for _ in range(30)]
             self.front.append((x, bw, hgt, r.choice(cols), lit, r.random() < 0.5))
             x += bw + r.randint(0, 14)
-        self.clouds = [(r.uniform(0, W), r.uniform(-1200, 380), r.uniform(0.7, 1.4), r.uniform(6, 16)) for _ in range(9)]
+        self.clouds = [(r.uniform(0, W), r.choice((r.uniform(-1300, 60), r.uniform(470, 600))), r.uniform(0.7, 1.4), r.uniform(6, 16)) for _ in range(10)]
         self.birds = [(r.uniform(0, W), r.uniform(150, 420), r.uniform(40, 90) * r.choice((-1, 1)), r.uniform(0, 6)) for _ in range(5)]
 
     def sky(self, d, cam_y, t, top=(84, 130, 190), bottom=(198, 222, 238)):
@@ -718,6 +718,10 @@ class Animator:
                         d.rounded_rectangle([x, y + 10, x + ul, y + 16], radius=3, fill=YEL + (int(255 * k),))
                 x += ww + sp
             y += size * 1.25
+        # sombra suave bajo el texto para que se lea sobre cualquier fondo
+        sh = Image.new("RGBA", img.size, (0, 0, 0, 0))
+        sh.putalpha(lay.getchannel("A").point(lambda v: int(v * 0.55)).filter(ImageFilter.GaussianBlur(7)))
+        img.alpha_composite(sh)
         img.alpha_composite(lay)
         return img.convert("RGB")
 
