@@ -1,10 +1,31 @@
 {
-  "guion": [
-    ["problema", "¿Un impacto en tu parabrisas? ¿Necesitas cambiar las lunas de tu vehículo?"],
-    ["solucion", "En Cristalbox cuidamos de tu vehículo con rapidez, profesionalidad y cristales de primeras marcas."],
-    ["servicios", "Reparamos y sustituimos lunas, realizamos tintados homologados, pulimos faros y calibramos sistemas ADAS cuando es necesario."],
-    ["confianza", "Porque tu seguridad y tu tranquilidad son nuestra prioridad."],
-    ["cierre", "Cristalbox Granada, Guadix y Baza. ¡Te esperamos!"]
+ "guion": [
+  [
+   "problema",
+   "¿Un impacto en tu parabrisas? ¿Necesitas cambiar las lunas de tu vehículo?"
   ],
-  "pausas": {"problema": 0.28, "solucion": 0.22, "servicios": 0.25, "confianza": 0.3, "cierre": 0.0}
+  [
+   "solucion",
+   "En Cristalbox cuidamos de tu vehículo con rapidez, profesionalidad y cristales de primeras marcas."
+  ],
+  [
+   "servicios",
+   "Reparamos y sustituimos lunas, realizamos tintados homologados, pulimos faros y calibramos sistemas ADAS cuando es necesario."
+  ],
+  [
+   "confianza",
+   "Porque tu seguridad y tu tranquilidad son nuestra prioridad."
+  ],
+  [
+   "cierre",
+   "Cristalbox Granada, Guadix y Baza. ¡Te esperamos!"
+  ]
+ ],
+ "pausas": {
+  "problema": 0.55,
+  "solucion": 0.45,
+  "servicios": 0.5,
+  "confianza": 0.6,
+  "cierre": 0.0
+ }
 }
