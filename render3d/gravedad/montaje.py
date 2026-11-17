@@ -184,13 +184,15 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         if i + 1 < len(ev):
             end = min(end, ev[i + 1][0][1])
         txt = "".join(f"{{\\k{max(1, int(round((b - a) * 100)))}}}{w.upper()} " for w, a, b in g).strip()
-        pop = "{\\pos(540,1240)\\fscx80\\fscy80\\t(0,120,\\fscx104\\fscy104)\\t(120,200,\\fscx100\\fscy100)}"
+        nch = len(" ".join(w for w, _, _ in g))
+        sc = min(100, int(100 * 15.5 / max(1, nch)))  # que nunca se salga del ancho (≈15 car. a 84 px)
+        pop = f"{{\\pos(540,1240)\\fscx{int(sc*.8)}\\fscy{int(sc*.8)}\\t(0,120,\\fscx{int(sc*1.04)}\\fscy{int(sc*1.04)})\\t(120,200,\\fscx{sc}\\fscy{sc})}}"
         lines.append(f"Dialogue: 0,{ass_time(start)},{ass_time(end)},Sub,,0,0,0,,{pop}{txt}")
     # texto final
     tq = nar["lines"][-2]["start"]
     end = nar["duration"] + 0.6
     lines.append(f"Dialogue: 1,{ass_time(tq)},{ass_time(end)},Sub,,0,0,0,,{{\\pos(540,620)\\fs96\\c&H00FFFFFF&\\fad(250,0)}}¿SOBREVIVIRÍAS?")
-    lines.append(f"Dialogue: 1,{ass_time(nar['lines'][-1]['start'] + 1.2)},{ass_time(end)},Sub,,0,0,0,,{{\\pos(540,760)\\fs60\\c&H0000D4FF&\\fad(250,0)}}💬 ¡DÉJALO EN COMENTARIOS!")
+    lines.append(f"Dialogue: 1,{ass_time(nar['lines'][-1]['start'] + 1.2)},{ass_time(end)},Sub,,0,0,0,,{{\\pos(540,760)\\fs60\\c&H0000D4FF&\\fad(250,0)}}¡DÉJALO EN COMENTARIOS!")
     with open(path, "w", encoding="utf-8") as f:
         f.write(head + "\n".join(lines) + "\n")
 

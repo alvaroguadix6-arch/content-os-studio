@@ -110,18 +110,20 @@ def word_times(text, start, end):
     return out
 
 
-def build(out_dir, motor="kokoro", voz="em_alex", speed=1.12, model=None):
+def build(out_dir, motor="kokoro", voz="em_alex", speed=1.12, model=None, guion=None, pausas=None):
     os.makedirs(out_dir, exist_ok=True)
+    guion = guion or GUION
+    pausas = pausas or PAUSAS
     parts, lines, t = [], [], 0.25
     parts.append(np.zeros(int(0.25 * SR)))
-    for key, text in GUION:
+    for key, text in guion:
         a = synth_kokoro(text, voz, speed) if motor == "kokoro" else synth_piper(text, model, speed)
         a = shorten_pauses(trim(a))
         a = a / max(1e-6, np.abs(a).max()) * 0.92
         dur = len(a) / SR
         lines.append({"key": key, "text": text, "start": t, "end": t + dur, "words": word_times(text, t + 0.03, t + dur - 0.05)})
         parts.append(a)
-        gap = PAUSAS.get(key, 0.2)
+        gap = pausas.get(key, 0.2)
         parts.append(np.zeros(int(gap * SR)))
         t += dur + gap
     voice = np.concatenate(parts)
@@ -143,9 +145,11 @@ if __name__ == "__main__":
     ap.add_argument("--motor", default="kokoro", choices=["kokoro", "piper"])
     ap.add_argument("--voz", default="em_alex")
     ap.add_argument("--speed", type=float, default=1.12)
+    ap.add_argument("--guion", help="JSON con {\"guion\": [[clave, texto], ...], \"pausas\": {clave: s}}")
     ap.add_argument("--modelo", default=os.path.join(os.path.dirname(HERE), "assets", "voices", "es_ES-davefx-medium.onnx"))
     a = ap.parse_args()
-    info = build(a.out, a.motor, a.voz, a.speed, a.modelo)
+    g = json.load(open(a.guion, encoding="utf-8")) if a.guion else {}
+    info = build(a.out, a.motor, a.voz, a.speed, a.modelo, [tuple(x) for x in g.get("guion", [])] or None, g.get("pausas"))
     for ln in info["lines"]:
         print(f"{ln['start']:5.2f}-{ln['end']:5.2f}  {ln['text'][:70]}")
     print(f"Duración total: {info['duration']:.1f} s")
