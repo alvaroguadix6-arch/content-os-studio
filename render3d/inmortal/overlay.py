@@ -102,7 +102,8 @@ class Overlay:
                 for ri, (i0, i1) in enumerate(rows):
                     lw = sum(widths[i0:i1]) + sp * (i1 - i0 - 1)
                     x = (W - lw) / 2
-                    y = 1470 + ri * 96 - (len(rows) - 1) * 48
+                    base_y = 1500 if st.scene(t) == "espacio" else (1000 if getattr(st.spec, "style", "") == "popart" else 1470)
+                    y = base_y + ri * 96 - (len(rows) - 1) * 48
                     for k in range(i0, i1):
                         on = words[k][1] <= t < words[k][2] + 0.05
                         d.text((x, y), texts[k], font=self.f_sub, fill=(255, 212, 0, 255) if on else (255, 255, 255, 255), stroke_width=10, stroke_fill=(0, 0, 0, 255), anchor="lm")

@@ -276,15 +276,15 @@ class PopDirector(Director):
         return self.whip(out, t)
 
     def draw_year(self, d, year, t):
-        self.tag(d, 540, 470, f"AÑO {year}", size=70, fill=(255, 230, 60, 255))
+        self.tag(d, 540, 530, f"AÑO {year}", size=70, fill=(255, 230, 60, 255))
 
     def infographics(self, img, d, name, t, lt, u):
         if name == "ruinas":
             # 20 generaciones: fila de cabecitas que se apagan una a una
             k = smooth(0.3, 6.5, lt)
             gone = int(20 * k)
-            x0, y0 = 300, 520
-            self.tag(d, 540, 455, "20 GENERACIONES", size=50, fill=(255, 230, 60, 255), k=min(1, lt / 0.3))
+            x0, y0 = 300, 600
+            self.tag(d, 540, 530, "20 GENERACIONES", size=50, fill=(255, 230, 60, 255), k=min(1, lt / 0.3))
             for i, (cx_, cy_) in enumerate(self.heads):
                 x, y = x0 + cx_ * 120, y0 + cy_ * 90 + 40
                 col = (246, 244, 240, 255) if i >= gone else (120, 120, 130, 255)
@@ -325,7 +325,7 @@ class PopDirector(Director):
         self.put(img, p, cx, cy - R + 8, max(0.16, 0.3 * scale), t)
         # infografías de la Tierra
         if 4.3 < lt < 7.3:
-            self.tag(d, 540, 520, "UN SOLO CONTINENTE", size=52, fill=(120, 230, 120, 255), k=min(1, (lt - 4.3) / 0.3))
+            self.tag(d, 540, 540, "UN SOLO CONTINENTE", size=52, fill=(120, 230, 120, 255), k=min(1, (lt - 4.3) / 0.3))
         if lt > 7.3:
             lvl = 1 - smooth(7.6, 10.4, lt)
             x0, y0, h0 = 940, 1450, 520
