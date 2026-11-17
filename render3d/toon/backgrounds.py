@@ -14,13 +14,13 @@ import time
 
 STYLE = ("digital painting, storybook illustration, highly detailed background art, soft volumetric light, "
          "painterly textures, cinematic composition, vertical, no people, no text")
-NEGATIVE = "people, person, character, text, watermark, logo, signature, blurry, lowres, deformed"
+NEGATIVE = "people, person, crowd, pedestrians, character, text, letters, signs, watermark, logo, signature, blurry, lowres, deformed"
 
 SCENES = {
-    "rayo": "empty city street at dusk under a dramatic thunderstorm, wet asphalt reflecting street lamps, tall old buildings, dark clouds",
+    "rayo": "deserted empty city street at dusk under a dramatic thunderstorm, nobody, wet asphalt reflecting street lamps, tall old buildings, dark clouds",
     "siglo": "futuristic city street at night, glowing cyan neon lines on glass skyscrapers, flying lights, wet road reflections",
     "ruinas": "ruined abandoned city street overgrown with moss and trees, broken skyscrapers, golden sunset light through mist",
-    "tierra": "planet earth seen from space, continents and clouds, thin blue atmosphere, stars, deep space",
+    "tierra": "a single planet earth centered in the frame seen from orbit, one globe only, blue oceans, green and brown continents, white clouds, thin glowing blue atmosphere, black starry space around",
     "sol": "scorched cracked desert with glowing lava cracks under a gigantic red giant sun filling the sky, red apocalyptic atmosphere",
     "espacio": "lonely deep space with countless stars and a faint purple nebula, a tiny white dwarf star far away",
 }
@@ -43,10 +43,13 @@ def generate(pipe, name, out_dir, seed=7, w=512, h=896, steps=4):
 
     g = torch.Generator("cpu").manual_seed(seed)
     t = time.time()
-    img = pipe(prompt=f"{SCENES[name]}, {STYLE}", width=w, height=h, num_inference_steps=steps,
-               guidance_scale=8.0, generator=g).images[0]
+    kw = dict(prompt=f"{SCENES[name]}, {STYLE}", width=w, height=h, num_inference_steps=steps, guidance_scale=8.0, generator=g)
+    try:
+        img = pipe(negative_prompt=NEGATIVE, **kw).images[0]
+    except TypeError:  # los modelos LCM no admiten prompt negativo
+        img = pipe(**kw).images[0]
     img = img.resize((1080, 1920), Image.LANCZOS)
-    path = os.path.join(out_dir, f"fondo_{name}.png")
+    path = os.path.join(out_dir, f"fondo_{name}_{seed}.png")
     img.save(path)
     print(f"[fondo] {name} en {time.time() - t:.1f} s → {path}", flush=True)
     return path
@@ -57,5 +60,7 @@ if __name__ == "__main__":
     names = sys.argv[2:] or list(SCENES)
     os.makedirs(out, exist_ok=True)
     pipe = load()
+    seeds = [int(x) for x in os.environ.get("SEEDS", "7").split(",")]
     for n in names:
-        generate(pipe, n, out)
+        for sd in seeds:
+            generate(pipe, n, out, seed=sd)

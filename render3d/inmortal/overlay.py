@@ -73,11 +73,11 @@ class Overlay:
             lines = [" ".join(words[:1]), " ".join(words[1:])] if len(words) > 2 else [self.final_txt]
             for i, ln in enumerate(lines):
                 fnt = _fit(d, ln, 120, 980)
-                d.text((W // 2, 760 + i * 140), ln, font=fnt, fill=(255, 255, 255, a), anchor="mm", stroke_width=10, stroke_fill=(0, 0, 0, a))
+                d.text((W // 2, 560 + i * 140), ln, font=fnt, fill=(255, 255, 255, a), anchor="mm", stroke_width=10, stroke_fill=(0, 0, 0, a))
             if self.eyes is not None:
                 e = self.eyes.copy()
                 e.putalpha(e.getchannel("A").point(lambda v: v * a // 255))
-                img.alpha_composite(e, (W // 2 - e.width // 2, 760 + len(lines) * 140 - 20))
+                img.alpha_composite(e, (W // 2 - e.width // 2, 560 + len(lines) * 140 - 40))
             return img
         # Subtítulos grandes, palabra activa en amarillo
         for cue in self.cues:
@@ -94,7 +94,7 @@ class Overlay:
                 for ri, (i0, i1) in enumerate(rows):
                     lw = sum(widths[i0:i1]) + sp * (i1 - i0 - 1)
                     x = (W - lw) / 2
-                    y = 1180 + ri * 96 - (len(rows) - 1) * 48
+                    y = 1470 + ri * 96 - (len(rows) - 1) * 48
                     for k in range(i0, i1):
                         on = words[k][1] <= t < words[k][2] + 0.05
                         d.text((x, y), texts[k], font=self.f_sub, fill=(255, 212, 0, 255) if on else (255, 255, 255, 255), stroke_width=10, stroke_fill=(0, 0, 0, 255), anchor="lm")
