@@ -116,11 +116,81 @@ def sfx(story, total_n):
     return out
 
 
+def _beat(kind, seed=0):
+    """Efectos tipo dibujos animados, sintetizados."""
+    rng = np.random.default_rng(seed)
+    if kind == "bonk":
+        n = int(0.45 * SR)
+        tt = np.arange(n) / SR
+        return 0.9 * np.sin(2 * np.pi * (620 * np.exp(-tt * 6) + 180) * tt) * np.exp(-tt * 9) + 0.5 * _onepole(rng.uniform(-1, 1, n), 1800) * np.exp(-tt * 30)
+    if kind == "boing":
+        n = int(0.6 * SR)
+        tt = np.arange(n) / SR
+        return 0.6 * np.sin(2 * np.pi * (220 + 160 * np.sin(2 * np.pi * 9 * tt) * np.exp(-tt * 3)) * tt) * np.exp(-tt * 4)
+    if kind == "pop":
+        n = int(0.12 * SR)
+        tt = np.arange(n) / SR
+        return 0.6 * np.sin(2 * np.pi * (900 - 600 * tt / 0.12) * tt) * np.exp(-tt * 40)
+    if kind == "fall":
+        n = int(0.6 * SR)
+        tt = np.arange(n) / SR
+        return 0.35 * np.sin(2 * np.pi * np.cumsum(1400 - 1000 * tt / 0.6) / SR) * np.minimum(1, tt * 20)
+    if kind == "crash":
+        n = int(0.9 * SR)
+        tt = np.arange(n) / SR
+        return 0.8 * rng.uniform(-1, 1, n) * np.exp(-tt * 6) + 0.6 * np.sin(2 * np.pi * 60 * tt) * np.exp(-tt * 5)
+    if kind == "car":
+        n = int(0.6 * SR)
+        tt = np.arange(n) / SR
+        return 0.45 * np.tanh(3 * np.sin(2 * np.pi * np.cumsum(90 + 120 * tt) / SR)) * np.sin(np.pi * tt / 0.6) + 0.3 * np.sin(2 * np.pi * 700 * tt) * (tt > 0.3) * np.exp(-(tt - 0.3) * 8)
+    if kind == "fly":
+        n = int(0.8 * SR)
+        tt = np.arange(n) / SR
+        return 0.45 * _onepole(rng.uniform(-1, 1, n), 1500) * np.sin(np.pi * tt / 0.8) ** 2 * (0.6 + 0.4 * np.sin(2 * np.pi * 12 * tt))
+    if kind == "thump":
+        n = int(0.3 * SR)
+        tt = np.arange(n) / SR
+        return 0.7 * np.sin(2 * np.pi * (90 * np.exp(-tt * 8) + 40) * tt) * np.exp(-tt * 14)
+    if kind in ("sparkle", "cling"):
+        n = int(0.7 * SR)
+        tt = np.arange(n) / SR
+        notes = (1568, 2093, 2637) if kind == "sparkle" else (2637, 3520)
+        out = np.zeros(n)
+        for i, f in enumerate(notes):
+            d0 = int(i * 0.07 * SR)
+            out[d0:] += 0.25 * np.sin(2 * np.pi * f * tt[: n - d0]) * np.exp(-tt[: n - d0] * 7)
+        return out
+    if kind == "whoosh":
+        n = int(0.7 * SR)
+        return 0.4 * _onepole(rng.uniform(-1, 1, n), 2500) * np.sin(np.linspace(0, np.pi, n)) ** 3
+    if kind == "zap":
+        n = int(0.5 * SR)
+        tt = np.arange(n) / SR
+        return 0.5 * np.sign(np.sin(2 * np.pi * 70 * tt)) * rng.uniform(0.3, 1, n) * np.exp(-tt * 7)
+    return np.zeros(1)
+
+
+def beats_track(total_n):
+    try:
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "toon"))
+        from director import BEATS
+    except Exception:
+        return np.zeros(total_n)
+    out = np.zeros(total_n)
+    for i, (t, kind) in enumerate(BEATS):
+        a = _beat(kind, i)
+        j = int(t * SR)
+        out[j:j + len(a)] += a[: len(out[j:j + len(a)])]
+    return out
+
+
 def build_audio(story, out_wav, model):
     total_n = int(story.duration * SR) + SR // 2
     voice, lines = narration(story, model, total_n)
     mus = music(story, total_n)
     fx = sfx(story, total_n)
+    if getattr(story.spec, "style", "") == "toon":
+        fx = fx + 0.9 * beats_track(total_n)
     venv = _onepole((np.abs(voice) > 0.02).astype(float), 4)
     duck = 1 - 0.5 * np.clip(venv * 3, 0, 1)
     mono = 1.0 * voice + duck * (0.9 * mus) + 0.8 * fx

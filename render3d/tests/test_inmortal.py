@@ -37,6 +37,17 @@ def test_camara_siempre_definida():
         assert pos != look and 10 < lens < 120
 
 
+def test_efectos_dentro_del_video():
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "toon"))
+    try:
+        from director import BEATS
+    except ImportError:  # sin Pillow/NumPy en este entorno
+        return
+    s = Story()
+    for t, kind in BEATS:
+        assert 0 <= t < s.duration - 0.3, (t, kind)
+
+
 if __name__ == "__main__":
     fails = 0
     for name, fn in list(globals().items()):

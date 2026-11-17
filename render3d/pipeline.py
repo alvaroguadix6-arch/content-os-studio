@@ -98,7 +98,7 @@ def cmd_render(a):
     ensure_file(os.path.join(HERE, "assets", "CarConcept.glb"), CAR_URL)
     script = os.path.join(INM_DIR, "scene.py") if template_of(a.spec) == "inmortal" else os.path.join(HERE, "scene_race.py")
     if template_of(a.spec) == "inmortal" and style_of(a.spec) == "toon":
-        script = os.path.join(HERE, "toon", "compose.py")  # estilo dibujos animados: compositor 2D
+        script = os.path.join(HERE, "toon", "director.py")  # estilo dibujos animados: animación 2D con gags
     args = [sys.executable, script, "--out", a.out, "--samples", str(a.samples), "--scale", str(a.scale), "--every", str(a.every)]
     if a.frames:
         args += ["--frames", str(a.frames[0]), str(a.frames[1])]

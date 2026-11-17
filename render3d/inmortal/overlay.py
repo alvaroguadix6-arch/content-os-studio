@@ -2,6 +2,7 @@
 gancho, rótulos de época, subtítulos grandes sincronizados y pregunta final con emoji."""
 from __future__ import annotations
 
+import math
 import os
 import sys
 
@@ -40,6 +41,7 @@ class Overlay:
         self.story = story
         self.cues = word_cues(lines)
         self.f_sub = _font(80, italic=False)
+        self._subfonts = {80: self.f_sub}
         final = story.spec.final_text
         self.final_txt = final.replace("👀", "").strip()
         self.eyes = _emoji("👀", 120) if "👀" in final else None
@@ -83,6 +85,12 @@ class Overlay:
         for cue in self.cues:
             if cue["start"] <= t < cue["end"] + 0.05:
                 words = cue["words"]
+                # rebote al aparecer cada bloque de subtítulos
+                k = min(1.0, (t - cue["start"]) / 0.12)
+                size = int(80 * (0.78 + 0.22 * k + 0.08 * math.sin(k * math.pi)))
+                if size not in self._subfonts:
+                    self._subfonts[size] = _font(size, italic=False)
+                self.f_sub = self._subfonts[size]
                 texts = [w[0].upper() for w in words]
                 widths = [d.textlength(x, font=self.f_sub) for x in texts]
                 sp = d.textlength(" ", font=self.f_sub)

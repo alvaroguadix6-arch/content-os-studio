@@ -178,7 +178,7 @@ class Compositor:
                 yy = (y - lt * 25) % H
                 xx = x + 20 * math.sin(lt * 0.6 + ph)
                 d.ellipse([xx - r, yy - r, xx + r, yy + r], fill=(255, 235, 190, 90))
-            for g in self.ghosts:
+            for g in (self.ghosts if getattr(self, "draw_char", True) else []):
                 age = t - g["t"]
                 if 0 <= age < 2.2:
                     a = math.sin(math.pi * age / 2.2)
@@ -202,7 +202,9 @@ class Compositor:
         # ── personaje ──
         face, arms = st.expression(t)
         face = self.blink(t, face)
-        if name in ("rayo", "siglo", "ruinas", "sol"):
+        if not getattr(self, "draw_char", True):
+            pass
+        elif name in ("rayo", "siglo", "ruinas", "sol"):
             h = 760 if name != "sol" else 640
             bob = 6 * math.sin(t * 2.4)
             im = self.char(face, arms, h)
