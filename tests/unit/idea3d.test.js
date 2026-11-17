@@ -25,4 +25,9 @@ describe('idea → encargo 3D', () => {
     const p = jobFileName({ title: 'Carrera: Rosso contra Giallo' }, new Date('2026-11-17T10:20:00Z'));
     expect(p).toBe('render3d/jobs/carrera-rosso-contra-giallo-202611171020.json');
   });
+  it('plantilla inmortal', () => {
+    const r = ideaToSpec('', { template: 'inmortal' });
+    expect(r.spec.template).toBe('inmortal');
+    expect(r.spec.final_text).toBe('¿ACEPTARÍAS SER INMORTAL? 👀');
+  });
 });

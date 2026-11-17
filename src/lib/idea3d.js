@@ -9,6 +9,12 @@ export const TEMPLATES_3D = {
     ready: true,
     desc: 'Dos superdeportivos en circuito cerrado con ciudad al fondo, salida con semáforo, adelantamientos, cámaras de cine, cámara lenta y foto finish.',
   },
+  inmortal: {
+    label: '¿Qué pasaría si fueras inmortal?',
+    emoji: '⏳',
+    ready: true,
+    desc: 'Historia cinematográfica: un viajero inmortal ve pasar siglos, millones de años, la muerte del Sol y acaba solo en el espacio. 57 s, narración, rótulos de época y pregunta final.',
+  },
   ciudad: {
     label: 'Simulación en ciudad',
     emoji: '🏙️',
@@ -67,6 +73,19 @@ export const QUALITY = {
  * @returns {{spec: object, understood: string[], notes: string[]}}
  */
 export function ideaToSpec(idea, { template = 'carrera', quality = 'normal' } = {}) {
+  if (template === 'inmortal') {
+    const finalText = (idea || '').trim() || '¿ACEPTARÍAS SER INMORTAL? 👀';
+    return {
+      spec: {
+        template: 'inmortal',
+        title: '¿Qué pasaría si fueras inmortal?',
+        final_text: finalText.slice(0, 60),
+        render: { samples: QUALITY[quality]?.samples ?? 16, chunk_frames: 35 },
+      },
+      understood: ['Historia fija en 6 escenas (rayo, +100 años, +500 años, millones de años, gigante roja, espacio)', `Texto final: ${finalText.slice(0, 60)}`],
+      notes: ['En esta plantilla, el cuadro de texto solo cambia la pregunta final.'],
+    };
+  }
   const understood = [];
   const notes = [];
   const text = idea || '';

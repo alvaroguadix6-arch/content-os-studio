@@ -17,4 +17,4 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
-      - run: python3 render3d/tests/test_sim.py
+      - run: python3 render3d/tests/test_sim.py && python3 render3d/tests/test_inmortal.py

@@ -1,0 +1,6 @@
+{
+  "template": "inmortal",
+  "title": "¿Qué pasaría si fueras inmortal?",
+  "final_text": "¿ACEPTARÍAS SER INMORTAL? 👀",
+  "render": { "samples": 16, "chunk_frames": 35 }
+}

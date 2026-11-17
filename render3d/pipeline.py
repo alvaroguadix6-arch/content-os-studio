@@ -49,9 +49,39 @@ def load_spec(path):
     return RaceSpec.from_json(path) if path else RaceSpec()
 
 
+def template_of(path):
+    if not path:
+        return "carrera"
+    with open(path, encoding="utf-8") as f:
+        return json.load(f).get("template", "carrera")
+
+
+INM_DIR = os.path.join(HERE, "inmortal")
+
+
+def get_story(path):
+    """Devuelve el objeto de guion de la plantilla (frames, duración, fps…)."""
+    if template_of(path) == "inmortal":
+        sys.path.insert(0, INM_DIR)
+        from story import Story, StorySpec
+
+        return Story(StorySpec.from_json(path) if path else StorySpec())
+    return Race(load_spec(path))
+
+
+CREDITS_INMORTAL = """Créditos del vídeo
+- Personaje, ciudad, Tierra, Sol, espacio, música y efectos: generados por Content-OS con Blender (sin material de terceros).
+- Coches del time-lapse: modelo «Car Concept» de Eric Chadwick / Darmstadt Graphics Group, licencia CC BY 4.0
+  (https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CarConcept).
+- Voz: Piper TTS, voz es_ES-davefx-medium (https://github.com/rhasspy/piper).
+- Simulación hipotética con fines divulgativos; las cifras temporales son estimaciones científicas aproximadas.
+"""
+
+
 def cmd_render(a):
     ensure_file(os.path.join(HERE, "assets", "CarConcept.glb"), CAR_URL)
-    args = [sys.executable, os.path.join(HERE, "scene_race.py"), "--out", a.out, "--samples", str(a.samples), "--scale", str(a.scale), "--every", str(a.every)]
+    script = os.path.join(INM_DIR, "scene.py") if template_of(a.spec) == "inmortal" else os.path.join(HERE, "scene_race.py")
+    args = [sys.executable, script, "--out", a.out, "--samples", str(a.samples), "--scale", str(a.scale), "--every", str(a.every)]
     if a.frames:
         args += ["--frames", str(a.frames[0]), str(a.frames[1])]
     if a.spec:
@@ -60,11 +90,17 @@ def cmd_render(a):
 
 
 def cmd_finish(a):
-    from audio import build_audio
-    from hud import render_hud
+    inm = template_of(a.spec) == "inmortal"
+    if inm:
+        sys.path.insert(0, INM_DIR)
+        from overlay import render_overlay as render_hud
+        from sound import build_audio
+    else:
+        from audio import build_audio
+        from hud import render_hud
 
-    spec = load_spec(a.spec)
-    race = Race(spec)
+    race = get_story(a.spec)
+    spec = race.spec
     work = os.path.dirname(os.path.abspath(a.out))
     os.makedirs(work, exist_ok=True)
     frames = sorted(glob.glob(os.path.join(a.frames, "f*.jpg")))
@@ -114,7 +150,7 @@ def cmd_finish(a):
         for i, c in enumerate(word_cues(lines), 1):
             f.write(f"{i}\n{ts(c['start'])} --> {ts(c['end'])}\n{' '.join(w[0] for w in c['words'])}\n\n")
     with open(os.path.splitext(a.out)[0] + "-creditos.txt", "w", encoding="utf-8") as f:
-        f.write(CREDITS)
+        f.write(CREDITS_INMORTAL if inm else CREDITS)
     info = {"duration": race.duration, "frames": race.frames, "fps": spec.fps, "title": spec.title, "missing_frames_filled": len(missing), "narration": lines}
     with open(os.path.splitext(a.out)[0] + ".json", "w", encoding="utf-8") as f:
         json.dump(info, f, ensure_ascii=False, indent=2)
@@ -137,7 +173,7 @@ def missing_ranges(n, have, size):
 
 
 def cmd_plan(a):
-    race = Race(load_spec(a.spec))
+    race = get_story(a.spec)
     n = race.frames
     have = set()
     if a.have_dir and os.path.isdir(a.have_dir):

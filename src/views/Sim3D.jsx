@@ -23,6 +23,7 @@ export default function Sim3D() {
   const { settings, setSettings, notify } = store;
   const [template, setTemplate] = useState('carrera');
   const [idea, setIdea] = useState(EXAMPLES[0]);
+  const isInm = template === 'inmortal';
   const [quality, setQuality] = useState('normal');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -92,7 +93,11 @@ export default function Sim3D() {
               key={id}
               className="segment"
               style={{ width: '100%', textAlign: 'left', borderColor: template === id ? 'var(--accent)' : undefined, opacity: t.ready ? 1 : 0.55 }}
-              onClick={() => t.ready && setTemplate(id)}
+              onClick={() => {
+                if (!t.ready) return;
+                setTemplate(id);
+                setIdea(id === 'inmortal' ? '¿ACEPTARÍAS SER INMORTAL? 👀' : EXAMPLES[0]);
+              }}
               disabled={!t.ready}
             >
               <div className="row between">
@@ -108,7 +113,7 @@ export default function Sim3D() {
       </div>
 
       <div className="card">
-        <h3>2 · Tu idea</h3>
+        <h3>2 · {isInm ? 'Pregunta final' : 'Tu idea'}</h3>
         <textarea value={idea} onChange={(e) => setIdea(e.target.value)} style={{ minHeight: 100 }} />
         <div className="row" style={{ margin: '8px 0' }}>
           {EXAMPLES.map((ex, i) => (
