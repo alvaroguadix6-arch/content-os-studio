@@ -219,6 +219,9 @@ class Director(Compositor):
                 out = Image.fromarray((acc / n).astype(np.uint8))
         return out
 
+    def draw_year(self, d, year, t):
+        d.text((W / 2, 470), f"AÑO {year}", font=self.font(70), fill=(255, 255, 255, 255), anchor="mm", stroke_width=7, stroke_fill=INK)
+
     # ───────── escenas: el personaje ya no lo dibuja la clase base ─────────
     def char(self, *a, **k):  # la base dibujaba al personaje; aquí solo se usa para fantasmas
         return super().char(*a, **k)
@@ -304,7 +307,7 @@ class Director(Compositor):
     def act_siglo(self, img, d, t, lt, u):
         g, s = 1800, 0.6
         year = int(2026 + 100 * smooth(1.2, 8.5, lt))
-        d.text((W / 2, 470), f"AÑO {year}", font=self.font(70), fill=(255, 255, 255, 255), anchor="mm", stroke_width=7, stroke_fill=INK)
+        self.draw_year(d, year, t)
         friends = [(175, (60, 90, 160, 255), (240, 200, 40, 255), 13.2), (905, (60, 130, 70, 255), (240, 240, 240, 255), 14.0)]
         for fx, coat, scarf, gone in friends:
             appear = ease_out((t - 9.15) / 0.3)

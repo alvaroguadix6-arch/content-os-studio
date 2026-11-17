@@ -63,7 +63,8 @@ def style_of(path):
     if not path:
         return ""
     with open(path, encoding="utf-8") as f:
-        return json.load(f).get("style", "toon" if json.load(open(path, encoding="utf-8")).get("template") == "inmortal" else "")
+        d = json.load(f)
+    return d.get("style", "toon" if d.get("template") == "inmortal" else "")
 
 
 def get_story(path):
@@ -75,6 +76,12 @@ def get_story(path):
         return Story(StorySpec.from_json(path) if path else StorySpec())
     return Race(load_spec(path))
 
+
+CREDITS_POPART = """Créditos del vídeo
+- Personaje, escenarios, infografías, música y efectos: creados por Content-OS (dibujados por código, sin IA de imágenes ni material de terceros).
+- Voz: Piper TTS, voz es_ES-davefx-medium (https://github.com/rhasspy/piper).
+- Simulación hipotética con fines divulgativos; las cifras temporales son estimaciones científicas aproximadas.
+"""
 
 CREDITS_TOON = """Créditos del vídeo
 - Personaje: diseño original de Content-OS (dibujado por código).
@@ -97,8 +104,9 @@ CREDITS_INMORTAL = """Créditos del vídeo
 def cmd_render(a):
     ensure_file(os.path.join(HERE, "assets", "CarConcept.glb"), CAR_URL)
     script = os.path.join(INM_DIR, "scene.py") if template_of(a.spec) == "inmortal" else os.path.join(HERE, "scene_race.py")
-    if template_of(a.spec) == "inmortal" and style_of(a.spec) == "toon":
-        script = os.path.join(HERE, "toon", "director.py")  # estilo dibujos animados: animación 2D con gags
+    if template_of(a.spec) == "inmortal" and style_of(a.spec) in ("toon", "popart"):
+        st_ = style_of(a.spec)
+        script = os.path.join(HERE, "toon", "popart.py" if st_ == "popart" else "director.py")  # animación 2D con gags
     args = [sys.executable, script, "--out", a.out, "--samples", str(a.samples), "--scale", str(a.scale), "--every", str(a.every)]
     if a.frames:
         args += ["--frames", str(a.frames[0]), str(a.frames[1])]
@@ -153,7 +161,7 @@ def cmd_finish(a):
         "-i", wav,
         "-filter_complex", "[0:v]scale=1080:1920:flags=lanczos[bg];[bg][1:v]overlay=0:0,format=yuv420p[v]",
         "-map", "[v]", "-map", "2:a",
-        "-c:v", "libx264", "-preset", a.preset, "-crf", "21" if style_of(a.spec) == "toon" else "18", "-profile:v", "high", "-r", str(spec.fps),
+        "-c:v", "libx264", "-preset", a.preset, "-crf", "21" if style_of(a.spec) in ("toon", "popart") else "18", "-profile:v", "high", "-r", str(spec.fps),
         "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", a.out,
     ]
     subprocess.run(cmd, check=True)
@@ -168,7 +176,7 @@ def cmd_finish(a):
         for i, c in enumerate(word_cues(lines), 1):
             f.write(f"{i}\n{ts(c['start'])} --> {ts(c['end'])}\n{' '.join(w[0] for w in c['words'])}\n\n")
     with open(os.path.splitext(a.out)[0] + "-creditos.txt", "w", encoding="utf-8") as f:
-        f.write((CREDITS_TOON if style_of(a.spec) == "toon" else CREDITS_INMORTAL) if inm else CREDITS)
+        f.write((CREDITS_POPART if style_of(a.spec) == "popart" else CREDITS_TOON if style_of(a.spec) == "toon" else CREDITS_INMORTAL) if inm else CREDITS)
     info = {"duration": race.duration, "frames": race.frames, "fps": spec.fps, "title": spec.title, "missing_frames_filled": len(missing), "narration": lines}
     with open(os.path.splitext(a.out)[0] + ".json", "w", encoding="utf-8") as f:
         json.dump(info, f, ensure_ascii=False, indent=2)

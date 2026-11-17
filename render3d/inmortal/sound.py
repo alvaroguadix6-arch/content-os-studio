@@ -189,7 +189,7 @@ def build_audio(story, out_wav, model):
     voice, lines = narration(story, model, total_n)
     mus = music(story, total_n)
     fx = sfx(story, total_n)
-    if getattr(story.spec, "style", "") == "toon":
+    if getattr(story.spec, "style", "") in ("toon", "popart"):
         fx = fx + 0.9 * beats_track(total_n)
     venv = _onepole((np.abs(voice) > 0.02).astype(float), 4)
     duck = 1 - 0.5 * np.clip(venv * 3, 0, 1)
