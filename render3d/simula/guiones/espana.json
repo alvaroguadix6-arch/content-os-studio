@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "¿Y si mañana España se despertara convertida en una isla?"
+  ],
+  [
+   "grieta",
+   "Imagina que los Pirineos se parten y el mar entra por los más de seiscientos kilómetros de frontera con Francia."
+  ],
+  [
+   "portugal",
+   "Y ojo, porque Portugal se vendría con nosotros: toda la península quedaría sola, rodeada de mar."
+  ],
+  [
+   "grande",
+   "Seríamos la isla más grande de Europa: más de quinientos ochenta mil kilómetros cuadrados, casi el triple que Gran Bretaña."
+  ],
+  [
+   "clima",
+   "Con agua por todos lados, el nordeste tendría un clima más marítimo, con inviernos más suaves y más humedad."
+  ],
+  [
+   "transporte",
+   "Los camiones y trenes que hoy cruzan por La Jonquera o por Irún tendrían que pasar en barco, o por un túnel bajo el mar como el del canal de la Mancha, de unos cincuenta kilómetros."
+  ],
+  [
+   "economia",
+   "Y lo notaríamos en el bolsillo, porque Francia es el principal destino de las exportaciones españolas."
+  ],
+  [
+   "playa",
+   "Eso sí, ganaríamos kilómetros de playa nuevos, en pleno Pirineo."
+  ],
+  [
+   "cta",
+   "¿Te mudarías a la isla de España? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "grieta": 0.22,
+  "portugal": 0.22,
+  "clima": 0.22,
+  "transporte": 0.22,
+  "economia": 0.22,
+  "playa": 0.22,
+  "cta": 0.0,
+  "grande": 0.22
+ }
+}

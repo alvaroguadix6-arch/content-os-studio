@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "¿Qué pasaría si, de repente, todos los mares de la Tierra empezaran a secarse?"
+  ],
+  [
+   "nivel",
+   "Los océanos cubren más del setenta por ciento del planeta, así que el cambio se notaría desde el primer día."
+  ],
+  [
+   "costa",
+   "Primero, la costa se alejaría kilómetros: los puertos quedarían en seco y los barcos, tirados sobre el barro."
+  ],
+  [
+   "fondo",
+   "Después aparecería el fondo marino: la cordillera más larga del planeta y llanuras enormes a casi cuatro mil metros de profundidad."
+  ],
+  [
+   "fosa",
+   "Y la fosa de las Marianas, de casi once kilómetros, sería el cañón más profundo jamás visto. Cabría el Everest entero."
+  ],
+  [
+   "sal",
+   "Toda la sal se quedaría en tierra. Según la NOAA, repartida por los continentes formaría una capa de unos ciento cincuenta metros."
+  ],
+  [
+   "oxigeno",
+   "Pero lo peor vendría después: el plancton del mar produce alrededor de la mitad del oxígeno que respiramos."
+  ],
+  [
+   "clima",
+   "Sin océanos no habría evaporación, ni nubes, ni lluvia: el planeta entero se convertiría en un desierto."
+  ],
+  [
+   "cta",
+   "¿Qué crees que echaríamos de menos primero? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "nivel": 0.22,
+  "costa": 0.22,
+  "fondo": 0.22,
+  "fosa": 0.22,
+  "sal": 0.22,
+  "oxigeno": 0.22,
+  "clima": 0.22,
+  "cta": 0.0
+ }
+}

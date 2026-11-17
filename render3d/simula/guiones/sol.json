@@ -1,0 +1,56 @@
+{
+ "guion": [
+  [
+   "intro",
+   "¿Y si mañana la luz del Sol dejara de llegar a la Tierra durante cinco años?"
+  ],
+  [
+   "oscuro",
+   "Durante unos ocho minutos no notaríamos nada, porque es lo que tarda su luz en llegar. Después, el cielo se volvería completamente negro."
+  ],
+  [
+   "semana",
+   "En solo una semana, la temperatura media del planeta caería por debajo de cero, y las ciudades se cubrirían de escarcha."
+  ],
+  [
+   "plantas",
+   "Sin luz no hay fotosíntesis: los cultivos morirían en pocas semanas, y con ellos, muchos de los animales que se alimentan de ellos."
+  ],
+  [
+   "anio",
+   "Al cabo de un año, según algunas estimaciones, la superficie rondaría los setenta grados bajo cero."
+  ],
+  [
+   "oceano",
+   "Los océanos se congelarían por arriba, pero debajo del hielo el agua seguiría líquida durante mucho tiempo."
+  ],
+  [
+   "refugio",
+   "La humanidad tendría que vivir bajo tierra, junto a fuentes de calor geotérmico."
+  ],
+  [
+   "vida",
+   "Y en el fondo del mar, junto a las fuentes hidrotermales, la vida seguiría como si nada."
+  ],
+  [
+   "vuelta",
+   "Cuando por fin volviera la luz, cinco años después, la Tierra sería irreconocible."
+  ],
+  [
+   "cta",
+   "¿Tú cómo sobrevivirías? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "oscuro": 0.22,
+  "semana": 0.22,
+  "plantas": 0.22,
+  "anio": 0.22,
+  "oceano": 0.22,
+  "refugio": 0.22,
+  "vida": 0.22,
+  "vuelta": 0.22,
+  "cta": 0.0
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Diez datos del espacio que te van a volar la cabeza."
+  ],
+  [
+   "d1",
+   "Uno: en el espacio no se oye nada. El sonido necesita aire para viajar."
+  ],
+  [
+   "d2",
+   "Dos: en Venus, un día dura más que un año."
+  ],
+  [
+   "d3",
+   "Tres: el Sol contiene el noventa y nueve coma ocho por ciento de la masa del sistema solar."
+  ],
+  [
+   "d4",
+   "Cuatro: las huellas de la Luna pueden durar millones de años, porque allí no hay viento."
+  ],
+  [
+   "d5",
+   "Cinco: una cucharadita de estrella de neutrones pesaría unos mil millones de toneladas."
+  ],
+  [
+   "d6",
+   "Seis: Saturno flotaría en el agua, si hubiera una bañera lo bastante grande."
+  ],
+  [
+   "d7",
+   "Siete: la luz del Sol tarda unos ocho minutos en llegar hasta aquí."
+  ],
+  [
+   "d8",
+   "Ocho: el monte Olimpo, en Marte, es unas dos veces y media más alto que el Everest."
+  ],
+  [
+   "d9",
+   "Nueve: hay más estrellas en el universo que granos de arena en todas las playas de la Tierra."
+  ],
+  [
+   "d10",
+   "Y diez: cerca de un agujero negro, el tiempo pasa más despacio."
+  ],
+  [
+   "cta",
+   "¿Cuál te ha sorprendido más? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "d1": 0.22,
+  "d2": 0.22,
+  "d3": 0.22,
+  "d4": 0.22,
+  "d5": 0.22,
+  "d6": 0.22,
+  "d7": 0.22,
+  "d8": 0.22,
+  "d9": 0.22,
+  "d10": 0.22,
+  "cta": 0.0
+ }
+}

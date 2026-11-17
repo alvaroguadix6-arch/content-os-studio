@@ -1,0 +1,66 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Diez cosas sobre GTA seis que quizá no sabías, y todas confirmadas."
+  ],
+  [
+   "d1",
+   "Uno: sale el diecinueve de noviembre de dos mil veintiséis, en PlayStation cinco y Xbox Series."
+  ],
+  [
+   "d2",
+   "Dos: se ha retrasado dos veces. Primero iba a salir en otoño de dos mil veinticinco, y después en mayo de dos mil veintiséis."
+  ],
+  [
+   "d3",
+   "Tres: transcurre en Leonida, la versión de Rockstar del estado de Florida."
+  ],
+  [
+   "d4",
+   "Cuatro: vuelve Vice City, la ciudad inspirada en Miami."
+  ],
+  [
+   "d5",
+   "Cinco: tiene dos protagonistas, Jason y Lucía, la primera protagonista de la saga moderna."
+  ],
+  [
+   "d6",
+   "Seis: el primer tráiler superó los noventa millones de visualizaciones en YouTube en un solo día."
+  ],
+  [
+   "d7",
+   "Siete: del segundo, Rockstar dice que alcanzó cuatrocientos setenta y cinco millones en veinticuatro horas, sumando todas las plataformas."
+  ],
+  [
+   "d8",
+   "Ocho: en dos mil veintidós sufrió una filtración de vídeos del desarrollo, y Rockstar lo confirmó."
+  ],
+  [
+   "d9",
+   "Nueve: la precarga en PlayStation cinco empezó el diez de noviembre."
+  ],
+  [
+   "d10",
+   "Y diez: todavía no hay fecha oficial para PC. Si la ves por ahí, es un rumor."
+  ],
+  [
+   "cta",
+   "¿Lo vas a jugar el primer día? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "d1": 0.22,
+  "d2": 0.22,
+  "d3": 0.22,
+  "d4": 0.22,
+  "d5": 0.22,
+  "d6": 0.22,
+  "d7": 0.22,
+  "d8": 0.22,
+  "d9": 0.22,
+  "d10": 0.22,
+  "cta": 0.0
+ }
+}
