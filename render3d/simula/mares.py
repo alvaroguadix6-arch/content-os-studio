@@ -180,15 +180,20 @@ class VIDEO(Video):
     def s_plancton(self, img, d, t, lt, u):
         self.bg(img, "sea2", (20, 90, 140), (4, 20, 40))
         k = smooth(1.0, 4.5, lt)
+        from PIL import Image as _I, ImageDraw as _D, ImageFilter as _F
+        gl = _I.new("RGBA", (W, H), (0, 0, 0, 0))  # un único halo para todas las partículas (rápido)
+        gd = _D.Draw(gl)
+        pts = []
         for x, y, r, ph in self.plankton:
             alive = ph > k
             xx = x + 14 * math.sin(t * 0.8 + ph * 9)
             yy = y + 12 * math.cos(t * 0.6 + ph * 7) + (0 if alive else (k - ph) * 300)
+            pts.append((xx, yy, r, alive))
             if alive:
-                self.glow(img, xx, yy, r * 2.2, (90, 255, 160), 60, blur=r) if r > 9 else None
-                self.E(d, xx, yy, r, (120, 255, 170))
-            else:
-                self.E(d, xx, yy, r * 0.8, (90, 100, 105))
+                gd.ellipse([xx - r * 2.2, yy - r * 2.2, xx + r * 2.2, yy + r * 2.2], fill=(90, 255, 160, 70))
+        img.alpha_composite(gl.filter(_F.GaussianBlur(10)).resize(img.size, _I.BILINEAR))
+        for xx, yy, r, alive in pts:
+            self.E(d, xx, yy, r if alive else r * 0.8, (120, 255, 170) if alive else (90, 100, 105))
         self.text(img, 540, 620, "FITOPLANCTON", 52, (140, 255, 190), alpha=smooth(0.2, 0.8, lt))
         self.pop_text(img, 540, 1500, "≈ 50 % DEL OXÍGENO", 64, t, self.w("oxigeno", "mitad"), YEL)
 
