@@ -249,7 +249,7 @@ def main():
     ass = os.path.join(work, "subtitulos.ass")
     subtitles(tl, ass)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-start_number", "0", "-i", os.path.join(a.frames, "f%05d.jpg"),
-           "-i", wav, "-vf", f"subtitles={ass}:fontsdir=/usr/share/fonts/opentype/inter", "-c:v", "libx264", "-preset", "medium", "-crf", "19",
+           "-i", wav, "-vf", f"subtitles={ass}:fontsdir=/usr/share/fonts/opentype/inter", "-c:v", "libx264", "-preset", "medium", "-crf", "22", "-maxrate", "6M", "-bufsize", "12M",
            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-movflags", "+faststart", "-shortest", a.out]
     subprocess.run(cmd, check=True)
     print("✅ Anuncio listo:", a.out)
