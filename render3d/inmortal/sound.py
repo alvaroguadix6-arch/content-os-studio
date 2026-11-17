@@ -13,12 +13,20 @@ from audio import SR, _env, _noise, _onepole, synth_voice, write_wav  # noqa: E4
 from story import ERAS, LIGHTNING_T  # noqa: E402
 
 
-def narration(story, model, total_n):
+def narration(story, model, total_n, lively=True):
+    """Narración continua: cada frase empieza en su momento y, si no cabe antes de la
+    siguiente, se acelera un poco (hasta 1,4x) para no dejar huecos ni solaparse."""
     track = np.zeros(total_n)
     lines, cursor = [], 0.0
-    for t, text in story.narration():
-        a = synth_voice(text, model, speed=1.0)
-        start = max(t, cursor + 0.12)
+    items = list(story.narration())
+    base = 1.15 if lively else 1.0
+    for idx, (t, text) in enumerate(items):
+        nxt = items[idx + 1][0] if idx + 1 < len(items) else story.duration - 0.3
+        start = max(t, cursor + 0.08)
+        window = max(0.8, nxt - start - 0.1)
+        a = synth_voice(text, model, speed=base, lively=lively)
+        if len(a) / SR > window:
+            a = synth_voice(text, model, speed=min(1.4, base * (len(a) / SR) / window), lively=lively)
         i0 = int(start * SR)
         i1 = min(total_n, i0 + len(a))
         if i0 >= total_n:
@@ -186,7 +194,7 @@ def beats_track(total_n):
 
 def build_audio(story, out_wav, model):
     total_n = int(story.duration * SR) + SR // 2
-    voice, lines = narration(story, model, total_n)
+    voice, lines = narration(story, model, total_n, lively=getattr(story.spec, "style", "") in ("toon", "popart"))
     mus = music(story, total_n)
     fx = sfx(story, total_n)
     if getattr(story.spec, "style", "") in ("toon", "popart"):

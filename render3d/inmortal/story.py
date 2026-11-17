@@ -73,17 +73,17 @@ ERAS = [
 ]
 
 DEFAULT_NARRATION = [
-    (0.15, "¿Y si no pudieras morir? Nunca."),
-    (3.0, "Lo descubres el día en que un rayo te atraviesa… y sigues en pie."),
-    (9.4, "Pasan cien años. Tu familia y tus amigos ya no están. Tu ciudad es irreconocible."),
-    (18.9, "Quinientos años. Has visto desaparecer veinte generaciones. Nadie recuerda tu nombre."),
-    (28.6, "Un millón de años después, la humanidad ha cambiado… o ya no existe."),
-    (32.3, "Los continentes se unen en uno solo."),
-    (35.7, "El Sol brilla cada vez más y los océanos se evaporan."),
-    (39.6, "Cinco mil millones de años: el Sol se hincha hasta convertirse en una gigante roja."),
-    (45.9, "Después, se apaga."),
-    (49.8, "Y al final, solo quedas tú. Flotando en la oscuridad. Para siempre."),
-    (54.2, "¿Aceptarías ser inmortal?"),
+    (0.1, "¿Y si no pudieras morir? ¡Nunca jamás!"),
+    (2.2, "Te cae un rayo, y nada. Te aplasta un piano, ¡y te levantas! Te atropella un coche, ¡y sales volando y caes de pie, como si nada!"),
+    (9.2, "Pasan cien años. Tus amigos envejecen y se van, uno a uno, pero tú sigues exactamente igual. Tu ciudad se llena de rascacielos y coches voladores, y ya ni la reconoces."),
+    (18.7, "Quinientos años. Veinte generaciones han nacido y han muerto delante de ti. Tu familia, tus amigos, tus vecinos, todos. Y ya nadie en el mundo, absolutamente nadie, recuerda tu nombre."),
+    (28.15, "Un millón de años después, la humanidad ha cambiado por completo, o ha desaparecido."),
+    (32.3, "Los continentes chocan y se unen en uno solo, gigantesco."),
+    (35.6, "El Sol brilla cada vez más, ¡y los océanos se evaporan!"),
+    (39.3, "Cinco mil millones de años: el Sol se hincha hasta convertirse en una gigante roja, más de cien veces más grande. ¡Y después se apaga!"),
+    (46.0, "Todo lo que has conocido, cada persona, cada lugar, ha desaparecido."),
+    (49.7, "Y al final, solo quedas tú, flotando en la oscuridad. Solo. Para siempre."),
+    (54.0, "¿Aceptarías ser inmortal?"),
 ]
 
 

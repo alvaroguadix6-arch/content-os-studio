@@ -40,14 +40,39 @@ def _onepole(x, cutoff):
 
 # ─────────────────────────── voz ───────────────────────────
 
-def synth_voice(text, model_path, speed=1.05):
+def compress_pauses(data, sr=SR, max_pause=0.13, keep=0.08, thr=0.012):
+    """Acorta los silencios internos largos (la voz suena más continua y animada)."""
+    env = np.convolve(np.abs(data), np.ones(int(sr * 0.01)) / int(sr * 0.01), mode="same")
+    quiet = env < thr
+    out, i, n = [], 0, len(data)
+    while i < n:
+        if quiet[i]:
+            j = i
+            while j < n and quiet[j]:
+                j += 1
+            seg = data[i:j]
+            if (j - i) / sr > max_pause and i > 0 and j < n:
+                k = int(keep * sr / 2)
+                seg = np.concatenate([seg[:k], seg[-k:]])
+            out.append(seg)
+            i = j
+        else:
+            j = i
+            while j < n and not quiet[j]:
+                j += 1
+            out.append(data[i:j])
+            i = j
+    return np.concatenate(out) if out else data
+
+
+def synth_voice(text, model_path, speed=1.05, lively=False):
     from piper import PiperVoice
 
     voice = PiperVoice.load(model_path)
     try:
         from piper import SynthesisConfig
 
-        cfg = SynthesisConfig(length_scale=1 / speed)
+        cfg = SynthesisConfig(length_scale=1 / speed, noise_scale=0.8 if lively else None, noise_w_scale=0.9 if lively else None)
         chunks = list(voice.synthesize(text, syn_config=cfg))
     except Exception:
         chunks = list(voice.synthesize(text))
@@ -60,6 +85,8 @@ def synth_voice(text, model_path, speed=1.05):
     idx = np.where(np.abs(data) > 0.01)[0]
     if len(idx):
         data = data[max(0, idx[0] - 2000): idx[-1] + 3000]
+    if lively:
+        data = compress_pauses(data)
     return data / max(1e-6, np.abs(data).max()) * 0.95
 
 
