@@ -114,7 +114,7 @@ class Anuncio:
         self.tl = Timeline(nar)
         self.arte = arte
         self.plates = {}
-        cfg = {"carretera": dict(clouds=0.35, cloud_speed=10), "camion": dict(clouds=0.4, cloud_speed=12),
+        cfg = {"camion": dict(clouds=0.4, cloud_speed=12),
                "familia": dict(clouds=0.35, cloud_speed=10, rays=0.8)}
         for name in ("carretera", "taller", "sustitucion", "tintado", "faro", "adas", "camion", "familia"):
             img = Image.open(os.path.join(arte, name + ".png")).convert("RGB").resize((int(W * 1.18), int(H * 1.18)), Image.LANCZOS)
@@ -235,7 +235,7 @@ class Anuncio:
         z = 1.0 + 0.32 * (lt / max(1.0, tl.e2)) ** 0.9
         far = p.render(W, H, z, 0, -0.05, t, (shake[0], shake[1]))
         f2 = far.resize((W, H), Image.BILINEAR, box=(W * 0.012, H * 0.012, W * 0.988, H * 0.988))
-        far = Image.blend(far, f2, 0.45)
+        far = Image.blend(far, f2, 0.3)
         if not hasattr(self, "_dash"):
             d = np.asarray(Image.fromarray(p.depth).resize((W, H), Image.BILINEAR, box=(p.P + p.size[0] * 0.0327, p.P + p.size[1] * 0.0327,
                                                                                           p.P + p.size[0] * 0.9673, p.P + p.size[1] * 0.9673)))
@@ -335,7 +335,7 @@ class Anuncio:
         img = self.s_service("adas", t, lt, u, self.tl.s_adas, zoom=(1.0, 1.1))
         d = ImageDraw.Draw(img, "RGBA")
         # visor de calibración: esquinas, línea de escaneo y confirmación
-        x0, y0, x1, y1 = 170, 560, 910, 1240
+        x0, y0, x1, y1 = 110, 1180, 970, 1800
         L = 70
         for (x, y, sx, sy) in ((x0, y0, 1, 1), (x1, y0, -1, 1), (x0, y1, 1, -1), (x1, y1, -1, -1)):
             d.line([(x, y + sy * L), (x, y), (x + sx * L, y)], fill=YELLOW + (255,), width=7)
@@ -347,7 +347,7 @@ class Anuncio:
         dur = self.tl.s_cam - self.tl.s_adas
         if lt > dur * 0.55:
             k = ease_out((lt - dur * 0.55) / 0.3)
-            cx, cy = W / 2, y1 + 70
+            cx, cy = W / 2, y0 - 90
             d.rounded_rectangle([cx - 150, cy - 44, cx + 150, cy + 44], 44, fill=(12, 12, 12, int(220 * k)), outline=YELLOW + (int(255 * k),), width=3)
             d.line([(cx - 95, cy), (cx - 80, cy + 16), (cx - 50, cy - 16)], fill=YELLOW + (int(255 * k),), width=7)
             d.text((cx + 20, cy), "OK", font=font("ExtraBold", 46), fill=(255, 255, 255, int(255 * k)), anchor="mm")
