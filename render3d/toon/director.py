@@ -388,12 +388,16 @@ class Director(Compositor):
         if desert > 0.3:
             p.face, p.sweat = "sorprendido", True
             p.arm_r = 120 + 25 * math.sin(t * 14)
-            for k in range(10):  # vapor de los océanos
-                a = -math.pi / 2 + (k - 4.5) * 0.25
-                ph = (lt * 0.5 + k * 0.13) % 1
-                rr = R + 20 + ph * 220
+            steam = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+            sd = ImageDraw.Draw(steam)
+            for k in range(26):  # vapor de los océanos (nubes difuminadas)
+                a = -math.pi / 2 + ((k * 0.618) % 1 - 0.5) * 2.6
+                ph = (lt * 0.35 + k * 0.071) % 1
+                rr = R + ph * 260
                 x, y = cx + math.cos(a) * rr, cy + math.sin(a) * rr
-                d.ellipse([x - 30 - 30 * ph, y - 30 - 30 * ph, x + 30 + 30 * ph, y + 30 + 30 * ph], fill=(230, 230, 235, int(120 * (1 - ph))))
+                rad = 25 + 70 * ph
+                sd.ellipse([x - rad, y - rad, x + rad, y + rad], fill=(235, 235, 240, int(70 * desert * (1 - ph))))
+            img.alpha_composite(steam.filter(ImageFilter.GaussianBlur(22)))
         cs = max(0.16, 0.3 * scale)
         self.put(img, p, cx, cy - R + 8, cs, t)
         if ice > 0.05:
