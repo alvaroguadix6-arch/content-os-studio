@@ -1,0 +1,20 @@
+name: Pruebas
+on:
+  push:
+    branches-ignore: [main, 'cache-*']
+  pull_request:
+jobs:
+  test:
+    # Solo en repositorio público (gratis). En privado no se ejecuta para no gastar cupo.
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: python3 render3d/tests/test_sim.py

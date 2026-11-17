@@ -1,0 +1,11 @@
+node_modules/
+dist/
+public/vendor/
+test-output/
+*.log
+.env
+.env.*
+render3d/assets/*.glb
+render3d/assets/voices/
+render3d/out/
+__pycache__/

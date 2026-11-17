@@ -1,0 +1,23 @@
+{
+  "template": "carrera",
+  "title": "Carrera: Rosso contra Giallo",
+  "idea": "Carrera ficticia en circuito cerrado entre un superdeportivo rojo y uno amarillo, con adelantamientos y final de foto finish.",
+  "car_a_name": "Rosso",
+  "car_b_name": "Giallo",
+  "car_a_color": [
+    0.55,
+    0.0,
+    0.0
+  ],
+  "car_b_color": [
+    0.9,
+    0.55,
+    0.0
+  ],
+  "winner": "a",
+  "render": {
+    "samples": 14,
+    "chunk_frames": 35
+  },
+  "reuse_branch": "cache-fotogramas"
+}
