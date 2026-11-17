@@ -296,7 +296,7 @@ class Anuncio:
     def s_sustitucion(self, t, lt, u):
         img = self.s_service("sustitucion", t, lt, u, self.tl.e3, pan=(0.25, 0.0))
         self.light_sweep(img, (lt - 0.2) / 1.2, alpha=45)
-        self.label(img, LABELS["sustitucion"], self.tl.e3 + 0.1, t)
+        self.label(img, LABELS["sustitucion"], self.tl.e3 + 0.1, t, y=1230)
         return img
 
     def s_tintado(self, t, lt, u):
