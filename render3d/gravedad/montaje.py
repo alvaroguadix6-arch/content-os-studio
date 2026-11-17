@@ -203,8 +203,13 @@ def main():
     ap.add_argument("--arte", required=True)
     ap.add_argument("--frames", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--estilo", default="realista", choices=["realista", "plano"],
+                    help="plano: ilustración plana con el texto ya dibujado arriba (sin subtítulos ASS)")
     a = ap.parse_args()
-    from animar import Animator
+    if a.estilo == "plano":
+        from plano import Animator
+    else:
+        from animar import Animator
 
     nar = json.load(open(os.path.join(a.narracion, "narracion.json"), encoding="utf-8"))
     an = Animator(nar, a.arte)
@@ -226,7 +231,7 @@ def main():
     ass = os.path.join(work, "subtitulos.ass")
     subtitles(nar, ass)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-framerate", "30", "-start_number", "0", "-i", os.path.join(a.frames, "f%05d.jpg"),
-           "-i", wav, "-vf", f"subtitles={ass}:fontsdir=/usr/share/fonts", "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+           "-i", wav, *([] if a.estilo == "plano" else ["-vf", f"subtitles={ass}:fontsdir=/usr/share/fonts"]), "-c:v", "libx264", "-preset", "medium", "-crf", "20",
            "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-movflags", "+faststart", "-shortest", a.out]
     subprocess.run(cmd, check=True)
     # también un .srt por si la red social lo pide aparte
