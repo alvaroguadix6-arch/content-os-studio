@@ -38,6 +38,7 @@ class StorySpec:
     title: str = "¿Qué pasaría si fueras inmortal?"
     fps: int = 30
     final_text: str = "¿ACEPTARÍAS SER INMORTAL? 👀"
+    style: str = "toon"  # "toon" = personaje 2D de dibujos animados; "3d" = figura 3D con capucha
     narration: list = field(default_factory=list)
 
     @classmethod
@@ -109,6 +110,24 @@ class Story:
 
     def narration(self):
         return self.spec.narration or DEFAULT_NARRATION
+
+    def expression(self, t):
+        """Expresión del personaje 2D en cada momento: (cara, brazos)."""
+        name = self.scene(t)
+        if name == "rayo":
+            if t < LIGHTNING_T + 0.15:
+                return "normal", "abajo"
+            return ("sorprendido", "abajo") if t < 5.0 else ("asombrado", "abiertos")
+        if name == "siglo":
+            return "asombrado", "abajo"
+        if name == "ruinas":
+            return "triste", "abajo"
+        if name == "sol":
+            u, _ = self.local(t)
+            return ("asombrado", "abajo") if u < 0.66 else ("sorprendido", "abajo")
+        if name == "espacio":
+            return ("normal", "abajo") if t > self.duration - 3.0 else ("triste", "abajo")
+        return "normal", "abajo"
 
     def era(self, t):
         for a, b, txt in ERAS:

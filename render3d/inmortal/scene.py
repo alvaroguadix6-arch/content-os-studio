@@ -223,6 +223,62 @@ def build_hero():
     return hero, wind, body
 
 
+def build_toon_hero(hero, story, fps):
+    """Personaje 2D (estilo dibujos animados) en planos que siempre miran a la cámara.
+    Un plano por combinación de expresión/brazos; se muestra el que toca en cada fotograma."""
+    sys.path.insert(0, os.path.join(os.path.dirname(HERE), "toon"))
+    from character import H as CH, W as CW, draw
+
+    tmp = os.path.join(os.environ.get("TMPDIR", "/tmp"), "contentos_personaje")
+    os.makedirs(tmp, exist_ok=True)
+    # ocultar la figura 3D
+    for ch in hero.children:
+        ch.hide_render = True
+    combos = sorted({story.expression(f / fps) for f in range(story.frames)})
+    planes = {}
+    height = 1.85
+    width = height * CW / CH
+    for face, arms in combos:
+        path = os.path.join(tmp, f"{face}_{arms}.png")
+        draw(face, arms, look_up=face == "asombrado").save(path)
+        img = bpy.data.images.load(path)
+        m = bpy.data.materials.new(f"Toon_{face}_{arms}")
+        m.use_nodes = True
+        m.blend_method = "BLEND" if hasattr(m, "blend_method") else None
+        nt = m.node_tree
+        nt.nodes.remove(nt.nodes["Principled BSDF"])
+        tex = nt.nodes.new("ShaderNodeTexImage")
+        tex.image = img
+        tex.interpolation = "Cubic"
+        em = node(nt, "ShaderNodeEmission", Strength=1.0)
+        nt.links.new(tex.outputs["Color"], em.inputs["Color"])
+        tr = nt.nodes.new("ShaderNodeBsdfTransparent")
+        mix = nt.nodes.new("ShaderNodeMixShader")
+        nt.links.new(tex.outputs["Alpha"], mix.inputs[0])
+        nt.links.new(tr.outputs[0], mix.inputs[1])
+        nt.links.new(em.outputs[0], mix.inputs[2])
+        nt.links.new(mix.outputs[0], nt.nodes["Material Output"].inputs["Surface"])
+        me = bpy.data.meshes.new(f"Toon_{face}_{arms}")
+        me.from_pydata([(-width / 2, 0, 0), (width / 2, 0, 0), (width / 2, 0, height), (-width / 2, 0, height)], [], [(0, 1, 2, 3)])
+        uv = me.uv_layers.new(name="UVMap")
+        for li, co in zip(range(4), [(0, 0), (1, 0), (1, 1), (0, 1)]):
+            uv.data[li].uv = co
+        me.materials.append(m)
+        pl = link(bpy.data.objects.new(f"Toon_{face}_{arms}", me))
+        pl.parent = hero
+        pl.visible_shadow = False
+        planes[(face, arms)] = pl
+    return planes
+
+
+def face_camera(planes, cam):
+    for pl in planes.values():
+        c = pl.constraints.new("LOCKED_TRACK")
+        c.target = cam
+        c.track_axis = "TRACK_NEGATIVE_Y"
+        c.lock_axis = "LOCK_Z"
+
+
 # ───────────────────────── ciudad (rayo, siglo, ruinas) ─────────────────────────
 
 def city_material():
@@ -811,7 +867,11 @@ def build(spec, samples, scale):
     sc = bpy.context.scene
     sc.frame_start = 0
     sc.frame_end = story.frames - 1
-    return story, {"hero": hero, "wind": wind, "bolt": bolt, "bolt_m": bolt_m, "cam": cam, "rim": rim, "rim_o": rim_o}
+    toon = {}
+    if getattr(spec, "style", "toon") == "toon":
+        toon = build_toon_hero(hero, story, fps)
+        face_camera(toon, cam)
+    return story, {"hero": hero, "wind": wind, "bolt": bolt, "bolt_m": bolt_m, "cam": cam, "rim": rim, "rim_o": rim_o, "toon": toon}
 
 
 def animate(story, objs, f0, f1):
@@ -824,6 +884,14 @@ def animate(story, objs, f0, f1):
         hero.rotation_euler = (tilt, 0, yaw)
         hero.keyframe_insert("location", frame=f)
         hero.keyframe_insert("rotation_euler", frame=f)
+        if objs.get("toon"):
+            cur = story.expression(t)
+            for k, pl in objs["toon"].items():
+                pl.hide_render = k != cur
+                pl.keyframe_insert("hide_render", frame=f)
+            # pequeño "rebote" de dibujos animados al respirar
+            hero.scale = (1.0, 1.0, 1.0 + 0.012 * math.sin(t * 2.4))
+            hero.keyframe_insert("scale", frame=f)
         objs["wind"].location = (t * 0.6, t * 0.3, 0)
         objs["wind"].keyframe_insert("location", frame=f)
         cpos, look, lens = story.camera(t)
