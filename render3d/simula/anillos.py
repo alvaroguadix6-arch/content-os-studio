@@ -102,7 +102,8 @@ class VIDEO(Video):
         self.pop_text(img, 540, 1680, "MIRANDO AL SUR · ESPAÑA", 54, t, self.w("espana", "sur"), YEL)
 
     def s_ecuador(self, img, d, t, lt, u):
-        polo = smooth(self.w("ecuador", "polos") - 0.4, self.w("ecuador", "polos") + 0.2, t)
+        tp = self.w("ecuador", "cerca") - 0.25
+        polo = smooth(tp - 0.1, tp + 0.1, t)
         if polo < 0.5:
             self.bg(img, "trop", (90, 160, 230), (190, 225, 245))
             lay = Image.new("RGBA", img.size, (0, 0, 0, 0))  # el anillo, de canto: una línea fina sobre la cabeza
@@ -114,7 +115,7 @@ class VIDEO(Video):
                 for i in range(6):
                     a = -math.pi / 2 + (i - 2.5) * 0.6 + 0.05 * math.sin(t * 2)
                     self.Ln(d, [(x + 50, 1000), (x + 50 + math.cos(a) * 180, 1000 + math.sin(a) * 90 + 40)], (60, 140, 70), 18)
-            self.text(img, 540, 1680, "ECUADOR: UNA LÍNEA FINA", 54, YEL)
+            self.text(img, 540, 1250, "ECUADOR: UNA LÍNEA FINA", 54, YEL)
         else:
             self.bg(img, "polar", (120, 150, 190), (220, 230, 240))
             lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
@@ -123,7 +124,7 @@ class VIDEO(Video):
             self.R(d, 0, 1500, W, H + 40, (240, 246, 252))
             for x in (250, 700):
                 self.P(d, [(x - 160, 1500), (x, 1300), (x + 160, 1500)], (225, 235, 245))
-            self.text(img, 540, 1680, "POLOS: APENAS SE VEN", 54, CYAN)
+            self.text(img, 540, 1250, "POLOS: APENAS SE VEN", 54, (40, 90, 160))
 
     def s_noche(self, img, d, t, lt, u):
         self.bg(img, "night", (6, 10, 26), (26, 34, 64))
