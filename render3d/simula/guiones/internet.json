@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Internet se apaga. En todo el mundo. Durante treinta días."
+  ],
+  [
+   "dia1",
+   "El primer día, más de cinco mil millones de personas se quedarían sin mensajes, sin redes y sin vídeos."
+  ],
+  [
+   "bancos",
+   "Pero lo serio llegaría con el dinero: los pagos con tarjeta y los cajeros dependen de redes, así que volvería el efectivo, y las colas."
+  ],
+  [
+   "aeropuertos",
+   "En los aeropuertos, las reservas, la facturación y parte de la coordinación de los vuelos funcionan conectadas: habría miles de cancelaciones."
+  ],
+  [
+   "super",
+   "Los supermercados reponen con pedidos automáticos: en pocos días habría estanterías vacías."
+  ],
+  [
+   "trabajo",
+   "Millones de personas no podrían teletrabajar, y muchas empresas se pararían."
+  ],
+  [
+   "papel",
+   "Volveríamos a los mapas de papel, las cartas y la radio."
+  ],
+  [
+   "hecho",
+   "Lo que sí es real: casi todo el tráfico de Internet entre continentes viaja por cables que recorren el fondo del mar."
+  ],
+  [
+   "cta",
+   "¿Qué sería lo primero que echarías de menos? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "dia1": 0.22,
+  "bancos": 0.22,
+  "aeropuertos": 0.22,
+  "super": 0.22,
+  "trabajo": 0.22,
+  "papel": 0.22,
+  "hecho": 0.22,
+  "cta": 0.0
+ }
+}

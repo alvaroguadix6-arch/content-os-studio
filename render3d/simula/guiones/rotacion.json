@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "La Tierra se detiene. Solo cinco segundos. Y eso bastaría para cambiarlo todo."
+  ],
+  [
+   "velocidad",
+   "Ahora mismo, en el ecuador, el suelo gira a unos mil seiscientos setenta kilómetros por hora. Y en España, a más de mil doscientos."
+  ],
+  [
+   "frenazo",
+   "Si el planeta se frenara de golpe, nosotros no: todo lo que no está anclado seguiría avanzando hacia el este a esa velocidad."
+  ],
+  [
+   "personas",
+   "Personas, coches y trenes saldrían despedidos más rápido que un avión comercial."
+  ],
+  [
+   "viento",
+   "La atmósfera tampoco se pararía: vientos de cientos de kilómetros por hora arrasarían ciudades y bosques."
+  ],
+  [
+   "oceanos",
+   "Y los océanos se lanzarían sobre los continentes, con olas mucho mayores que cualquier tsunami conocido."
+  ],
+  [
+   "hipotesis",
+   "Por suerte, es solo una hipótesis: la Tierra no puede frenarse de golpe."
+  ],
+  [
+   "hecho",
+   "Lo que sí es real: la Luna frena su giro muy despacio, y el día se alarga aproximadamente dos milésimas de segundo cada siglo."
+  ],
+  [
+   "cta",
+   "¿Dónde te pillaría a ti? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "velocidad": 0.22,
+  "frenazo": 0.22,
+  "personas": 0.22,
+  "viento": 0.22,
+  "oceanos": 0.22,
+  "hipotesis": 0.22,
+  "hecho": 0.22,
+  "cta": 0.0
+ }
+}

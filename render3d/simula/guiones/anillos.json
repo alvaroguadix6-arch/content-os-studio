@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Imagina mirar al cielo desde tu casa, y ver un anillo gigante cruzándolo de lado a lado."
+  ],
+  [
+   "plano",
+   "Si la Tierra tuviera anillos como Saturno, estarían sobre el ecuador: enormes, pero finísimos. Los de Saturno, en muchas zonas, no llegan a un kilómetro de grosor."
+  ],
+  [
+   "espana",
+   "Desde España los veríamos como un arco gigantesco hacia el sur."
+  ],
+  [
+   "ecuador",
+   "En el ecuador serían una línea fina justo encima de la cabeza, y cerca de los polos apenas se verían."
+  ],
+  [
+   "noches",
+   "Las noches serían mucho más claras, porque los anillos reflejarían la luz del Sol."
+  ],
+  [
+   "sombra",
+   "Pero también harían sombra: en invierno caería sobre parte del planeta, y algunos científicos creen que haría ese invierno todavía más frío."
+  ],
+  [
+   "satelites",
+   "Y muchos satélites tendrían que esquivar trozos de hielo y roca."
+  ],
+  [
+   "hecho",
+   "Lo que sí es real: un estudio de dos mil veinticuatro sugiere que la Tierra pudo tener anillos hace unos cuatrocientos sesenta y seis millones de años."
+  ],
+  [
+   "cta",
+   "¿Te gustaría ver este cielo? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "plano": 0.22,
+  "espana": 0.22,
+  "ecuador": 0.22,
+  "noches": 0.22,
+  "sombra": 0.22,
+  "satelites": 0.22,
+  "hecho": 0.22,
+  "cta": 0.0
+ }
+}

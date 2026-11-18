@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Mira al cielo esta noche, e imagina que la Luna ya no está."
+  ],
+  [
+   "mareas",
+   "Lo primero que cambiaría serían las mareas: la Luna provoca la mayor parte, así que solo quedarían las del Sol, mucho más débiles."
+  ],
+  [
+   "costas",
+   "Las playas, los puertos y la vida de las costas cambiarían por completo."
+  ],
+  [
+   "noches",
+   "Las noches serían mucho más oscuras: sin luna llena, solo las estrellas iluminarían el campo."
+  ],
+  [
+   "animales",
+   "Y muchos animales se desorientarían. Los corales, por ejemplo, usan la luz de la Luna para sincronizar su reproducción."
+  ],
+  [
+   "eclipses",
+   "Se acabarían los eclipses totales de Sol. Nunca más veríamos uno."
+  ],
+  [
+   "eje",
+   "Y a largo plazo, según algunos modelos, la inclinación del eje de la Tierra podría variar mucho más, con cambios de clima extremos a lo largo de millones de años."
+  ],
+  [
+   "hecho",
+   "Lo que sí es real: la Luna se aleja de nosotros unos tres coma ocho centímetros cada año."
+  ],
+  [
+   "cta",
+   "¿Echarías de menos la Luna? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "mareas": 0.22,
+  "costas": 0.22,
+  "noches": 0.22,
+  "animales": 0.22,
+  "eclipses": 0.22,
+  "eje": 0.22,
+  "hecho": 0.22,
+  "cta": 0.0
+ }
+}

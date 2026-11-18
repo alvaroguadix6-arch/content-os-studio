@@ -39,6 +39,7 @@ def norm(w):
 
 class Video:
     NAME = "video"
+    BRAND = None  # p. ej. "NIVEL OCULTO": marca discreta arriba y en el cierre
     KEYWORDS: set = set()
     END_HOLD = 0.8
 
@@ -187,6 +188,8 @@ class Video:
         for j in range(3):
             b = abs(math.sin(t * 5 - j * 0.6)) * 26 * k
             self.E(d, cx + (j - 1) * 150 * k, cy - b, 38 * k, (28, 40, 70))
+        if self.BRAND:
+            self.text(img, 540, 1450, self.BRAND, 70 * k, YEL, alpha=clamp((t - t0 - 0.3) / 0.4))
 
     # ───── globo terráqueo ─────
     def _globe_geo(self, R):
@@ -397,7 +400,21 @@ class Video:
             out = out.convert("RGB")
         out = self.grade(out, t, name)
         out = self.hud(out, t)
-        return self.caption(out, t)
+        out = self.caption(out, t)
+        return self.brand(out) if self.BRAND else out
+
+    def brand(self, out):
+        img = out.convert("RGBA")
+        lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
+        d = ImageDraw.Draw(lay)
+        f = font("ExtraBold", 28)
+        txt = " ".join(self.BRAND)
+        tw = f.getlength(txt)
+        d.rounded_rectangle([540 - tw / 2 - 22, 118, 540 + tw / 2 + 22, 162], 22, fill=(10, 14, 24, 120))
+        d.text((540, 141), txt, font=f, fill=(255, 255, 255, 215), anchor="mm")
+        d.rectangle([540 - 18, 158, 540 + 18, 162], fill=YEL + (230,))
+        img.alpha_composite(lay)
+        return img.convert("RGB")
 
     # ───── sonido: eventos (t, tipo, ganancia) ─────
     def sfx_events(self):

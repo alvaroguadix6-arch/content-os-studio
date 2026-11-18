@@ -1,0 +1,56 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Un asteroide gigante se dirige hacia el océano. Y nadie lo ha visto venir."
+  ],
+  [
+   "entrada",
+   "Entra en la atmósfera a más de sesenta mil kilómetros por hora, convertido en una bola de fuego."
+  ],
+  [
+   "impacto",
+   "Al chocar, vaporiza el agua y abre un cráter en el fondo del mar."
+  ],
+  [
+   "columna",
+   "Una columna de vapor y roca sube kilómetros hacia el cielo."
+  ],
+  [
+   "ola",
+   "Y el océano responde: según un estudio de dos mil veintidós, el asteroide que acabó con los dinosaurios provocó olas iniciales de hasta un kilómetro y medio de altura."
+  ],
+  [
+   "tsunami",
+   "Los tsunamis cruzarían el océano a la velocidad de un avión, a unos ochocientos kilómetros por hora."
+  ],
+  [
+   "costas",
+   "En pocas horas golpearían las costas, entrando kilómetros tierra adentro."
+  ],
+  [
+   "clima",
+   "Y el vapor y el polvo en la atmósfera podrían enfriar el clima durante años."
+  ],
+  [
+   "hecho",
+   "Lo que sí es real: la NASA vigila los asteroides cercanos, y en dos mil veintidós la misión DART consiguió desviar uno."
+  ],
+  [
+   "cta",
+   "¿Crees que estamos preparados? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "entrada": 0.22,
+  "impacto": 0.22,
+  "columna": 0.22,
+  "ola": 0.22,
+  "tsunami": 0.22,
+  "costas": 0.22,
+  "clima": 0.22,
+  "hecho": 0.22,
+  "cta": 0.0
+ }
+}
