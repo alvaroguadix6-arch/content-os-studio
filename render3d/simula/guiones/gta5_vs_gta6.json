@@ -1,0 +1,41 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Trece años separan GTA cinco de GTA seis. Estas son sus cinco grandes diferencias."
+  ],
+  [
+   "d1",
+   "Uno: la ciudad. GTA cinco transcurre en Los Santos, inspirada en Los Ángeles. GTA seis vuelve a Vice City, inspirada en Miami."
+  ],
+  [
+   "d2",
+   "Dos: los protagonistas. En GTA cinco había tres: Michael, Franklin y Trevor. En GTA seis son dos, Jason y Lucía."
+  ],
+  [
+   "d3",
+   "Tres: el mapa. Antes era Los Santos y el condado de Blaine; ahora, el estado de Leonida, con seis regiones confirmadas. Eso sí, su tamaño oficial aún no se conoce."
+  ],
+  [
+   "d4",
+   "Cuatro: las consolas. GTA cinco salió en dos mil trece en PlayStation tres y Xbox trescientos sesenta. GTA seis sale solo en PlayStation cinco y Xbox Series, y sin fecha para PC."
+  ],
+  [
+   "d5",
+   "Cinco: la expectación. GTA cinco ha vendido más de doscientos millones de copias, y el primer tráiler de GTA seis batió récords en YouTube."
+  ],
+  [
+   "cta",
+   "¿Con cuál te quedas? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "d1": 0.22,
+  "d2": 0.22,
+  "d3": 0.22,
+  "d4": 0.22,
+  "d5": 0.22,
+  "cta": 0.0
+ }
+}
