@@ -1,0 +1,66 @@
+{
+ "guion": [
+  [
+   "intro",
+   "¿Buscas trucos para GTA seis? Cuidado: casi todos los que circulan son falsos."
+  ],
+  [
+   "d1",
+   "Uno: a día de hoy, Rockstar no ha confirmado ni un solo código de trucos."
+  ],
+  [
+   "d2",
+   "Dos: muchos de los que verás son copiados de GTA cinco."
+  ],
+  [
+   "d3",
+   "Tres: la buena noticia es que todos los GTA principales desde GTA tres han tenido trucos en la historia. Es muy probable que vuelvan."
+  ],
+  [
+   "d4",
+   "Cuatro: en GTA cinco, los trucos desactivaban los trofeos en esa partida. Guarda antes de probarlos."
+  ],
+  [
+   "d5",
+   "Cinco: en el modo online nunca ha habido trucos. Si alguien te los vende, es una estafa."
+  ],
+  [
+   "d6",
+   "Seis: la precarga en PlayStation cinco ya está disponible desde el diez de noviembre."
+  ],
+  [
+   "d7",
+   "Siete: libera espacio en tu consola, porque es un juego enorme."
+  ],
+  [
+   "d8",
+   "Ocho: ojo con los vídeos hechos con inteligencia artificial: Rockstar ya ha pedido retirar algunos."
+  ],
+  [
+   "d9",
+   "Nueve: nada de webs con GTA seis gratis o para PC. No hay fecha oficial para PC."
+  ],
+  [
+   "d10",
+   "Y diez: cuando salgan los trucos de verdad, los tendrás aquí, en Nivel Oculto."
+  ],
+  [
+   "cta",
+   "¿Qué truco te gustaría que tuviera? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "d1": 0.2,
+  "d2": 0.2,
+  "d3": 0.2,
+  "d4": 0.2,
+  "d5": 0.2,
+  "d6": 0.2,
+  "d7": 0.2,
+  "d8": 0.2,
+  "d9": 0.2,
+  "d10": 0.2,
+  "cta": 0.0
+ }
+}
