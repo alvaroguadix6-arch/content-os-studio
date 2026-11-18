@@ -151,7 +151,7 @@ class VIDEO(Video):
         self.pop_text(img, 540, 560, "SIN TELETRABAJO", 74, t, self.w("trabajo", "teletrabajar"), YEL)
 
     def s_papel(self, img, d, t, lt, u):
-        self.bg(img, "paper", (250, 235, 200), (235, 215, 175))
+        self.bg(img, "paper", (74, 58, 46), (46, 36, 30))
         k = ease_out(lt / 1.0)
         # mapa de papel que se despliega
         w_ = 700 * k
