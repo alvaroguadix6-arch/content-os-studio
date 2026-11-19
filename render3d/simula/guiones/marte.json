@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Cuatro personas acaban de pasar trescientos setenta y ocho días en Marte, sin salir de la Tierra."
+  ],
+  [
+   "donde",
+   "Es la misión CHAPEA de la NASA: un hábitat impreso en 3D en Houston que imita una base marciana."
+  ],
+  [
+   "tamano",
+   "Se llama Mars Dune Alpha y mide unos ciento sesenta metros cuadrados, más o menos como un piso grande."
+  ],
+  [
+   "reglas",
+   "Allí no hay ventanas, y los mensajes con la Tierra llegan con retraso, como pasaría de verdad desde Marte."
+  ],
+  [
+   "vida",
+   "Cultivan verduras, hacen ejercicio, reparan equipos y salen a paseos marcianos simulados."
+  ],
+  [
+   "fechas",
+   "Entraron el diecinueve de octubre de dos mil veinticinco, y salieron el treinta y uno de octubre de este año."
+  ],
+  [
+   "porque",
+   "El objetivo es saber cómo afecta a la salud y al rendimiento vivir tanto tiempo aislados, antes de enviar humanos a Marte de verdad."
+  ],
+  [
+   "siguiente",
+   "Y la NASA ya busca voluntarios para la próxima misión, que empezaría, como pronto, en dos mil veintisiete."
+  ],
+  [
+   "cta",
+   "¿Tú aguantarías un año encerrado? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "donde": 0.22,
+  "reglas": 0.22,
+  "vida": 0.22,
+  "fechas": 0.22,
+  "porque": 0.22,
+  "siguiente": 0.22,
+  "cta": 0.0,
+  "tamano": 0.22
+ }
+}

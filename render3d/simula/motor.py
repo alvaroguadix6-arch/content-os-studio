@@ -113,6 +113,8 @@ class Video:
 
     @staticmethod
     def R(d, x0, y0, x1, y1, fill, radius=0, outline=None, width=0):
+        x0, x1 = min(x0, x1), max(x0, x1)
+        y0, y1 = min(y0, y1), max(y0, y1)
         if radius:
             d.rounded_rectangle([x0 * S, y0 * S, x1 * S, y1 * S], radius=radius * S, fill=fill, outline=outline, width=int(width * S))
         else:

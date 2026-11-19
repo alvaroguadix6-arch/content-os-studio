@@ -1,0 +1,46 @@
+{
+ "guion": [
+  [
+   "intro",
+   "GTA seis ya está aquí, y en solo unas horas internet se ha llenado de descubrimientos. Estos son los más virales, sin spoilers de la historia."
+  ],
+  [
+   "d1",
+   "Uno: salió a medianoche, hora local, en cada país, y la PlayStation cinco necesitó una actualización de última hora para poder jugar."
+  ],
+  [
+   "d2",
+   "Dos: un jugador subió a la torre de radio más alta, unos siete minutos escalando, y arriba encontró un nido con huevos de Pascua de verdad. Y se pueden tirar a la gente de abajo."
+  ],
+  [
+   "d3",
+   "Tres: vuelve Bigfoot. Y, según los primeros jugadores, huele fatal."
+  ],
+  [
+   "d4",
+   "Cuatro: Rockstar ha escondido hasta un chiste sobre GTA siete."
+  ],
+  [
+   "d5",
+   "Y cinco: los primeros fallos ya son virales: camiones que salen volando y personajes que atraviesan objetos."
+  ],
+  [
+   "espera",
+   "Trece años de espera, y el primer día ya ha dado para todo esto."
+  ],
+  [
+   "cta",
+   "¿Qué es lo más loco que has visto tú? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "d1": 0.22,
+  "d2": 0.22,
+  "d3": 0.22,
+  "d4": 0.22,
+  "d5": 0.22,
+  "cta": 0.0,
+  "espera": 0.22
+ }
+}

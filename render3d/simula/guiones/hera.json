@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "En dos mil veintidós, la NASA estrelló una nave contra un asteroide a propósito. Y ahora alguien ha vuelto a mirar qué pasó."
+  ],
+  [
+   "dart",
+   "La misión DART chocó contra Dimorfo, una pequeña luna que gira alrededor del asteroide Dídimo, y acortó su órbita unos treinta y dos minutos."
+  ],
+  [
+   "hera",
+   "Para verlo de cerca, la Agencia Espacial Europea lanzó Hera, una nave del tamaño de un coche pequeño."
+  ],
+  [
+   "viaje",
+   "Tras más de dos años de viaje, Hera acaba de llegar, y sus primeras imágenes ya muestran Dídimo a pocas decenas de kilómetros."
+  ],
+  [
+   "cresta",
+   "Se ve una cresta afilada alrededor de su ecuador, y zonas rocosas junto a otras más lisas."
+  ],
+  [
+   "colores",
+   "Su cámara lo ha fotografiado en veinticinco colores distintos, para saber de qué está hecho."
+  ],
+  [
+   "crater",
+   "Y lo mejor está por llegar: para el veinticinco de noviembre se esperan imágenes más detalladas, quizá del lado donde DART dejó su huella."
+  ],
+  [
+   "calma",
+   "Tranquilo: ninguno de los dos asteroides es un peligro para la Tierra."
+  ],
+  [
+   "cta",
+   "¿Crees que necesitamos un escudo contra asteroides? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "dart": 0.22,
+  "hera": 0.22,
+  "viaje": 0.22,
+  "cresta": 0.22,
+  "colores": 0.22,
+  "crater": 0.22,
+  "calma": 0.22,
+  "cta": 0.0
+ }
+}
