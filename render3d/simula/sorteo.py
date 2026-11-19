@@ -112,9 +112,9 @@ class Sorteo(Video):
         if self.PLATFORM == "IG":
             self.row(img, d, 760, "seguir", "SIGUE LA CUENTA", t, self.start("r1"))
             self.row(img, d, 960, "like", "DALE ME GUSTA", t, self.start("r2"))
-            self.row(img, d, 1160, "comentar", "COMENTA UN JUEGO", t, self.start("r3"))
+            self.row(img, d, 1160, "comentar", "COMENTA EL VÍDEO", t, self.start("r3"))
         else:
-            self.row(img, d, 800, "comentar", "COMENTA UN JUEGO", t, self.start("r1"), "ESTE ES TU BOLETO")
+            self.row(img, d, 800, "comentar", "COMENTA EL VÍDEO", t, self.start("r1"), "ESTE ES TU BOLETO")
             self.row(img, d, 1030, "suscribir", "SUSCRÍBETE", t, self.w("r2", "suscríbete"), "OPCIONAL · APOYA EL CANAL", CYAN)
             self.row(img, d, 1230, "like", "DALE ME GUSTA", t, self.w("r2", "dale"), "OPCIONAL", CYAN)
         self.giftcard(img, d, 540, 1550, 0.55)
@@ -137,12 +137,12 @@ class Sorteo(Video):
     def s_legal(self, img, d, t, lt, u):
         self.bg(img, "end", (28, 48, 82), (14, 24, 44))
         plat = "INSTAGRAM" if self.PLATFORM == "IG" else "YOUTUBE"
-        items = [("VÁLIDO EN ESPAÑA", self.w("legal", "españa")), ("MENORES: CON PERMISO", self.w("legal", "menor")),
+        items = [("VÁLIDO EN ESPAÑA", self.w("legal", "españa")),
                  (f"{plat} NO PATROCINA", self.w("legal", "patrocina")), ("BASES EN LA DESCRIPCIÓN", self.w("legal", "bases"))]
         for i, (txt, ti) in enumerate(items):
             k = clamp((t - ti + 0.2) / 0.3)
             if k > 0:
-                y = 650 + i * 190
+                y = 700 + i * 210
                 self.R(d, 120, y - 64, 960, y + 64, (22, 30, 54), radius=32)
                 self.text(img, 540, y, txt, 48, WHITE, alpha=k)
 
