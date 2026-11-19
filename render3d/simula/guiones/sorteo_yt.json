@@ -1,0 +1,41 @@
+{
+ "guion": [
+  [
+   "intro",
+   "¡Sorteo en Nivel Oculto! Cuando lleguemos a cien suscriptores, sortearemos diez euros para la PlayStation Store."
+  ],
+  [
+   "reglas",
+   "Participar es muy fácil."
+  ],
+  [
+   "r1",
+   "Comenta en este vídeo qué juego te comprarías con esos diez euros. Ese es tu boleto."
+  ],
+  [
+   "r2",
+   "Y si te gusta el canal, suscríbete y dale a me gusta: así llegamos antes a los cien."
+  ],
+  [
+   "como",
+   "Cuando lleguemos a los cien suscriptores, elegiremos al ganador al azar entre los comentarios, y lo anunciaremos aquí."
+  ],
+  [
+   "legal",
+   "Sorteo válido en España. Si eres menor, necesitas permiso de tus padres. YouTube no patrocina ni gestiona este sorteo, y tienes las bases en la descripción."
+  ],
+  [
+   "cta",
+   "¡Mucha suerte, y nos vemos en el siguiente vídeo!"
+  ]
+ ],
+ "pausas": {
+  "intro": 0.35,
+  "reglas": 0.25,
+  "r1": 0.25,
+  "r2": 0.25,
+  "como": 0.25,
+  "legal": 0.25,
+  "cta": 0.0
+ }
+}

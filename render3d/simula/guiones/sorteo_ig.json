@@ -1,0 +1,46 @@
+{
+ "guion": [
+  [
+   "intro",
+   "¡Sorteo en Nivel Oculto! Cuando lleguemos a cien seguidores, sortearemos diez euros para la PlayStation Store."
+  ],
+  [
+   "reglas",
+   "Para participar, solo tienes que hacer tres cosas."
+  ],
+  [
+   "r1",
+   "Uno: sigue a Nivel Oculto."
+  ],
+  [
+   "r2",
+   "Dos: dale me gusta a este vídeo."
+  ],
+  [
+   "r3",
+   "Y tres: comenta qué juego te comprarías con esos diez euros."
+  ],
+  [
+   "como",
+   "Cuando lleguemos a los cien seguidores, elegiremos al ganador al azar entre los comentarios, y lo anunciaremos aquí."
+  ],
+  [
+   "legal",
+   "Sorteo válido en España. Si eres menor, necesitas permiso de tus padres. Instagram no patrocina ni gestiona este sorteo, y tienes las bases en la descripción."
+  ],
+  [
+   "cta",
+   "¡Mucha suerte, y nos vemos en el siguiente vídeo!"
+  ]
+ ],
+ "pausas": {
+  "intro": 0.35,
+  "reglas": 0.25,
+  "r1": 0.25,
+  "r2": 0.25,
+  "r3": 0.25,
+  "como": 0.25,
+  "legal": 0.25,
+  "cta": 0.0
+ }
+}
