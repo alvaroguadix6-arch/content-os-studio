@@ -138,7 +138,9 @@ class Sorteo(Video):
         self.bg(img, "end", (28, 48, 82), (14, 24, 44))
         plat = "INSTAGRAM" if self.PLATFORM == "IG" else "YOUTUBE"
         items = [("VÁLIDO EN ESPAÑA", self.w("legal", "españa")),
-                 (f"{plat} NO PATROCINA", self.w("legal", "patrocina")), ("BASES EN LA DESCRIPCIÓN", self.w("legal", "bases"))]
+                 (f"{plat} NO PATROCINA", self.w("legal", "patrocina"))]
+        if "bases" in self.L["legal"]["text"]:
+            items.append(("BASES EN LA DESCRIPCIÓN", self.w("legal", "bases")))
         for i, (txt, ti) in enumerate(items):
             k = clamp((t - ti + 0.2) / 0.3)
             if k > 0:
