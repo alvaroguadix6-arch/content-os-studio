@@ -116,7 +116,7 @@ class Sorteo(Video):
         else:
             self.row(img, d, 800, "comentar", "COMENTA UN JUEGO", t, self.start("r1"), "ESTE ES TU BOLETO")
             self.row(img, d, 1030, "suscribir", "SUSCRÍBETE", t, self.w("r2", "suscríbete"), "OPCIONAL · APOYA EL CANAL", CYAN)
-            self.row(img, d, 1230, "like", "DALE ME GUSTA", t, self.w("r2", "gusta"), "OPCIONAL", CYAN)
+            self.row(img, d, 1230, "like", "DALE ME GUSTA", t, self.w("r2", "dale"), "OPCIONAL", CYAN)
         self.giftcard(img, d, 540, 1550, 0.55)
 
     def s_azar(self, img, d, t, lt, u):
