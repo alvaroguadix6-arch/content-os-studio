@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Todos los volcanes de la Tierra entran en erupción. A la vez."
+  ],
+  [
+   "cuantos",
+   "Hay unos mil trescientos cincuenta volcanes potencialmente activos en tierra firme, y normalmente solo unos cuarenta y cinco están en erupción al mismo tiempo."
+  ],
+  [
+   "ceniza",
+   "Si estallaran todos, columnas de ceniza subirían decenas de kilómetros y cubrirían el cielo de medio planeta."
+  ],
+  [
+   "vuelos",
+   "Los aviones no podrían volar. En dos mil diez, un solo volcán de Islandia obligó a cancelar unos cien mil vuelos en Europa."
+  ],
+  [
+   "frio",
+   "Y llegaría el frío, porque el azufre volcánico refleja la luz del Sol. En mil ochocientos dieciséis, tras la erupción del Tambora, Europa vivió el año sin verano."
+  ],
+  [
+   "cosechas",
+   "Con todos a la vez, se perderían cosechas en todo el mundo, y la temperatura podría caer varios grados durante años."
+  ],
+  [
+   "lava",
+   "Y cerca de cada volcán, ríos de lava y nubes ardientes arrasarían los pueblos."
+  ],
+  [
+   "dato",
+   "Lo que sí es real: aunque los volcanes emiten dióxido de carbono, los humanos emitimos más de cien veces más cada año."
+  ],
+  [
+   "cta",
+   "¿Qué volcán crees que sería el más peligroso? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "cuantos": 0.22,
+  "ceniza": 0.22,
+  "vuelos": 0.22,
+  "frio": 0.22,
+  "cosechas": 0.22,
+  "lava": 0.22,
+  "dato": 0.22,
+  "cta": 0.0
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Un agujero negro aparece cerca de la Tierra. No lo verías, pero lo notarías."
+  ],
+  [
+   "tamano",
+   "Uno con la masa del Sol mediría apenas seis kilómetros de diámetro, como una ciudad pequeña."
+  ],
+  [
+   "luz",
+   "Lo primero sería el cielo: su gravedad doblaría la luz de las estrellas, y veríamos un anillo deformado a su alrededor."
+  ],
+  [
+   "mareas",
+   "Si se acercara, sus fuerzas de marea levantarían olas gigantes que inundarían las costas."
+  ],
+  [
+   "orbita",
+   "La órbita de la Tierra cambiaría: podríamos acercarnos al Sol, alejarnos, o salir despedidos al espacio."
+  ],
+  [
+   "espagueti",
+   "Y si cayéramos dentro, todo se estiraría como un espagueti. Los científicos lo llaman, literalmente, espaguetización."
+  ],
+  [
+   "tiempo",
+   "Cerca del horizonte, el tiempo pasaría mucho más despacio que en el resto del universo."
+  ],
+  [
+   "dato",
+   "Tranquilo: el agujero negro conocido más cercano, Gaia BH1, está a unos mil quinientos sesenta años luz."
+  ],
+  [
+   "cta",
+   "¿Te asomarías al horizonte de sucesos? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "tamano": 0.22,
+  "luz": 0.22,
+  "mareas": 0.22,
+  "orbita": 0.22,
+  "espagueti": 0.22,
+  "tiempo": 0.22,
+  "dato": 0.22,
+  "cta": 0.0
+ }
+}

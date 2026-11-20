@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Más de dos millones de bloques de piedra, y ninguna máquina moderna. Así se construyó la Gran Pirámide."
+  ],
+  [
+   "quien",
+   "Hace unos cuatro mil quinientos años, el faraón Keops ordenó levantar su tumba en Guiza."
+  ],
+  [
+   "cantera",
+   "Los bloques de caliza se cortaban en canteras junto a la obra, con cinceles de cobre y herramientas de piedra."
+  ],
+  [
+   "rio",
+   "La caliza blanca del revestimiento y el granito llegaban en barco por el Nilo. Un papiro de la época, el diario de Merer, cuenta esos viajes."
+  ],
+  [
+   "arena",
+   "Para arrastrar los bloques usaban trineos de madera, y mojaban la arena delante: así hacía falta mucha menos fuerza."
+  ],
+  [
+   "rampas",
+   "Cómo los subían sigue siendo un misterio. La hipótesis más aceptada son rampas de tierra y ladrillo, rectas o alrededor de la pirámide."
+  ],
+  [
+   "obreros",
+   "Y no eran esclavos: se han encontrado las casas y las tumbas de los trabajadores, que cobraban en pan y cerveza."
+  ],
+  [
+   "final",
+   "Tardaron unos veinte años. Con ciento cuarenta y seis metros, fue la estructura más alta del mundo durante casi cuatro mil años."
+  ],
+  [
+   "cta",
+   "¿Cómo crees que subieron los bloques? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "quien": 0.22,
+  "cantera": 0.22,
+  "rio": 0.22,
+  "arena": 0.22,
+  "rampas": 0.22,
+  "obreros": 0.22,
+  "final": 0.22,
+  "cta": 0.0
+ }
+}

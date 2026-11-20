@@ -1,0 +1,56 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Dos millones y medio de remaches. Así se levantó la Torre Eiffel, pieza a pieza."
+  ],
+  [
+   "origen",
+   "En mil ochocientos ochenta y siete, París quería un monumento para la Exposición Universal de mil ochocientos ochenta y nueve."
+  ],
+  [
+   "planos",
+   "Los ingenieros de Gustave Eiffel dibujaron más de cinco mil planos y diseñaron unas dieciocho mil piezas de hierro, fabricadas al milímetro en su taller."
+  ],
+  [
+   "cimientos",
+   "Primero, los cimientos: cuatro enormes bases de hormigón, una por cada pata."
+  ],
+  [
+   "patas",
+   "Después, las cuatro patas crecieron inclinadas hacia el centro, apoyadas en andamios de madera."
+  ],
+  [
+   "union",
+   "Lo más delicado fue unirlas en el primer piso: usaron gatos hidráulicos y cajas de arena para ajustar cada pata al milímetro."
+  ],
+  [
+   "remaches",
+   "Cada remache se calentaba al rojo y lo colocaba un equipo de cuatro operarios."
+  ],
+  [
+   "final",
+   "En unos dos años y dos meses llegó a trescientos metros, y fue la estructura más alta del mundo durante cuarenta años."
+  ],
+  [
+   "dato",
+   "Y lo más curioso: iba a ser temporal. Tenía permiso para solo veinte años."
+  ],
+  [
+   "cta",
+   "¿Sabías que estuvo a punto de desmontarse? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "origen": 0.22,
+  "planos": 0.22,
+  "cimientos": 0.22,
+  "patas": 0.22,
+  "union": 0.22,
+  "remaches": 0.22,
+  "final": 0.22,
+  "dato": 0.22,
+  "cta": 0.0
+ }
+}

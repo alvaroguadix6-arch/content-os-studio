@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Durante diez segundos, desaparece todo el oxígeno de la Tierra. Y diez segundos son más que suficientes."
+  ],
+  [
+   "aire",
+   "El oxígeno es el veintiuno por ciento del aire que respiras."
+  ],
+  [
+   "presion",
+   "Si desapareciera del aire, la presión caería de golpe, como si subieras de repente a unos dos mil metros: tus oídos harían pop."
+  ],
+  [
+   "fuego",
+   "Todo el fuego se apagaría al instante: motores de gasolina, cocinas e incendios."
+  ],
+  [
+   "ozono",
+   "Y sin ozono, que también es oxígeno, la radiación ultravioleta del Sol llegaría sin filtro."
+  ],
+  [
+   "extremo",
+   "Pero si desaparecieran también los átomos de oxígeno de todo, sería mucho peor: el agua lleva oxígeno, y casi la mitad del peso de la corteza terrestre es oxígeno."
+  ],
+  [
+   "hormigon",
+   "En ese escenario, el hormigón y las rocas se desmoronarían, y el agua se convertiría en hidrógeno."
+  ],
+  [
+   "dato",
+   "Lo que sí es real: hace unos dos mil cuatrocientos millones de años, unas bacterias llenaron por primera vez la atmósfera de oxígeno."
+  ],
+  [
+   "cta",
+   "¿Qué crees que notarías primero? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "aire": 0.22,
+  "presion": 0.22,
+  "fuego": 0.22,
+  "ozono": 0.22,
+  "extremo": 0.22,
+  "hormigon": 0.22,
+  "dato": 0.22,
+  "cta": 0.0
+ }
+}
