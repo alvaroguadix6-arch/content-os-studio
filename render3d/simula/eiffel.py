@@ -224,7 +224,7 @@ class VIDEO(Video):
         h = 300 * p
         self.R(d, 960, top, 972, BASE_Y, YEL)
         self.text(img, 940, top - 40, f"{h:.0f} m", 52, YEL, anchor="rm")
-        self.pop_text(img, 540, 1760, "MÁS ALTA DEL MUNDO · 40 AÑOS", 46, t, self.w("final", "cuarenta"), WHITE)
+        self.pop_text(img, 540, 1690, "MÁS ALTA DEL MUNDO · 40 AÑOS", 46, t, self.w("final", "cuarenta"), WHITE)
 
     def s_dato(self, img, d, t, lt, u):
         self.paris_bg(img, d, t, sky=((60, 80, 140), (240, 160, 120)))
