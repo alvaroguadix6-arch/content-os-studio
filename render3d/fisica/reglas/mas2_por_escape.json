@@ -6,12 +6,12 @@
   "gravedad": 1200,
   "rebote": 1.0,
   "velocidad_inicial": 900,
-  "abertura": 120,
+  "abertura": 130,
   "lado": 780,
   "radio": 13,
   "max_figuras": 750,
   "duracion": 60,
   "fps": 60,
   "subpasos": 4,
-  "semilla": 3
+  "semilla": 4
 }
