@@ -1,0 +1,8 @@
+{
+  "_nota": "Plantilla: cada escape acelera las figuras nuevas un 5 %. Cámbiala y súbela para generar otro vídeo.",
+  "titulo": "EVERY ESCAPE = FASTER",
+  "etiqueta": "BALLS",
+  "figuras_por_escape": 2,
+  "acelerar_por_escape": 0.05,
+  "gravedad": 1200, "velocidad_inicial": 700, "abertura": 120, "radio": 13, "max_figuras": 750, "duracion": 60, "semilla": 3
+}

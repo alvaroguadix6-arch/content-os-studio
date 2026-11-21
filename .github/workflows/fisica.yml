@@ -1,0 +1,59 @@
+# NIVEL OCULTO · Simulaciones de física («satisfying»): renderiza un vídeo por cada archivo de reglas.
+#
+# GRATIS solo en repositorios PÚBLICOS (runners estándar de GitHub). Si el repositorio es privado, no se
+# arranca ninguna máquina (el trabajo se omite y no consume minutos).
+#
+# Se activa al subir o modificar render3d/fisica/reglas/*.json (se renderizan los archivos cambiados) o a
+# mano desde la pestaña Actions indicando el archivo. El MP4 queda como artefacto descargable 14 días.
+name: Física (satisfying)
+
+on:
+  push:
+    paths: ['render3d/fisica/reglas/*.json']
+  workflow_dispatch:
+    inputs:
+      reglas:
+        description: 'Archivo de reglas (p. ej. render3d/fisica/reglas/mas2_por_escape.json)'
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fisica-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Herramientas gratuitas (ffmpeg, fuente Inter, NumPy, SciPy, Pillow)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-inter > /dev/null
+          pip install -q numpy scipy pillow
+      - name: Elegir reglas
+        id: pick
+        run: |
+          if [ -n "${{ github.event.inputs.reglas }}" ]; then LIST="${{ github.event.inputs.reglas }}";
+          else LIST=$(git diff-tree --no-commit-id --name-only -r --root HEAD -- 'render3d/fisica/reglas/*.json' | tr '\n' ' '); fi
+          echo "list=$LIST" >> "$GITHUB_OUTPUT"
+          echo "Reglas: $LIST"
+      - name: Simular y renderizar
+        run: |
+          mkdir -p salida
+          for R in ${{ steps.pick.outputs.list }}; do
+            [ -f "$R" ] || continue
+            python render3d/fisica/sim.py "$R" --out "salida/$(basename "$R" .json).mp4"
+          done
+          ls -la salida
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fisica-${{ github.run_number }}
+          path: salida/*.mp4
+          retention-days: 14

@@ -1,0 +1,9 @@
+{
+  "_nota": "Plantilla: cuadrado que gira y tres obstáculos circulares dentro ([x, y, radio]).",
+  "titulo": "+2 BALLS · SPINNING BOX",
+  "etiqueta": "BALLS",
+  "figuras_por_escape": 2,
+  "rotacion": 0.35,
+  "obstaculos": [[400, 950, 40], [680, 950, 40], [540, 1180, 50]],
+  "gravedad": 1100, "velocidad_inicial": 800, "abertura": 120, "radio": 13, "max_figuras": 700, "duracion": 60, "semilla": 3
+}

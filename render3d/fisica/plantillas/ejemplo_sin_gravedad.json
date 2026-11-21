@@ -1,0 +1,7 @@
+{
+  "_nota": "Plantilla: sin gravedad y +3 figuras por escape.",
+  "titulo": "+3 BALLS · ZERO GRAVITY",
+  "etiqueta": "BALLS",
+  "figuras_por_escape": 3,
+  "gravedad": 0, "velocidad_inicial": 700, "abertura": 110, "radio": 13, "max_figuras": 750, "duracion": 60, "semilla": 5
+}
