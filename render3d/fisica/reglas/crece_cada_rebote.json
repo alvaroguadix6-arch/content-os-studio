@@ -1,0 +1,12 @@
+{
+ "modo": "crece",
+ "titulo": "CRECE CON CADA REBOTE",
+ "etiqueta": "REBOTES",
+ "gravedad": 900,
+ "velocidad": 700,
+ "radio": 14,
+ "crecer": 4.5,
+ "rebote": 1.0,
+ "semilla": 2,
+ "duracion": 60
+}

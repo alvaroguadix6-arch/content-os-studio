@@ -1,0 +1,13 @@
+{
+ "modo": "multiplica",
+ "titulo": "CADA 7 REBOTES, SE DUPLICA",
+ "etiqueta": "BOLAS",
+ "gravedad": 0,
+ "velocidad": 650,
+ "radio": 11,
+ "iniciales": 1,
+ "rebotes_por_bola": 7,
+ "max_bolas": 600,
+ "semilla": 3,
+ "duracion": 60
+}

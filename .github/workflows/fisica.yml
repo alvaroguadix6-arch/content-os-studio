@@ -49,7 +49,9 @@ jobs:
           mkdir -p salida
           for R in ${{ steps.pick.outputs.list }}; do
             [ -f "$R" ] || continue
-            python render3d/fisica/sim.py "$R" --out "salida/$(basename "$R" .json).mp4"
+            # con "modo" (batalla, crece, anillos, multiplica, ppt) → arena circular; sin él → cuadrado con hueco
+            if grep -q '"modo"' "$R"; then MOTOR=arena.py; else MOTOR=sim.py; fi
+            python "render3d/fisica/$MOTOR" "$R" --out "salida/$(basename "$R" .json).mp4"
           done
           ls -la salida
       - uses: actions/upload-artifact@v4

@@ -1,0 +1,12 @@
+{
+ "modo": "anillos",
+ "titulo": "¿PUEDE ESCAPAR?",
+ "etiqueta": "ANILLOS",
+ "gravedad": 800,
+ "velocidad": 600,
+ "radio": 16,
+ "anillos": 10,
+ "hueco": 50,
+ "semilla": 4,
+ "duracion": 60
+}

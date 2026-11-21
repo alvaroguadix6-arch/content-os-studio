@@ -1,0 +1,15 @@
+{
+ "modo": "batalla",
+ "titulo": "¿QUÉ COLOR GANA?",
+ "equipos": 4,
+ "iniciales": 20,
+ "velocidad": 520,
+ "radio": 13,
+ "max_bolas": 360,
+ "reproducir": 0.1,
+ "ventaja_mayoria": 1.0,
+ "giro_brazo": 1.4,
+ "semilla": 2,
+ "duracion": 60,
+ "contagio": 0.008
+}
