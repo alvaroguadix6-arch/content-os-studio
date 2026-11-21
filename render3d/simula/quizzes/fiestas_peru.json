@@ -1,0 +1,72 @@
+{
+ "pais": "PERÚ",
+ "mapa": "peru",
+ "tema": "FIESTAS",
+ "intro": "Las fiestas más famosas de Perú. Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿Dónde se celebra el Inti Raymi?",
+   "prov": "Cusco",
+   "punto": [
+    -71.967,
+    -13.532
+   ],
+   "respuesta": "Cusco",
+   "detalle": "Inti Raymi",
+   "voz_q": "¿Dónde se celebra el Inti Raymi, la fiesta del Sol?",
+   "voz_a": "¡Cusco!"
+  },
+  {
+   "q": "¿Dónde es la Fiesta de la Virgen de la Candelaria?",
+   "prov": "Puno",
+   "punto": [
+    -70.02,
+    -15.84
+   ],
+   "respuesta": "Puno",
+   "detalle": "Virgen de la Candelaria",
+   "voz_q": "¿Dónde es la gran Fiesta de la Virgen de la Candelaria?",
+   "voz_a": "¡Puno!"
+  },
+  {
+   "q": "¿Dónde sale la procesión del Señor de los Milagros?",
+   "prov": [
+    "Lima",
+    "Lima Province"
+   ],
+   "punto": [
+    -77.043,
+    -12.046
+   ],
+   "respuesta": "Lima",
+   "detalle": "Señor de los Milagros",
+   "voz_q": "¿Dónde sale la procesión del Señor de los Milagros?",
+   "voz_a": "¡Lima!"
+  },
+  {
+   "q": "¿En qué región es el Festival de la Marinera?",
+   "prov": "La Libertad",
+   "punto": [
+    -79.03,
+    -8.11
+   ],
+   "respuesta": "La Libertad",
+   "detalle": "Festival de la Marinera · Trujillo",
+   "voz_q": "¿En qué región es el Festival de la Marinera?",
+   "voz_a": "¡La Libertad! En Trujillo."
+  },
+  {
+   "q": "¿Dónde es el Festival de la Vendimia?",
+   "prov": "Ica",
+   "punto": [
+    -75.73,
+    -14.07
+   ],
+   "respuesta": "Ica",
+   "detalle": "Festival de la Vendimia",
+   "voz_q": "Y la última: ¿dónde es el famoso Festival de la Vendimia?",
+   "voz_a": "¡Ica!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

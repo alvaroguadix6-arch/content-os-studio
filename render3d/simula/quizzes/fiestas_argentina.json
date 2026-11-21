@@ -1,0 +1,69 @@
+{
+ "pais": "ARGENTINA",
+ "mapa": "argentina",
+ "tema": "FIESTAS",
+ "intro": "Las fiestas más famosas de Argentina. Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿Dónde es la Fiesta Nacional de la Vendimia?",
+   "prov": "Mendoza",
+   "punto": [
+    -68.84,
+    -32.89
+   ],
+   "respuesta": "Mendoza",
+   "detalle": "Fiesta de la Vendimia",
+   "voz_q": "¿Dónde se celebra la Fiesta Nacional de la Vendimia?",
+   "voz_a": "¡Mendoza!"
+  },
+  {
+   "q": "¿En qué provincia es el Carnaval de Gualeguaychú?",
+   "prov": "Entre Ríos",
+   "punto": [
+    -58.52,
+    -33.01
+   ],
+   "respuesta": "Entre Ríos",
+   "detalle": "Carnaval de Gualeguaychú",
+   "voz_q": "¿En qué provincia es el Carnaval de Gualeguaychú?",
+   "voz_a": "¡Entre Ríos!"
+  },
+  {
+   "q": "¿Dónde es el Festival de Folklore de Cosquín?",
+   "prov": "Córdoba",
+   "punto": [
+    -64.47,
+    -31.24
+   ],
+   "respuesta": "Córdoba",
+   "detalle": "Festival de Cosquín",
+   "voz_q": "¿Dónde es el Festival Nacional de Folklore de Cosquín?",
+   "voz_a": "¡Córdoba!"
+  },
+  {
+   "q": "¿Dónde es la Fiesta Nacional de la Nieve?",
+   "prov": "Río Negro",
+   "punto": [
+    -71.31,
+    -41.13
+   ],
+   "respuesta": "Río Negro",
+   "detalle": "Fiesta de la Nieve · Bariloche",
+   "voz_q": "¿En qué provincia es la Fiesta Nacional de la Nieve?",
+   "voz_a": "¡Río Negro! En Bariloche."
+  },
+  {
+   "q": "¿Dónde es el Carnaval de la Quebrada de Humahuaca?",
+   "prov": "Jujuy",
+   "punto": [
+    -65.35,
+    -23.2
+   ],
+   "respuesta": "Jujuy",
+   "detalle": "Carnaval de Humahuaca",
+   "voz_q": "Y la última: ¿dónde es el Carnaval de la Quebrada de Humahuaca?",
+   "voz_a": "¡Jujuy!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

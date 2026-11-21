@@ -1,0 +1,69 @@
+{
+ "pais": "COLOMBIA",
+ "mapa": "colombia",
+ "tema": "FIESTAS",
+ "intro": "Las fiestas más famosas de Colombia. Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿Dónde es el Carnaval de Barranquilla?",
+   "prov": "Atlántico",
+   "punto": [
+    -74.8,
+    10.96
+   ],
+   "respuesta": "Atlántico",
+   "detalle": "Carnaval de Barranquilla",
+   "voz_q": "¿En qué departamento es el Carnaval de Barranquilla?",
+   "voz_a": "¡Atlántico!"
+  },
+  {
+   "q": "¿Dónde es la Feria de las Flores?",
+   "prov": "Antioquia",
+   "punto": [
+    -75.57,
+    6.25
+   ],
+   "respuesta": "Antioquia",
+   "detalle": "Feria de las Flores · Medellín",
+   "voz_q": "¿Dónde se celebra la Feria de las Flores?",
+   "voz_a": "¡Antioquia! En Medellín."
+  },
+  {
+   "q": "¿Dónde es el Carnaval de Negros y Blancos?",
+   "prov": "Nariño",
+   "punto": [
+    -77.28,
+    1.21
+   ],
+   "respuesta": "Nariño",
+   "detalle": "Negros y Blancos · Pasto",
+   "voz_q": "¿Dónde es el Carnaval de Negros y Blancos?",
+   "voz_a": "¡Nariño! En Pasto."
+  },
+  {
+   "q": "¿En qué departamento es la Feria de Cali?",
+   "prov": "Valle del Cauca",
+   "punto": [
+    -76.53,
+    3.45
+   ],
+   "respuesta": "Valle del Cauca",
+   "detalle": "Feria de Cali",
+   "voz_q": "¿En qué departamento es la Feria de Cali?",
+   "voz_a": "¡Valle del Cauca!"
+  },
+  {
+   "q": "¿Dónde es el Festival de la Leyenda Vallenata?",
+   "prov": "Cesar",
+   "punto": [
+    -73.25,
+    10.46
+   ],
+   "respuesta": "Cesar",
+   "detalle": "Leyenda Vallenata · Valledupar",
+   "voz_q": "Y la última: ¿dónde es el Festival de la Leyenda Vallenata?",
+   "voz_a": "¡Cesar! En Valledupar."
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

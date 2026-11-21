@@ -58,8 +58,28 @@ def proj(lon, lat, can=False):
     return MX + (lon - LON0) * K * CX, MY + (LAT0 - lat) * K
 
 
+_QCFG = json.load(open(os.path.join(HERE, "quizzes", os.environ.get("QUIZ", "monumentos") + ".json"), encoding="utf-8"))
+MAPA = _QCFG.get("mapa")  # None → España con recuadro de Canarias; si no, quizzes/mapas/<mapa>.geojson ajustado a la pantalla
+
+
+def fit_country(d):
+    """Ajusta la proyección para que el país llene la zona del mapa (x 60–1020, y 640–1560)."""
+    global LON0, LAT0, K, CX, MX, MY
+    pts = [p for f in d["features"] for poly in f["geometry"]["coordinates"] for p in poly[0]]
+    lons, lats = [p[0] for p in pts], [p[1] for p in pts]
+    CX = math.cos(math.radians((min(lats) + max(lats)) / 2))
+    w, h = (max(lons) - min(lons)) * CX, max(lats) - min(lats)
+    K = min(960 / w, 900 / h)
+    LON0, LAT0 = min(lons), max(lats)
+    MX, MY = 540 - w * K / 2, 1100 - h * K / 2
+
+
 def load_map():
-    d = json.load(open(os.path.join(HERE, "quizzes", "provincias.geojson"), encoding="utf-8"))
+    if MAPA:
+        d = json.load(open(os.path.join(HERE, "quizzes", "mapas", MAPA + ".geojson"), encoding="utf-8"))
+        fit_country(d)
+    else:
+        d = json.load(open(os.path.join(HERE, "quizzes", "provincias.geojson"), encoding="utf-8"))
     provs = {}
     for f in d["features"]:
         name = f["properties"]["name"]
@@ -84,8 +104,9 @@ def base_map():
     big = Image.new("RGBA", (W * S, H * S), (0, 0, 0, 0))
     d = ImageDraw.Draw(big)
     c = CAN
-    d.rounded_rectangle([c["x"] * S, c["y"] * S, (c["x"] + c["w"]) * S, (c["y"] + c["h"]) * S], 18 * S,
-                        fill=(30, 26, 80, 200), outline=(110, 150, 230, 200), width=3 * S)
+    if not MAPA:
+        d.rounded_rectangle([c["x"] * S, c["y"] * S, (c["x"] + c["w"]) * S, (c["y"] + c["h"]) * S], 18 * S,
+                            fill=(30, 26, 80, 200), outline=(110, 150, 230, 200), width=3 * S)
     for rings in PROVS.values():
         for r in rings:
             d.polygon([(x * S, y * S) for x, y in r], fill=(46, 52, 128, 255))
@@ -106,10 +127,12 @@ _hl = {}
 
 def highlight(name):
     """Capa de la provincia iluminada en amarillo (con brillo)."""
+    if isinstance(name, list):
+        name = tuple(name)
     if name not in _hl:
         big = Image.new("RGBA", (W * S, H * S), (0, 0, 0, 0))
         d = ImageDraw.Draw(big)
-        for r in PROVS[name]:
+        for r in [r for n in (name if isinstance(name, tuple) else (name,)) for r in PROVS[n]]:
             pts = [(x * S, y * S) for x, y in r]
             d.polygon(pts, fill=YEL + (255,))
             d.line(pts + [pts[0]], fill=(255, 250, 220, 255), width=3 * S, joint="curve")
@@ -181,9 +204,12 @@ class Video:
         if self.base is None:
             self.base = base_map()
         img = self.bg(t)
-        img.alpha_composite(self.base)
-        d = ImageDraw.Draw(img)
         cur = self.current(t)
+        lay = self.base
+        if isinstance(cur, int):
+            lay = self.map_answer(t, cur)
+        img.alpha_composite(lay)
+        d = ImageDraw.Draw(img)
         if cur is None:
             self.intro(img, d, t)
         elif cur == "outro":
@@ -214,7 +240,7 @@ class Video:
     def intro(self, img, d, t):
         a = back(t / 0.5)
         tema = self.Q["tema"]
-        self.card(img, d, 0.0, t, "QUIZ DE ESPAÑA", f"{tema}: ¿cuántas aciertas?", 60)
+        self.card(img, d, 0.0, t, "QUIZ DE " + self.Q.get("pais", "ESPAÑA"), f"{tema}: ¿cuántas aciertas?", 60)
         # mapa que «late» con provincias al azar iluminándose
         rng = np.random.default_rng(int(t * 6))
         names = list(PROVS)
@@ -237,6 +263,40 @@ class Video:
                 d.ellipse([x - r, y - r, x + r, y + r], fill=(46, 52, 128), outline=YEL, width=5)
                 d.text((x, y), n, font=font("Black", max(1, int(60 * a))), fill=(255, 255, 255), anchor="mm")
         d.text((540, 1790), "/ 5", font=font("ExtraBold", 44), fill=(220, 210, 255), anchor="mm")
+
+    def map_answer(self, t, i):
+        """Mapa con la región iluminada; en países con regiones pequeñas, zoom hacia el punto al revelar."""
+        q = self.Q["preguntas"][i - 1]
+        ans = self.L[f"a{i}"]["start"]
+        if t < ans - 0.05:
+            return self.base
+        u = t - ans + 0.05
+        lay = self.base.copy()
+        h = highlight(q["prov"])
+        a = min(1.0, u / 0.2)
+        lay.alpha_composite(h if a >= 1 else _alpha(h, a))
+        fl = 1 + 0.6 * max(0, 1 - u / 0.35)  # destello inicial
+        if fl > 1.001:
+            lay.alpha_composite(_alpha(h, (fl - 1) * 0.8))
+        if not MAPA:
+            return lay
+        names = q["prov"] if isinstance(q["prov"], list) else [q["prov"]]
+        pts = np.array([p for n in names for r in PROVS[n] for p in r])
+        size = max(pts.max(0) - pts.min(0))
+        Z = min(2.6, max(1.0, 260 / max(size, 1)))
+        if Z < 1.05:
+            return lay
+        nt = self.L[f"q{i + 1}"]["start"] - 0.15 if i < 5 else self.L["outro"]["start"] - 0.1
+        env = min(ease((u - 0.1) / 0.7), ease((nt - t) / 0.45))
+        z = 1 + (Z - 1) * env
+        if z < 1.005:
+            return lay
+        px, py = proj(*q["punto"])
+        lay = lay.transform(lay.size, Image.AFFINE, (1 / z, 0, px - px / z, 0, 1 / z, py - py / z), resample=Image.BILINEAR)
+        yy = np.arange(H)[:, None]
+        m = np.clip((yy - 600) / 90, 0, 1) * np.clip((1615 - yy) / 90, 0, 1)  # bordes suaves
+        lay.putalpha(Image.fromarray((np.asarray(lay.getchannel("A"), np.float32) * m).astype(np.uint8)))
+        return lay
 
     def question(self, img, d, t, i):
         q = self.Q["preguntas"][i - 1]
@@ -261,13 +321,7 @@ class Video:
         # respuesta
         if t >= ans - 0.05:
             u = t - ans + 0.05
-            h = highlight(q["prov"])
-            fl = 1 + 0.6 * max(0, 1 - u / 0.35)  # destello inicial
-            a = min(1.0, u / 0.2)
-            img.alpha_composite(h if a >= 1 else _alpha(h, a))
-            if fl > 1.001:
-                img.alpha_composite(_alpha(h, (fl - 1) * 0.8))
-            can = q["prov"] in ("Las Palmas", "Santa Cruz De Tenerife")
+            can = not MAPA and q["prov"] in ("Las Palmas", "Santa Cruz De Tenerife")
             px, py = proj(*q["punto"], can=can)
             by = 1705
             ln = ease((u - 0.15) / 0.4)

@@ -1,0 +1,69 @@
+{
+ "pais": "VENEZUELA",
+ "mapa": "venezuela",
+ "tema": "FIESTAS",
+ "intro": "Las fiestas más famosas de Venezuela. Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿En qué estado es la Feria de la Chinita?",
+   "prov": "Zulia",
+   "punto": [
+    -71.64,
+    10.65
+   ],
+   "respuesta": "Zulia",
+   "detalle": "Feria de la Chinita · Maracaibo",
+   "voz_q": "¿En qué estado se celebra la Feria de la Chinita?",
+   "voz_a": "¡Zulia! En Maracaibo."
+  },
+  {
+   "q": "¿Dónde bailan los Diablos Danzantes de Yare?",
+   "prov": "Miranda",
+   "punto": [
+    -66.74,
+    10.18
+   ],
+   "respuesta": "Miranda",
+   "detalle": "Diablos Danzantes de Yare",
+   "voz_q": "¿Dónde bailan los Diablos Danzantes de Yare?",
+   "voz_a": "¡Miranda!"
+  },
+  {
+   "q": "¿Dónde es el Carnaval de El Callao?",
+   "prov": "Bolívar",
+   "punto": [
+    -61.82,
+    7.35
+   ],
+   "respuesta": "Bolívar",
+   "detalle": "Carnaval de El Callao",
+   "voz_q": "¿En qué estado es el Carnaval de El Callao?",
+   "voz_a": "¡Bolívar!"
+  },
+  {
+   "q": "¿Dónde es la Feria Internacional de San Sebastián?",
+   "prov": "Táchira",
+   "punto": [
+    -72.23,
+    7.77
+   ],
+   "respuesta": "Táchira",
+   "detalle": "Feria de San Sebastián",
+   "voz_q": "¿Dónde es la Feria Internacional de San Sebastián?",
+   "voz_a": "¡Táchira! En San Cristóbal."
+  },
+  {
+   "q": "¿En qué estado es la Feria del Sol?",
+   "prov": "Mérida",
+   "punto": [
+    -71.14,
+    8.59
+   ],
+   "respuesta": "Mérida",
+   "detalle": "Feria del Sol",
+   "voz_q": "Y la última: ¿en qué estado es la Feria del Sol?",
+   "voz_a": "¡Mérida!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

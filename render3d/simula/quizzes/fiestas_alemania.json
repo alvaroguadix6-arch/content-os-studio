@@ -1,0 +1,69 @@
+{
+ "pais": "ALEMANIA",
+ "mapa": "alemania",
+ "tema": "FIESTAS",
+ "intro": "Las fiestas más famosas de Alemania. Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿En qué estado se celebra el Oktoberfest?",
+   "prov": "Bayern",
+   "punto": [
+    11.58,
+    48.14
+   ],
+   "respuesta": "Baviera",
+   "detalle": "Oktoberfest · Múnich",
+   "voz_q": "¿En qué estado se celebra el Oktoberfest?",
+   "voz_a": "¡Baviera! En Múnich."
+  },
+  {
+   "q": "¿Dónde es el Carnaval de Colonia?",
+   "prov": "Nordrhein-Westfalen",
+   "punto": [
+    6.96,
+    50.94
+   ],
+   "respuesta": "Renania del Norte-Westfalia",
+   "detalle": "Carnaval de Colonia",
+   "voz_q": "¿En qué estado es el Carnaval de Colonia?",
+   "voz_a": "¡Renania del Norte-Westfalia!"
+  },
+  {
+   "q": "¿Dónde es la Berlinale?",
+   "prov": "Berlin",
+   "punto": [
+    13.4,
+    52.52
+   ],
+   "respuesta": "Berlín",
+   "detalle": "Berlinale",
+   "voz_q": "¿Dónde se celebra la Berlinale, el festival de cine?",
+   "voz_a": "¡Berlín!"
+  },
+  {
+   "q": "¿Dónde es la Fiesta de Cannstatt?",
+   "prov": "Baden-Württemberg",
+   "punto": [
+    9.22,
+    48.8
+   ],
+   "respuesta": "Baden-Wurtemberg",
+   "detalle": "Cannstatter Volksfest · Stuttgart",
+   "voz_q": "¿En qué estado es la Fiesta de Cannstatt, en Stuttgart?",
+   "voz_a": "¡Baden-Wurtemberg!"
+  },
+  {
+   "q": "¿Dónde es la Semana de Kiel?",
+   "prov": "Schleswig-Holstein",
+   "punto": [
+    10.14,
+    54.32
+   ],
+   "respuesta": "Schleswig-Holstein",
+   "detalle": "Kieler Woche",
+   "voz_q": "Y la última: ¿dónde es la Semana de Kiel, la gran fiesta de la vela?",
+   "voz_a": "¡Schleswig-Holstein!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

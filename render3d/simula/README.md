@@ -31,3 +31,9 @@ QUIZ=monumentos python montaje.py quiz --narracion narracion/ --frames frames/ -
 ```
 La narración se genera con `gravedad/voz.py` (preguntas con pausa de 5 s para la cuenta atrás).
 Listos: monumentos, comida, extremos, naturaleza, fiestas.
+
+### Quiz de otros países
+Añade `"mapa": "<pais>"` y `"pais": "<NOMBRE>"` al JSON: usa `quizzes/mapas/<pais>.geojson` (regiones de Natural Earth,
+dominio público), ajusta el país a la pantalla y hace zoom al revelar si la región es pequeña. `prov` puede ser una lista
+(p. ej. Lima = ["Lima", "Lima Province"]). Mapas: Francia, Perú, Inglaterra, Colombia, Venezuela, Argentina, Chile,
+Alemania, Italia y Portugal (`fiestas_<pais>.json`).

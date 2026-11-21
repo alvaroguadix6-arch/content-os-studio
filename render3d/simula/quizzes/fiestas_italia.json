@@ -1,0 +1,69 @@
+{
+ "pais": "ITALIA",
+ "mapa": "italia",
+ "tema": "FIESTAS",
+ "intro": "Las fiestas más famosas de Italia. Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿En qué región es el Carnaval de Venecia?",
+   "prov": "Veneto",
+   "punto": [
+    12.335,
+    45.44
+   ],
+   "respuesta": "Véneto",
+   "detalle": "Carnaval de Venecia",
+   "voz_q": "¿En qué región es el Carnaval de Venecia?",
+   "voz_a": "¡Véneto!"
+  },
+  {
+   "q": "¿Dónde se corre el Palio de Siena?",
+   "prov": "Toscana",
+   "punto": [
+    11.33,
+    43.32
+   ],
+   "respuesta": "Toscana",
+   "detalle": "Palio de Siena",
+   "voz_q": "¿Dónde se corre el Palio de Siena?",
+   "voz_a": "¡Toscana!"
+  },
+  {
+   "q": "¿En qué región es el Festival de Sanremo?",
+   "prov": "Liguria",
+   "punto": [
+    7.78,
+    43.82
+   ],
+   "respuesta": "Liguria",
+   "detalle": "Festival de Sanremo",
+   "voz_q": "¿En qué región es el Festival de Sanremo?",
+   "voz_a": "¡Liguria!"
+  },
+  {
+   "q": "¿Dónde es la Batalla de las Naranjas?",
+   "prov": "Piemonte",
+   "punto": [
+    7.876,
+    45.467
+   ],
+   "respuesta": "Piamonte",
+   "detalle": "Batalla de las Naranjas · Ivrea",
+   "voz_q": "¿Dónde es la Batalla de las Naranjas?",
+   "voz_a": "¡Piamonte! En Ivrea."
+  },
+  {
+   "q": "¿Dónde es la Fiesta de San Genaro?",
+   "prov": "Campania",
+   "punto": [
+    14.27,
+    40.85
+   ],
+   "respuesta": "Campania",
+   "detalle": "San Genaro · Nápoles",
+   "voz_q": "Y la última: ¿dónde es la Fiesta de San Genaro?",
+   "voz_a": "¡Campania! En Nápoles."
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

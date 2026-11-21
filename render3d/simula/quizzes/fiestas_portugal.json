@@ -1,0 +1,69 @@
+{
+ "pais": "PORTUGAL",
+ "mapa": "portugal",
+ "tema": "FIESTAS",
+ "intro": "Las fiestas más famosas de Portugal. Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿Dónde es la Fiesta de San Juan?",
+   "prov": "Porto",
+   "punto": [
+    -8.61,
+    41.15
+   ],
+   "respuesta": "Oporto",
+   "detalle": "San Juan",
+   "voz_q": "¿Dónde es la famosa noche de San Juan portuguesa?",
+   "voz_a": "¡Oporto!"
+  },
+  {
+   "q": "¿Dónde son las fiestas de San Antonio?",
+   "prov": "Lisboa",
+   "punto": [
+    -9.14,
+    38.72
+   ],
+   "respuesta": "Lisboa",
+   "detalle": "Santo António",
+   "voz_q": "¿Dónde son las fiestas de San Antonio con sardinas?",
+   "voz_a": "¡Lisboa!"
+  },
+  {
+   "q": "¿Dónde es la Fiesta de los Tabuleiros?",
+   "prov": "Santarém",
+   "punto": [
+    -8.41,
+    39.6
+   ],
+   "respuesta": "Santarém",
+   "detalle": "Festa dos Tabuleiros · Tomar",
+   "voz_q": "¿En qué distrito es la Fiesta de los Tabuleiros?",
+   "voz_a": "¡Santarém! En Tomar."
+  },
+  {
+   "q": "¿Dónde es la Romería de la Agonía?",
+   "prov": "Viana do Castelo",
+   "punto": [
+    -8.83,
+    41.69
+   ],
+   "respuesta": "Viana do Castelo",
+   "detalle": "Romaria d'Agonia",
+   "voz_q": "¿Dónde es la Romería de la Agonía?",
+   "voz_a": "¡Viana do Castelo!"
+  },
+  {
+   "q": "¿Dónde es la Queima das Fitas más famosa?",
+   "prov": "Coimbra",
+   "punto": [
+    -8.43,
+    40.21
+   ],
+   "respuesta": "Coimbra",
+   "detalle": "Queima das Fitas",
+   "voz_q": "Y la última: ¿dónde es la Queima das Fitas más famosa?",
+   "voz_a": "¡Coimbra!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

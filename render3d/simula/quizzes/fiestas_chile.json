@@ -1,0 +1,69 @@
+{
+ "pais": "CHILE",
+ "mapa": "chile",
+ "tema": "FIESTAS",
+ "intro": "Las fiestas más famosas de Chile. Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿En qué región es el Festival de Viña del Mar?",
+   "prov": "Valparaíso",
+   "punto": [
+    -71.55,
+    -33.02
+   ],
+   "respuesta": "Valparaíso",
+   "detalle": "Festival de Viña del Mar",
+   "voz_q": "¿En qué región es el Festival de Viña del Mar?",
+   "voz_a": "¡Valparaíso!"
+  },
+  {
+   "q": "¿Dónde es la Fiesta de La Tirana?",
+   "prov": "Tarapacá",
+   "punto": [
+    -69.65,
+    -20.34
+   ],
+   "respuesta": "Tarapacá",
+   "detalle": "Fiesta de La Tirana",
+   "voz_q": "¿Dónde es la Fiesta de La Tirana?",
+   "voz_a": "¡Tarapacá!"
+  },
+  {
+   "q": "¿Dónde es la Fiesta de la Candelaria de Copiapó?",
+   "prov": "Atacama",
+   "punto": [
+    -70.33,
+    -27.37
+   ],
+   "respuesta": "Atacama",
+   "detalle": "Candelaria de Copiapó",
+   "voz_q": "¿En qué región es la Fiesta de la Candelaria de Copiapó?",
+   "voz_a": "¡Atacama!"
+  },
+  {
+   "q": "¿En qué región es la Noche Valdiviana?",
+   "prov": "Los Ríos",
+   "punto": [
+    -73.24,
+    -39.81
+   ],
+   "respuesta": "Los Ríos",
+   "detalle": "Noche Valdiviana",
+   "voz_q": "¿En qué región es la Noche Valdiviana?",
+   "voz_a": "¡Los Ríos!"
+  },
+  {
+   "q": "¿Dónde es el Carnaval Andino Con la Fuerza del Sol?",
+   "prov": "Arica y Parinacota",
+   "punto": [
+    -70.31,
+    -18.48
+   ],
+   "respuesta": "Arica y Parinacota",
+   "detalle": "Carnaval Andino · Arica",
+   "voz_q": "Y la última: ¿dónde es el Carnaval Andino Con la Fuerza del Sol?",
+   "voz_a": "¡Arica y Parinacota!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}
