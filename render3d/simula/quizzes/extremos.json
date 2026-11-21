@@ -1,0 +1,67 @@
+{
+ "tema": "PUNTOS EXTREMOS",
+ "intro": "Los puntos extremos de España. Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿Dónde está el punto más al norte de la península?",
+   "prov": "A Coruña",
+   "punto": [
+    -7.686,
+    43.789
+   ],
+   "respuesta": "A Coruña",
+   "detalle": "Estaca de Bares",
+   "voz_q": "¿En qué provincia está el punto más al norte de la península?",
+   "voz_a": "¡A Coruña! La Estaca de Bares."
+  },
+  {
+   "q": "¿Y el punto más al sur de la península?",
+   "prov": "Cádiz",
+   "punto": [
+    -5.61,
+    36.0
+   ],
+   "respuesta": "Cádiz",
+   "detalle": "Punta de Tarifa",
+   "voz_q": "¿Y el punto más al sur?",
+   "voz_a": "¡Cádiz! La Punta de Tarifa."
+  },
+  {
+   "q": "¿Dónde está el punto más al este de la península?",
+   "prov": "Girona",
+   "punto": [
+    3.322,
+    42.319
+   ],
+   "respuesta": "Girona",
+   "detalle": "Cap de Creus",
+   "voz_q": "¿Y el punto más al este?",
+   "voz_a": "¡Girona! El Cap de Creus."
+  },
+  {
+   "q": "¿Y el punto más al oeste de la península?",
+   "prov": "A Coruña",
+   "punto": [
+    -9.298,
+    42.883
+   ],
+   "respuesta": "A Coruña",
+   "detalle": "Cabo Touriñán",
+   "voz_q": "¿Y el punto más al oeste?",
+   "voz_a": "¡Otra vez A Coruña! El cabo Touriñán."
+  },
+  {
+   "q": "¿Dónde está la montaña más alta de España?",
+   "prov": "Santa Cruz De Tenerife",
+   "punto": [
+    -16.642,
+    28.272
+   ],
+   "respuesta": "Santa Cruz de Tenerife",
+   "detalle": "El Teide · 3.715 m",
+   "voz_q": "¿Y la montaña más alta de España?",
+   "voz_a": "¡Santa Cruz de Tenerife! El Teide, tres mil setecientos quince metros."
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

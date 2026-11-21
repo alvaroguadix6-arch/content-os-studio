@@ -1,0 +1,67 @@
+{
+ "tema": "NATURALEZA",
+ "intro": "Paisajes de España. Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿Dónde está el pico más alto de la península?",
+   "prov": "Granada",
+   "punto": [
+    -3.311,
+    37.053
+   ],
+   "respuesta": "Granada",
+   "detalle": "Mulhacén · 3.479 m",
+   "voz_q": "¿En qué provincia está el pico más alto de la península?",
+   "voz_a": "¡Granada! El Mulhacén."
+  },
+  {
+   "q": "¿Dónde está el Parque Nacional de Ordesa?",
+   "prov": "Huesca",
+   "punto": [
+    -0.05,
+    42.65
+   ],
+   "respuesta": "Huesca",
+   "detalle": "Ordesa y Monte Perdido",
+   "voz_q": "¿Dónde está el Parque Nacional de Ordesa?",
+   "voz_a": "¡Huesca!"
+  },
+  {
+   "q": "¿En qué provincia está el Cabo de Gata?",
+   "prov": "Almería",
+   "punto": [
+    -2.193,
+    36.722
+   ],
+   "respuesta": "Almería",
+   "detalle": "Cabo de Gata",
+   "voz_q": "¿En qué provincia está el Cabo de Gata?",
+   "voz_a": "¡Almería!"
+  },
+  {
+   "q": "¿Dónde están Las Médulas, antiguas minas de oro romanas?",
+   "prov": "León",
+   "punto": [
+    -6.766,
+    42.459
+   ],
+   "respuesta": "León",
+   "detalle": "Las Médulas",
+   "voz_q": "¿Dónde están Las Médulas, las antiguas minas de oro romanas?",
+   "voz_a": "¡León!"
+  },
+  {
+   "q": "¿En qué provincia nace el río Ebro?",
+   "prov": "Cantabria",
+   "punto": [
+    -4.19,
+    43.0
+   ],
+   "respuesta": "Cantabria",
+   "detalle": "Fontibre",
+   "voz_q": "¿En qué provincia nace el río Ebro?",
+   "voz_a": "¡Cantabria! En Fontibre."
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

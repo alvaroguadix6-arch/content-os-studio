@@ -1,0 +1,67 @@
+{
+ "tema": "MONUMENTOS",
+ "intro": "¿Sabes en qué provincia está cada monumento? Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿En qué provincia está la Alhambra?",
+   "prov": "Granada",
+   "punto": [
+    -3.588,
+    37.176
+   ],
+   "respuesta": "Granada",
+   "detalle": "La Alhambra",
+   "voz_q": "¿En qué provincia está la Alhambra?",
+   "voz_a": "¡Granada!"
+  },
+  {
+   "q": "¿En qué provincia está la Sagrada Familia?",
+   "prov": "Barcelona",
+   "punto": [
+    2.174,
+    41.403
+   ],
+   "respuesta": "Barcelona",
+   "detalle": "Sagrada Familia",
+   "voz_q": "¿Y la Sagrada Familia?",
+   "voz_a": "¡Barcelona!"
+  },
+  {
+   "q": "¿Dónde está el famoso acueducto romano?",
+   "prov": "Segovia",
+   "punto": [
+    -4.118,
+    40.948
+   ],
+   "respuesta": "Segovia",
+   "detalle": "Acueducto romano",
+   "voz_q": "¿Dónde está el acueducto romano más famoso de España?",
+   "voz_a": "¡Segovia!"
+  },
+  {
+   "q": "¿En qué provincia está el Museo Guggenheim?",
+   "prov": "Bizkaia/Vizcaya",
+   "punto": [
+    -2.934,
+    43.268
+   ],
+   "respuesta": "Vizcaya",
+   "detalle": "Guggenheim · Bilbao",
+   "voz_q": "¿En qué provincia está el Museo Guggenheim?",
+   "voz_a": "¡Vizcaya! En Bilbao."
+  },
+  {
+   "q": "¿Dónde está el Teatro Romano de Mérida?",
+   "prov": "Badajoz",
+   "punto": [
+    -6.338,
+    38.915
+   ],
+   "respuesta": "Badajoz",
+   "detalle": "Teatro Romano · Mérida",
+   "voz_q": "Y la difícil: ¿en qué provincia está el Teatro Romano de Mérida?",
+   "voz_a": "¡Badajoz!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

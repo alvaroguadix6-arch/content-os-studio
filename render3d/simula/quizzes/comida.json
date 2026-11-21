@@ -1,0 +1,67 @@
+{
+ "tema": "COMIDA TÍPICA",
+ "intro": "¿De qué provincia es cada comida? Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿De dónde es la fabada?",
+   "prov": "Asturias",
+   "punto": [
+    -5.85,
+    43.36
+   ],
+   "respuesta": "Asturias",
+   "detalle": "Fabada asturiana",
+   "voz_q": "¿De dónde es la fabada?",
+   "voz_a": "¡Asturias!"
+  },
+  {
+   "q": "¿De qué provincia es el turrón de Jijona?",
+   "prov": "Alacant/Alicante",
+   "punto": [
+    -0.528,
+    38.54
+   ],
+   "respuesta": "Alicante",
+   "detalle": "Turrón de Jijona",
+   "voz_q": "¿De qué provincia es el turrón de Jijona?",
+   "voz_a": "¡Alicante!"
+  },
+  {
+   "q": "¿De dónde son los pimientos de Padrón?",
+   "prov": "A Coruña",
+   "punto": [
+    -8.658,
+    42.738
+   ],
+   "respuesta": "A Coruña",
+   "detalle": "Pimientos de Padrón",
+   "voz_q": "¿De dónde son los pimientos de Padrón?",
+   "voz_a": "¡A Coruña!"
+  },
+  {
+   "q": "¿De qué provincia es el jamón de Jabugo?",
+   "prov": "Huelva",
+   "punto": [
+    -6.73,
+    37.92
+   ],
+   "respuesta": "Huelva",
+   "detalle": "Jamón de Jabugo",
+   "voz_q": "¿De qué provincia es el jamón de Jabugo?",
+   "voz_a": "¡Huelva!"
+  },
+  {
+   "q": "¿De dónde es la sobrasada?",
+   "prov": "Illes Balears",
+   "punto": [
+    2.95,
+    39.62
+   ],
+   "respuesta": "Islas Baleares",
+   "detalle": "Sobrasada de Mallorca",
+   "voz_q": "Y la última: ¿de dónde es la sobrasada?",
+   "voz_a": "¡Islas Baleares! De Mallorca."
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

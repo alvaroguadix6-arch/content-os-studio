@@ -1,0 +1,67 @@
+{
+ "tema": "FIESTAS",
+ "intro": "Las fiestas más famosas de España. Cinco preguntas. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿Dónde se celebran los San Fermines?",
+   "prov": "Navarra",
+   "punto": [
+    -1.645,
+    42.817
+   ],
+   "respuesta": "Navarra",
+   "detalle": "San Fermín · Pamplona",
+   "voz_q": "¿Dónde se celebran los San Fermines?",
+   "voz_a": "¡Navarra! En Pamplona."
+  },
+  {
+   "q": "¿En qué provincia se celebran las Fallas?",
+   "prov": "València/Valencia",
+   "punto": [
+    -0.376,
+    39.47
+   ],
+   "respuesta": "Valencia",
+   "detalle": "Las Fallas",
+   "voz_q": "¿En qué provincia se celebran las Fallas?",
+   "voz_a": "¡Valencia!"
+  },
+  {
+   "q": "¿Dónde es la Feria de Abril?",
+   "prov": "Sevilla",
+   "punto": [
+    -5.99,
+    37.39
+   ],
+   "respuesta": "Sevilla",
+   "detalle": "Feria de Abril",
+   "voz_q": "¿Dónde es la Feria de Abril?",
+   "voz_a": "¡Sevilla!"
+  },
+  {
+   "q": "¿Dónde es la Batalla del Vino de Haro?",
+   "prov": "La Rioja",
+   "punto": [
+    -2.847,
+    42.578
+   ],
+   "respuesta": "La Rioja",
+   "detalle": "Batalla del Vino · Haro",
+   "voz_q": "¿En qué provincia es la Batalla del Vino de Haro?",
+   "voz_a": "¡La Rioja!"
+  },
+  {
+   "q": "¿Dónde son las Fiestas del Pilar?",
+   "prov": "Zaragoza",
+   "punto": [
+    -0.88,
+    41.65
+   ],
+   "respuesta": "Zaragoza",
+   "detalle": "Fiestas del Pilar",
+   "voz_q": "Y la última: ¿dónde son las Fiestas del Pilar?",
+   "voz_a": "¡Zaragoza!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

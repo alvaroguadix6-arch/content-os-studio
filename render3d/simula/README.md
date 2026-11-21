@@ -19,3 +19,15 @@ ambiental y efectos generados por código, MP4 comprimido ~10 MB).
     python montaje.py sol --narracion voz/ --frames frames/ --out sol.mp4   # MP4 final
 
 Mapas: máscara de tierra/mar de `global-land-mask` (datos GLOBE de NOAA).
+
+## Quiz del mapa de España (`quiz.py`)
+
+Cinco preguntas, cuenta atrás de 5 s y la provincia se ilumina con la respuesta (voz de Alex, música y efectos).
+Contenido en `quizzes/<nombre>.json` (`q`, `prov` tal cual aparece en `provincias.geojson`, `punto` [lon, lat], `respuesta`, `detalle`, `voz_q`, `voz_a`).
+
+```bash
+QUIZ=monumentos python quiz.py frames/ narracion/        # fotogramas
+QUIZ=monumentos python montaje.py quiz --narracion narracion/ --frames frames/ --out quiz.mp4
+```
+La narración se genera con `gravedad/voz.py` (preguntas con pausa de 5 s para la cuenta atrás).
+Listos: monumentos, comida, extremos, naturaleza, fiestas.
