@@ -433,7 +433,7 @@ def run(rules_path, out=None, stats=False, seconds=None):
     if out:
         tmp = os.path.splitext(out)[0] + "_video.mp4"
         proc = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
-                                 "-r", str(R.fps), "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt",
+                                 "-r", str(R.fps), "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "21", "-maxrate", "6M", "-bufsize", "12M", "-pix_fmt",
                                  "yuv420p", tmp], stdin=subprocess.PIPE)
     shown = float(sim.count)
     last = sim.count
