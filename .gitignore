@@ -9,3 +9,7 @@ render3d/assets/*.glb
 render3d/assets/voices/
 render3d/out/
 __pycache__/
+render3d/conquista/datos/raster.npz
+render3d/conquista/temporada*/salida/_trabajo_*/
+render3d/conquista/temporada*/salida/*.mp4
+render3d/conquista/temporada*/salida/*.wav
