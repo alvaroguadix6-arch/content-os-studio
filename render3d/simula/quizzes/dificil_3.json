@@ -1,7 +1,7 @@
 {
  "etiqueta": "QUIZ DIFÍCIL",
  "tema": "LUGARES OCULTOS",
- "intro": "Quiz difícil: lugares de España que pocos saben situar. ¿Cuántas aciertas?",
+ "intro": "Lugares de España que no sabes situar. ¿Cuántas aciertas?",
  "preguntas": [
   {
    "q": "¿En qué provincia está Covadonga?",
@@ -64,5 +64,10 @@
    "voz_a": "¡Málaga!"
   }
  ],
- "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "gancho": [
+  "LUGARES QUE",
+  "*NO SABES*",
+  "SITUAR"
+ ]
 }

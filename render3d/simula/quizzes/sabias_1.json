@@ -3,7 +3,7 @@
  "etiqueta": "¿SABÍAS QUE...?",
  "tema": "CURIOSIDADES",
  "titulo": "Curiosidades del mapa de España",
- "intro": "Cinco curiosidades del mapa de España que casi nadie conoce.",
+ "intro": "Esto no te lo enseñaron en el cole. Cinco curiosidades del mapa de España.",
  "preguntas": [
   {
    "q": "Hay un pueblo español rodeado completamente por Francia",
@@ -66,5 +66,10 @@
    "voz_a": "Es la muralla de Lugo."
   }
  ],
- "outro": "¿Cuál no sabías? Dímelo en los comentarios."
+ "outro": "¿Cuál no sabías? Dímelo en los comentarios.",
+ "gancho": [
+  "ESTO NO TE",
+  "LO ENSEÑARON",
+  "*EN EL COLE*"
+ ]
 }

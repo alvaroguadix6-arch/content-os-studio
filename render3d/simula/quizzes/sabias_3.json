@@ -3,7 +3,7 @@
  "etiqueta": "¿SABÍAS QUE...?",
  "tema": "PUEBLOS INCREÍBLES",
  "titulo": "Pueblos increíbles de España",
- "intro": "Cinco pueblos de España que parecen de otro planeta.",
+ "intro": "Pueblos que parecen de otro planeta... y están en España.",
  "preguntas": [
   {
    "q": "Hay un pueblo con las casas bajo una roca gigante",
@@ -66,5 +66,10 @@
    "voz_a": "Es Consuegra, en Toledo."
   }
  ],
- "outro": "¿Cuál no sabías? Dímelo en los comentarios."
+ "outro": "¿Cuál no sabías? Dímelo en los comentarios.",
+ "gancho": [
+  "PUEBLOS DE",
+  "*OTRO PLANETA*",
+  "...EN ESPAÑA"
+ ]
 }

@@ -170,6 +170,8 @@ class Video:
 
     def sfx_events(self):
         ev = []
+        if self.Q.get("gancho"):
+            ev += [(0.08 + k * 0.22, "boom" if k == 0 else "pop", 0.55 if k == 0 else 0.45) for k in range(len(self.Q["gancho"]))]
         sabias = self.Q.get("modo") == "sabias"
         for i in range(1, 6):
             t0, t1 = self.L[f"q{i}"]["end"], self.L[f"a{i}"]["start"]
@@ -238,10 +240,48 @@ class Video:
         d.rounded_rectangle([540 - w / 2, cy - 150, 540 + w / 2, cy - 98], 26, fill=PINK)
         d.text((540, cy - 124), label, font=f, fill=(255, 255, 255), anchor="mm")
 
+    def gancho(self, img, t):
+        """Título gancho a pantalla completa: líneas que entran de golpe (las *marcadas* en amarillo)."""
+        lines = self.Q["gancho"]
+        dim = Image.new("RGBA", img.size, (10, 4, 30, int(150 * min(1, t / 0.2))))
+        img.alpha_composite(dim)
+        lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
+        dl = ImageDraw.Draw(lay)
+        sizes = []
+        for ln in lines:
+            txt = ln.strip("*")
+            sz = 150
+            while sz > 60 and dl.textlength(txt, font=font("Black", sz)) > 960:
+                sz -= 4
+            sizes.append(sz)
+        total = sum(s * 1.12 for s in sizes)
+        y = 900 - total / 2
+        for k, (ln, sz) in enumerate(zip(lines, sizes)):
+            u = (t - 0.08 - k * 0.22) / 0.32
+            if u <= 0:
+                y += sz * 1.12
+                continue
+            sc = 1 + 0.9 * (1 - back(u)) if u < 1 else 1.0
+            col = YEL if ln.startswith("*") else (255, 255, 255)
+            txt = ln.strip("*")
+            fs = font("Black", max(8, int(sz * sc)))
+            shake = 6 * math.sin(t * 60) * max(0, 1 - u) if u < 1 else 0
+            dl.text((540 + shake, y + sz * 0.56), txt, font=fs, fill=col, anchor="mm", stroke_width=10, stroke_fill=(24, 10, 60))
+            y += sz * 1.12
+        img.alpha_composite(lay)
+
     def intro(self, img, d, t):
         a = back(t / 0.5)
         tema = self.Q["tema"]
         sabias = self.Q.get("modo") == "sabias"
+        if self.Q.get("gancho"):
+            rng = np.random.default_rng(int(t * 8))
+            names = list(PROVS)
+            img.alpha_composite(_alpha(highlight(names[rng.integers(len(names))]), 0.9))
+            self.gancho(img, t)
+            f = font("Black", int(96 * a) + 1)
+            d.text((540, 1700), "5 DATOS" if sabias else "5 PREGUNTAS", font=f, fill=YEL, anchor="mm", stroke_width=6, stroke_fill=(30, 16, 70))
+            return
         self.card(img, d, 0.0, t, self.Q.get("etiqueta", "QUIZ DE " + self.Q.get("pais", "ESPAÑA")),
                   self.Q.get("titulo", f"{tema}: ¿cuántas aciertas?"), 60)
         # mapa que «late» con provincias al azar iluminándose

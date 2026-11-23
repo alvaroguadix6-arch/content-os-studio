@@ -1,7 +1,7 @@
 {
  "etiqueta": "QUIZ FÁCIL",
  "tema": "NIVEL FÁCIL",
- "intro": "Quiz fácil de España. Cinco preguntas. Si no aciertas todas, repasa el mapa.",
+ "intro": "¿Eres de España? Demuéstralo. Cinco preguntas fáciles... ¿o no tanto?",
  "preguntas": [
   {
    "q": "¿En qué provincia está la Giralda?",
@@ -64,5 +64,10 @@
    "voz_a": "¡Málaga!"
   }
  ],
- "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "gancho": [
+  "¿ERES DE",
+  "*ESPAÑA?*",
+  "DEMUÉSTRALO"
+ ]
 }

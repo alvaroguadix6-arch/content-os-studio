@@ -1,7 +1,7 @@
 {
  "etiqueta": "QUIZ FÁCIL",
  "tema": "NIVEL FÁCIL",
- "intro": "Otro quiz fácil de España. Cinco preguntas. ¿Haces pleno?",
+ "intro": "Si fallas una sola, repasa el mapa. Cinco preguntas fáciles.",
  "preguntas": [
   {
    "q": "¿Dónde está la Catedral de Santiago?",
@@ -64,5 +64,10 @@
    "voz_a": "¡Córdoba!"
   }
  ],
- "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "gancho": [
+  "SI FALLAS",
+  "*UNA SOLA*",
+  "REPASA EL MAPA"
+ ]
 }

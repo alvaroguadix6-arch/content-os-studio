@@ -1,7 +1,7 @@
 {
  "etiqueta": "QUIZ DIFÍCIL",
  "tema": "RÍOS Y MONTAÑAS",
- "intro": "Quiz difícil: ríos y montañas de España. ¿Cuántas aciertas?",
+ "intro": "¿Dónde nace el Tajo? Piénsalo bien. Cinco preguntas difíciles de ríos y montañas.",
  "preguntas": [
   {
    "q": "¿En qué provincia nace el río Tajo?",
@@ -64,5 +64,10 @@
    "voz_a": "¡Soria! En los picos de Urbión."
   }
  ],
- "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "gancho": [
+  "¿DÓNDE NACE",
+  "*EL TAJO?*",
+  "PIÉNSALO BIEN"
+ ]
 }

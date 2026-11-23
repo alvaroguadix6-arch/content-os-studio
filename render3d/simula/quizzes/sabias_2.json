@@ -3,7 +3,7 @@
  "etiqueta": "¿SABÍAS QUE...?",
  "tema": "RÉCORDS",
  "titulo": "Récords del mapa de España",
- "intro": "Cinco récords del mapa de España que te van a sorprender.",
+ "intro": "Récords de España que no te vas a creer.",
  "preguntas": [
   {
    "q": "¿Qué provincia tiene más municipios?",
@@ -66,5 +66,10 @@
    "voz_a": "Es el río Tinto, en Huelva."
   }
  ],
- "outro": "¿Cuál no sabías? Dímelo en los comentarios."
+ "outro": "¿Cuál no sabías? Dímelo en los comentarios.",
+ "gancho": [
+  "RÉCORDS DE",
+  "*ESPAÑA*",
+  "QUE NO TE CREES"
+ ]
 }

@@ -1,7 +1,7 @@
 {
  "etiqueta": "QUIZ DIFÍCIL",
  "tema": "NIVEL DIFÍCIL",
- "intro": "Quiz difícil: pueblos de España. Solo para expertos.",
+ "intro": "Solo para expertos en España. ¿Sabes dónde están estos pueblos?",
  "preguntas": [
   {
    "q": "¿En qué provincia está Albarracín?",
@@ -64,5 +64,10 @@
    "voz_a": "¡Málaga!"
   }
  ],
- "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "gancho": [
+  "SOLO PARA",
+  "*EXPERTOS*",
+  "EN ESPAÑA"
+ ]
 }
