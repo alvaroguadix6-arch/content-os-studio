@@ -134,18 +134,19 @@ class VIDEO(Video):
         self.Ln(d, [(540, 960), (540, 1060 + 60 * k)], YEL, 8)  # gravedad
         self.P(d, [(510, 1060 + 60 * k), (570, 1060 + 60 * k), (540, 1110 + 60 * k)], YEL)
         ks = smooth(self.w("llegada", "galileo"), self.end("llegada"), t)
-        self.text(img, 540, 520, f"{int(170000 * ks):,} km/h".replace(",", "."), 96, WHITE)
+        if t >= self.w("llegada", "galileo") - 0.1:
+            self.text(img, 540, 520, f"{int(170000 * ks):,} km/h".replace(",", "."), 96, WHITE)
         self.pop_text(img, 540, 640, "SONDA GALILEO · 1995", 52, t, self.w("llegada", "galileo"), CYAN)
 
     def s_fuego(self, img, d, t, lt, u):
         self.bgdyn(img, (30, 10, 6), (90, 40, 20))
         heat = smooth(0, 1.0, lt)
-        self.P(d, [(430, 930), (650, 930), (600 + 30 * math.sin(t * 9), 330), (480 + 30 * math.sin(t * 7), 330)], (255, 120, 40))  # estela
+        self.P(d, [(430, 930), (650, 930), (600 + 30 * math.sin(t * 9), 470), (480 + 30 * math.sin(t * 7), 470)], (255, 120, 40))  # estela
         self.P(d, [(470, 930), (610, 930), (570 + 20 * math.sin(t * 11), 520), (510 + 20 * math.sin(t * 8), 520)], (255, 200, 90))
         for i in range(14):  # chispas de plasma hacia arriba
             ph = (t * 3 + i / 14) % 1
             x = 540 + (i - 7) * 16 + 10 * math.sin(t * 5 + i)
-            y = 900 - ph * 650
+            y = 900 - ph * 400
             self.Ln(d, [(x, y), (x, y - 70)], mix((255, 240, 180), (255, 90, 40), ph), 8)
         self.glow(img, 540, 1000, 260, (255, 170, 60), 230 * heat)
         self.glow(img, 540, 1060, 140, (255, 240, 200), 240 * heat)
@@ -154,7 +155,7 @@ class VIDEO(Video):
         self.R(d, 190, 1430, 890, 1490, (50, 30, 30), radius=30)
         self.R(d, 190, 1430, 190 + 700 * sh, 1490, (255, 150, 60), radius=30)
         self.text(img, 540, 1385, f"ESCUDO TÉRMICO {int(sh * 100)}%", 48, WHITE)
-        self.pop_text(img, 540, 560, "BOLA DE FUEGO", 92, t, self.t_fire, (255, 170, 60))
+        self.pop_text(img, 540, 1640, "BOLA DE FUEGO", 92, t, self.t_fire, (255, 170, 60))
 
     def s_nubes(self, img, d, t, lt, u):
         self.bgdyn(img, (196, 160, 122), (120, 80, 60))

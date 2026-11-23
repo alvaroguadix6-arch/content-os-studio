@@ -109,6 +109,8 @@ class Video:
     @staticmethod
     def E(d, x, y, r, fill, outline=None, width=0, ry=None):
         ry = r if ry is None else ry
+        if r <= 0 or ry <= 0:
+            return
         d.ellipse([(x - r) * S, (y - ry) * S, (x + r) * S, (y + ry) * S], fill=fill, outline=outline, width=int(width * S))
 
     @staticmethod
