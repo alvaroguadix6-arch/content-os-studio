@@ -1,0 +1,68 @@
+{
+ "etiqueta": "QUIZ FÁCIL",
+ "tema": "NIVEL FÁCIL",
+ "intro": "Otro quiz fácil de España. Cinco preguntas. ¿Haces pleno?",
+ "preguntas": [
+  {
+   "q": "¿Dónde está la Catedral de Santiago?",
+   "prov": "A Coruña",
+   "punto": [
+    -8.544,
+    42.881
+   ],
+   "respuesta": "A Coruña",
+   "detalle": "Catedral de Santiago",
+   "voz_q": "¿En qué provincia está la Catedral de Santiago de Compostela?",
+   "voz_a": "¡A Coruña!"
+  },
+  {
+   "q": "¿Dónde está la playa de La Concha?",
+   "prov": "Gipuzkoa/Guipúzcoa",
+   "punto": [
+    -1.99,
+    43.318
+   ],
+   "respuesta": "Guipúzcoa",
+   "detalle": "La Concha · San Sebastián",
+   "voz_q": "¿Dónde está la playa de La Concha?",
+   "voz_a": "¡Guipúzcoa! En San Sebastián."
+  },
+  {
+   "q": "¿En qué provincia está el Camp Nou?",
+   "prov": "Barcelona",
+   "punto": [
+    2.123,
+    41.381
+   ],
+   "respuesta": "Barcelona",
+   "detalle": "Camp Nou",
+   "voz_q": "¿En qué provincia está el Camp Nou?",
+   "voz_a": "¡Barcelona!"
+  },
+  {
+   "q": "¿A qué provincia pertenece Ibiza?",
+   "prov": "Illes Balears",
+   "punto": [
+    1.43,
+    38.98
+   ],
+   "respuesta": "Islas Baleares",
+   "detalle": "Ibiza",
+   "voz_q": "¿A qué provincia pertenece Ibiza?",
+   "voz_a": "¡Islas Baleares!"
+  },
+  {
+   "q": "¿Dónde está la Mezquita-Catedral más famosa de España?",
+   "prov": "Córdoba",
+   "punto": [
+    -4.779,
+    37.879
+   ],
+   "respuesta": "Córdoba",
+   "detalle": "Mezquita-Catedral",
+   "voz_q": "Y la última: ¿dónde está la Mezquita-Catedral más famosa de España?",
+   "voz_a": "¡Córdoba!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

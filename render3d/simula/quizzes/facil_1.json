@@ -1,0 +1,68 @@
+{
+ "etiqueta": "QUIZ FÁCIL",
+ "tema": "NIVEL FÁCIL",
+ "intro": "Quiz fácil de España. Cinco preguntas. Si no aciertas todas, repasa el mapa.",
+ "preguntas": [
+  {
+   "q": "¿En qué provincia está la Giralda?",
+   "prov": "Sevilla",
+   "punto": [
+    -5.993,
+    37.386
+   ],
+   "respuesta": "Sevilla",
+   "detalle": "La Giralda",
+   "voz_q": "¿En qué provincia está la Giralda?",
+   "voz_a": "¡Sevilla!"
+  },
+  {
+   "q": "¿Dónde está la Puerta del Sol?",
+   "prov": "Madrid",
+   "punto": [
+    -3.703,
+    40.417
+   ],
+   "respuesta": "Madrid",
+   "detalle": "Puerta del Sol",
+   "voz_q": "¿Dónde está la Puerta del Sol?",
+   "voz_a": "¡Madrid!"
+  },
+  {
+   "q": "¿En qué provincia está Benidorm?",
+   "prov": "Alacant/Alicante",
+   "punto": [
+    -0.131,
+    38.541
+   ],
+   "respuesta": "Alicante",
+   "detalle": "Benidorm",
+   "voz_q": "¿En qué provincia está Benidorm?",
+   "voz_a": "¡Alicante!"
+  },
+  {
+   "q": "¿Dónde está la Ciudad de las Artes y las Ciencias?",
+   "prov": "València/Valencia",
+   "punto": [
+    -0.355,
+    39.455
+   ],
+   "respuesta": "Valencia",
+   "detalle": "Ciudad de las Artes y las Ciencias",
+   "voz_q": "¿Dónde está la Ciudad de las Artes y las Ciencias?",
+   "voz_a": "¡Valencia!"
+  },
+  {
+   "q": "¿En qué provincia está Marbella?",
+   "prov": "Málaga",
+   "punto": [
+    -4.886,
+    36.51
+   ],
+   "respuesta": "Málaga",
+   "detalle": "Marbella",
+   "voz_q": "Y la última: ¿en qué provincia está Marbella?",
+   "voz_a": "¡Málaga!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

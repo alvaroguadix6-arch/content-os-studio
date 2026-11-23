@@ -1,0 +1,68 @@
+{
+ "etiqueta": "QUIZ DIFÍCIL",
+ "tema": "LUGARES OCULTOS",
+ "intro": "Quiz difícil: lugares de España que pocos saben situar. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿En qué provincia está Covadonga?",
+   "prov": "Asturias",
+   "punto": [
+    -5.07,
+    43.31
+   ],
+   "respuesta": "Asturias",
+   "detalle": "Covadonga",
+   "voz_q": "¿En qué provincia está Covadonga?",
+   "voz_a": "¡Asturias!"
+  },
+  {
+   "q": "¿Dónde está el desierto de Tabernas?",
+   "prov": "Almería",
+   "punto": [
+    -2.4,
+    37.05
+   ],
+   "respuesta": "Almería",
+   "detalle": "Desierto de Tabernas",
+   "voz_q": "¿Dónde está el desierto de Tabernas?",
+   "voz_a": "¡Almería!"
+  },
+  {
+   "q": "¿En qué provincia está el Monasterio de Piedra?",
+   "prov": "Zaragoza",
+   "punto": [
+    -1.78,
+    41.19
+   ],
+   "respuesta": "Zaragoza",
+   "detalle": "Monasterio de Piedra",
+   "voz_q": "¿En qué provincia está el Monasterio de Piedra?",
+   "voz_a": "¡Zaragoza!"
+  },
+  {
+   "q": "¿Dónde está la Ciudad Encantada?",
+   "prov": "Cuenca",
+   "punto": [
+    -1.98,
+    40.2
+   ],
+   "respuesta": "Cuenca",
+   "detalle": "Ciudad Encantada",
+   "voz_q": "¿Dónde está la Ciudad Encantada?",
+   "voz_a": "¡Cuenca!"
+  },
+  {
+   "q": "¿En qué provincia está el Caminito del Rey?",
+   "prov": "Málaga",
+   "punto": [
+    -4.79,
+    36.93
+   ],
+   "respuesta": "Málaga",
+   "detalle": "Caminito del Rey",
+   "voz_q": "Y la última: ¿en qué provincia está el Caminito del Rey?",
+   "voz_a": "¡Málaga!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

@@ -1,0 +1,68 @@
+{
+ "etiqueta": "QUIZ DIFÍCIL",
+ "tema": "NIVEL DIFÍCIL",
+ "intro": "Quiz difícil: pueblos de España. Solo para expertos.",
+ "preguntas": [
+  {
+   "q": "¿En qué provincia está Albarracín?",
+   "prov": "Teruel",
+   "punto": [
+    -1.444,
+    40.408
+   ],
+   "respuesta": "Teruel",
+   "detalle": "Albarracín",
+   "voz_q": "¿En qué provincia está Albarracín?",
+   "voz_a": "¡Teruel!"
+  },
+  {
+   "q": "¿En qué provincia está Cudillero?",
+   "prov": "Asturias",
+   "punto": [
+    -6.149,
+    43.563
+   ],
+   "respuesta": "Asturias",
+   "detalle": "Cudillero",
+   "voz_q": "¿En qué provincia está Cudillero?",
+   "voz_a": "¡Asturias!"
+  },
+  {
+   "q": "¿Dónde está Frías, «la ciudad más pequeña de España»?",
+   "prov": "Burgos",
+   "punto": [
+    -3.29,
+    42.762
+   ],
+   "respuesta": "Burgos",
+   "detalle": "Frías",
+   "voz_q": "¿Dónde está Frías, conocida como la ciudad más pequeña de España?",
+   "voz_a": "¡Burgos!"
+  },
+  {
+   "q": "¿En qué provincia está Peñíscola?",
+   "prov": "Castelló/Castellón",
+   "punto": [
+    0.406,
+    40.358
+   ],
+   "respuesta": "Castellón",
+   "detalle": "Peñíscola",
+   "voz_q": "¿En qué provincia está Peñíscola?",
+   "voz_a": "¡Castellón!"
+  },
+  {
+   "q": "¿En qué provincia está Ronda?",
+   "prov": "Málaga",
+   "punto": [
+    -5.167,
+    36.742
+   ],
+   "respuesta": "Málaga",
+   "detalle": "Ronda",
+   "voz_q": "Y la última: ¿en qué provincia está Ronda?",
+   "voz_a": "¡Málaga!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

@@ -1,0 +1,70 @@
+{
+ "modo": "sabias",
+ "etiqueta": "¿SABÍAS QUE...?",
+ "tema": "CURIOSIDADES",
+ "titulo": "Curiosidades del mapa de España",
+ "intro": "Cinco curiosidades del mapa de España que casi nadie conoce.",
+ "preguntas": [
+  {
+   "q": "Hay un pueblo español rodeado completamente por Francia",
+   "prov": "Girona",
+   "punto": [
+    1.98,
+    42.46
+   ],
+   "respuesta": "Llívia · Girona",
+   "detalle": "Un enclave español dentro de Francia",
+   "voz_q": "Hay un pueblo español rodeado completamente por Francia.",
+   "voz_a": "Es Llívia, en Girona."
+  },
+  {
+   "q": "Hay un trozo de Burgos rodeado por Álava",
+   "prov": "Burgos",
+   "punto": [
+    -2.75,
+    42.73
+   ],
+   "respuesta": "Condado de Treviño",
+   "detalle": "Es de Burgos, pero está dentro de Álava",
+   "voz_q": "Hay un trozo de Burgos que está rodeado por Álava.",
+   "voz_a": "Es el Condado de Treviño."
+  },
+  {
+   "q": "Hay una parte de Valencia que no toca el resto de Valencia",
+   "prov": "València/Valencia",
+   "punto": [
+    -1.29,
+    40.06
+   ],
+   "respuesta": "Rincón de Ademuz",
+   "detalle": "Entre Cuenca y Teruel",
+   "voz_q": "Hay una parte de Valencia que no toca el resto de la provincia.",
+   "voz_a": "Es el Rincón de Ademuz, entre Cuenca y Teruel."
+  },
+  {
+   "q": "Hay una isla que cambia de país cada seis meses",
+   "prov": "Gipuzkoa/Guipúzcoa",
+   "punto": [
+    -1.763,
+    43.343
+   ],
+   "respuesta": "Isla de los Faisanes",
+   "detalle": "Medio año España, medio año Francia",
+   "voz_q": "Hay una isla que cambia de país cada seis meses.",
+   "voz_a": "La isla de los Faisanes, en el río Bidasoa: medio año española y medio año francesa."
+  },
+  {
+   "q": "En España está la única muralla romana que se conserva entera",
+   "prov": "Lugo",
+   "punto": [
+    -7.556,
+    43.01
+   ],
+   "respuesta": "Lugo",
+   "detalle": "Muralla romana",
+   "voz_q": "Y en España está la única muralla romana del mundo que se conserva entera.",
+   "voz_a": "Es la muralla de Lugo."
+  }
+ ],
+ "outro": "¿Cuál no sabías? Dímelo en los comentarios."
+}

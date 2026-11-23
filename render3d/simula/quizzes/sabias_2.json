@@ -1,0 +1,70 @@
+{
+ "modo": "sabias",
+ "etiqueta": "¿SABÍAS QUE...?",
+ "tema": "RÉCORDS",
+ "titulo": "Récords del mapa de España",
+ "intro": "Cinco récords del mapa de España que te van a sorprender.",
+ "preguntas": [
+  {
+   "q": "¿Qué provincia tiene más municipios?",
+   "prov": "Burgos",
+   "punto": [
+    -3.7,
+    42.34
+   ],
+   "respuesta": "Burgos",
+   "detalle": "371 municipios",
+   "voz_q": "La provincia con más municipios de España...",
+   "voz_a": "Es Burgos, con trescientos setenta y uno."
+  },
+  {
+   "q": "¿Cuál es el municipio más grande de España?",
+   "prov": "Cáceres",
+   "punto": [
+    -6.37,
+    39.47
+   ],
+   "respuesta": "Cáceres",
+   "detalle": "1.750 km²",
+   "voz_q": "El municipio más grande de España...",
+   "voz_a": "Es Cáceres: mil setecientos cincuenta kilómetros cuadrados."
+  },
+  {
+   "q": "¿Cuál es la provincia más pequeña?",
+   "prov": "Gipuzkoa/Guipúzcoa",
+   "punto": [
+    -2.17,
+    43.15
+   ],
+   "respuesta": "Guipúzcoa",
+   "detalle": "1.980 km²",
+   "voz_q": "La provincia más pequeña de España...",
+   "voz_a": "Es Guipúzcoa."
+  },
+  {
+   "q": "Aquí está el mar de plástico, visible desde el espacio",
+   "prov": "Almería",
+   "punto": [
+    -2.81,
+    36.78
+   ],
+   "respuesta": "Almería",
+   "detalle": "Mar de invernaderos",
+   "voz_q": "Hay un mar de plástico que se ve desde el espacio.",
+   "voz_a": "Son los invernaderos de Almería."
+  },
+  {
+   "q": "Aquí hay un río de agua roja",
+   "prov": "Huelva",
+   "punto": [
+    -6.56,
+    37.7
+   ],
+   "respuesta": "Huelva",
+   "detalle": "Río Tinto",
+   "voz_q": "Y en España hay un río de agua roja.",
+   "voz_a": "Es el río Tinto, en Huelva."
+  }
+ ],
+ "outro": "¿Cuál no sabías? Dímelo en los comentarios."
+}

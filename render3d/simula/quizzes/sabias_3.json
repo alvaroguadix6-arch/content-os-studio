@@ -1,0 +1,70 @@
+{
+ "modo": "sabias",
+ "etiqueta": "¿SABÍAS QUE...?",
+ "tema": "PUEBLOS INCREÍBLES",
+ "titulo": "Pueblos increíbles de España",
+ "intro": "Cinco pueblos de España que parecen de otro planeta.",
+ "preguntas": [
+  {
+   "q": "Hay un pueblo con las casas bajo una roca gigante",
+   "prov": "Cádiz",
+   "punto": [
+    -5.18,
+    36.862
+   ],
+   "respuesta": "Setenil de las Bodegas",
+   "detalle": "Cádiz",
+   "voz_q": "Hay un pueblo con las casas metidas bajo una roca gigante.",
+   "voz_a": "Es Setenil de las Bodegas, en Cádiz."
+  },
+  {
+   "q": "Hay un pueblo pintado entero de azul",
+   "prov": "Málaga",
+   "punto": [
+    -5.173,
+    36.625
+   ],
+   "respuesta": "Júzcar",
+   "detalle": "Málaga · el pueblo pitufo",
+   "voz_q": "Hay un pueblo pintado entero de azul.",
+   "voz_a": "Es Júzcar, en Málaga: el pueblo pitufo."
+  },
+  {
+   "q": "Hay un pueblo al borde de un acantilado de lava",
+   "prov": "Girona",
+   "punto": [
+    2.55,
+    42.22
+   ],
+   "respuesta": "Castellfollit de la Roca",
+   "detalle": "Girona",
+   "voz_q": "Hay un pueblo construido al borde de un acantilado de lava.",
+   "voz_a": "Es Castellfollit de la Roca, en Girona."
+  },
+  {
+   "q": "Hay una ciudad con miles de casas cueva",
+   "prov": "Granada",
+   "punto": [
+    -3.137,
+    37.3
+   ],
+   "respuesta": "Guadix",
+   "detalle": "Granada · más de 2.000 cuevas",
+   "voz_q": "Hay una ciudad con más de dos mil casas cueva.",
+   "voz_a": "Es Guadix, en Granada."
+  },
+  {
+   "q": "Aquí están los molinos de Don Quijote",
+   "prov": "Toledo",
+   "punto": [
+    -3.607,
+    39.462
+   ],
+   "respuesta": "Consuegra",
+   "detalle": "Toledo · molinos de viento",
+   "voz_q": "Y aquí están los molinos de Don Quijote.",
+   "voz_a": "Es Consuegra, en Toledo."
+  }
+ ],
+ "outro": "¿Cuál no sabías? Dímelo en los comentarios."
+}

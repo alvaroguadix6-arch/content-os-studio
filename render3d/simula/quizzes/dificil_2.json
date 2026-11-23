@@ -1,0 +1,68 @@
+{
+ "etiqueta": "QUIZ DIFÍCIL",
+ "tema": "RÍOS Y MONTAÑAS",
+ "intro": "Quiz difícil: ríos y montañas de España. ¿Cuántas aciertas?",
+ "preguntas": [
+  {
+   "q": "¿En qué provincia nace el río Tajo?",
+   "prov": "Teruel",
+   "punto": [
+    -1.7,
+    40.32
+   ],
+   "respuesta": "Teruel",
+   "detalle": "Nacimiento del Tajo",
+   "voz_q": "¿En qué provincia nace el río Tajo, el más largo de la península?",
+   "voz_a": "¡Teruel!"
+  },
+  {
+   "q": "¿En qué provincia nace el Guadalquivir?",
+   "prov": "Jaén",
+   "punto": [
+    -2.86,
+    37.87
+   ],
+   "respuesta": "Jaén",
+   "detalle": "Sierra de Cazorla",
+   "voz_q": "¿En qué provincia nace el Guadalquivir?",
+   "voz_a": "¡Jaén! En la sierra de Cazorla."
+  },
+  {
+   "q": "¿En qué provincia desemboca el Ebro?",
+   "prov": "Tarragona",
+   "punto": [
+    0.85,
+    40.72
+   ],
+   "respuesta": "Tarragona",
+   "detalle": "Delta del Ebro",
+   "voz_q": "¿En qué provincia desemboca el Ebro?",
+   "voz_a": "¡Tarragona! En el delta del Ebro."
+  },
+  {
+   "q": "¿Dónde está el Aneto, el pico más alto de los Pirineos?",
+   "prov": "Huesca",
+   "punto": [
+    0.657,
+    42.631
+   ],
+   "respuesta": "Huesca",
+   "detalle": "Aneto · 3.404 m",
+   "voz_q": "¿Dónde está el Aneto, el pico más alto de los Pirineos?",
+   "voz_a": "¡Huesca!"
+  },
+  {
+   "q": "¿En qué provincia nace el río Duero?",
+   "prov": "Soria",
+   "punto": [
+    -2.88,
+    41.99
+   ],
+   "respuesta": "Soria",
+   "detalle": "Picos de Urbión",
+   "voz_q": "Y la última: ¿en qué provincia nace el río Duero?",
+   "voz_a": "¡Soria! En los picos de Urbión."
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

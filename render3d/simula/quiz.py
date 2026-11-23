@@ -170,9 +170,10 @@ class Video:
 
     def sfx_events(self):
         ev = []
+        sabias = self.Q.get("modo") == "sabias"
         for i in range(1, 6):
             t0, t1 = self.L[f"q{i}"]["end"], self.L[f"a{i}"]["start"]
-            for k in range(5):
+            for k in ([] if sabias else range(5)):
                 ts = t0 + k * (t1 - t0) / 5
                 ev.append((ts, "tick", 0.9))
                 ev.append((ts, "beep", 0.12 if k < 4 else 0.22))
@@ -240,7 +241,9 @@ class Video:
     def intro(self, img, d, t):
         a = back(t / 0.5)
         tema = self.Q["tema"]
-        self.card(img, d, 0.0, t, "QUIZ DE " + self.Q.get("pais", "ESPAÑA"), f"{tema}: ¿cuántas aciertas?", 60)
+        sabias = self.Q.get("modo") == "sabias"
+        self.card(img, d, 0.0, t, self.Q.get("etiqueta", "QUIZ DE " + self.Q.get("pais", "ESPAÑA")),
+                  self.Q.get("titulo", f"{tema}: ¿cuántas aciertas?"), 60)
         # mapa que «late» con provincias al azar iluminándose
         rng = np.random.default_rng(int(t * 6))
         names = list(PROVS)
@@ -249,10 +252,13 @@ class Video:
             h = highlight(nm)
             img.alpha_composite(_alpha(h, 0.85))
         f = font("Black", int(120 * a) + 1)
-        d.text((540, 1700), "5 PREGUNTAS", font=f, fill=YEL, anchor="mm", stroke_width=6, stroke_fill=(30, 16, 70))
+        d.text((540, 1700), "5 DATOS" if sabias else "5 PREGUNTAS", font=f, fill=YEL, anchor="mm", stroke_width=6, stroke_fill=(30, 16, 70))
 
     def outro(self, img, d, t):
         t0 = self.L["outro"]["start"] - 0.1
+        if self.Q.get("modo") == "sabias":
+            self.card(img, d, t0, t, "¿CUÁL NO SABÍAS?", "Dímelo en los comentarios", 62)
+            return
         self.card(img, d, t0, t, "¿CUÁNTAS HAS ACERTADO?", "Dímelo en los comentarios", 62)
         a = back((t - t0 - 0.3) / 0.5)
         y = 1690
@@ -302,10 +308,11 @@ class Video:
         q = self.Q["preguntas"][i - 1]
         qs, qe = self.L[f"q{i}"]["start"] - 0.15, self.L[f"q{i}"]["end"]
         ans = self.L[f"a{i}"]["start"]
-        self.card(img, d, qs, t, f"PREGUNTA {i}/5", q["q"], 58 if len(q["q"]) < 44 else 52)
+        sabias = self.Q.get("modo") == "sabias"
+        self.card(img, d, qs, t, f"DATO {i}/5" if sabias else f"PREGUNTA {i}/5", q["q"], 58 if len(q["q"]) < 44 else 52 if len(q["q"]) < 70 else 46)
         # cuenta atrás
         cy = 540
-        if t < ans + 0.2:
+        if t < ans + 0.2 and not sabias:
             a = back((t - qs - 0.2) / 0.4)
             r = 70 * a
             if r > 2:
