@@ -1,0 +1,56 @@
+{
+ "guion": [
+  [
+   "intro",
+   "En el punto más profundo del océano cabría el Everest... y aún le sobrarían más de dos kilómetros de agua por encima."
+  ],
+  [
+   "lugar",
+   "Es el abismo Challenger, en la fosa de las Marianas, en el océano Pacífico: casi once kilómetros bajo la superficie."
+  ],
+  [
+   "luz",
+   "Al bajar, la luz del Sol desaparece antes de llegar a los mil metros. Desde ahí, todo es oscuridad total."
+  ],
+  [
+   "frio",
+   "El agua se queda a uno o dos grados. Siempre."
+  ],
+  [
+   "presion",
+   "Y la presión no para de subir: en el fondo es más de mil veces la de la superficie. Más de una tonelada sobre cada centímetro cuadrado."
+  ],
+  [
+   "cuerpo",
+   "Tu cuerpo es sobre todo agua y aguanta mejor de lo que crees, pero el aire de tus pulmones quedaría aplastado. Por eso solo se baja en submarinos con esferas de paredes gruesísimas."
+  ],
+  [
+   "vida",
+   "Aun así, hay vida: pequeños crustáceos en el fondo, y peces como el pez caracol, filmado a más de ocho mil metros."
+  ],
+  [
+   "historia",
+   "Los primeros en llegar fueron dos hombres en el batiscafo Trieste, en mil novecientos sesenta. En dos mil doce, James Cameron bajó solo, y tardó más de dos horas y media."
+  ],
+  [
+   "plastico",
+   "Y allí abajo, en el lugar más remoto del planeta, se ha encontrado hasta una bolsa de plástico."
+  ],
+  [
+   "cta",
+   "¿Tú bajarías hasta el fondo? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "lugar": 0.22,
+  "luz": 0.22,
+  "frio": 0.22,
+  "presion": 0.22,
+  "cuerpo": 0.22,
+  "vida": 0.22,
+  "historia": 0.22,
+  "plastico": 0.22,
+  "cta": 0.0
+ }
+}

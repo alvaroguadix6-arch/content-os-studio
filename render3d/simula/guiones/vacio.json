@@ -1,0 +1,56 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Si salieras al espacio sin traje, no explotarías. Pero tendrías unos quince segundos."
+  ],
+  [
+   "aire",
+   "Lo primero: no aguantes la respiración. El aire de tus pulmones se expandiría de golpe y los rompería. Tienes que soltarlo."
+  ],
+  [
+   "hervir",
+   "Sin presión, el agua hierve a la temperatura de tu cuerpo. La saliva de tu lengua empezaría a burbujear."
+  ],
+  [
+   "hinchar",
+   "Tus tejidos se hincharían mucho, pero tu piel es lo bastante elástica para aguantar. No reventarías."
+  ],
+  [
+   "frio",
+   "Tampoco te congelarías al momento: el vacío casi no roba calor. Y al sol, la luz ultravioleta te quemaría la piel."
+  ],
+  [
+   "desmayo",
+   "El problema es el oxígeno. Tu sangre lo pierde muy rápido, y en unos quince segundos te desmayas."
+  ],
+  [
+   "leblanc",
+   "Lo sabemos porque en mil novecientos sesenta y seis un técnico de la NASA, Jim LeBlanc, perdió la presión de su traje en una cámara de vacío. Lo último que recuerda es la saliva hirviendo en su lengua."
+  ],
+  [
+   "rescate",
+   "Le devolvieron la presión en segundos, y se recuperó."
+  ],
+  [
+   "limite",
+   "Por los experimentos, se cree que el límite está en torno a un minuto y medio. Después, el daño sería mortal."
+  ],
+  [
+   "cta",
+   "Sabiendo esto, ¿te atreverías a ser astronauta? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "aire": 0.22,
+  "hervir": 0.22,
+  "hinchar": 0.22,
+  "frio": 0.22,
+  "desmayo": 0.22,
+  "leblanc": 0.22,
+  "rescate": 0.22,
+  "limite": 0.22,
+  "cta": 0.0
+ }
+}

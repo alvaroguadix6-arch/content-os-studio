@@ -1,0 +1,56 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Mirar un eclipse solar unos segundos puede dejarte una mancha en la vista para siempre. Y no sentirías nada."
+  ],
+  [
+   "sol",
+   "Durante un eclipse, la Luna tapa casi todo el Sol, pero el trocito que queda brilla igual que en un día normal."
+  ],
+  [
+   "lupa",
+   "El cristalino de tu ojo funciona como una lupa: concentra esa luz en un punto diminuto del fondo del ojo."
+  ],
+  [
+   "fovea",
+   "Ese punto es la fóvea, la zona de la retina con la que lees y ves los detalles."
+  ],
+  [
+   "quema",
+   "La luz tan intensa daña sus células en cuestión de segundos. Los médicos lo llaman retinopatía solar."
+  ],
+  [
+   "dolor",
+   "Y lo peor: la retina no tiene receptores de dolor. No notas nada mientras ocurre."
+  ],
+  [
+   "despues",
+   "Horas después aparece la visión borrosa y una mancha oscura justo donde miras. A veces mejora con los meses... y a veces es para siempre."
+  ],
+  [
+   "gafas",
+   "Las gafas de sol no sirven. Solo las gafas homologadas para eclipses, con la norma ISO doce mil trescientos doce, guion dos."
+  ],
+  [
+   "total",
+   "El único momento seguro sin protección es la totalidad, cuando la Luna tapa el Sol por completo. Y el dos de agosto de dos mil veintisiete habrá un eclipse total visible desde el sur de España."
+  ],
+  [
+   "cta",
+   "¿Tú miraste el último eclipse? ¿Con gafas o sin gafas? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "sol": 0.22,
+  "lupa": 0.22,
+  "fovea": 0.22,
+  "quema": 0.22,
+  "dolor": 0.22,
+  "despues": 0.22,
+  "gafas": 0.22,
+  "total": 0.22,
+  "cta": 0.0
+ }
+}

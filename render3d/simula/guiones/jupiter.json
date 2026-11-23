@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "No podrías aterrizar en Júpiter. Simplemente, no tiene suelo."
+  ],
+  [
+   "tamano",
+   "Es tan grande que dentro cabrían más de mil trescientas Tierras. Y está hecho casi todo de hidrógeno y helio, como una estrella."
+  ],
+  [
+   "llegada",
+   "Al acercarte, su gravedad te acelera muchísimo. La sonda Galileo entró en su atmósfera en mil novecientos noventa y cinco a unos ciento setenta mil kilómetros por hora."
+  ],
+  [
+   "fuego",
+   "El rozamiento la convirtió en una bola de fuego: perdió más de la mitad de su escudo térmico."
+  ],
+  [
+   "nubes",
+   "Después cayó en paracaídas entre nubes de amoníaco, con vientos de cientos de kilómetros por hora."
+  ],
+  [
+   "hundirse",
+   "Aguantó cincuenta y ocho minutos, unos ciento cincuenta kilómetros por debajo de las nubes. Allí la presión era veintitrés veces la de la Tierra, y hacía más de ciento cincuenta grados."
+  ],
+  [
+   "abajo",
+   "Si siguieras bajando, la presión aplastaría cualquier nave. El hidrógeno se vuelve líquido... y más abajo, metálico."
+  ],
+  [
+   "nucleo",
+   "Y nunca tocarías suelo firme: solo un núcleo enterrado a decenas de miles de kilómetros de profundidad."
+  ],
+  [
+   "cta",
+   "¿Qué planeta quieres que exploremos ahora? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "tamano": 0.22,
+  "llegada": 0.22,
+  "fuego": 0.22,
+  "nubes": 0.22,
+  "hundirse": 0.22,
+  "abajo": 0.22,
+  "nucleo": 0.22,
+  "cta": 0.0
+ }
+}

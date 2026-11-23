@@ -382,6 +382,7 @@ class Video:
         d = ImageDraw.Draw(img)
         getattr(self, "s_" + name)(img, d, t, lt, u)
         z, cx, cy = self.camera(t, name, lt, u)
+        z = max(1.0, z)
         for ts, k in self.shakes:
             if 0 <= t - ts < 0.6:
                 a = (1 - (t - ts) / 0.6) * k

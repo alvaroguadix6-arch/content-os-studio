@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Si un rayo cae sobre tu coche, lo más seguro es quedarte dentro. Pero no por lo que todo el mundo cree."
+  ],
+  [
+   "mito",
+   "No te salvan las ruedas de goma. Un rayo atraviesa kilómetros de aire: unos centímetros de goma no lo van a parar."
+  ],
+  [
+   "potencia",
+   "Un rayo lleva unos treinta mil amperios y calienta el aire hasta unos treinta mil grados, cinco veces más que la superficie del Sol."
+  ],
+  [
+   "jaula",
+   "Lo que te protege es la carrocería de metal. La corriente viaja por fuera, por la chapa, y salta al suelo."
+  ],
+  [
+   "faraday",
+   "Funciona como una jaula de Faraday: tú, dentro, quedas fuera del camino de la corriente."
+  ],
+  [
+   "danos",
+   "Eso sí, el coche puede sufrir: marcas en la pintura, la antena fundida, la electrónica estropeada... y alguna rueda reventada."
+  ],
+  [
+   "consejo",
+   "Si te pilla una tormenta, para en un sitio seguro, quédate dentro con las ventanillas subidas y no toques las partes metálicas."
+  ],
+  [
+   "ojo",
+   "Ojo: los descapotables de lona y los coches de fibra no te protegen igual."
+  ],
+  [
+   "cta",
+   "¿Te ha pillado alguna vez una tormenta fuerte en la carretera? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "mito": 0.22,
+  "potencia": 0.22,
+  "jaula": 0.22,
+  "faraday": 0.22,
+  "danos": 0.22,
+  "consejo": 0.22,
+  "ojo": 0.22,
+  "cta": 0.0
+ }
+}
