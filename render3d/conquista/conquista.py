@@ -153,8 +153,9 @@ def estado(temporada, ep):
     own_cur = territory(cur, km2, order)
 
     def rank(tot):
-        ts = sorted([t for t in tot if tot[t] > 0], key=lambda t: (-tot[t], first_seen[t], munis[t]["id"]))
-        return {t: k + 1 for k, t in enumerate(ts)}
+        """Ranking con empates compartidos (1, 2, 2, 2…): mismo nº de votos = mismo puesto."""
+        vals = sorted((v for v in tot.values() if v > 0), reverse=True)
+        return {t: 1 + sum(1 for x in vals if x > tot[t]) for t in tot if tot[t] > 0}
     r_prev, r_cur = rank(prev), rank(cur)
     pueblos = []
     for k, t in enumerate(order):
@@ -187,12 +188,13 @@ def estado(temporada, ep):
         for b in byid:
             if a < b and byid[a]["provincia"] == byid[b]["provincia"]:
                 pairs.add((a, b))
-    riv = sorted(pairs, key=lambda ab: (abs(byid[ab[0]]["votos"] - byid[ab[1]]["votos"]) / max(1, byid[ab[0]]["votos"] + byid[ab[1]]["votos"]),
+    riv = sorted(pairs, key=lambda ab: (ab not in touching,  # primero los que comparten frontera
+                                        abs(byid[ab[0]]["votos"] - byid[ab[1]]["votos"]) / max(1, byid[ab[0]]["votos"] + byid[ab[1]]["votos"]),
                                         -(byid[ab[0]]["votos"] + byid[ab[1]]["votos"])))
     total_area = float(g["area"].sum())
     return dict(
         temporada=os.path.basename(os.path.abspath(temporada)), episodio=ep, config=c,
-        pueblos=sorted(pueblos, key=lambda p: (p["puesto"] or 1e9)),
+        pueblos=sorted(pueblos, key=lambda p: (p["puesto"] or 1e9, datos.norm(p["nombre"]))),  # empates: orden alfabético
         votos_total=int(sum(cur.values())), votos_nuevos=int(sum(cur.values()) - sum(prev.values())),
         conquistado=round(100 * float(g["area"][own_cur >= 0].sum()) / total_area, 2),
         conquistado_antes=round(100 * float(g["area"][own_prev >= 0].sum()) / total_area, 2),

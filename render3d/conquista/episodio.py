@@ -68,6 +68,16 @@ _C = {100: "ciento", 200: "doscientos", 300: "trescientos", 400: "cuatrocientos"
       700: "setecientos", 800: "ochocientos", 900: "novecientos"}
 
 
+def letras_m(n: int) -> str:
+    """Número delante de un sustantivo masculino: «treinta y un pueblos», «veintiún votos»."""
+    s = letras(n)
+    if s.endswith("veintiuno"):
+        return s[:-9] + "veintiún"
+    if s.endswith("uno"):
+        return s[:-3] + "un"
+    return s
+
+
 def letras(n: int) -> str:
     n = int(n)
     if n <= 20:
@@ -89,6 +99,19 @@ def letras(n: int) -> str:
     m, r = divmod(n, 1_000_000)
     head = "un millón" if m == 1 else letras(m).replace("uno", "un") + " millones"
     return head + ("" if r == 0 else " " + letras(r))
+
+
+def top_rows(P, slots=5):
+    """Filas del TOP 5: pueblos uno a uno; si un empate no cabe entero, una fila resumen («=2 · 30 pueblos»)."""
+    rows, i = [], 0
+    while i < len(P) and len(rows) < slots:
+        grp = [p for p in P if p["puesto"] == P[i]["puesto"]]
+        if len(grp) <= slots - len(rows):
+            rows += [("pueblo", p) for p in grp]
+        else:
+            rows.append(("grupo", P[i]["puesto"], len(grp), P[i]["votos"]))
+        i += len(grp)
+    return rows
 
 
 # ───── guion (se genera de los datos; nunca inventa votos) ─────
@@ -114,20 +137,36 @@ def guion(st):
         ]
     L = []
     nuevos = st["votos_nuevos"]
-    L.append(("intro", f"Episodio {letras(ep)}. {letras(nuevos).capitalize()} votos nuevos" + (f" y {letras(len(P))} pueblos en guerra." if len(P) > 1 else "."),
+    L.append(("intro", f"Episodio {letras(ep)}. {letras_m(nuevos).capitalize()} voto{'s' if nuevos != 1 else ''} nuevo{'s' if nuevos != 1 else ''}" + (f" y {letras_m(len(P))} pueblos en guerra." if len(P) > 1 else "."),
               ["votos", "guerra"]))
     lid = P[0]
     if lid["puesto_antes"] == 1:
-        txt = f"{lid['nombre']} sigue en cabeza: {letras(lid['votos'])} votos y {letras(lid['municipios'])} municipios conquistados."
+        txt = f"{lid['nombre']} sigue en cabeza: {letras_m(lid['votos'])} votos y {letras_m(lid['municipios'])} municipios conquistados."
     elif lid["nuevo"]:
-        txt = f"Y el primer líder es {lid['nombre']}, con {letras(lid['votos'])} votos."
+        txt = f"Y el primer líder es {lid['nombre']}, con {letras_m(lid['votos'])} votos" + (f": ya controla {letras_m(lid['municipios'])} municipios." if lid["municipios"] > 1 else ".")
     else:
-        txt = f"¡{lid['nombre']} toma el liderato! {letras(lid['votos']).capitalize()} votos y {letras(lid['municipios'])} municipios."
+        txt = f"¡{lid['nombre']} toma el liderato! {letras_m(lid['votos']).capitalize()} votos y {letras_m(lid['municipios'])} municipios."
     if lid["domina"]:
         txt += f" Ya domina {lid['domina'][0]}."
     L.append(("lider", txt, [lid["nombre"].split("/")[0].split()[0], "cabeza", "liderato", "domina"]))
     # el gran salto: más votos ganados (que no sea el líder)
     rest = [p for p in P[1:] if p["votos"] > p["votos_antes"]]
+    big = max((p["votos"] - p["votos_antes"] for p in rest), default=0)
+    if big < 2:  # sin un salto claro: la guerra de provincias (cuántos pueblos mete cada una)
+        from collections import Counter
+        cnt = Counter(p["provincia"] for p in P)
+        top = cnt.most_common()
+        if top and top[0][1] >= 2:
+            n = top[0][1]
+            tied = [pv for pv, c in top if c == n][:3]
+            nombres = [pv.split("/")[-1] for pv in tied]
+            if len(nombres) == 1:
+                txt = f"La provincia con más pueblos en juego es {nombres[0]}: {letras_m(n)}."
+            else:
+                txt = f"{', '.join(nombres[:-1])} y {nombres[-1]} empatan: {letras_m(n)} pueblos cada una en la guerra."
+            L.append(("provincias", txt, [x.split()[0] for x in nombres] + ["empatan", "pueblos"]))
+            st["_prov"] = [p["idx"] for p in P if p["provincia"] in tied]
+        rest = []
     if rest:
         s = max(rest, key=lambda p: (p["votos"] - p["votos_antes"], -p["puesto"]))
         g = s["votos"] - s["votos_antes"]
@@ -151,11 +190,19 @@ def guion(st):
         if a["votos"] < b["votos"]:
             a, b = b, a
         dif = a["votos"] - b["votos"]
-        txt = (f"Y ojo: {a['nombre']} contra {b['nombre']}. " + ("¡Empate total!" if dif == 0 else f"Solo les separa{'n' if dif > 1 else ''} {letras(dif)} voto{'s' if dif > 1 else ''}."))
+        txt = (f"Y ojo: {a['nombre']} contra {b['nombre']}" + (", vecinos y rivales. " if r["frontera"] else ". ") + ("¡Empate total!" if dif == 0 else f"Solo les separa{'n' if dif > 1 else ''} {letras_m(dif)} voto{'s' if dif > 1 else ''}."))
         L.append(("rivalidad", txt, ["contra", "Empate", "separa", "separan"]))
         st["_riv"] = (a["idx"], b["idx"])
     if len(P) >= 2:
-        L.append(("top", "Así queda el top cinco. ¿Está tu pueblo?", ["top", "cinco", "tu"]))
+        grp = [r for r in top_rows(P) if r[0] == "grupo"]
+        if grp:
+            _, puesto, n, v = grp[0]
+            arriba = [r[1]["nombre"] for r in top_rows(P) if r[0] == "pueblo"]
+            txt = (f"Así queda la clasificación: {' y '.join(arriba)} arriba, y {letras_m(n)} pueblos empatados a {letras_m(v)} voto{'s' if v != 1 else ''}."
+                   " ¡Un voto más y los adelantas a todos!")
+            L.append(("top", txt, ["clasificación", "empatados", "adelantas"]))
+        else:
+            L.append(("top", "Así queda el top cinco. ¿Está tu pueblo?", ["top", "cinco", "tu"]))
     L.append(("cta", f"Comenta tu pueblo y tu provincia para sumar votos. ¿Quién conquistará más en el episodio {letras(sig)}?", ["Comenta", "votos", "conquistará"]))
     return L
 
@@ -252,7 +299,7 @@ class Video:
         lv = self.territory_view([lid])
         keys.append((L["lider"]["start"] + 0.7, *lv))
         keys.append((L["lider"]["end"] + 0.2, lv[0], lv[1], lv[2] * 1.08))
-        for key, who in (("salto", [st.get("_salto")]), ("invasion", list(st.get("_inv", ()))), ("rivalidad", list(st.get("_riv", ())))):
+        for key, who in (("provincias", st.get("_prov", [None])), ("salto", [st.get("_salto")]), ("invasion", list(st.get("_inv", ()))), ("rivalidad", list(st.get("_riv", ())))):
             if key in L and all(w is not None for w in who):
                 v = self.territory_view(who)
                 keys.append((L[key]["start"] + 0.6, *v))
@@ -435,7 +482,17 @@ class Video:
         if "top" in self.L and self.L["top"]["start"] + 0.2 <= t <= self.L["cta"]["start"] + 0.2:
             return
         placed = []
-        for p in self.st["pueblos"][:12]:
+        # primero los pueblos de los que se está hablando en ese momento
+        focus = [self.st["pueblos"][0]["idx"]]
+        for key, who in (("rivalidad", self.st.get("_riv", ())), ("invasion", self.st.get("_inv", ())), ("salto", [self.st.get("_salto")]),
+                         ("provincias", self.st.get("_prov", ()))):
+            if key in self.L and self.L[key]["start"] - 0.3 <= t <= self.L[key]["end"] + 0.4:
+                focus = [w for w in who if w is not None] + focus
+        byidx = {p["idx"]: p for p in self.st["pueblos"]}
+        cand = [byidx[i] for i in dict.fromkeys(focus) if i in byidx] + [p for p in self.st["pueblos"] if p["idx"] not in focus]
+        for p in cand:
+            if len(placed) >= 12:
+                break
             k = self.order.index(p["idx"])
             appear = self.tc[self.own_cur == k]
             t_on = appear.min() if len(appear) and appear.max() >= 0 else -1
@@ -451,22 +508,34 @@ class Video:
             size = clamp(30 + 6 * cam.z + 3 * math.log1p(p["votos"]), 30, 66) * (0.6 + 0.4 * a)
             name = p["nombre"].split("/")[-1].upper()
             fw = d.textlength(name, font=font("Black", size))
-            box = (sx - fw / 2 - 14, sy - size - 34, sx + fw / 2 + 14, sy + 30)
-            if any(not (box[2] < b[0] or box[0] > b[2] or box[3] < b[1] or box[1] > b[3]) for b in placed):
+            box = None
+            is_focus = p["idx"] in focus[:-1] or p["idx"] == focus[-1]
+            for dy in ((0, 1.7 * size + 100, -(1.7 * size + 100)) if is_focus else (0,)):  # si choca, se desplaza (con línea al punto)
+                bx = (sx - fw / 2 - 14, sy + dy - size - 34, sx + fw / 2 + 14, sy + dy + 30 + size * 0.5)
+                if bx[0] < 16 or bx[2] > W - 16:
+                    continue
+                if any(not (bx[2] < q[0] or bx[0] > q[2] or bx[3] < q[1] or bx[1] > q[3]) for q in placed):
+                    continue
+                box, ly = bx, sy + dy
+                break
+            if box is None:
                 continue
             placed.append(box)
             col = tuple(conquista.PALETA[k % len(conquista.PALETA)])
+            if ly != sy:
+                d.line([(sx, sy), (sx, ly)], fill=WHITE, width=3)
             d.ellipse([sx - 9, sy - 9, sx + 9, sy + 9], fill=WHITE, outline=INK, width=3)
-            self.text(d, (sx, sy - 26), name, size, WHITE, "Black", "ms", 6, INK)
+            self.text(d, (sx, ly - 26), name, size, WHITE, "Black", "ms", 6, INK)
             # votos animados (cuentan desde los del episodio anterior)
             v0, v1 = p["votos_antes"], p["votos"]
             u = out3((t - max(0.5, t_on)) / 2.5)
             v = int(round(v0 + (v1 - v0) * u))
-            vs = f"{miles(v)} VOTOS"
+            vs = f"{miles(v)} VOTO" + ("S" if v != 1 else "")
             fv = font("Black", int(size * 0.55))
             vw = d.textlength(vs, font=fv)
-            d.rounded_rectangle([sx - vw / 2 - 12, sy + 14, sx + vw / 2 + 12, sy + 14 + size * 0.7], 12, fill=col)
-            d.text((sx, sy + 14 + size * 0.35), vs, font=fv, fill=INK, anchor="mm")
+            d.rounded_rectangle([sx - vw / 2 - 12, ly + 14, sx + vw / 2 + 12, ly + 14 + size * 0.7], 12, fill=col)
+            d.text((sx, ly + 14 + size * 0.35), vs, font=fv, fill=INK, anchor="mm")
+            sy = ly
             if p["domina"]:
                 self.crown(d, sx, sy - size - 48, size * 0.55)
 
@@ -499,14 +568,25 @@ class Video:
         dl.rounded_rectangle([x0, y0 - 90, x0 + 900, y0 + 5 * 92 + 20], 34, fill=(16, 9, 40, 235), outline=YEL, width=5)
         img.alpha_composite(lay)
         self.text(d, (x0 + 450, y0 - 45), "TOP 5", 54, YEL, "Black")
+        rows = top_rows(self.st["pueblos"])
         for i in range(5):
             b = back((t - t0 - 0.3 - i * 0.14) / 0.4)
             if b <= 0.01:
                 continue
             y = y0 + 20 + i * 92 + (1 - b) * 40
-            self.text(d, (x0 + 60, y + 30), f"{i + 1}", 52, WHITE, "Black")
-            if i < len(P):
-                p = P[i]
+            row = rows[i] if i < len(rows) else None
+            if row is None and any(r[0] == "grupo" for r in rows):
+                continue  # tras un empate múltiple no quedan puestos libres
+            if row and row[0] == "grupo":  # empate que no cabe: una fila resumen
+                _, puesto, n, v = row
+                self.text(d, (x0 + 60, y + 30), f"={puesto}", 46, WHITE, "Black")
+                self.text(d, (x0 + 120, y + 18), f"{n} PUEBLOS EMPATADOS", 38, YEL, "Black", "lm")
+                self.text(d, (x0 + 120, y + 54), "¡un voto más y los adelantas!", 24, (190, 180, 230), "SemiBold", "lm")
+                self.text(d, (x0 + 800, y + 30), miles(v), 44, YEL, "Black", "rm")
+                continue
+            p = row[1] if row else None
+            self.text(d, (x0 + 60, y + 30), f"{p['puesto'] if p else i + 1}", 52, WHITE, "Black")
+            if p:
                 k = self.order.index(p["idx"])
                 col = tuple(conquista.PALETA[k % len(conquista.PALETA)])
                 d.ellipse([x0 + 110, y + 12, x0 + 146, y + 48], fill=col)
@@ -555,6 +635,12 @@ class Video:
         if t < L["intro"]["end"] + 0.3:
             self.chips(img, d, t, [(f"+{miles(st['votos_nuevos'])}", "VOTOS NUEVOS", YEL), (miles(len(st["pueblos"])), "PUEBLOS", (120, 220, 255)),
                                    (f"{st['conquistado']:.1f}%".replace(".", ","), "CONQUISTADO", PINK)], 0.4)
+        if "provincias" in L and L["provincias"]["start"] - 0.1 <= t <= L["provincias"]["end"] + 0.3:
+            from collections import Counter
+            cnt = Counter(p["provincia"] for p in st["pueblos"]).most_common()
+            n = cnt[0][1]
+            items = [(str(c), pv.split("/")[-1].upper(), col) for (pv, c), col in zip([x for x in cnt if x[1] == n][:3], (YEL, (120, 220, 255), PINK))]
+            self.chips(img, d, t, items, L["provincias"]["start"])
         for key in ("rivalidad", "invasion"):
             if key in L and L[key]["start"] - 0.1 <= t <= L[key]["end"] + 0.3:
                 a = back((t - L[key]["start"]) / 0.4)
