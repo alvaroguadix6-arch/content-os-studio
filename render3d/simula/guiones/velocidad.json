@@ -1,0 +1,66 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Diez cosas, de la más lenta a la más rápida. Y la número uno te va a volar la cabeza."
+  ],
+  [
+   "r10",
+   "Número diez: un caracol de jardín. Unos cincuenta metros por hora."
+  ],
+  [
+   "r9",
+   "Número nueve: Usain Bolt. En su récord, rozó los cuarenta y cinco kilómetros por hora."
+  ],
+  [
+   "r8",
+   "Número ocho: el guepardo. Casi cien kilómetros por hora, en carreras cortas."
+  ],
+  [
+   "r7",
+   "Número siete: el halcón peregrino. En picado supera los trescientos. Es el animal más rápido del planeta."
+  ],
+  [
+   "r6",
+   "Número seis: un avión comercial. Unos novecientos kilómetros por hora."
+  ],
+  [
+   "r5",
+   "Número cinco: la bala de un fusil. Unos tres mil kilómetros por hora."
+  ],
+  [
+   "r4",
+   "Número cuatro: la Estación Espacial. Veintiocho mil kilómetros por hora: una vuelta a la Tierra cada hora y media."
+  ],
+  [
+   "r3",
+   "Número tres: tú. Sin moverte del sofá, viajas con la Tierra alrededor del Sol a más de cien mil kilómetros por hora."
+  ],
+  [
+   "r2",
+   "Número dos: la sonda Parker, de la NASA. Lo más rápido que ha fabricado el ser humano: casi setecientos mil kilómetros por hora."
+  ],
+  [
+   "r1",
+   "Y el número uno: la luz. Más de mil millones de kilómetros por hora. En un solo segundo daría siete vueltas y media a la Tierra."
+  ],
+  [
+   "cta",
+   "¿Cuál te ha sorprendido más? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.35,
+  "r10": 0.2,
+  "r9": 0.2,
+  "r8": 0.2,
+  "r7": 0.2,
+  "r6": 0.2,
+  "r5": 0.2,
+  "r4": 0.2,
+  "r3": 0.2,
+  "r2": 0.2,
+  "r1": 0.2,
+  "cta": 0.0
+ }
+}
