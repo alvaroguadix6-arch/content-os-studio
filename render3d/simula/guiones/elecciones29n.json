@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Quedan cinco días para las elecciones generales. Y desde hoy, en España, está prohibido publicar encuestas."
+  ],
+  [
+   "ley",
+   "La ley electoral lo impide durante los cinco días anteriores a la votación. Así que las que has visto hasta ahora son las últimas."
+  ],
+  [
+   "fecha",
+   "Las elecciones son este domingo, veintinueve de noviembre. Pedro Sánchez las adelantó el cinco de octubre."
+  ],
+  [
+   "escanos",
+   "Se eligen trescientos cincuenta diputados, y la mayoría absoluta está en ciento setenta y seis."
+  ],
+  [
+   "pasado",
+   "En dos mil veintitrés, el PP fue el más votado, con ciento treinta y siete escaños. Pero gobernó Sánchez, con el apoyo de otros grupos."
+  ],
+  [
+   "candidatos",
+   "Ahora, los principales candidatos son: Pedro Sánchez por el PSOE, Alberto Núñez Feijóo por el PP, Santiago Abascal por Vox, Ada Colau al frente de una candidatura conjunta de izquierdas, e Irene Montero por Podemos."
+  ],
+  [
+   "encuestas",
+   "Y las encuestas no se ponen de acuerdo. El CIS da ganador al PSOE, casi diez puntos por delante del PP. Pero la media del resto de sondeos da a PP y Vox juntos más de la mitad de los votos."
+  ],
+  [
+   "calendario",
+   "La campaña acaba el viernes, el sábado es jornada de reflexión, y el domingo se vota de nueve de la mañana a ocho de la tarde."
+  ],
+  [
+   "cta",
+   "¿Vas a ir a votar el domingo? Te leo en los comentarios, siempre con respeto."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "ley": 0.2,
+  "fecha": 0.2,
+  "escanos": 0.2,
+  "pasado": 0.2,
+  "candidatos": 0.2,
+  "encuestas": 0.2,
+  "calendario": 0.2,
+  "cta": 0.0
+ }
+}
