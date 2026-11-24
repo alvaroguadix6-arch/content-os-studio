@@ -12,6 +12,7 @@ import random
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 from motor import CYAN, RED, WHITE, W, H, S, YEL, Video, back_out, clamp, ease_out, mix, render, schedule, smooth  # noqa: F401
+from caso_base import Caso
 from toon import INK, Look, Toon
 
 MOOD, BPM = "suspense", 104
@@ -68,34 +69,10 @@ class VIDEO(Video):
         d.polygon([(x * S, y * S) for x, y in pts], fill=col)
         d.line([(x * S, y * S) for x, y in pts + [pts[0]]], fill=INK, width=int(ow * S), joint="curve")
 
-    def ot(self, img, x, y, txt, size, col=WHITE, stroke=8, anchor="mm", rot=0.0, alpha=255):
-        """Texto Anton con contorno grueso."""
-        lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
-        dl = ImageDraw.Draw(lay)
-        dl.text((x * S, y * S), txt, font=anton(size * S), fill=tuple(col[:3]) + (alpha,), anchor=anchor, stroke_width=int(stroke * S),
-                stroke_fill=INK + (alpha,))
-        if rot:
-            lay = lay.rotate(rot, center=(x * S, y * S), resample=Image.BICUBIC)
-        img.alpha_composite(lay)
-
     def pop(self, img, x, y, txt, size, t, t0, col=WHITE, rot=0.0, stroke=8):
         k = back_out((t - t0) / 0.3)
         if k > 0.02:
             self.ot(img, x, y, txt, size * k, col, stroke, rot=rot)
-
-    def stamp(self, img, x, y, txt, size, t, t0, col=CARD, rot=-8):
-        k = back_out((t - t0) / 0.28)
-        if k <= 0.02:
-            return
-        sc = 2 - k if k < 1 else 1
-        f = anton(size * S * sc)
-        tw = f.getlength(txt)
-        lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
-        dl = ImageDraw.Draw(lay)
-        dl.rounded_rectangle([x * S - tw / 2 - 30 * S, y * S - size * S * 0.72 * sc, x * S + tw / 2 + 30 * S, y * S + size * S * 0.72 * sc],
-                             radius=int(14 * S), fill=(255, 250, 240, 235), outline=col + (255,), width=int(10 * S))
-        dl.text((x * S, y * S), txt, font=f, fill=col + (255,), anchor="mm")
-        img.alpha_composite(lay.rotate(-rot, center=(x * S, y * S), resample=Image.BICUBIC))
 
     def money_rain(self, d, t, k=1.0, speed=1.0):
         for x, y0, s, ph in self.bills:
@@ -225,79 +202,18 @@ class VIDEO(Video):
         self.ot(img, x + 140 * s, y - 10 * s, "", 10)
 
     # ───── HUD de «juego» ─────
-    def hud(self, out, t):
-        if t < 0.8 or t >= self.start("cta") - 0.1:
-            return out
-        img = out.convert("RGBA")
-        lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
-        d = ImageDraw.Draw(lay)
-        k = ease_out(clamp((t - 0.8) / 0.4))
-        y0 = 40 - (1 - k) * 160
+    def hud_items(self, t):
         botin = 0 if t < self.t_go else 298_000_000 * ease_out(clamp((t - self.start("botin")) / 2.0)) if t < self.start("botin") + 2.5 else 298_000_000
         dias = 0 if t < self.start("huida") else int(DAYS * clamp((t - self.start("huida")) / max(0.1, self.t_det - self.start("huida"))))
         stars = 0 + (t >= self.t_go) + (t >= self.start("huida")) + (t >= self.t_det)
-        chips = [("DÍAS LIBRE", f"{dias}/{DAYS}", (255, 255, 255)), ("BOTÍN", f"{botin / 1e6:,.0f} M PTA".replace(",", "."), GOLD), ("BUSCADO", "", (255, 90, 90))]
-        x = 22
-        for lab, val, col in chips:
-            w = 334
-            d.rounded_rectangle([x, y0, x + w, y0 + 128], 20, fill=(20, 16, 24, 235), outline=(255, 255, 255, 90), width=4)
-            d.text((x + 18, y0 + 28), lab, font=anton(34), fill=(220, 210, 220), anchor="lm")
-            if lab == "BUSCADO":
-                for s in range(3):
-                    cx, cy = x + 62 + s * 100, y0 + 84
-                    pts = []
-                    for i in range(10):
-                        rr = 34 if i % 2 == 0 else 14
-                        a = -math.pi / 2 + i * math.pi / 5
-                        pts.append((cx + rr * math.cos(a), cy + rr * math.sin(a)))
-                    d.polygon(pts, fill=(255, 200, 40) if s < stars else (70, 66, 80), outline=INK)
-            else:
-                d.text((x + 18, y0 + 84), val, font=anton(56), fill=col, anchor="lm", stroke_width=3, stroke_fill=INK)
-            x += w + 9
-        img.alpha_composite(lay.resize(img.size, Image.LANCZOS) if lay.size != img.size else lay)
-        return img.convert("RGB")
+        return [("DÍAS LIBRE", f"{dias}/{DAYS}", (255, 255, 255)), ("BOTÍN", f"{botin / 1e6:,.0f} M PTA".replace(",", "."), GOLD), ("BUSCADO", int(stars), (255, 90, 90))]
+
+    hud = Caso.hud
 
     # ───── subtítulos tipo meme: 1-3 palabras, grandes, en el centro ─────
-    def caption(self, out, t):
-        if t >= self.start("cta") - 0.1:
-            return out
-        cur = None
-        for ln in self.nar["lines"]:
-            if ln["start"] - 0.05 <= t <= ln["end"] + 0.25:
-                cur = ln
-        if not cur:
-            return out
-        words = cur["words"]
-        idx = max([i for i, w in enumerate(words) if w[1] <= t + 0.02] or [0])
-        g0 = (idx // 3) * 3
-        grp = words[g0:g0 + 3]
-        img = out.convert("RGBA")
-        lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
-        d = ImageDraw.Draw(lay)
-        f = anton(104)
-        toks = [w[0].upper() for w in grp]
-        sp = f.getlength(" ")
-        widths = [f.getlength(tk) for tk in toks]
-        while sum(widths) + sp * (len(toks) - 1) > 1000 and len(toks) > 1:
-            toks, widths, grp = toks[:-1], widths[:-1], grp[:-1]
-        x = 540 - (sum(widths) + sp * (len(toks) - 1)) / 2
-        y = 1310
-        for (w, a, b), tk, ww in zip(grp, toks, widths):
-            if t < a - 0.03:
-                x += ww + sp
-                continue
-            age = t - a
-            sc = 1 + 0.12 * max(0, 1 - age / 0.12)
-            key = self.is_key(w)
-            col = GOLD if key else (255, 255, 255)
-            fs = anton(104 * sc)
-            d.text((x + ww / 2, y), tk, font=fs, fill=col, anchor="mm", stroke_width=10, stroke_fill=INK)
-            if key:
-                ul = ww * ease_out(age / 0.25)
-                d.rounded_rectangle([x, y + 52, x + ul, y + 64], 6, fill=GOLD, outline=INK, width=3)
-            x += ww + sp
-        img.alpha_composite(lay)
-        return img.convert("RGB")
+    caption = Caso.caption
+    ot = Caso.ot
+    stamp = Caso.stamp
 
     def phase_card(self, img, d, t, t0, title, icon):
         """Tarjeta de fase que entra de golpe (como un aviso de juego)."""
@@ -419,9 +335,9 @@ class VIDEO(Video):
         for j, (frag, lab, col) in enumerate((("hoteles", "HOTELES", (255, 120, 160)), ("fiestas", "FIESTAS", (120, 220, 255)), ("gastos", "GASTOS", GOLD))):
             k = back_out((t - self.w("rio", frag)) / 0.3)
             if k > 0.02:
-                x = 200 + j * 340
-                self.box(d, x - 140 * k, 1610 - 46 * k, x + 140 * k, 1610 + 46 * k, col, 6, 16)
-                self.ot(img, x, 1610, lab, 56 * k, INK, 0)
+                x = 250 + j * 250
+                self.box(d, x - 115 * k, 1400 - 44 * k, x + 115 * k, 1400 + 44 * k, col, 6, 16)
+                self.ot(img, x, 1400, lab, 52 * k, INK, 0, safe=False)
 
     def s_caida(self, img, d, t, lt, u):
         self.bg_police(img, d, t)
@@ -473,8 +389,8 @@ class VIDEO(Video):
         if k > 0.6:
             self.ot(img, 540, 900, "¿DÓNDE ESTÁ", 110, INK, 0)
             self.ot(img, 540, 1040, "EL DINERO?", 120, CARD, 0)
-        self.dioni.draw(img, 860, 1760, t, expr="sly", pose="shrug", scale=0.7)
-        self.ot(img, 540, 1820, "NIVEL OCULTO", 64, WHITE, 6)
+        self.dioni.draw(img, 800, 1700, t, expr="sly", pose="shrug", scale=0.6)
+        self.ot(img, 450, 1400, "NIVEL OCULTO", 64, WHITE, 6)
 
     def camera(self, t, name, lt, u):
         if name in ("rio", "botin"):

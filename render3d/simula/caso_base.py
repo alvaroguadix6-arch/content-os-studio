@@ -14,6 +14,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 from motor import CYAN, RED, WHITE, W, H, S, YEL, Video, back_out, clamp, ease_out, mix, render, schedule, smooth  # noqa: F401
 from toon import INK, Look, Toon  # noqa: F401
+from zona_segura import BOTTOM, RIGHT_ICONS, SIDE, TOP, clamp_text
 
 FONT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "fonts", "Anton-Regular.ttf")
 _fc = {}
@@ -56,7 +57,9 @@ class Caso(Video):
         d.ellipse([(x - rx - ow) * S, (y - ry - ow) * S, (x + rx + ow) * S, (y + ry + ow) * S], fill=INK)
         d.ellipse([(x - rx) * S, (y - ry) * S, (x + rx) * S, (y + ry) * S], fill=col)
 
-    def ot(self, img, x, y, txt, size, col=WHITE, stroke=8, anchor="mm", rot=0.0, alpha=255):
+    def ot(self, img, x, y, txt, size, col=WHITE, stroke=8, anchor="mm", rot=0.0, alpha=255, safe=True):
+        if safe and anchor == "mm" and txt:
+            x, y = clamp_text(x, y, anton(size).getlength(txt) + 2 * stroke, size * 1.2)
         lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
         dl = ImageDraw.Draw(lay)
         dl.text((x * S, y * S), txt, font=anton(size * S), fill=tuple(col[:3]) + (alpha,), anchor=anchor, stroke_width=int(stroke * S),
@@ -75,6 +78,7 @@ class Caso(Video):
         if k <= 0.02:
             return
         sc = 2 - k if k < 1 else 1
+        x, y = clamp_text(x, y, anton(size).getlength(txt) + 90, size * 1.7)
         f = anton(size * S * sc)
         tw = f.getlength(txt)
         lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
@@ -89,8 +93,9 @@ class Caso(Video):
             return
         f = anton(size * k)
         tw = f.getlength(txt)
+        x, y = clamp_text(x, y, anton(size).getlength(txt) + 70, size * 1.6)
         self.box(d, x - tw / 2 - 26, y - size * 0.75 * k, x + tw / 2 + 26, y + size * 0.75 * k, bg, 6, 16)
-        self.ot(img, x, y, txt, size * k, fg, 0)
+        self.ot(img, x, y, txt, size * k, fg, 0, safe=False)
 
     def money_rain(self, d, t, k=1.0, speed=1.0):
         for x, y0, s, ph in self.bills:
@@ -319,21 +324,27 @@ class Caso(Video):
         lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
         d = ImageDraw.Draw(lay)
         k = ease_out(clamp((t - 0.8) / 0.4))
-        y0 = 40 - (1 - k) * 160
-        x = 22
+        y0 = TOP + 12 - (1 - k) * 300  # por debajo de la barra de estado e iconos de la app
+        w, gap = 272, 12
+        x = (1080 - (3 * w + 2 * gap)) / 2
         for lab, val, col in items:
-            w = 334
-            d.rounded_rectangle([x, y0, x + w, y0 + 128], 20, fill=(20, 16, 24, 235), outline=(255, 255, 255, 90), width=4)
-            d.text((x + 18, y0 + 28), lab, font=anton(34), fill=(220, 210, 220), anchor="lm")
+            d.rounded_rectangle([x, y0, x + w, y0 + 112], 18, fill=(20, 16, 24, 235), outline=(255, 255, 255, 90), width=4)
+            fl = 30
+            while anton(fl).getlength(lab) > w - 30 and fl > 18:
+                fl -= 1
+            d.text((x + 16, y0 + 26), lab, font=anton(fl), fill=(220, 210, 220), anchor="lm")
             if isinstance(val, int):  # estrellas
                 for s in range(3):
-                    cx, cy = x + 62 + s * 100, y0 + 84
-                    pts = [(cx + (34 if i % 2 == 0 else 14) * math.cos(-math.pi / 2 + i * math.pi / 5),
-                            cy + (34 if i % 2 == 0 else 14) * math.sin(-math.pi / 2 + i * math.pi / 5)) for i in range(10)]
+                    cx, cy = x + 52 + s * 84, y0 + 74
+                    pts = [(cx + (29 if i % 2 == 0 else 12) * math.cos(-math.pi / 2 + i * math.pi / 5),
+                            cy + (29 if i % 2 == 0 else 12) * math.sin(-math.pi / 2 + i * math.pi / 5)) for i in range(10)]
                     d.polygon(pts, fill=(255, 200, 40) if s < val else (70, 66, 80), outline=INK)
             else:
-                d.text((x + 18, y0 + 84), val, font=anton(56), fill=col, anchor="lm", stroke_width=3, stroke_fill=INK)
-            x += w + 9
+                fv = 50
+                while anton(fv).getlength(val) > w - 30 and fv > 26:
+                    fv -= 2
+                d.text((x + 16, y0 + 74), val, font=anton(fv), fill=col, anchor="lm", stroke_width=3, stroke_fill=INK)
+            x += w + gap
         img.alpha_composite(lay)
         return img.convert("RGB")
 
@@ -353,14 +364,22 @@ class Caso(Video):
         img = out.convert("RGBA")
         lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
         d = ImageDraw.Draw(lay)
-        f = anton(104)
+        fs0 = 96
+        f = anton(fs0)
         toks = [w[0].upper() for w in grp]
         sp = f.getlength(" ")
         widths = [f.getlength(tk) for tk in toks]
-        while sum(widths) + sp * (len(toks) - 1) > 1000 and len(toks) > 1:
+        maxw = RIGHT_ICONS[0] - SIDE - 40
+        while sum(widths) + sp * (len(toks) - 1) > maxw and len(toks) > 1:
             toks, widths, grp = toks[:-1], widths[:-1], grp[:-1]
-        x = 540 - (sum(widths) + sp * (len(toks) - 1)) / 2
-        y = 1310
+        while sum(widths) + sp * (len(toks) - 1) > maxw and fs0 > 60:  # una palabra muy larga: letra algo menor
+            fs0 -= 4
+            f = anton(fs0)
+            sp = f.getlength(" ")
+            widths = [f.getlength(tk) for tk in toks]
+        cx = (SIDE + RIGHT_ICONS[0]) / 2
+        x = cx - (sum(widths) + sp * (len(toks) - 1)) / 2
+        y = 1190
         for (w, a, b), tk, ww in zip(grp, toks, widths):
             if t < a - 0.03:
                 x += ww + sp
@@ -368,10 +387,10 @@ class Caso(Video):
             age = t - a
             sc = 1 + 0.12 * max(0, 1 - age / 0.12)
             key = self.is_key(w)
-            d.text((x + ww / 2, y), tk, font=anton(104 * sc), fill=GOLD if key else (255, 255, 255), anchor="mm", stroke_width=10, stroke_fill=INK)
+            d.text((x + ww / 2, y), tk, font=anton(fs0 * sc), fill=GOLD if key else (255, 255, 255), anchor="mm", stroke_width=10, stroke_fill=INK)
             if key:
                 ul = ww * ease_out(age / 0.25)
-                d.rounded_rectangle([x, y + 52, x + ul, y + 64], 6, fill=GOLD, outline=INK, width=3)
+                d.rounded_rectangle([x, y + fs0 * 0.5, x + ul, y + fs0 * 0.5 + 12], 6, fill=GOLD, outline=INK, width=3)
             x += ww + sp
         img.alpha_composite(lay)
         return img.convert("RGB")
@@ -404,8 +423,8 @@ class Caso(Video):
             self.ot(img, 540, 900, self.FIN[0], 100, INK, 0)
             self.ot(img, 540, 1040, self.FIN[1], 110, CARD, 0)
         if toon:
-            toon.draw(img, 860, 1760, t, expr=expr, pose=pose, scale=0.7)
-        self.ot(img, 540, 1820, "NIVEL OCULTO", 64, WHITE, 6)
+            toon.draw(img, 800, 1700, t, expr=expr, pose=pose, scale=0.6)
+        self.ot(img, 450, 1400, "NIVEL OCULTO", 64, WHITE, 6)
 
     def s_fin(self, img, d, t, lt, u):
         self.end_card(img, d, t, lt, getattr(self, "host", None))
