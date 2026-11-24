@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Ganar las elecciones del domingo no garantiza gobernar. En dos mil veintitrés, el PP fue el más votado... y gobernó otro. Estas son las cinco claves del veintinueve de noviembre."
+  ],
+  [
+   "mayoria",
+   "Clave uno: la investidura. Para ser presidente hay que superar una votación en el Congreso. En la primera hacen falta ciento setenta y seis votos. En la segunda, basta con más síes que noes."
+  ],
+  [
+   "provincias",
+   "Clave dos: los escaños no se reparten a nivel nacional. Cada provincia es una batalla distinta: Madrid elige más de treinta diputados; Soria, solo dos."
+  ],
+  [
+   "dhondt",
+   "Clave tres: la ley D'Hondt. En cada provincia, los votos de cada partido se dividen entre uno, dos, tres... y los cocientes más altos se llevan los escaños. Por eso, con menos votos, se pueden sacar los mismos escaños."
+  ],
+  [
+   "umbral",
+   "Y el partido que no llega al tres por ciento de los votos en una provincia, allí se queda fuera."
+  ],
+  [
+   "bloques",
+   "Clave cuatro: los bloques. Si PP y Vox suman ciento setenta y seis, Feijóo tendría mayoría para gobernar. Si no llegan, todo dependerá de los apoyos de otros grupos, como en dos mil veintitrés."
+  ],
+  [
+   "noche",
+   "Clave cinco: la noche electoral. Los colegios cierran a las ocho de la tarde, llegan los sondeos a pie de urna, y durante la noche, el recuento oficial."
+  ],
+  [
+   "despues",
+   "Y después, el nuevo Congreso tiene que reunirse en un máximo de veinticinco días. Ahí empieza la verdadera partida."
+  ],
+  [
+   "cta",
+   "¿Crees que habrá gobierno rápido, o otra negociación larga? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.35,
+  "mayoria": 0.25,
+  "provincias": 0.25,
+  "dhondt": 0.25,
+  "umbral": 0.25,
+  "bloques": 0.25,
+  "noche": 0.25,
+  "despues": 0.25,
+  "cta": 0.0
+ }
+}
