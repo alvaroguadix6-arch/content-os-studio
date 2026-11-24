@@ -101,7 +101,11 @@ class Toon:
         sh_y = y - 62 * u + by
         torso = [(x - 15 * u, sh_y), (x + 15 * u, sh_y), (x + 13 * u, hip_y + 2 * u), (x - 13 * u, hip_y + 2 * u)]
         # brazos de atrás primero? (todo plano: se dibujan después del torso para que se vean)
+        if L.extra.get("coat"):
+            self.poly(d, S, [(x - 16 * u, sh_y + 2 * u), (x + 16 * u, sh_y + 2 * u), (x + 19 * u, hip_y + 16 * u), (x - 19 * u, hip_y + 16 * u)], L.extra["coat"], ow)
         self.poly(d, S, torso, L.shirt, ow)
+        if L.extra.get("tie"):
+            self.poly(d, S, [(x - 2.5 * u, sh_y + 4 * u), (x + 2.5 * u, sh_y + 4 * u), (x + 3.5 * u, sh_y + 22 * u), (x, sh_y + 26 * u), (x - 3.5 * u, sh_y + 22 * u)], L.extra["tie"], ow * 0.6)
         if L.pattern == "flowers":
             for i in range(7):
                 fx = x - 8 * u + (i % 3) * 8 * u
@@ -170,6 +174,14 @@ class Toon:
             d.line(_p(S, [(ex - 6 * u, byy + bt * 5 * u), (ex + 6 * u, byy - bt * 5 * u)]), fill=INK, width=int(2.6 * u * S))
         # nariz
         self.ell(d, S, hx0 + face_dir * 2 * u, hy0 + 6 * u, 3.6 * u, 3.2 * u, tuple(max(0, c - 25) for c in L.skin), ow * 0.6)
+        if L.extra.get("sunglasses"):
+            for side in (-1, 1):
+                self.ell(d, S, hx0 + side * 8 * u, hy0 - 2 * u, 7.5 * u, 5.5 * u, (25, 25, 32), ow * 0.6)
+            d.line(_p(S, [(hx0 - 2 * u, hy0 - 3 * u), (hx0 + 2 * u, hy0 - 3 * u)]), fill=INK, width=int(1.5 * u * S))
+        if L.extra.get("mustache"):
+            c = L.extra.get("mustache_col", L.hair)
+            self.ell(d, S, hx0 - 4 * u, hy0 + 9.5 * u, 5.5 * u, 2.2 * u, c, ow * 0.5)
+            self.ell(d, S, hx0 + 4 * u, hy0 + 9.5 * u, 5.5 * u, 2.2 * u, c, ow * 0.5)
         # boca
         mx, my = hx0, hy0 + 13 * u
         mo = mouth_open if mouth_open is not None else None

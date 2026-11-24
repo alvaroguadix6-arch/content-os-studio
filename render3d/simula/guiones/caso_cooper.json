@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Secuestró un avión, cobró doscientos mil dólares, saltó en paracaídas en plena noche... y nunca más se supo de él."
+  ],
+  [
+   "billete",
+   "Veinticuatro de noviembre de mil novecientos setenta y uno. Un hombre trajeado, que dice llamarse Dan Cooper, compra un billete de Portland a Seattle."
+  ],
+  [
+   "nota",
+   "Ya en el aire, le pasa una nota a una azafata: dice que lleva una bomba."
+  ],
+  [
+   "pide",
+   "Pide doscientos mil dólares y cuatro paracaídas."
+  ],
+  [
+   "seattle",
+   "En Seattle le dan el dinero, y él deja bajar a los pasajeros."
+  ],
+  [
+   "salto",
+   "El avión despega otra vez, rumbo a México. Y en mitad de la noche, Cooper abre la escalera trasera... y salta."
+  ],
+  [
+   "dinero",
+   "Nunca lo encontraron. En mil novecientos ochenta, un niño halló parte de los billetes enterrados en la orilla de un río."
+  ],
+  [
+   "fbi",
+   "En dos mil dieciséis, el FBI dejó de investigar activamente el caso. Sigue sin resolver."
+  ],
+  [
+   "cta",
+   "¿Crees que sobrevivió al salto? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.32,
+  "billete": 0.18,
+  "nota": 0.18,
+  "pide": 0.18,
+  "seattle": 0.18,
+  "salto": 0.18,
+  "dinero": 0.18,
+  "fbi": 0.18,
+  "cta": 0.0
+ }
+}

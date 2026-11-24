@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Uno de los libros más valiosos de España desapareció de la catedral de Santiago. Y apareció un año después... en un garaje."
+  ],
+  [
+   "codice",
+   "El Códice Calixtino es un manuscrito del siglo doce: una especie de guía medieval del Camino de Santiago."
+  ],
+  [
+   "robo",
+   "En julio de dos mil once desaparece del archivo de la catedral. Sin puertas forzadas, sin pistas."
+  ],
+  [
+   "busqueda",
+   "Durante un año, la policía lo busca sin éxito."
+  ],
+  [
+   "sospechoso",
+   "Hasta que las sospechas apuntan a un electricista que había trabajado durante años en la catedral."
+  ],
+  [
+   "garaje",
+   "En julio de dos mil doce, la policía encuentra el códice en un garaje, envuelto en una bolsa de plástico."
+  ],
+  [
+   "dinero",
+   "Y en los registros aparece más de un millón de euros en efectivo."
+  ],
+  [
+   "vuelta",
+   "El códice volvió a la catedral de Santiago, donde se guarda hoy."
+  ],
+  [
+   "cta",
+   "¿Cómo crees que se pudo sacar sin que nadie lo viera? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.32,
+  "codice": 0.18,
+  "robo": 0.18,
+  "busqueda": 0.18,
+  "sospechoso": 0.18,
+  "garaje": 0.18,
+  "dinero": 0.18,
+  "vuelta": 0.18,
+  "cta": 0.0
+ }
+}

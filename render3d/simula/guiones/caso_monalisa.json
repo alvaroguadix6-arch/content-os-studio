@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "El cuadro más famoso del mundo desapareció durante dos años. Y el ladrón había trabajado en el propio museo."
+  ],
+  [
+   "robo",
+   "París, lunes veintiuno de agosto de mil novecientos once. El Louvre está cerrado. Vincenzo Peruggia, un italiano que había trabajado allí, entra como un operario más."
+  ],
+  [
+   "salida",
+   "Descuelga la Mona Lisa, la esconde bajo su bata de trabajo... y sale por la puerta."
+  ],
+  [
+   "nadie",
+   "Nadie se da cuenta hasta el día siguiente. Y cuando lo descubren, el escándalo es mundial."
+  ],
+  [
+   "sospechosos",
+   "La policía llega a detener al poeta Apollinaire, e interroga incluso a Picasso. Los dos eran inocentes."
+  ],
+  [
+   "baul",
+   "Mientras tanto, el cuadro estaba en la habitación de Peruggia, en París, escondido en un baúl."
+  ],
+  [
+   "florencia",
+   "En diciembre de mil novecientos trece viaja a Florencia e intenta venderlo a un marchante. Pero el marchante avisa a la policía, y Peruggia es detenido."
+  ],
+  [
+   "fama",
+   "La Mona Lisa vuelve al Louvre... y ya no es un cuadro más: el robo la había convertido en el más famoso del planeta."
+  ],
+  [
+   "cta",
+   "Si pudieras llevarte un cuadro de cualquier museo, ¿cuál sería? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.32,
+  "robo": 0.18,
+  "salida": 0.18,
+  "nadie": 0.18,
+  "sospechosos": 0.18,
+  "baul": 0.18,
+  "florencia": 0.18,
+  "fama": 0.18,
+  "cta": 0.0
+ }
+}

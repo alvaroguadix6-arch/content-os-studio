@@ -1,0 +1,46 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Si encuentras estos cuadros, te dan diez millones de dólares. Llevan desaparecidos desde mil novecientos noventa."
+  ],
+  [
+   "policia",
+   "Boston, dieciocho de marzo de mil novecientos noventa, de madrugada. Dos hombres vestidos de policía llaman a la puerta del museo Isabella Stewart Gardner."
+  ],
+  [
+   "dentro",
+   "Dicen que vienen por un aviso. El vigilante les abre... y en minutos, los dos guardias acaban atados en el sótano."
+  ],
+  [
+   "obras",
+   "Durante más de una hora se llevan trece obras: entre ellas un Vermeer, y la única marina que pintó Rembrandt."
+  ],
+  [
+   "valor",
+   "Valor estimado: más de quinientos millones de dólares. El mayor robo de arte de la historia."
+  ],
+  [
+   "marcos",
+   "Hoy, en el museo, los marcos vacíos siguen colgados en la pared, esperando a que vuelvan."
+  ],
+  [
+   "pistas",
+   "Más de treinta años después, ninguna obra ha aparecido, y nadie ha sido condenado por el robo."
+  ],
+  [
+   "cta",
+   "¿Dónde crees que están los cuadros? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.32,
+  "policia": 0.18,
+  "dentro": 0.18,
+  "obras": 0.18,
+  "valor": 0.18,
+  "marcos": 0.18,
+  "pistas": 0.18,
+  "cta": 0.0
+ }
+}

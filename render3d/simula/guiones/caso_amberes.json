@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Robaron más de cien millones en diamantes de una de las cámaras acorazadas más seguras del mundo... y los delató un bocadillo."
+  ],
+  [
+   "centro",
+   "Amberes, Bélgica, febrero de dos mil tres. El Centro del Diamante guarda las joyas en una cámara con sensores de calor, de movimiento, de luz... y una puerta de tres toneladas."
+  ],
+  [
+   "plan",
+   "Una banda liderada por el italiano Leonardo Notarbartolo pasa meses preparándolo. Él llega a alquilar una oficina en el propio edificio."
+  ],
+  [
+   "golpe",
+   "Un fin de semana burlan los sensores, y vacían más de cien cajas fuertes."
+  ],
+  [
+   "botin",
+   "Diamantes, oro y joyas por un valor estimado de más de cien millones de dólares."
+  ],
+  [
+   "error",
+   "Pero al huir, tiran una bolsa de basura junto a una carretera. Dentro hay papeles... y un bocadillo de salami a medio comer."
+  ],
+  [
+   "pista",
+   "Esa bolsa pone a la policía tras la pista de la banda. Notarbartolo es detenido y condenado a diez años."
+  ],
+  [
+   "diamantes",
+   "Y la mayoría de los diamantes nunca apareció."
+  ],
+  [
+   "cta",
+   "¿Te esperabas que un bocadillo los delatara? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.32,
+  "centro": 0.18,
+  "plan": 0.18,
+  "golpe": 0.18,
+  "botin": 0.18,
+  "error": 0.18,
+  "pista": 0.18,
+  "diamantes": 0.18,
+  "cta": 0.0
+ }
+}
