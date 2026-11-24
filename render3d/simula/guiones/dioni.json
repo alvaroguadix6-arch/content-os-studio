@@ -1,0 +1,56 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Un vigilante de seguridad se llevó un furgón blindado con casi trescientos millones de pesetas. Sin un solo disparo. Esta es la historia de El Dioni."
+  ],
+  [
+   "fecha",
+   "Madrid. Veintiocho de julio de mil novecientos ochenta y nueve. Dionisio Rodríguez trabaja de vigilante en una empresa de transporte de fondos."
+  ],
+  [
+   "golpe",
+   "Sus dos compañeros bajan del furgón. Y él... simplemente arranca."
+  ],
+  [
+   "botin",
+   "Dentro: doscientos noventa y ocho millones de pesetas. Al cambio, unos uno coma ocho millones de euros."
+  ],
+  [
+   "huida",
+   "Reparte parte del dinero entre unos amigos... y se marcha a Brasil."
+  ],
+  [
+   "rio",
+   "En Río de Janeiro vive casi dos meses a lo grande. Hoteles, fiestas, y gastos sin parar."
+  ],
+  [
+   "caida",
+   "Pero tanto gasto llama la atención. El diecinueve de septiembre, la policía brasileña lo detiene. Según la prensa, al principio creyeron que era un narcotraficante."
+  ],
+  [
+   "carcel",
+   "Pasa diez meses en una cárcel de Brasil, antes de ser extraditado a España."
+  ],
+  [
+   "misterio",
+   "¿Y el dinero? Una parte se recuperó. Pero, según la prensa, más de cien millones de pesetas nunca aparecieron."
+  ],
+  [
+   "cta",
+   "¿Dónde crees que está el dinero que falta? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "fecha": 0.18,
+  "golpe": 0.3,
+  "botin": 0.18,
+  "huida": 0.18,
+  "rio": 0.18,
+  "caida": 0.18,
+  "carcel": 0.18,
+  "misterio": 0.18,
+  "cta": 0.0
+ }
+}
