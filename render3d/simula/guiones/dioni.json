@@ -2,11 +2,11 @@
  "guion": [
   [
    "intro",
-   "Un vigilante de seguridad se llevó un furgón blindado con casi trescientos millones de pesetas. Sin un solo disparo. Esta es la historia de El Dioni."
+   "Más de cien millones de pesetas siguen sin aparecer. Y el hombre que se los llevó... era el que tenía que vigilarlos."
   ],
   [
    "fecha",
-   "Madrid. Veintiocho de julio de mil novecientos ochenta y nueve. Dionisio Rodríguez trabaja de vigilante en una empresa de transporte de fondos."
+   "Madrid, mil novecientos ochenta y nueve. Dionisio Rodríguez, El Dioni, es vigilante en una empresa de transporte de fondos."
   ],
   [
    "golpe",
@@ -34,7 +34,7 @@
   ],
   [
    "misterio",
-   "¿Y el dinero? Una parte se recuperó. Pero, según la prensa, más de cien millones de pesetas nunca aparecieron."
+   "¿Y el dinero? Una parte se recuperó. El resto, según la prensa, más de cien millones, nunca apareció."
   ],
   [
    "cta",
@@ -42,7 +42,7 @@
   ]
  ],
  "pausas": {
-  "intro": 0.3,
+  "intro": 0.35,
   "fecha": 0.18,
   "golpe": 0.3,
   "botin": 0.18,

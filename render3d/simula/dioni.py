@@ -93,19 +93,28 @@ class VIDEO(Video):
 
     # ───── escenas ─────
     def s_expediente(self, img, d, t, lt, u):
+        """Arranque en frío: el misterio primero (texto en pantalla desde el fotograma 0) y luego la ironía."""
         self.noir(img, d, t)
-        k = ease_out(clamp(lt / 0.6))
-        self.R(d, 120, 620 + (1 - k) * 300, 960, 1480, (196, 160, 100), radius=14)  # carpeta
-        self.R(d, 120, 560 + (1 - k) * 300, 420, 640 + (1 - k) * 300, (196, 160, 100), radius=14)
-        self.R(d, 170, 700 + (1 - k) * 300, 910, 1430, PAPER)
-        self.silhouette(img, 540, 1300 + (1 - k) * 300, 1.7)
-        self.qmark(img, 540, 900 + (1 - k) * 300, 160, (232, 222, 196))
-        self.stamp(img, 540, 760, "CASO 1989", 70, t, 0.5)
-        n = 298e6 * ease_out(clamp((t - self.w("intro", "trescientos") + 0.2) / 1.2))
-        if n > 0:
-            self.counter_txt(img, 520, n, 84, YEL)
-            self.text(img, 540, 600, "PESETAS", 40, WHITE)
-        self.stamp(img, 540, 1580, "SIN UN SOLO DISPARO", 56, t, self.w("intro", "disparo"), WHITE, rot=4)
+        th = self.w("intro", "hombre") - 0.2
+        tv = self.w("intro", "vigilarlos")
+        if t < th:  # bolsas de dinero que se vacían en interrogaciones
+            for j in range(3):
+                x = 270 + j * 270
+                k = 1 - smooth(0.3 + j * 0.25, 0.9 + j * 0.25, lt)
+                col = mix((40, 40, 52), (190, 160, 100), k)
+                self.E(d, x, 1150, 120, col)
+                self.R(d, x - 44, 1010, x + 44, 1050, col)
+                if k < 0.6:
+                    self.qmark(img, x, 1150, 170, YEL)
+            self.stamp(img, 540, 620, "+100 MILLONES", 104, t, -0.3)
+            self.stamp(img, 540, 780, "DESAPARECIDOS", 74, t, -0.15, WHITE, rot=-6)
+        else:  # foco sobre el vigilante
+            k = smooth(th, th + 0.5, t)
+            self.P(d, [(470, 300), (610, 300), (820, 1520), (260, 1520)], mix((14, 16, 22), (70, 70, 60), k))
+            self.glow(img, 540, 1300, 260, (230, 220, 170), 120 * k)
+            self.silhouette(img, 540, 1500, 1.9)
+            self.R(d, 470, 1050, 530, 1080, (200, 170, 60))  # placa
+            self.stamp(img, 540, 620, "ERA EL VIGILANTE", 86, t, tv)
 
     def s_madrid(self, img, d, t, lt, u):
         self.noir(img, d, t, (40, 30, 10))
@@ -259,7 +268,8 @@ class VIDEO(Video):
 
     def sfx_events(self):
         st = self.start
-        return [(0.1, "rumble", 0.5), (0.5, "boom", 0.7), (self.w("intro", "trescientos"), "riser", 0.4), (self.w("intro", "disparo"), "boom", 0.6),
+        return [(0.0, "boom", 0.8), (0.15, "click", 0.6), (0.6, "rumble", 0.4), (self.w("intro", "hombre") - 0.2, "whoosh", 0.5),
+                (self.w("intro", "vigilarlos"), "boom", 0.8),
                 (st("fecha") + 0.2, "whoosh", 0.4), (self.w("fecha", "julio"), "pop", 0.5), (self.t_go, "horn", 0.4), (self.t_go + 0.1, "whoosh", 0.7),
                 (st("botin") + 0.2, "shimmer", 0.5), (self.w("botin", "cambio"), "pop", 0.5), (self.w("huida", "brasil"), "whoosh", 0.6),
                 (st("rio") + 0.2, "shimmer", 0.4), (self.w("rio", "hoteles"), "pop", 0.4), (self.w("rio", "fiestas"), "pop", 0.4),
@@ -269,7 +279,7 @@ class VIDEO(Video):
 
     def music_plan(self):
         st = self.start
-        return [(0, 0.8), (st("fecha"), 0.6), (st("golpe"), 0.9), (st("botin"), 0.75), (st("rio"), 0.85), (st("caida"), 1.0),
+        return [(0, 0.3), (self.w("intro", "vigilarlos"), 0.85), (st("fecha"), 0.6), (st("golpe"), 0.9), (st("botin"), 0.75), (st("rio"), 0.85), (st("caida"), 1.0),
                 (st("carcel"), 0.6), (st("misterio"), 0.85), (st("cta"), 0.4), (self.duration, 0.3)]
 
 
