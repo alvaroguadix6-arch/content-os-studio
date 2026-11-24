@@ -1,0 +1,56 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Más de cien millones de pesetas siguen sin aparecer. Y el hombre que se los llevó... era el que tenía que vigilarlos."
+  ],
+  [
+   "fecha",
+   "Madrid, mil novecientos ochenta y nueve. Dionisio Rodríguez, El Dioni, es vigilante en una empresa de transporte de fondos."
+  ],
+  [
+   "golpe",
+   "Sus dos compañeros bajan del furgón. Y él... simplemente arranca."
+  ],
+  [
+   "botin",
+   "Dentro: doscientos noventa y ocho millones de pesetas. Al cambio, unos uno coma ocho millones de euros."
+  ],
+  [
+   "huida",
+   "Reparte parte del dinero entre unos amigos... y se marcha a Brasil."
+  ],
+  [
+   "rio",
+   "En Río de Janeiro vive casi dos meses a lo grande. Hoteles, fiestas, y gastos sin parar."
+  ],
+  [
+   "caida",
+   "Pero tanto gasto llama la atención. El diecinueve de septiembre, la policía brasileña lo detiene. Según la prensa, al principio creyeron que era un narcotraficante."
+  ],
+  [
+   "carcel",
+   "Pasa diez meses en una cárcel de Brasil, antes de ser extraditado a España."
+  ],
+  [
+   "misterio",
+   "¿Y el dinero? Una parte se recuperó. El resto, según la prensa, más de cien millones, nunca apareció."
+  ],
+  [
+   "cta",
+   "¿Dónde crees que está el dinero que falta? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.35,
+  "fecha": 0.18,
+  "golpe": 0.3,
+  "botin": 0.18,
+  "huida": 0.18,
+  "rio": 0.18,
+  "caida": 0.18,
+  "carcel": 0.18,
+  "misterio": 0.18,
+  "cta": 0.0
+ }
+}
