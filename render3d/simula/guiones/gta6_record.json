@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "GTA seis ha ganado en un solo día más dinero que Vengadores: Endgame en toda su historia en los cines."
+  ],
+  [
+   "cifra",
+   "Según Take-Two, tres mil setecientos noventa millones de dólares en sus primeras veinticuatro horas."
+  ],
+  [
+   "endgame",
+   "Endgame, la película más taquillera de Marvel, recaudó unos dos mil ochocientos millones en total. GTA seis la supera en casi mil millones... en un día."
+  ],
+  [
+   "gta5",
+   "Y su hermano mayor, GTA cinco, hizo unos ochocientos millones en su primer día. Casi cinco veces menos."
+  ],
+  [
+   "copias",
+   "Antes incluso de salir ya había vendido treinta y dos millones y medio de copias. Como si dos de cada tres españoles lo hubieran comprado."
+  ],
+  [
+   "nota",
+   "Y en Metacritic tiene un noventa y nueve: empata con Zelda Ocarina of Time como el juego mejor valorado de la historia."
+  ],
+  [
+   "segundo",
+   "Haz la cuenta: en su primer día ingresó una media de cuarenta y cuatro mil dólares por segundo. En lo que dura este vídeo, más de dos millones."
+  ],
+  [
+   "ojo",
+   "Ojo: son ventas estimadas por la compañía, no beneficios. Pero ningún lanzamiento había llegado tan lejos."
+  ],
+  [
+   "cta",
+   "¿Tú ya lo tienes, o estás esperando? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "cifra": 0.2,
+  "endgame": 0.2,
+  "gta5": 0.2,
+  "copias": 0.2,
+  "nota": 0.2,
+  "segundo": 0.2,
+  "ojo": 0.2,
+  "cta": 0.0
+ }
+}
