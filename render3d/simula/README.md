@@ -37,3 +37,21 @@ Añade `"mapa": "<pais>"` y `"pais": "<NOMBRE>"` al JSON: usa `quizzes/mapas/<pa
 dominio público), ajusta el país a la pantalla y hace zoom al revelar si la región es pequeña. `prov` puede ser una lista
 (p. ej. Lima = ["Lima", "Lima Province"]). Mapas: Francia, Perú, Inglaterra, Colombia, Venezuela, Argentina, Chile,
 Alemania, Italia y Portugal (`fiestas_<pais>.json`).
+
+## Paquetes de instagram-agent (`nivel_oculto.py`)
+
+Adaptador genérico: convierte cualquier paquete exportado desde el repositorio privado (`paquetes/AAAA-Www/<id>.json`)
+en un vídeo con esta misma plantilla. Una escena por frase; el tipo de escena sale del `visual_brief`
+(`mapa` → globo real, `simulacion`, `animacion` → ciudad, `archivo`, `grafico` → cifra y barras, `texto`) y los
+rótulos de `on_screen_text` aparecen como tarjeta roja bajo los subtítulos. Los números se pasan a letra para la voz.
+
+    python nivel_oculto.py guion ../../paquetes/2026-W49/x.json voz/guion.json
+    python ../gravedad/voz.py voz/ --guion voz/guion.json --motor kokoro --voz em_alex
+    PAQUETE=../../paquetes/2026-W49/x.json python nivel_oculto.py plan voz/
+    PAQUETE=../../paquetes/2026-W49/x.json python nivel_oculto.py render voz/ frames/
+    PAQUETE=../../paquetes/2026-W49/x.json python montaje.py nivel_oculto --narracion voz/ --frames frames/ --out x.mp4
+
+En GitHub: **Actions → Render paquete → Run workflow** (solo manual, escribe `RENDER`). Antes de renderizar,
+`tools/check_paquetes.py` valida que el paquete no contiene datos privados. Para piezas especiales se puede seguir
+escribiendo un módulo propio (como `caso_cooper.py`): el adaptador es la base automática.
+Pruebas: `python3 render3d/tests/test_nivel_oculto.py`.
