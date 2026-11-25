@@ -13,3 +13,9 @@ render3d/conquista/datos/raster.npz
 render3d/conquista/temporada*/salida/_trabajo_*/
 render3d/conquista/temporada*/salida/*.mp4
 render3d/conquista/temporada*/salida/*.wav
+
+# Datos de terceros: exportaciones de comentarios y revisiones con @usuarios.
+# Nunca deben subirse a este repositorio público.
+render3d/conquista/**/comentarios*.csv
+render3d/conquista/temporada*/revisar/
+comentarios*.csv
