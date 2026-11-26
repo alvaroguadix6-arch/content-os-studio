@@ -1,0 +1,178 @@
+{
+  "id": "2026-12-10-tordesillas-el-reparto-del-mundo",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "Tordesillas: el día que España y Portugal se repartieron el mundo",
+  "script": [
+    "En un pueblo de Valladolid, dos reinos se repartieron el planeta.",
+    "Tordesillas, 7 de junio de 1494.",
+    "Castilla y Portugal firman un tratado para dividirse las tierras por descubrir.",
+    "Trazan una línea de polo a polo, a 370 leguas al oeste de las islas de Cabo Verde.",
+    "Lo que quedara al oeste, para Castilla. Lo del este, para Portugal.",
+    "Por esa línea, hoy en Brasil se habla portugués.",
+    "Y el original del tratado está en la memoria del mundo de la UNESCO.",
+    "¿Lo sabías? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "EL REPARTO DEL MUNDO"
+    },
+    {
+      "at": 3.88,
+      "text": "7 DE JUNIO DE 1494"
+    },
+    {
+      "at": 10.24,
+      "text": "370 LEGUAS"
+    },
+    {
+      "at": 20.82,
+      "text": "BRASIL"
+    },
+    {
+      "at": 28.94,
+      "text": "¿LO SABÍAS?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 3.8824,
+      "kind": "mapa",
+      "visual": "1494",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -3.0,
+          40.0
+        ],
+        "etiqueta": "1494"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 2.1176,
+      "kind": "mapa",
+      "visual": "Tordesillas",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -5.0,
+          41.5
+        ],
+        "etiqueta": "Tordesillas",
+        "resaltar": [
+          "Valladolid"
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 4.2353,
+      "kind": "archivo",
+      "visual": "Castilla y Portugal se reparten las tierras por descubrir",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Castilla y Portugal se reparten las tierras por descubrir",
+        "fecha": "7 de junio de 1494",
+        "cabecera": "Tratado"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 6.3529,
+      "kind": "mapa",
+      "visual": "370 leguas al oeste",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -46.5,
+          10.0
+        ],
+        "etiqueta": "370 leguas al oeste"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 4.2353,
+      "kind": "archivo",
+      "visual": "Al oeste, para Castilla. Al este, para Portugal",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Al oeste, para Castilla. Al este, para Portugal",
+        "fecha": "1494",
+        "cabecera": "El reparto"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 3.1765,
+      "kind": "mapa",
+      "visual": "Brasil",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -47.9,
+          -15.8
+        ],
+        "etiqueta": "Brasil"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 4.9412,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "1494",
+            "texto": "Tratado de Tordesillas"
+          },
+          {
+            "fecha": "2007",
+            "texto": "Memoria del Mundo · UNESCO"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.0588,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "El Tratado de Tordesillas se firmó el 7 de junio de 1494 entre Castilla y Portugal",
+      "source": "World History Encyclopedia",
+      "url": "https://www.worldhistory.org/trans/es/1-19935/tratado-de-tordesillas/"
+    },
+    {
+      "claim": "La línea se fijó a 370 leguas al oeste de las islas de Cabo Verde: el oeste para Castilla y el este para Portugal",
+      "source": "El Orden Mundial",
+      "url": "https://elordenmundial.com/mapas-y-graficos/mapa-tratado-tordesillas-espana-portugal-reparto-mundo/"
+    },
+    {
+      "claim": "El tratado está inscrito en el registro Memoria del Mundo de la UNESCO",
+      "source": "UNESCO Memory of the World: Treaty of Tordesillas",
+      "url": "https://en.unesco.org/memoryoftheworld/registry/613"
+    }
+  ],
+  "caption": {
+    "text": "¿Lo sabías?\n\nEl 7 de junio de 1494, en Tordesillas (Valladolid), Castilla y Portugal firmaron un tratado que dividía las tierras por descubrir con una línea a 370 leguas al oeste de Cabo Verde. Por eso hoy en Brasil se habla portugués.",
+    "hashtags": [
+      "#historia",
+      "#españa",
+      "#historiadeespaña",
+      "#valladolid"
+    ],
+    "alt_text": "Mapa del mundo con una línea de polo a polo"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

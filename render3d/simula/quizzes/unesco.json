@@ -1,0 +1,82 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "PATRIMONIO",
+ "titulo": "Patrimonio de la Humanidad: ¿dónde está?",
+ "gancho": [
+  "PATRIMONIO DE LA",
+  "*HUMANIDAD*"
+ ],
+ "intro": "Patrimonio de la Humanidad. ¿Dónde está?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#unesco",
+  "#patrimonio"
+ ],
+ "preguntas": [
+  {
+   "q": "¿Dónde está la Torre de Hércules, el faro romano en uso?",
+   "prov": "A Coruña",
+   "punto": [
+    -8.406,
+    43.386
+   ],
+   "respuesta": "A Coruña",
+   "detalle": "Patrimonio UNESCO · 2009",
+   "voz_q": "¿Dónde está la Torre de Hércules, el faro romano en uso?",
+   "voz_a": "¡En A Coruña!"
+  },
+  {
+   "q": "¿En qué provincia está el yacimiento de Atapuerca?",
+   "prov": "Burgos",
+   "punto": [
+    -3.52,
+    42.352
+   ],
+   "respuesta": "Burgos",
+   "detalle": "Patrimonio UNESCO · 2000",
+   "voz_q": "¿En qué provincia está el yacimiento de Atapuerca?",
+   "voz_a": "¡Burgos!"
+  },
+  {
+   "q": "¿Dónde está la cueva de Altamira?",
+   "prov": "Cantabria",
+   "punto": [
+    -4.119,
+    43.378
+   ],
+   "respuesta": "Cantabria",
+   "detalle": "Patrimonio UNESCO · 1985",
+   "voz_q": "¿Dónde está la cueva de Altamira?",
+   "voz_a": "¡En Cantabria!"
+  },
+  {
+   "q": "¿En qué provincia está el Palmeral de Elche?",
+   "prov": "Alacant/Alicante",
+   "punto": [
+    -0.698,
+    38.267
+   ],
+   "respuesta": "Alicante",
+   "detalle": "Patrimonio UNESCO · 2000",
+   "voz_q": "¿En qué provincia está el Palmeral de Elche?",
+   "voz_a": "¡Alicante!"
+  },
+  {
+   "q": "¿Dónde está el Puente de Vizcaya, un puente colgante con barquilla?",
+   "prov": "Bizkaia/Vizcaya",
+   "punto": [
+    -3.017,
+    43.323
+   ],
+   "respuesta": "Bizkaia",
+   "detalle": "Portugalete y Getxo · UNESCO 2006",
+   "voz_q": "¿Dónde está el Puente de Vizcaya, un puente colgante con barquilla?",
+   "voz_a": "¡En Bizkaia!"
+  }
+ ],
+ "fuentes": [
+  "UNESCO, Lista del Patrimonio Mundial: Torre de Hércules (2009), Atapuerca (2000), Altamira (1985), Palmeral de Elche (2000), Puente de Vizcaya (2006)"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

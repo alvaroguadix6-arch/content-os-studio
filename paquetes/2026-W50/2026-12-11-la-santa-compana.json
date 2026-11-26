@@ -1,0 +1,176 @@
+{
+  "id": "2026-12-11-la-santa-compana",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "misterios",
+  "title": "La Santa Compaña: la procesión de almas de Galicia",
+  "script": [
+    "En Galicia dicen que, de noche, una procesión de almas recorre los caminos.",
+    "La llaman la Santa Compaña.",
+    "Según la leyenda, van con túnicas y velas, y su luz no se ve.",
+    "Delante camina una persona viva, con una cruz, que no recuerda nada al día siguiente.",
+    "Dicen que aparece en los cruces de caminos.",
+    "Por eso allí hay tantos cruceiros, grandes cruces de piedra.",
+    "Y para protegerse, la tradición dice que hay que trazar un círculo en el suelo.",
+    "¿Te la han contado alguna vez? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "LA SANTA COMPAÑA"
+    },
+    {
+      "at": 6.35,
+      "text": "VELAS QUE NO SE VEN"
+    },
+    {
+      "at": 11.29,
+      "text": "UNA PERSONA VIVA"
+    },
+    {
+      "at": 19.41,
+      "text": "CRUCEIROS"
+    },
+    {
+      "at": 28.24,
+      "text": "¿TE LA CONTARON?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 4.5882,
+      "kind": "mapa",
+      "visual": "Galicia",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -8.0,
+          42.8
+        ],
+        "etiqueta": "Galicia",
+        "resaltar": [
+          "A Coruña",
+          "Lugo",
+          "Ourense",
+          "Pontevedra"
+        ]
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 1.7647,
+      "kind": "archivo",
+      "visual": "La Santa Compaña",
+      "escena": {
+        "tipo": "documento",
+        "titular": "La Santa Compaña",
+        "fecha": "Leyenda popular gallega",
+        "cabecera": "Leyendas de Galicia"
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 4.9412,
+      "kind": "simulacion",
+      "visual": "suelo_cara",
+      "escena": {
+        "tipo": "figura",
+        "figura": "suelo_cara"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 5.2941,
+      "kind": "simulacion",
+      "visual": "iglesia",
+      "escena": {
+        "tipo": "figura",
+        "figura": "iglesia"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 2.8235,
+      "kind": "mapa",
+      "visual": "Cruce de caminos",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -7.56,
+          43.01
+        ],
+        "etiqueta": "Cruce de caminos",
+        "resaltar": [
+          "Lugo"
+        ]
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 3.5294,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "Siglo XIX",
+            "texto": "La leyenda ya aparece en textos"
+          },
+          {
+            "fecha": "Hoy",
+            "texto": "Cruceiros en los cruces de caminos"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 5.2941,
+      "kind": "archivo",
+      "visual": "Trazar un círculo en el suelo",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Trazar un círculo en el suelo",
+        "fecha": "Según la tradición",
+        "cabecera": "Protección"
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 2.4706,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "La Santa Compaña es una leyenda gallega de una procesión nocturna de almas en pena",
+      "source": "Wikipedia: Santa Compaña",
+      "url": "https://en.wikipedia.org/wiki/Santa_Compa%C3%B1a"
+    },
+    {
+      "claim": "Según la tradición, la encabeza una persona viva con una cruz y aparece en los cruces de caminos; se protege uno trazando un círculo",
+      "source": "Xunta de Galicia (material educativo): A Santa Compaña",
+      "url": "https://centros.edu.xunta.gal/ceipmenendezpelayo/aulavirtual/pluginfile.php/7189/mod_resource/content/1/A%20SANTA%20COMPA%C3%91A%204%C2%BA%20A.pdf"
+    },
+    {
+      "claim": "Los cruceiros se levantan en cruces de caminos",
+      "source": "Viaje Camino de Santiago: la Santa Compaña",
+      "url": "https://viajecaminodesantiago.com/noticias/leyenda-santa-compana-camino/"
+    }
+  ],
+  "caption": {
+    "text": "¿Te la han contado alguna vez?\n\nEs una de las leyendas más conocidas de Galicia: la Santa Compaña, una procesión nocturna de almas que, según la tradición, recorre los caminos con velas y aparece en los cruces. Por eso hay tantos cruceiros.",
+    "hashtags": [
+      "#misterios",
+      "#galicia",
+      "#leyendas",
+      "#españa"
+    ],
+    "alt_text": "Mapa de Galicia de noche con un cruce de caminos"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "RÍOS",
+ "titulo": "¿Qué capital cruza cada río?",
+ "gancho": [
+  "¿QUÉ CAPITAL",
+  "CRUZA *CADA RÍO*?"
+ ],
+ "intro": "¿Qué capital cruza cada río?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#rios",
+  "#geografia"
+ ],
+ "preguntas": [
+  {
+   "q": "¿Qué capital cruza el Pisuerga?",
+   "prov": "Valladolid",
+   "punto": [
+    -4.724,
+    41.652
+   ],
+   "respuesta": "Valladolid",
+   "detalle": "Río Pisuerga",
+   "voz_q": "¿Qué capital cruza el Pisuerga?",
+   "voz_a": "¡Valladolid!"
+  },
+  {
+   "q": "¿Por qué capital pasa el Tormes?",
+   "prov": "Salamanca",
+   "punto": [
+    -5.664,
+    40.96
+   ],
+   "respuesta": "Salamanca",
+   "detalle": "Río Tormes · Puente Romano",
+   "voz_q": "¿Por qué capital pasa el Tormes?",
+   "voz_a": "¡Salamanca!"
+  },
+  {
+   "q": "¿Qué capital atraviesa el Segura?",
+   "prov": "Murcia",
+   "punto": [
+    -1.131,
+    37.984
+   ],
+   "respuesta": "Murcia",
+   "detalle": "Río Segura",
+   "voz_q": "¿Qué capital atraviesa el Segura?",
+   "voz_a": "¡Murcia!"
+  },
+  {
+   "q": "¿Qué ciudad se asoma a la ría del Nervión?",
+   "prov": "Bizkaia/Vizcaya",
+   "punto": [
+    -2.935,
+    43.263
+   ],
+   "respuesta": "Bilbao",
+   "detalle": "Ría del Nervión",
+   "voz_q": "¿Qué ciudad se asoma a la ría del Nervión?",
+   "voz_a": "¡Bilbao!"
+  },
+  {
+   "q": "¿Qué ciudad convirtió el antiguo cauce del Turia en un parque?",
+   "prov": "València/Valencia",
+   "punto": [
+    -0.376,
+    39.47
+   ],
+   "respuesta": "Valencia",
+   "detalle": "Jardín del Turia",
+   "voz_q": "¿Qué ciudad convirtió el antiguo cauce del Turia en un parque?",
+   "voz_a": "¡Valencia!"
+  }
+ ],
+ "fuentes": [
+  "Confederaciones Hidrográficas del Duero, Segura y Júcar (MITECO)",
+  "Ayuntamientos de Valladolid, Salamanca, Murcia, Bilbao y Valencia"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

@@ -1,0 +1,161 @@
+{
+  "id": "2026-12-14-tarifa-el-sur-de-europa",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "curiosidades",
+  "title": "Tarifa: el punto más al sur de Europa",
+  "script": [
+    "El punto más al sur de toda la Europa continental es español.",
+    "Es la Punta de Tarifa, en Cádiz.",
+    "Allí se separan dos mares: el Atlántico y el Mediterráneo.",
+    "Y África está tan cerca que se ve a simple vista.",
+    "Marruecos queda a unos 14 kilómetros.",
+    "Es una de las zonas con más viento de Europa: por eso es la capital del kitesurf.",
+    "¿Has estado? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "EL SUR DE EUROPA"
+    },
+    {
+      "at": 4.24,
+      "text": "PUNTA DE TARIFA"
+    },
+    {
+      "at": 6.71,
+      "text": "DOS MARES"
+    },
+    {
+      "at": 14.12,
+      "text": "14 KM"
+    },
+    {
+      "at": 22.24,
+      "text": "¿HAS ESTADO?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 4.2353,
+      "kind": "mapa",
+      "visual": "Sur de Europa",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -5.61,
+          36.0
+        ],
+        "etiqueta": "Sur de Europa"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 2.4706,
+      "kind": "mapa",
+      "visual": "Punta de Tarifa",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -5.61,
+          36.001
+        ],
+        "etiqueta": "Punta de Tarifa",
+        "resaltar": [
+          "Cádiz"
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 3.5294,
+      "kind": "mapa",
+      "visual": "Atlántico · Mediterráneo",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -5.61,
+          36.0
+        ],
+        "etiqueta": "Atlántico · Mediterráneo"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 3.8824,
+      "kind": "simulacion",
+      "visual": "frontera",
+      "escena": {
+        "tipo": "figura",
+        "figura": "frontera",
+        "texto": "Estrecho",
+        "lados": [
+          "África",
+          "Europa"
+        ]
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 2.1176,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 14,
+        "unidad": "kilómetros hasta Marruecos",
+        "prefijo": "≈ "
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 6.0,
+      "kind": "mapa",
+      "visual": "Viento del Estrecho",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -5.61,
+          36.01
+        ],
+        "etiqueta": "Viento del Estrecho"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 1.0588,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "La Punta de Tarifa es el punto más meridional de la Europa continental y separa el Atlántico del Mediterráneo",
+      "source": "Wikipedia: Punta de Tarifa",
+      "url": "https://en.wikipedia.org/wiki/Punta_de_Tarifa"
+    },
+    {
+      "claim": "Tarifa está a unos 14 km de la costa marroquí",
+      "source": "Ministerio de Defensa: Biblioteca Virtual",
+      "url": "https://bibliotecavirtual.defensa.gob.es/BVMDefensa/bibliodef/en/consulta_aut/registro.do?id=323944"
+    },
+    {
+      "claim": "Tarifa, referencia mundial del kitesurf por el viento del Estrecho",
+      "source": "Wikipedia: Tarifa",
+      "url": "https://en.wikipedia.org/wiki/Tarifa"
+    }
+  ],
+  "caption": {
+    "text": "¿Has estado?\n\nLa Punta de Tarifa (Cádiz) es el punto más al sur de la Europa continental. Allí se separan el Atlántico y el Mediterráneo, y Marruecos queda a unos 14 kilómetros: se ve a simple vista.",
+    "hashtags": [
+      "#curiosidades",
+      "#españa",
+      "#tarifa",
+      "#cadiz"
+    ],
+    "alt_text": "Estrecho de Gibraltar entre Europa y África"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

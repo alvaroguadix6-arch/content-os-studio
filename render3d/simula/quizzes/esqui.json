@@ -1,0 +1,82 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "ESQUÍ",
+ "titulo": "¿Dónde está cada estación de esquí?",
+ "gancho": [
+  "¿DÓNDE SE",
+  "*ESQUÍA*?"
+ ],
+ "intro": "Temporada de esquí. ¿Dónde está cada estación?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#esqui",
+  "#nieve"
+ ],
+ "preguntas": [
+  {
+   "q": "¿En qué provincia está Sierra Nevada?",
+   "prov": "Granada",
+   "punto": [
+    -3.4,
+    37.09
+   ],
+   "respuesta": "Granada",
+   "detalle": "La estación más al sur de Europa",
+   "voz_q": "¿En qué provincia está Sierra Nevada?",
+   "voz_a": "¡Granada!"
+  },
+  {
+   "q": "¿Dónde está Baqueira Beret?",
+   "prov": "Lleida",
+   "punto": [
+    0.93,
+    42.7
+   ],
+   "respuesta": "Lleida",
+   "detalle": "Val d'Aran",
+   "voz_q": "¿Dónde está Baqueira Beret?",
+   "voz_a": "¡En Lleida!"
+  },
+  {
+   "q": "¿En qué provincia está Formigal?",
+   "prov": "Huesca",
+   "punto": [
+    -0.35,
+    42.78
+   ],
+   "respuesta": "Huesca",
+   "detalle": "Valle de Tena",
+   "voz_q": "¿En qué provincia está Formigal?",
+   "voz_a": "¡Huesca!"
+  },
+  {
+   "q": "¿Dónde está La Molina?",
+   "prov": "Girona",
+   "punto": [
+    1.95,
+    42.34
+   ],
+   "respuesta": "Girona",
+   "detalle": "La Cerdanya",
+   "voz_q": "¿Dónde está La Molina?",
+   "voz_a": "¡En Girona!"
+  },
+  {
+   "q": "¿En qué comunidad está Alto Campoo?",
+   "prov": "Cantabria",
+   "punto": [
+    -4.38,
+    43.03
+   ],
+   "respuesta": "Cantabria",
+   "detalle": "Junto al nacimiento del Ebro",
+   "voz_q": "¿En qué comunidad está Alto Campoo?",
+   "voz_a": "¡Cantabria!"
+  }
+ ],
+ "fuentes": [
+  "ATUDEM (Asociación Turística de Estaciones de Esquí y Montaña): estaciones de España"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}
