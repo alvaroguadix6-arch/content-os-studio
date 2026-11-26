@@ -17,6 +17,10 @@ on:
       confirmar:
         description: 'Escribe RENDER para confirmar'
         required: true
+      titulo_portada:
+        description: 'Título corto para la portada (opcional, máx. 40 caracteres)'
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -102,6 +106,19 @@ jobs:
           mkdir -p "$RUNNER_TEMP/out"
           python montaje.py nivel_oculto --narracion "$RUNNER_TEMP/voz" --frames "$RUNNER_TEMP/frames" --out "$RUNNER_TEMP/out/$NAME.mp4"
           python zona_segura.py "$RUNNER_TEMP/out/$NAME.mp4" "$RUNNER_TEMP/out/$NAME-zona-segura.jpg" || true
+
+      - name: Portada (1080×1920, mismo estilo que el vídeo)
+        env:
+          PKG: ${{ inputs.paquete }}
+          TITULO: ${{ inputs.titulo_portada }}
+        working-directory: render3d/simula
+        run: |
+          if [ ${#TITULO} -gt 40 ]; then echo "título de portada demasiado largo"; exit 1; fi
+          if [ -n "$TITULO" ]; then
+            python nivel_oculto.py portada "../../$PKG" "$RUNNER_TEMP/out/$NAME-portada.jpg" "$TITULO"
+          else
+            python nivel_oculto.py portada "../../$PKG" "$RUNNER_TEMP/out/$NAME-portada.jpg"
+          fi
 
       - name: Control de calidad (formato, sonoridad, silencios, planos congelados)
         run: python3 tools/qc_video.py "$RUNNER_TEMP/out/$NAME.mp4" --hoja "$RUNNER_TEMP/out/$NAME-hoja.jpg" --resumen "$GITHUB_STEP_SUMMARY"

@@ -134,6 +134,35 @@ def beat_layout(pkg):
     return kinds, cards
 
 
+METEOR_RE = re.compile(r"meteor|asteroid|bola de fuego|del espacio", re.I)
+HOUSE_RE = re.compile(r"techo|casa|casera|sof[aá]|siesta", re.I)
+IMPACT_RE = re.compile(r"atraviesa|impacto|crac|golpea|cay[oó] encima", re.I)
+ROCK_RE = re.compile(r"\bkg\b|kilos|roca|piedra|trozo", re.I)
+
+
+def beat_motifs(pkg):
+    """Motivo visual de cada frase según el guion y el brief: «meteorito» (con o sin impacto) y «roca»."""
+    text_all = " ".join(pkg["script"]) + " " + " ".join(v.get("visual", "") for v in pkg.get("visual_brief") or [])
+    meteor_story = bool(re.search(r"meteor|asteroid", text_all, re.I))
+    kinds, cards = beat_layout(pkg)
+    out = []
+    for line, kind, card in zip(pkg["script"], kinds, cards):
+        txt, m = line + " " + (card or ""), None
+        if meteor_story:
+            if IMPACT_RE.search(txt):
+                m = "impacto"
+            elif kind == "mapa":
+                m = None                      # los mapas (dónde ocurrió) se mantienen
+            elif METEOR_RE.search(txt):
+                m = "meteorito"
+            elif ROCK_RE.search(txt):
+                m = "roca"
+            elif HOUSE_RE.search(txt) or kind in ("simulacion", "animacion", "texto"):
+                m = "casa"                    # en una historia de meteorito, la casa da continuidad visual
+        out.append(m)
+    return out
+
+
 def synthetic_narration(pkg, wpm=WPM):
     """narracion.json con tiempos estimados (sin audio): para planes, vistas previas y pruebas."""
     g = guion_for_voice(pkg)
@@ -177,6 +206,10 @@ def make_video(pkg):
             self.order = {k: i for i, k in enumerate(keys)}
             self.city = City(seed=7)
             self.numbers = {k: (re.findall(r"\d[\d.,]*", s) or [None])[0] for k, s in zip(keys, pkg["script"])}
+            self.motifs = dict(zip(keys, beat_motifs(pkg)))
+            rr = __import__("random").Random(11)
+            self.rock = [(a, 1 + rr.uniform(-0.18, 0.14)) for a in [i * 2 * math.pi / 14 for i in range(14)]]
+            self.craters = [(rr.uniform(-0.45, 0.4), rr.uniform(-0.4, 0.4), rr.uniform(0.08, 0.17)) for _ in range(5)]
 
         def build_scenes(self):
             return [(0.0 if i == 0 else self.start(k), k) for i, k in enumerate(keys) if k in self.L]
@@ -190,7 +223,18 @@ def make_video(pkg):
         # ── escenas ──
         def draw_beat(self, key, img, d, t, lt, u):
             kind = self.kinds.get(key, "texto")
+            motif = self.motifs.get(key)
+            if motif in ("meteorito", "impacto"):
+                self.bg(img, "noche", (4, 6, 22), (24, 30, 70))
+                return self.m_meteorito(key, img, d, t, lt, u, impact=motif == "impacto")
             self.bg(img, kind, top, bottom)
+            if motif == "roca":
+                return self.m_roca(key, img, d, t, lt, u)
+            if motif == "casa":
+                self.bg(img, "noche", (4, 6, 22), (24, 30, 70))
+                self.stars(d, t, 0.8)
+                self.R(d, -20, 1330, W + 20, 1960, (34, 44, 40))
+                return self.house(d, 540, 1330, lit=1.0, crack=0.6 if "techo" in pkg["script"][self.order[key]].lower() else 0.0)
             getattr(self, "k_" + kind)(key, img, d, t, lt, u)
 
         def k_mapa(self, key, img, d, t, lt, u):
@@ -229,6 +273,8 @@ def make_video(pkg):
         def k_grafico(self, key, img, d, t, lt, u):
             self.stars(d, t, 0.25)
             n = self.numbers.get(key)
+            if not n:                       # sin cifra no hay gráfico: nada de barras sin significado
+                return self.k_texto(key, img, d, t, lt, u)
             for i in range(6):
                 h = 60 + 52 * i * ease_out(clamp(lt / 0.8 - i * 0.08))
                 self.R(d, 230 + i * 110, 1250 - h, 300 + i * 110, 1250, CYAN if i < 5 else YEL, radius=10)
@@ -240,6 +286,68 @@ def make_video(pkg):
             self.stars(d, t, 0.4)
             self.glow(img, 540, 900, 260, YEL, alpha=40)
             self.qmark(img, 540, 900, 300 * back_out(clamp(lt / 0.5)), (255, 255, 255))
+
+        # ── motivo: meteorito sobre una casa de los años 50 ──
+        def house(self, d, x, y, lit=0.8, crack=0.0):
+            self.R(d, x - 230, y - 250, x + 230, y, (150, 110, 90), outline=(40, 30, 30), width=6)
+            self.P(d, [(x - 270, y - 245), (x, y - 430), (x + 270, y - 245)], (110, 50, 45), outline=(40, 30, 30))
+            win = (255, 215, 120) if lit > 0.5 else (60, 70, 100)
+            for wx in (x - 150, x + 70):
+                self.R(d, wx, y - 200, wx + 80, y - 120, win, outline=(40, 30, 30), width=5)
+            self.R(d, x - 40, y - 140, x + 40, y, (80, 50, 40), outline=(40, 30, 30), width=5)
+            if crack > 0:
+                cx, cy = x + 20, y - 360
+                for ang in (-2.4, -1.6, -0.9, -0.2, 0.6):
+                    L = 120 * crack
+                    self.Ln(d, [(cx, cy), (cx + L * math.cos(ang), cy + L * math.sin(ang))], (20, 15, 15), 7)
+                self.E(d, cx, cy, 34 * crack, (25, 18, 18))
+
+        def fireball(self, img, d, x, y, k=1.0, dirx=-0.55, diry=1.0):
+            for i in range(9, 0, -1):
+                tx, ty = x - dirx * i * 42 * k, y - diry * i * 42 * k
+                self.E(d, tx, ty, (26 - i * 2) * k, (255, 170 - i * 10, 60))
+            self.glow(img, x, y, 90 * k, (255, 160, 60), alpha=170)
+            self.E(d, x, y, 30 * k, (255, 235, 180))
+
+        def m_meteorito(self, key, img, d, t, lt, u, impact=False):
+            self.stars(d, t, 1.0, drift=4.0)
+            self.R(d, -20, 1330, W + 20, 1960, (34, 44, 40))
+            hit = 0.72
+            if impact:
+                p = min(u / hit, 1.0)
+                x, y = 900 + (560 - 900) * ease_out(p), 160 + (1000 - 160) * (p ** 1.4)
+                crack = clamp((u - hit) / 0.15)
+                self.house(d, 540, 1330, lit=1.0, crack=crack)
+                if u < hit:
+                    self.fireball(img, d, x, y, 1.0)
+                else:
+                    a = 1 - clamp((u - hit) / 0.25)
+                    self.glow(img, 560, 1000, 260, (255, 240, 200), alpha=int(220 * a))
+                    for i in range(10):
+                        ang = i * 0.63 + 0.3
+                        dist = 40 + 260 * clamp((u - hit) / 0.28)
+                        self.E(d, 560 + dist * math.cos(ang), 1000 + dist * math.sin(ang) * 0.6, 9, (120, 100, 90))
+                    if not getattr(self, "_shake_" + key, False):
+                        self.shakes.append((t, 1.0))
+                        setattr(self, "_shake_" + key, True)
+            else:
+                self.house(d, 540, 1330, lit=0.9)
+                x = 980 - 520 * u
+                y = 120 + 520 * u
+                self.fireball(img, d, x, y, 0.8 + 0.4 * u)
+
+        def m_roca(self, key, img, d, t, lt, u):
+            self.stars(d, t, 0.35)
+            k = back_out(clamp(lt / 0.6))
+            R = 210 * k
+            rot = t * 0.25
+            cx, cy = 540, 960
+            self.glow(img, cx, cy, R * 1.5, (255, 150, 60), alpha=90)
+            pts = [(cx + R * r * math.cos(a + rot), cy + R * r * math.sin(a + rot)) for a, r in self.rock]
+            self.P(d, pts, (96, 82, 74), outline=(30, 24, 22))
+            for ox, oy, cr in self.craters:
+                self.E(d, cx + R * (ox * math.cos(rot) - oy * math.sin(rot)), cy + R * (ox * math.sin(rot) + oy * math.cos(rot)),
+                       R * cr, (70, 60, 55))
 
         # ── rótulos fijos (fuera del zoom) ──
         def overlay(self, ov, d, t, name, lt, u):
@@ -271,6 +379,12 @@ def make_video(pkg):
                     ev.append((t0 + 0.1, "pop", 0.5))
                 if self.kinds.get(k) == "grafico":
                     ev.append((t0 + 0.2, "tick", 0.35))
+                if self.motifs.get(k) == "impacto":
+                    t1 = next((s for s, kk in self.scenes if s > t0), self.duration)
+                    ev.append((t0 + 0.72 * (t1 - t0), "boom", 0.9))
+                    ev.append((t0 + 0.74 * (t1 - t0), "crack", 0.6))
+                elif self.motifs.get(k) == "meteorito":
+                    ev.append((t0 + 0.05, "wind", 0.4))
             return ev
 
         def music_plan(self):
