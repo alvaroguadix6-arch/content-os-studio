@@ -19,6 +19,11 @@ Sin datos privados: estadísticas, votos detallados por usuario y enlaces de des
 - **Escenas con datos** (`simula/escenas.py`): mapas reales, cifras, fechas y figuras en lugar de escenas genéricas;
   prueba de zona segura de todas ellas en cada PR.
 - **Semana 3-9 dic**: 7 quiz de España nuevos y 7 historias con escenas de datos (paquetes W49 y W50).
+- **Retención y calidad visual**: quiz con barra de progreso de 5 tramos y zoom a la provincia en el mapa de España;
+  historias con el mapa visible desde el primer fotograma, globo más rápido, zoom de entrada y empujón en cada corte.
+  Prueba del primer fotograma. Conquista sin cambios hasta publicar el episodio 4.
+- **Semana 10-16 dic**: 7 quiz (ríos, UNESCO, paisajes, platos, genios, fronteras, esquí) y 7 historias
+  (Tordesillas, Santa Compaña, cruzar España andando, Teide, Tarifa, Estrecho cerrado, Camino de Santiago).
 
 ## Incidencias resueltas en la fase 1
 | problema | causa | solución permanente |
