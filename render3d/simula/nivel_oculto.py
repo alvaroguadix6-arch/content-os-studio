@@ -358,6 +358,8 @@ def make_video(pkg):
             if k <= 0:
                 return False
             size = 76 if len(card) <= 16 else 62
+            while size > 36 and font("ExtraBold", size).getlength(card) + 80 > 844:  # zona segura: máx. 844 px
+                size -= 2
             f = font("ExtraBold", size)
             tw = f.getlength(card)
             y = TOP_TEXT + 110  # bajo los subtítulos y por encima de la ilustración

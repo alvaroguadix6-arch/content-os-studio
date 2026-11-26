@@ -22,6 +22,22 @@ import datos  # noqa: E402
 import mapa  # noqa: E402
 
 W, H, FPS = 1080, 1920, 30
+# ───── maquetación: zona segura común de Reels, TikTok y Shorts (simula/zona_segura.py) ─────
+# cabecera 254-330 · marca 360 · contadores 400-540 · mapa completo 620-1240 · TOP 5 740-1310 · subtítulos 1300-1430
+# por debajo de y=900 nada pasa de x=862 (iconos de la derecha)
+sys.path.insert(0, os.path.join(os.path.dirname(HERE), "simula"))
+import zona_segura as ZS  # noqa: E402
+
+FULL = (598.0, 1357.0, 0.72)   # cámara que encuadra la Península, Baleares y Canarias dentro de la zona segura
+HEADER_Y, BRAND_Y, CHIPS_Y = 292, 362, 470
+SUB_X, SUB_W, SUB_BOTTOM = 500, 720, 1405   # subtítulos centrados algo a la izquierda (iconos a la derecha)
+
+
+def fit_size(d, text, size, maxw, style="Black"):
+    """Tamaño de letra más grande (≤ size) con el que `text` cabe en maxw píxeles."""
+    while size > 20 and d.textlength(text, font=font(style, size)) > maxw:
+        size -= 2
+    return size
 YEL = (255, 206, 40)
 WHITE = (255, 255, 255)
 INK = (24, 14, 52)
@@ -280,18 +296,19 @@ class Video:
 
     def _camera_plan(self):
         L = self.L
-        full = (540.0, 1100.0, 1.0)
+        full = FULL
+        fx, fy, fz = FULL
         keys = []
         if self.launch and "conquista" in L:
             dense = mapa.proj(-3.6, 41.7)
             keys += [(0.0, dense[0], dense[1], 5.5), (L["intro"]["end"] + 0.1, *full)]
-            keys += [(L["vacio"]["start"], 540, 1100, 1.0), (L["reglas"]["start"], 540, 1110, 1.06), (L["reglas"]["end"], 540, 1100, 1.0)]
+            keys += [(L["vacio"]["start"], *full), (L["reglas"]["start"], fx, fy + 10, fz * 1.06), (L["reglas"]["end"], *full)]
             self.demo = mapa.proj(-3.2, 39.25)
             keys += [(L["conquista"]["start"] + 0.6, self.demo[0] + 30, self.demo[1], 2.6), (L["choque"]["end"], self.demo[0] + 45, self.demo[1], 2.9)]
-            keys += [(L["top"]["start"] + 0.8, *full), (self.duration, 540, 1100, 1.04)]
+            keys += [(L["top"]["start"] + 0.8, *full), (self.duration, fx, fy, fz * 1.04)]
             return keys
         if self.launch:
-            return [(0.0, 540, 1100, 1.25), (self.duration, 540, 1100, 1.0)]
+            return [(0.0, fx, fy, fz * 1.25), (self.duration, *full)]
         st = self.st
         lid = st["pueblos"][0]["idx"]
         keys.append((0.0, *full))
@@ -305,9 +322,9 @@ class Video:
                 keys.append((L[key]["start"] + 0.6, *v))
                 keys.append((L[key]["end"] + 0.2, v[0], v[1], v[2] * 1.07))
         if "top" in L:
-            keys.append((L["top"]["start"] + 0.6, 540, 1180, 0.82))
+            keys.append((L["top"]["start"] + 0.6, fx, fy + 80, fz * 0.9))
         keys.append((L["cta"]["start"] + 0.5, *full))
-        keys.append((self.duration, 540, 1100, 1.05))
+        keys.append((self.duration, fx, fy, fz * 1.05))
         return sorted(keys)
 
     def camera(self, t):
@@ -419,14 +436,15 @@ class Video:
         a = out3((t - 0.2) / 0.5) if not self.launch else out3((t - (self.L["intro"]["end"] - 0.2)) / 0.5)
         if a <= 0:
             return
-        y = 92 - (1 - a) * 160
-        f = font("Black", 40)
+        y = HEADER_Y - (1 - a) * 160
+        f = font("Black", 36)
         label = "TU PUEBLO CONQUISTA ESPAÑA"
         w = d.textlength(label, font=f)
-        d.rounded_rectangle([540 - w / 2 - 150, y - 38, 540 + w / 2 + 30, y + 38], 38, fill=(20, 12, 48, 235), outline=YEL, width=4)
-        d.rounded_rectangle([540 - w / 2 - 146, y - 34, 540 - w / 2 - 14, y + 34], 34, fill=YEL)
-        self.text(d, (540 - w / 2 - 80, y + 1), f"EP.{ep}", 34, INK, "Black")
-        self.text(d, (540 + 10 - 50 + 50, y + 1), label, 40, WHITE, "Black")
+        x0 = 540 - (w + 170) / 2  # pastilla entera (EP. + título) centrada: 118 ≤ x ≤ 962
+        d.rounded_rectangle([x0, y - 36, x0 + w + 170, y + 36], 36, fill=(20, 12, 48, 235), outline=YEL, width=4)
+        d.rounded_rectangle([x0 + 4, y - 32, x0 + 132, y + 32], 32, fill=YEL)
+        self.text(d, (x0 + 68, y + 1), f"EP.{ep}", 32, INK, "Black")
+        self.text(d, (x0 + 150 + w / 2, y + 1), label, 36, WHITE, "Black")
 
     def caption(self, img, d, t):
         """Subtítulos palabra a palabra (palabras clave en amarillo)."""
@@ -445,23 +463,23 @@ class Video:
         n = len(words)
         blk = (n - 1) // 6
         show = allw[blk * 6: blk * 6 + 6]
-        f = font("Black", 64)
+        f = font("Black", 60)
         toks = [w[0] for w in show]
         lines, curl = [], []
         for tk in toks:
             test = " ".join(curl + [tk])
-            if d.textlength(test, font=f) * 1.08 > 960 and curl:
+            if d.textlength(test, font=f) * 1.08 > SUB_W and curl:
                 lines.append(curl)
                 curl = [tk]
             else:
                 curl.append(tk)
         lines.append(curl)
         lines = [ln for ln in lines if ln]
-        y0 = 1660 - (len(lines) - 1) * 40
+        y0 = SUB_BOTTOM - 30 - (len(lines) - 1) * 76
         k = 0
         for li, ln in enumerate(lines):
             tot = sum(d.textlength(tk, font=f) for tk in ln) + d.textlength("  ", font=f) * (len(ln) - 1)
-            x = 540 - tot / 2
+            x = SUB_X - tot / 2
             for tk in ln:
                 wi = blk * 6 + k
                 k += 1
@@ -471,16 +489,16 @@ class Video:
                 sc = 1 + 0.08 * max(0, 1 - age / 0.12)
                 clean = tk.strip("¿?¡!.,:;").lower()
                 col = YEL if any(clean.startswith(kw.lower()[:5]) for kw in kws if len(kw) > 2) else WHITE
-                fs = font("Black", int(64 * sc))
-                d.text((x + d.textlength(tk, font=f) / 2, y0 + li * 80), tk, font=fs, fill=col, anchor="mm", stroke_width=7, stroke_fill=INK)
+                fs = font("Black", int(60 * sc))
+                d.text((x + d.textlength(tk, font=f) / 2, y0 + li * 76), tk, font=fs, fill=col, anchor="mm", stroke_width=7, stroke_fill=INK)
                 x += d.textlength(tk, font=f) + d.textlength("  ", font=f)
 
     # ── etiquetas de pueblos ──
     def labels(self, img, d, t, cam):
         if self.launch or not self.st["pueblos"]:
             return
-        if "top" in self.L and self.L["top"]["start"] + 0.2 <= t <= self.L["cta"]["start"] + 0.2:
-            return
+        if t >= self.L.get("top", self.L["cta"])["start"] + 0.2:
+            return  # TOP 5 y llamada final: sin rótulos sobre el mapa
         placed = []
         # primero los pueblos de los que se está hablando en ese momento
         focus = [self.st["pueblos"][0]["idx"]]
@@ -503,7 +521,7 @@ class Video:
             a = out3((t - t_on) / 0.4) if t_on >= 0 else 1.0
             wx, wy = self.town_world(p["idx"])
             sx, sy = cam.to_screen(wx, wy)
-            if not (60 < sx < 1020 and 560 < sy < 1560):
+            if not (130 < sx < 950 and 600 < sy < 1290):
                 continue
             size = clamp(30 + 6 * cam.z + 3 * math.log1p(p["votos"]), 30, 66) * (0.6 + 0.4 * a)
             name = p["nombre"].split("/")[-1].upper()
@@ -512,7 +530,7 @@ class Video:
             is_focus = p["idx"] in focus[:-1] or p["idx"] == focus[-1]
             for dy in ((0, 1.7 * size + 100, -(1.7 * size + 100)) if is_focus else (0,)):  # si choca, se desplaza (con línea al punto)
                 bx = (sx - fw / 2 - 14, sy + dy - size - 34, sx + fw / 2 + 14, sy + dy + 30 + size * 0.5)
-                if bx[0] < 16 or bx[2] > W - 16:
+                if ZS.inseguro(bx) or bx[3] > SUB_BOTTOM - 130:  # dentro de la zona segura y sin tapar subtítulos
                     continue
                 if any(not (bx[2] < q[0] or bx[0] > q[2] or bx[3] < q[1] or bx[1] > q[3]) for q in placed):
                     continue
@@ -552,22 +570,23 @@ class Video:
             a = back((t - t0 - i * 0.18) / 0.45)
             if a <= 0.01:
                 continue
-            cx = 540 + (i - (n - 1) / 2) * 340
-            y = 470 - (1 - a) * 80
-            d.rounded_rectangle([cx - 158, y - 70, cx + 158, y + 70], 26, fill=(18, 10, 44, 230), outline=col, width=4)
-            self.text(d, (cx, y - 14), val, 60, col, "Black")
-            self.text(d, (cx, y + 40), lab, 24, (210, 200, 240), "ExtraBold")
+            cx = 540 + (i - (n - 1) / 2) * 286
+            y = CHIPS_Y - (1 - a) * 80
+            d.rounded_rectangle([cx - 136, y - 66, cx + 136, y + 66], 26, fill=(18, 10, 44, 230), outline=col, width=4)
+            self.text(d, (cx, y - 14), val, fit_size(d, val, 56, 240), col, "Black")
+            self.text(d, (cx, y + 38), lab, fit_size(d, lab, 22, 240, "ExtraBold"), (210, 200, 240), "ExtraBold")
 
     def top5(self, img, d, t, t0):
         P = self.st["pueblos"][:5]
         a = out3((t - t0) / 0.5)
-        x0 = 90 - (1 - a) * 1100
-        y0 = 1100
+        x0 = 118 - (1 - a) * 1100
+        y0 = 820  # panel 744×560 entre x=118 y x=862 (iconos a la derecha) e y=730-1290
+        PW = 744
         lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
         dl = ImageDraw.Draw(lay)
-        dl.rounded_rectangle([x0, y0 - 90, x0 + 900, y0 + 5 * 92 + 20], 34, fill=(16, 9, 40, 235), outline=YEL, width=5)
+        dl.rounded_rectangle([x0, y0 - 90, x0 + PW, y0 + 5 * 92 + 10], 34, fill=(16, 9, 40, 235), outline=YEL, width=5)
         img.alpha_composite(lay)
-        self.text(d, (x0 + 450, y0 - 45), "TOP 5", 54, YEL, "Black")
+        self.text(d, (x0 + PW / 2, y0 - 45), "TOP 5", 50, YEL, "Black")
         rows = top_rows(self.st["pueblos"])
         for i in range(5):
             b = back((t - t0 - 0.3 - i * 0.14) / 0.4)
@@ -580,9 +599,9 @@ class Video:
             if row and row[0] == "grupo":  # empate que no cabe: una fila resumen
                 _, puesto, n, v = row
                 self.text(d, (x0 + 60, y + 30), f"={puesto}", 46, WHITE, "Black")
-                self.text(d, (x0 + 120, y + 18), f"{n} PUEBLOS EMPATADOS", 38, YEL, "Black", "lm")
-                self.text(d, (x0 + 120, y + 54), "¡un voto más y los adelantas!", 24, (190, 180, 230), "SemiBold", "lm")
-                self.text(d, (x0 + 800, y + 30), miles(v), 44, YEL, "Black", "rm")
+                self.text(d, (x0 + 120, y + 18), f"{n} PUEBLOS EMPATADOS", fit_size(d, f"{n} PUEBLOS EMPATADOS", 36, 440), YEL, "Black", "lm")
+                self.text(d, (x0 + 120, y + 54), "¡un voto más y los adelantas!", 22, (190, 180, 230), "SemiBold", "lm")
+                self.text(d, (x0 + PW - 90, y + 30), miles(v), 42, YEL, "Black", "rm")
                 continue
             p = row[1] if row else None
             self.text(d, (x0 + 60, y + 30), f"{p['puesto'] if p else i + 1}", 52, WHITE, "Black")
@@ -591,13 +610,14 @@ class Video:
                 col = tuple(conquista.PALETA[k % len(conquista.PALETA)])
                 d.ellipse([x0 + 110, y + 12, x0 + 146, y + 48], fill=col)
                 name = p["nombre"].split("/")[-1]
-                self.text(d, (x0 + 166, y + 18), name if len(name) < 22 else name[:21] + "…", 40, WHITE, "Black", "lm")
-                self.text(d, (x0 + 166, y + 54), p["provincia"].split("/")[-1], 24, (190, 180, 230), "SemiBold", "lm")
-                self.text(d, (x0 + 800, y + 30), miles(p["votos"]), 44, col, "Black", "rm")
-                self.move_icon(d, x0 + 850, y + 30, p)
+                name = name if len(name) < 20 else name[:19] + "…"
+                self.text(d, (x0 + 166, y + 18), name, fit_size(d, name, 38, 400), WHITE, "Black", "lm")
+                self.text(d, (x0 + 166, y + 54), p["provincia"].split("/")[-1], 22, (190, 180, 230), "SemiBold", "lm")
+                self.text(d, (x0 + PW - 90, y + 30), miles(p["votos"]), 42, col, "Black", "rm")
+                self.move_icon(d, x0 + PW - 46, y + 30, p)
             else:
-                self.text(d, (x0 + 166, y + 30), "¿TU PUEBLO?", 40, (150, 140, 200), "Black", "lm")
-                self.text(d, (x0 + 800, y + 30), "0", 44, (150, 140, 200), "Black", "rm")
+                self.text(d, (x0 + 166, y + 30), "¿TU PUEBLO?", 38, (150, 140, 200), "Black", "lm")
+                self.text(d, (x0 + PW - 90, y + 30), "0", 42, (150, 140, 200), "Black", "rm")
 
     def move_icon(self, d, x, y, p):
         if p["nuevo"]:
@@ -611,6 +631,16 @@ class Video:
         else:
             d.rectangle([x - 14, y - 4, x + 14, y + 4], fill=(170, 170, 200))
 
+    def fondo_portada(self):
+        """Fondo limpio para la portada: el mapa conquistado al final del episodio, encuadrado entero."""
+        t = self.duration - 0.1
+        img = self.bg(t)
+        fill, owner, ocol = self.colors(t)
+        img.alpha_composite(mapa.render(mapa.Camera(*FULL), fill, owner, ocol))
+        with ZS.exento():
+            mapa.canarias_box(mapa.Camera(*FULL), ImageDraw.Draw(img))
+        return img.convert("RGB")
+
     # ── fotograma ──
     def frame(self, t):
         img = self.bg(t)
@@ -619,7 +649,8 @@ class Video:
         layer = mapa.render(cam, fill, owner, ocol)
         img.alpha_composite(layer)
         d = ImageDraw.Draw(img)
-        mapa.canarias_box(cam, d)
+        with ZS.exento():  # el recuadro de Canarias es parte del mapa: se mueve con la cámara
+            mapa.canarias_box(cam, d)
         if self.launch:
             self.launch_overlay(img, d, t, cam)
         else:
@@ -627,7 +658,7 @@ class Video:
             self.episode_overlay(img, d, t, cam)
         self.header(img, d, t)
         self.caption(img, d, t)
-        self.text(d, (540, 1872), "N I V E L   O C U L T O", 28, (190, 170, 240), "ExtraBold")
+        self.text(d, (540, BRAND_Y), "N I V E L   O C U L T O", 24, (190, 170, 240), "ExtraBold")
         return img.convert("RGB")
 
     def episode_overlay(self, img, d, t, cam):
@@ -656,10 +687,10 @@ class Video:
         if a <= 0.01:
             return
         y = 470
-        self.text(d, (540, y), "COMENTA", int(120 * a) + 1, YEL, "Black", "mm", 9, INK)
-        self.text(d, (540, y + 110), "TU PUEBLO + PROVINCIA", int(56 * a) + 1, WHITE, "Black", "mm", 7, INK)
+        self.text(d, (540, y), "COMENTA", int(110 * a) + 1, YEL, "Black", "mm", 9, INK)
+        self.text(d, (540, y + 100), "TU PUEBLO + PROVINCIA", int(52 * a) + 1, WHITE, "Black", "mm", 7, INK)
         bob = 14 * math.sin(t * 7)
-        ay = 1515 + bob
+        ay = 690 + bob
         if a > 0.5:
             d.polygon([(500, ay - 30), (580, ay - 30), (580, ay + 10), (620, ay + 10), (540, ay + 70), (460, ay + 10), (500, ay + 10)], fill=YEL, outline=INK)
         nxt = f"EPISODIO {self.st['episodio'] + 1}" + (": LAS PRIMERAS CONQUISTAS" if self.launch else "")
@@ -667,8 +698,8 @@ class Video:
         if b > 0:
             f = font("Black", 36)
             w = d.textlength(nxt, font=f)
-            d.rounded_rectangle([540 - w / 2 - 30, 1380 - 34, 540 + w / 2 + 30, 1380 + 34], 34, fill=PINK)
-            self.text(d, (540, 1380), nxt, 36, WHITE, "Black")
+            d.rounded_rectangle([540 - w / 2 - 30, 800 - 34, 540 + w / 2 + 30, 800 + 34], 34, fill=PINK)
+            self.text(d, (540, 800), nxt, 36, WHITE, "Black")
 
     def launch_overlay(self, img, d, t, cam):
         L = self.L
@@ -684,9 +715,9 @@ class Video:
             if a > 0.01 and fade > 0:
                 lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
                 dl = ImageDraw.Draw(lay)
-                dl.text((540, 760), "TU PUEBLO", font=font("Black", int(150 * a) + 1), fill=WHITE + (int(255 * fade),), anchor="mm", stroke_width=10, stroke_fill=INK)
-                dl.text((540, 920), "CONQUISTA", font=font("Black", int(120 * a) + 1), fill=YEL + (int(255 * fade),), anchor="mm", stroke_width=10, stroke_fill=INK)
-                dl.text((540, 1050), "ESPAÑA", font=font("Black", int(150 * a) + 1), fill=YEL + (int(255 * fade),), anchor="mm", stroke_width=10, stroke_fill=INK)
+                dl.text((540, 700), "TU PUEBLO", font=font("Black", int(130 * a) + 1), fill=WHITE + (int(255 * fade),), anchor="mm", stroke_width=10, stroke_fill=INK)
+                dl.text((540, 840), "CONQUISTA", font=font("Black", int(112 * a) + 1), fill=YEL + (int(255 * fade),), anchor="mm", stroke_width=10, stroke_fill=INK)
+                dl.text((540, 990), "ESPAÑA", font=font("Black", int(130 * a) + 1), fill=YEL + (int(255 * fade),), anchor="mm", stroke_width=10, stroke_fill=INK)
                 img.alpha_composite(lay)
         # contadores del mapa vacío
         v0, v1 = L["vacio"]["start"], L["reglas"]["start"]
@@ -707,26 +738,26 @@ class Video:
         if r0 - 0.1 <= t <= r1 + 0.3:
             a = back((t - r0 - 0.4) / 0.45)
             out = clamp((t - r1) / 0.3)
-            y = 1180 + (1 - a) * 500 + out * 600
+            y = 1110 + (1 - a) * 500 + out * 600
             if a > 0.01:
                 lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
                 dl = ImageDraw.Draw(lay)
-                dl.rounded_rectangle([90, y - 110, 990, y + 110], 40, fill=(250, 248, 255, 245))
-                dl.ellipse([120, y - 70, 220, y + 30], fill=(255, 196, 0))
-                dl.text((170, y - 20), "TÚ", font=font("Black", 36), fill=INK, anchor="mm")
-                dl.text((250, y - 62), "@tu_usuario", font=font("Bold", 30), fill=(120, 110, 150), anchor="lm")
-                dl.text((250, y - 5), "Tu pueblo, tu provincia", font=font("Black", 50), fill=INK, anchor="lm")
-                dl.text((250, y + 58), "Responder", font=font("SemiBold", 26), fill=(140, 130, 170), anchor="lm")
+                dl.rounded_rectangle([118, y - 110, 862, y + 110], 40, fill=(250, 248, 255, 245))
+                dl.ellipse([142, y - 66, 234, y + 26], fill=(255, 196, 0))
+                dl.text((188, y - 20), "TÚ", font=font("Black", 34), fill=INK, anchor="mm")
+                dl.text((256, y - 62), "@tu_usuario", font=font("Bold", 28), fill=(120, 110, 150), anchor="lm")
+                dl.text((256, y - 5), "Tu pueblo, tu provincia", font=font("Black", 42), fill=INK, anchor="lm")
+                dl.text((256, y + 58), "Responder", font=font("SemiBold", 24), fill=(140, 130, 170), anchor="lm")
                 # corazón
-                hx, hy = 930, y - 10
+                hx, hy = 820, y - 10
                 dl.ellipse([hx - 26, hy - 22, hx, hy + 4], fill=PINK)
                 dl.ellipse([hx - 4, hy - 22, hx + 22, hy + 4], fill=PINK)
                 dl.polygon([(hx - 26, hy - 6), (hx + 22, hy - 6), (hx - 2, hy + 26)], fill=PINK)
                 img.alpha_composite(lay)
             b = back((t - r0 - 2.0) / 0.4)
             if b > 0.01 and out < 1:
-                self.text(d, (540, 900), "1 COMENTARIO = 1 VOTO", int(70 * b) + 1, YEL, "Black", "mm", 8, INK)
-                self.text(d, (540, 975), "(1 voto por cuenta y episodio)", int(34 * b) + 1, WHITE, "Bold", "mm", 5, INK)
+                self.text(d, (540, 800), "1 COMENTARIO = 1 VOTO", int(62 * b) + 1, YEL, "Black", "mm", 8, INK)
+                self.text(d, (540, 880), "(1 voto por cuenta y episodio)", int(32 * b) + 1, WHITE, "Bold", "mm", 5, INK)
         # demostración (EJEMPLO, no son votos reales)
         c0, c1 = L["conquista"]["start"] + 0.5, L["choque"]["end"] + 0.4
         if c0 <= t <= c1 and hasattr(self, "demo_pos"):
@@ -740,6 +771,8 @@ class Video:
                 if v <= 0:
                     continue
                 sx, sy = cam.to_screen(wx, wy)
+                tw = d.textlength(name, font=font("Black", 52)) + 14
+                sx, _ = ZS.clamp_text(sx, sy - 40, tw, 70)  # el rótulo no entra bajo los iconos
                 self.text(d, (sx, sy - 30), name, 52, WHITE, "Black", "ms", 7, INK)
                 vs = f"{v} VOTOS"
                 fv = font("Black", 32)

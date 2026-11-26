@@ -96,6 +96,12 @@ jobs:
           python nivel_oculto.py guion "../../$PKG" "$RUNNER_TEMP/voz/guion.json"
           python ../gravedad/voz.py "$RUNNER_TEMP/voz" --guion "$RUNNER_TEMP/voz/guion.json" --motor kokoro --voz em_alex
 
+      - name: Comprobar zonas seguras (Instagram, TikTok, YouTube Shorts)
+        env:
+          PKG: ${{ inputs.paquete }}
+        working-directory: render3d/simula
+        run: python formatos.py zonas paquete "../../$PKG" "$RUNNER_TEMP/voz"
+
       - name: Plan, fotogramas y montaje
         env:
           PAQUETE: ${{ github.workspace }}/${{ inputs.paquete }}

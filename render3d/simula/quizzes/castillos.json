@@ -1,0 +1,80 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "CASTILLOS",
+ "titulo": "¿En qué provincia está cada castillo?",
+ "intro": "Castillos de España. ¿Sabes en qué provincia está cada uno? Cinco preguntas.",
+ "gancho": [
+  "¿SABES DÓNDE",
+  "ESTÁN ESTOS",
+  "*CASTILLOS*?"
+ ],
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#castillos",
+  "#historia"
+ ],
+ "preguntas": [
+  {
+   "q": "¿En qué provincia está el castillo de Coca?",
+   "prov": "Segovia",
+   "punto": [
+    -4.522,
+    41.218
+   ],
+   "respuesta": "Segovia",
+   "detalle": "Castillo de Coca",
+   "voz_q": "¿En qué provincia está el castillo de Coca?",
+   "voz_a": "¡Segovia!"
+  },
+  {
+   "q": "¿En qué provincia está el castillo de Loarre?",
+   "prov": "Huesca",
+   "punto": [
+    -0.612,
+    42.326
+   ],
+   "respuesta": "Huesca",
+   "detalle": "Castillo de Loarre",
+   "voz_q": "¿Y el castillo de Loarre?",
+   "voz_a": "¡Huesca!"
+  },
+  {
+   "q": "¿En qué provincia está el castillo de Peñafiel?",
+   "prov": "Valladolid",
+   "punto": [
+    -4.118,
+    41.598
+   ],
+   "respuesta": "Valladolid",
+   "detalle": "Castillo de Peñafiel",
+   "voz_q": "¿Dónde está el castillo de Peñafiel?",
+   "voz_a": "¡Valladolid!"
+  },
+  {
+   "q": "¿En qué provincia está el castillo de Belmonte?",
+   "prov": "Cuenca",
+   "punto": [
+    -2.703,
+    39.559
+   ],
+   "respuesta": "Cuenca",
+   "detalle": "Castillo de Belmonte",
+   "voz_q": "¿Y el castillo de Belmonte?",
+   "voz_a": "¡Cuenca!"
+  },
+  {
+   "q": "¿En qué provincia está el castillo de Butrón?",
+   "prov": "Bizkaia/Vizcaya",
+   "punto": [
+    -2.877,
+    43.36
+   ],
+   "respuesta": "Bizkaia",
+   "detalle": "Castillo de Butrón",
+   "voz_q": "Última: ¿dónde está el castillo de Butrón?",
+   "voz_a": "¡Bizkaia!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}
