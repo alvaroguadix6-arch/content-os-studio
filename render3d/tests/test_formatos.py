@@ -161,6 +161,23 @@ def test_zonas_seguras_todas_las_escenas_de_paquete():
     assert not malos, malos
 
 
+def test_conquista_diaria_sin_votos_nuevos():
+    """La serie es diaria: un episodio sin votos nuevos también se genera y su guion tiene sentido."""
+    import shutil
+    sys.path.insert(0, CONQ)
+    import conquista
+    import episodio
+    with tempfile.TemporaryDirectory() as d:
+        t = os.path.join(d, "t")
+        shutil.copytree(os.path.join(CONQ, "temporada1"), t)
+        ult = max(int(f[2:4]) for f in os.listdir(os.path.join(t, "votos")) if f.startswith("ep"))
+        open(os.path.join(t, "votos", f"ep{ult + 1:02d}.csv"), "w").write("pueblo,provincia,votos\n")
+        st = conquista.estado(t, ult + 1)
+        g = episodio.guion(st)
+        assert st["votos_nuevos"] == 0 and "no se ha movido" in g[0][1] and "Cero" not in g[0][1], g[0]
+        assert f"episodio {episodio.letras(ult + 2)}" in g[-1][1]
+
+
 def test_portada():
     with tempfile.TemporaryDirectory() as d:
         os.makedirs(os.path.join(d, "voz"))
@@ -178,7 +195,7 @@ if __name__ == "__main__":
     solo = set(sys.argv[1:])  # p. ej. `test_formatos.py rapidas` o nombres de pruebas concretas
     RAPIDAS = {"test_lote_valida_y_limita", "test_lote_con_paquetes_y_plataformas", "test_quiz_json_completos", "test_textos_sin_datos_privados",
                "test_canarias_dentro_de_la_zona", "test_contar_votos_reconoce_y_no_duplica",
-               "test_provincias_y_pueblos_bilingues"}
+               "test_provincias_y_pueblos_bilingues", "test_conquista_diaria_sin_votos_nuevos"}
     if "rapidas" in solo:
         solo = RAPIDAS
     for name, fn in list(globals().items()):

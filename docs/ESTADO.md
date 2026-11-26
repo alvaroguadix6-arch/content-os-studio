@@ -23,5 +23,7 @@ Sin datos privados: estadísticas, votos detallados por usuario y enlaces de des
 | Faisanes paró en zonas seguras | panel «archivo» hasta x=890 | escena corregida + prueba de todas las escenas en cada PR |
 
 ## Próximos pasos
+- **Conquista diaria (prioritario)**: cada día, render del episodio siguiente antes de las 16:00 para publicarlo a
+  las 18:30 (ep. 4 el 27-11, ep. 5 el 28-11…), también si no hay votos nuevos.
 Ver `docs/CONTINUIDAD.md` en el repo privado: reserva para la semana del 03-12, escenas propias para historias,
 encadenar repos y publicación con aprobación (solo con autorización del usuario).
