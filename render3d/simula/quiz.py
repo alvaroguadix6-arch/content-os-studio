@@ -321,6 +321,7 @@ class Video:
             self.card(img, d, t0, t, "¿CUÁL NO SABÍAS?", "Dímelo en los comentarios", 62)
             return
         self.card(img, d, t0, t, "¿CUÁNTAS HAS ACERTADO?", "Dímelo en los comentarios", 62)
+        self.progreso(d, 5, True)
         a = back((t - t0 - 0.3) / 0.5)
         y = CD_Y
         for k, n in enumerate("012345"):
@@ -330,6 +331,16 @@ class Video:
                 d.ellipse([x - r, y - r, x + r, y + r], fill=(46, 52, 128), outline=YEL, width=5)
                 d.text((x, y), n, font=font("Black", max(1, int(60 * a))), fill=(255, 255, 255), anchor="mm")
         d.text((540, CD_Y + 90), "/ 5", font=font("ExtraBold", 40), fill=(220, 210, 255), anchor="mm", stroke_width=4, stroke_fill=(30, 16, 70))
+
+    def progreso(self, d, i, resuelta):
+        """Barra de progreso de 5 tramos (fase 2, retención): se ve cuánto falta. Abajo en el centro, fuera del
+        recuadro de Canarias y dentro de la zona segura."""
+        w, g, y = 44, 12, 1398
+        x0 = 540 - (5 * w + 4 * g) / 2
+        for k in range(5):
+            hecho = k < i - 1 or (k == i - 1 and resuelta)
+            col = YEL if hecho else (255, 255, 255) if k == i - 1 else (90, 80, 150)
+            d.rounded_rectangle([x0 + k * (w + g), y - 6, x0 + k * (w + g) + w, y + 6], 6, fill=col)
 
     def map_answer(self, t, i):
         """Mapa con la región iluminada; en países con regiones pequeñas, zoom hacia el punto al revelar."""
@@ -345,12 +356,13 @@ class Video:
         fl = 1 + 0.6 * max(0, 1 - u / 0.35)  # destello inicial
         if fl > 1.001:
             lay.alpha_composite(_alpha(h, (fl - 1) * 0.8))
-        if not MAPA:
-            return lay
         names = q["prov"] if isinstance(q["prov"], list) else [q["prov"]]
+        if not MAPA and any(n in ("Las Palmas", "Santa Cruz De Tenerife") for n in names):
+            return lay   # Canarias va en su recuadro: sin zoom
         pts = np.array([p for n in names for r in PROVS[n] for p in r])
         size = max(pts.max(0) - pts.min(0))
-        Z = min(2.6, max(1.0, 260 / max(size, 1)))
+        # fase 2: también en el mapa de España, un acercamiento suave a la provincia (más moderado: 1,5×)
+        Z = min(2.6 if MAPA else 1.5, max(1.0, 260 / max(size, 1)))
         if Z < 1.05:
             return lay
         nt = self.L[f"q{i + 1}"]["start"] - 0.15 if i < 5 else self.L["outro"]["start"] - 0.1
@@ -371,6 +383,7 @@ class Video:
         ans = self.L[f"a{i}"]["start"]
         sabias = self.Q.get("modo") == "sabias"
         self.card(img, d, qs, t, f"DATO {i}/5" if sabias else f"PREGUNTA {i}/5", q["q"], 58 if len(q["q"]) < 44 else 52 if len(q["q"]) < 70 else 46)
+        self.progreso(d, i, t >= ans)
         # cuenta atrás
         cy = CD_Y
         if t < ans + 0.2 and not sabias:

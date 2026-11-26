@@ -46,6 +46,15 @@ def valida(spec):
     return t != "figura" or spec["figura"] in FIGURAS
 
 
+def foco(spec):
+    """Punto de la pantalla hacia el que se acerca la cámara (fase 2): el lugar en el mapa de España. None si no hay."""
+    if not valida(spec) or spec["tipo"] != "mapa_espana":
+        return None
+    lon, lat = spec["punto"]
+    proj, _ = _proyeccion(lon < -13 and lat < 30)
+    return proj(lon, lat)
+
+
 def num_es(x, dec=0):
     s = f"{x:,.{dec}f}".replace(",", "X").replace(".", ",").replace("X", ".")
     return s
@@ -137,23 +146,23 @@ def mapa_espana(v, spec, img, d, t, lt, u):
     lon, lat = spec["punto"]
     can = lon < -13 and lat < 30
     capa = _capa_mapa(can, [p for p in spec.get("resaltar") or [] if p in _provincias()])
-    a = clamp(lt / 0.45)
+    a = clamp(0.7 + lt / 0.2)          # fase 2: el mapa se ve desde el primer fotograma (nada de pantalla vacía)
     if a < 1:
         capa = capa.copy()
         capa.putalpha(capa.getchannel("A").point(lambda x: int(x * a)))
     img.alpha_composite(capa)
     proj, _ = _proyeccion(can)
     x, y = proj(lon, lat)
-    k = back_out(clamp((lt - 0.35) / 0.4))
+    k = back_out(clamp((lt - 0.1) / 0.3))
     if k > 0:
         pulse = 1 + 0.25 * math.sin(t * 6)
         v.glow(img, x, y, 70 * pulse, YEL, alpha=160)
         v.E(d, x, y, 34 * pulse * k, (255, 80, 90), outline=WHITE, width=5)
         v.E(d, x, y, 12 * k, WHITE)
-    if spec.get("etiqueta") and lt > 0.6:
+    if spec.get("etiqueta") and lt > 0.3:
         # la etiqueta se aparta del punto hacia el centro para no tapar la zona resaltada
         _label(v, img, 0.4 * x + 0.6 * 540, y - 120 if y > 800 else y + 140, spec["etiqueta"].upper(), 46,
-               alpha=clamp((lt - 0.6) / 0.2))
+               alpha=clamp((lt - 0.3) / 0.15))
 
 
 # ───── globo girado hasta el lugar real ─────
@@ -170,7 +179,7 @@ def mapa_mundo(v, spec, img, d, t, lt, u):
     v.stars(d, t, 0.6)
     lon, lat = spec["punto"]
     spin = 3.0
-    girar = 40 * (1 - ease_out(clamp(lt / 1.2)))      # llega girando y se para en el lugar
+    girar = 30 * (1 - ease_out(clamp(lt / 0.6)))      # llega girando y se para en el lugar (rápido: retención)
     centro = lon + girar
     R = 300 * (1 + 0.08 * smooth(0, 1, u))
     cx, cy = 540, 960
@@ -178,12 +187,12 @@ def mapa_mundo(v, spec, img, d, t, lt, u):
     nx, ny, nz = _globo_xy(lat, lon - centro)
     if nz > 0.05:
         x, y = cx + nx * R, cy + ny * R
-        k = back_out(clamp((lt - 0.9) / 0.4))
+        k = back_out(clamp((lt - 0.45) / 0.3))
         if k > 0:
             v.glow(img, x, y, 60, YEL, alpha=170)
             v.E(d, x, y, 24 * k * (1 + 0.2 * math.sin(t * 6)), (255, 80, 90), outline=WHITE, width=4)
-        if spec.get("etiqueta") and lt > 1.1:
-            _label(v, img, x, y - 90, spec["etiqueta"].upper(), 44, alpha=clamp((lt - 1.1) / 0.2))
+        if spec.get("etiqueta") and lt > 0.6:
+            _label(v, img, x, y - 90, spec["etiqueta"].upper(), 44, alpha=clamp((lt - 0.6) / 0.15))
 
 
 # ───── cifra que cuenta ─────
