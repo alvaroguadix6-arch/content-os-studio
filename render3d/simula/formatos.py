@@ -57,8 +57,9 @@ def lote(spec, conquista_ep="", paquetes=""):
     if ep:
         if not ep.isdigit() or not 1 <= int(ep) <= 99:
             raise ValueError("episodio de Conquista inválido (1-99)")
-        if not os.path.exists(os.path.join(CONQ, "temporada1", "votos", f"ep{int(ep):02d}.csv")) and int(ep) > 1:
-            raise ValueError(f"faltan los votos del episodio {ep} (temporada1/votos/ep{int(ep):02d}.csv)")
+        vd = os.path.join(CONQ, "temporada1", "votos")
+        if int(ep) > 1 and not any(os.path.exists(os.path.join(vd, f"ep{int(ep):02d}.{x}")) for x in ("csv", "pendiente")):
+            raise ValueError(f"faltan los votos del episodio {ep} (temporada1/votos/ep{int(ep):02d}.csv o .pendiente)")
         jobs.append({"formato": "conquista", "tema": f"ep{int(ep):02d}", "id": f"conquista-ep{int(ep):02d}"})
     for raw in [x.strip() for x in (paquetes or "").split(",") if x.strip()]:
         if not PAQ_RE.match(raw) or not os.path.exists(os.path.join(ROOT, raw)):
@@ -134,7 +135,9 @@ def texto_conquista(temporada, ep):
         lid = P[0]
         cab = f"Episodio {ep} de Tu pueblo conquista España: {lid['nombre']} va primero con {lid['votos']} voto{'s' if lid['votos'] != 1 else ''}."
         pct = f"{st['conquistado']:.1f}".replace(".", ",")
-        cuerpo = f"{st['votos_nuevos']} votos nuevos, {len(P)} pueblos en juego y el {pct} % de España ya tiene dueño."
+        cuerpo = (f"Los votos del episodio anterior se suman en el episodio {ep + 1}. {len(P)} pueblos en juego y el {pct} % de España ya tiene dueño."
+                  if st.get("votos_pendientes") else
+                  f"{st['votos_nuevos']} votos nuevos, {len(P)} pueblos en juego y el {pct} % de España ya tiene dueño.")
     pide = (f"Comenta tu pueblo y tu provincia: cada cuenta suma un voto y conquista territorio en el episodio {ep + 1}.")
     return f"{cab}\n\n{cuerpo}\n\n{pide}", ["#tupuebloconquistaespaña", "#españa", "#pueblos", "#mapa"]
 
