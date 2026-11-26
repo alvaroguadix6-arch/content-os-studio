@@ -117,6 +117,15 @@ def test_contar_votos_reconoce_y_no_duplica():
         assert "Guadix,Granada,2" in out and "Baza" not in out, out   # 1 voto por cuenta: el primero
 
 
+def test_provincias_y_pueblos_bilingues():
+    sys.path.insert(0, CONQ)
+    import datos
+    for t in ("Alacant/Alicante", "València/Valencia", "Araba/Álava", "Castelló/Castellón"):
+        assert datos.prov_code(t), t
+    i, why = datos.find("Alcoi/Alcoy", "Alacant/Alicante")
+    assert i is not None, why
+
+
 def test_portada():
     with tempfile.TemporaryDirectory() as d:
         os.makedirs(os.path.join(d, "voz"))
@@ -133,7 +142,8 @@ def test_portada():
 if __name__ == "__main__":
     solo = set(sys.argv[1:])  # p. ej. `test_formatos.py rapidas` o nombres de pruebas concretas
     RAPIDAS = {"test_lote_valida_y_limita", "test_quiz_json_completos", "test_textos_sin_datos_privados",
-               "test_canarias_dentro_de_la_zona", "test_contar_votos_reconoce_y_no_duplica"}
+               "test_canarias_dentro_de_la_zona", "test_contar_votos_reconoce_y_no_duplica",
+               "test_provincias_y_pueblos_bilingues"}
     if "rapidas" in solo:
         solo = RAPIDAS
     for name, fn in list(globals().items()):

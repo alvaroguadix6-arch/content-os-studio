@@ -526,24 +526,31 @@ class Video:
             size = clamp(30 + 6 * cam.z + 3 * math.log1p(p["votos"]), 30, 66) * (0.6 + 0.4 * a)
             name = p["nombre"].split("/")[-1].upper()
             fw = d.textlength(name, font=font("Black", size))
+            while fw > 520 and size > 26:  # nombres largos («Santa Coloma de Gramenet»): más pequeños para que quepan
+                size -= 2
+                fw = d.textlength(name, font=font("Black", size))
             box = None
             is_focus = p["idx"] in focus[:-1] or p["idx"] == focus[-1]
-            for dy in ((0, 1.7 * size + 100, -(1.7 * size + 100)) if is_focus else (0,)):  # si choca, se desplaza (con línea al punto)
-                bx = (sx - fw / 2 - 14, sy + dy - size - 34, sx + fw / 2 + 14, sy + dy + 30 + size * 0.5)
+            offs = [(0, 0)]
+            if is_focus:  # si choca o no cabe, se desplaza arriba/abajo o a un lado (con línea al punto)
+                d1 = 1.7 * size + 100
+                offs += [(0, d1), (0, -d1), (-(fw / 2 + 60), 0), (fw / 2 + 60, 0), (-(fw / 2 + 60), d1), (-(fw / 2 + 60), -d1)]
+            for dx, dy in offs:
+                bx = (sx + dx - fw / 2 - 14, sy + dy - size - 34, sx + dx + fw / 2 + 14, sy + dy + 30 + size * 0.5)
                 if ZS.inseguro(bx) or bx[3] > SUB_BOTTOM - 130:  # dentro de la zona segura y sin tapar subtítulos
                     continue
                 if any(not (bx[2] < q[0] or bx[0] > q[2] or bx[3] < q[1] or bx[1] > q[3]) for q in placed):
                     continue
-                box, ly = bx, sy + dy
+                box, ly, lx = bx, sy + dy, sx + dx
                 break
             if box is None:
                 continue
             placed.append(box)
             col = tuple(conquista.PALETA[k % len(conquista.PALETA)])
-            if ly != sy:
-                d.line([(sx, sy), (sx, ly)], fill=WHITE, width=3)
+            if (lx, ly) != (sx, sy):
+                d.line([(sx, sy), (lx, ly)], fill=WHITE, width=3)
             d.ellipse([sx - 9, sy - 9, sx + 9, sy + 9], fill=WHITE, outline=INK, width=3)
-            self.text(d, (sx, ly - 26), name, size, WHITE, "Black", "ms", 6, INK)
+            self.text(d, (lx, ly - 26), name, size, WHITE, "Black", "ms", 6, INK)
             # votos animados (cuentan desde los del episodio anterior)
             v0, v1 = p["votos_antes"], p["votos"]
             u = out3((t - max(0.5, t_on)) / 2.5)
@@ -551,11 +558,10 @@ class Video:
             vs = f"{miles(v)} VOTO" + ("S" if v != 1 else "")
             fv = font("Black", int(size * 0.55))
             vw = d.textlength(vs, font=fv)
-            d.rounded_rectangle([sx - vw / 2 - 12, ly + 14, sx + vw / 2 + 12, ly + 14 + size * 0.7], 12, fill=col)
-            d.text((sx, ly + 14 + size * 0.35), vs, font=fv, fill=INK, anchor="mm")
-            sy = ly
+            d.rounded_rectangle([lx - vw / 2 - 12, ly + 14, lx + vw / 2 + 12, ly + 14 + size * 0.7], 12, fill=col)
+            d.text((lx, ly + 14 + size * 0.35), vs, font=fv, fill=INK, anchor="mm")
             if p["domina"]:
-                self.crown(d, sx, sy - size - 48, size * 0.55)
+                self.crown(d, lx, ly - size - 48, size * 0.55)
 
     def crown(self, d, x, y, s):
         pts = [(x - s, y + s * 0.5), (x - s, y - s * 0.3), (x - s * 0.5, y + s * 0.1), (x, y - s * 0.6), (x + s * 0.5, y + s * 0.1),
@@ -580,7 +586,7 @@ class Video:
         P = self.st["pueblos"][:5]
         a = out3((t - t0) / 0.5)
         x0 = 118 - (1 - a) * 1100
-        y0 = 820  # panel 744×560 entre x=118 y x=862 (iconos a la derecha) e y=730-1290
+        y0 = 785  # panel 744×560 entre x=118 y x=862 (iconos a la derecha) e y=695-1255, sin tocar subtítulos
         PW = 744
         lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
         dl = ImageDraw.Draw(lay)
