@@ -188,6 +188,25 @@ def asegurar_pico(out, wav, tp_max=None):
     return pico_real(out)
 
 
+def bajar_volumen(out, tp_max=None, intentos=2):
+    """Último recurso (fase 2, fallo del quiz de esquí del 26-11): si bajar el limitador no basta (el pico lo crea el
+    propio códec y no responde de forma proporcional), se escala el audio YA codificado: la ganancia lineal sí baja
+    el pico real en la misma medida. Devuelve el pico final."""
+    tp_max = TP_MAX if tp_max is None else tp_max
+    tp = pico_real(out)
+    for intento in range(intentos):
+        if tp is None or tp <= tp_max:
+            break
+        db = tp_max - tp - 0.3
+        tmp = out + ".vol.mp4"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", out, "-map", "0:v", "-map", "0:a", "-c:v", "copy",
+                        "-c:a", "aac", "-b:a", "192k", "-af", f"volume={db:.2f}dB", "-movflags", "+faststart", tmp], check=True)
+        os.replace(tmp, out)
+        print(f"pico real {tp:+.1f} dBTP → volumen {db:+.1f} dB (último recurso, intento {intento + 1})")
+        tp = pico_real(out)
+    return tp
+
+
 def audio_final(wav, lim=0.79):
     import re as _re
     r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", wav, "-af",
@@ -229,8 +248,15 @@ def main():
            "-i", wav, "-c:v", "libx264", "-preset", "slow", "-crf", "21", "-maxrate", "6M", "-bufsize", "12M", "-pix_fmt", "yuv420p",
            "-c:a", "aac", "-b:a", "192k", "-af", audio_final(wav), "-ar", "48000", "-movflags", "+faststart", "-shortest", a.out]
     subprocess.run(cmd, check=True)
-    asegurar_pico(a.out, wav)
-    print(f"pico real final: {pico_real(a.out)} dBTP")
+    tp = asegurar_pico(a.out, wav)
+    # Conquista («episodio») queda igual que antes hasta publicar su ep. 4 (petición del usuario): luego se le aplicará
+    # también el último recurso y el fallo estricto.
+    if a.video != "episodio" and tp is not None and tp > TP_MAX:
+        tp = bajar_volumen(a.out)
+    print(f"pico real final: {tp} dBTP")
+    if a.video != "episodio" and (tp is None or tp > TP_MAX):
+        print(f"❌ El pico real ({tp} dBTP) supera {TP_MAX} dBTP: el vídeo NO está listo (control de calidad estricto).")
+        sys.exit(1)
     print("✅ Vídeo listo:", a.out)
 
 

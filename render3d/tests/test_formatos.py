@@ -191,6 +191,25 @@ def test_escenas_con_datos_en_zona_segura():
     assert not malos, malos
 
 
+def test_pico_real_ultimo_recurso():
+    """Fallo del 26-11 (quiz de esquí a +0,4 dBTP marcado «listo»): si el limitador no basta, se baja el volumen del
+    audio ya codificado hasta quedar por debajo de −1 dBTP."""
+    import shutil
+    if not shutil.which("ffmpeg"):
+        print("  (sin ffmpeg: se omite)")
+        return
+    sys.path.insert(0, SIM)
+    import montaje
+    with tempfile.TemporaryDirectory() as d:
+        wav, mp4 = os.path.join(d, "a.wav"), os.path.join(d, "v.mp4")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "sine=f=1000:d=2", "-af", "volume=40dB",
+                        "-c:a", "pcm_f32le", "-ar", "48000", wav], check=True)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "color=c=black:s=64x64:d=2", "-i", wav,
+                        "-c:v", "libx264", "-c:a", "aac", "-b:a", "192k", "-shortest", mp4], check=True)
+        assert montaje.pico_real(mp4) > montaje.TP_MAX
+        assert montaje.bajar_volumen(mp4) <= montaje.TP_MAX
+
+
 def test_primer_fotograma_con_contenido():
     """Retención (fase 2): el primer fotograma de una historia con mapa ya enseña el mapa, no una pantalla vacía."""
     import numpy as np
