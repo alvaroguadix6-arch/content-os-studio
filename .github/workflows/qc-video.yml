@@ -1,5 +1,5 @@
 # Control de calidad de un vídeo ya renderizado (manual, solo lectura, gratis).
-# Descarga el artefacto de una ejecución de «Render paquete» y mide formato, sonoridad, silencios,
+# Descarga los artefactos de una ejecución de render y mide formato, sonoridad, silencios,
 # planos congelados y negros. Deja el informe en el resumen y una hoja de contactos como artefacto.
 name: QC vídeo
 
@@ -37,7 +37,8 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
           F=$(find video -name '*.mp4' | head -1)
           [ -n "$F" ] || { echo "no hay MP4 en el artefacto"; exit 1; }
-          python3 tools/qc_video.py "$F" --hoja qc-hoja.jpg --resumen "$GITHUB_STEP_SUMMARY"
+          python3 tools/qc_video.py "$F" --hoja qc-hoja.jpg > /dev/null || true
+          python3 tools/qc_lote.py video --resumen "$GITHUB_STEP_SUMMARY"   # todos los vídeos de esa ejecución
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: qc-hoja
