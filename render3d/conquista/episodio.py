@@ -153,8 +153,12 @@ def guion(st):
         ]
     L = []
     nuevos = st["votos_nuevos"]
-    L.append(("intro", f"Episodio {letras(ep)}. {letras_m(nuevos).capitalize()} voto{'s' if nuevos != 1 else ''} nuevo{'s' if nuevos != 1 else ''}" + (f" y {letras_m(len(P))} pueblos en guerra." if len(P) > 1 else "."),
-              ["votos", "guerra"]))
+    if nuevos == 0:  # serie diaria: también hay episodio cuando un día no llegan votos
+        L.append(("intro", f"Episodio {letras(ep)}. Hoy el mapa no se ha movido: {letras_m(len(P))} pueblos esperan tu voto.",
+                  ["mapa", "voto"]))
+    else:
+        L.append(("intro", f"Episodio {letras(ep)}. {letras_m(nuevos).capitalize()} voto{'s' if nuevos != 1 else ''} nuevo{'s' if nuevos != 1 else ''}" + (f" y {letras_m(len(P))} pueblos en guerra." if len(P) > 1 else "."),
+                  ["votos", "guerra"]))
     lid = P[0]
     if lid["puesto_antes"] == 1:
         txt = f"{lid['nombre']} sigue en cabeza: {letras_m(lid['votos'])} votos y {letras_m(lid['municipios'])} municipios conquistados."

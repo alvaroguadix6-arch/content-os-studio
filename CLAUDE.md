@@ -4,6 +4,12 @@ Producción y render gratuito de vídeos verticales (1080×1920, 30 fps) para @n
 **Responde siempre en español de España.** Estado y continuidad: `docs/ESTADO.md` (público) y, en el repo privado
 `instagram-agent`, `docs/CONTINUIDAD.md` (con estadísticas y enlaces de descarga).
 
+## ⭐ Regla prioritaria: Conquista diaria
+«Tu pueblo conquista España» tiene un episodio nuevo **todos los días a las 18:30**, sin excepción y con numeración
+consecutiva, también sin votos nuevos (el guion lo cubre: «Hoy el mapa no se ha movido…»). El render del episodio
+debe estar listo para descargar **antes de las 16:00**; si falla, arreglarlo es lo primero (sin relajar el QC).
+Sigue siendo manual (`RENDER`): no se publica nada ni se activa ninguna automatización.
+
 ## Reglas
 - **Repositorio público**: nunca estadísticas privadas, comentarios, nombres de usuario, credenciales ni tokens.
   Solo entran paquetes saneados desde `instagram-agent` (`paquetes/AAAA-Www/*.json`) y votos agregados de Conquista
