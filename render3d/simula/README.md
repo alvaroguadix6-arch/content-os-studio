@@ -42,7 +42,9 @@ artefacto y comprueba que los archivos se abren (`tools/verificar_descargas.py`)
 ### Zonas seguras (Reels, TikTok y Shorts)
 `zona_segura.py` define la zona común (arriba 250 px, abajo 480 px, iconos a la derecha desde x=870 entre
 y=900 e y=1600, 110 px de margen lateral). `formatos.py zonas quiz <tema> voz/` recorre el vídeo y falla si algún
-texto o rótulo queda tapado más de 0,6 s; el workflow lo comprueba antes de montar. El recuadro de Canarias está
+texto o rótulo queda tapado más de 0,6 s; el workflow lo comprueba antes de montar. Además, el workflow
+«Pruebas del motor de vídeo» dibuja todas las escenas (quiz, Conquista y cada tipo de escena de paquete) en cada
+pull request, así que un fallo de maquetación se detecta antes de fusionar y nunca en mitad de un render. El recuadro de Canarias está
 abajo a la izquierda, dentro de la zona. Pruebas: `python3 render3d/tests/test_formatos.py`.
 
 ### Quiz de otros países
