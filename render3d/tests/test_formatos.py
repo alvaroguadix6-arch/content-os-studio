@@ -131,7 +131,12 @@ def test_portada():
 
 
 if __name__ == "__main__":
+    solo = set(sys.argv[1:])  # p. ej. `test_formatos.py rapidas` o nombres de pruebas concretas
+    RAPIDAS = {"test_lote_valida_y_limita", "test_quiz_json_completos", "test_textos_sin_datos_privados",
+               "test_canarias_dentro_de_la_zona", "test_contar_votos_reconoce_y_no_duplica"}
+    if "rapidas" in solo:
+        solo = RAPIDAS
     for name, fn in list(globals().items()):
-        if name.startswith("test_") and callable(fn):
+        if name.startswith("test_") and callable(fn) and (not solo or name in solo):
             fn()
             print("ok", name)

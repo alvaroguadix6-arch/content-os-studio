@@ -150,6 +150,11 @@ def sfx(v, n):
     return out
 
 
+# −14 LUFS como las apps; después un limitador a −2 dBFS para que el AAC no pase de −1 dBTP (en dos quiz
+# la normalización sola dejó picos de −0,4 dBTP por los «tic» de la cuenta atrás).
+AUDIO_FINAL = "loudnorm=I=-14:TP=-2:LRA=11,aresample=48000,alimiter=limit=0.79:level=0:attack=2:release=60"
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")
@@ -175,7 +180,7 @@ def main():
     write_wav(wav, mix)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-framerate", "30", "-start_number", "0", "-i", os.path.join(a.frames, "f%05d.jpg"),
            "-i", wav, "-c:v", "libx264", "-preset", "slow", "-crf", "21", "-maxrate", "6M", "-bufsize", "12M", "-pix_fmt", "yuv420p",
-           "-c:a", "aac", "-b:a", "192k", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-movflags", "+faststart", "-shortest", a.out]
+           "-c:a", "aac", "-b:a", "192k", "-af", AUDIO_FINAL, "-ar", "48000", "-movflags", "+faststart", "-shortest", a.out]
     subprocess.run(cmd, check=True)
     print("✅ Vídeo listo:", a.out)
 

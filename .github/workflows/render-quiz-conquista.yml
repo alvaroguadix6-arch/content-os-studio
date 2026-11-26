@@ -103,7 +103,8 @@ jobs:
           ffmpeg -version | head -1
           ls /usr/share/fonts/opentype/inter/Inter-Black.otf > /dev/null
           python -c "import numpy, scipy, PIL, soundfile, torch, kokoro, misaki; print('ok dependencias')"
-          python render3d/tests/test_formatos.py
+          # pruebas rápidas (las de zonas seguras se hacen abajo con la voz real de cada vídeo)
+          python render3d/tests/test_formatos.py rapidas
 
       - name: Voz (Kokoro em_alex)
         working-directory: render3d/simula
@@ -187,5 +188,5 @@ jobs:
           path: descargas
       - name: Abrir cada archivo descargado
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          command -v ffprobe > /dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null; }
           python3 tools/verificar_descargas.py descargas --resumen "$GITHUB_STEP_SUMMARY"
