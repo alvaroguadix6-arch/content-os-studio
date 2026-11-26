@@ -1,0 +1,141 @@
+{
+  "id": "2026-11-29-caso-abierto-01-dan-cooper",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "misterios",
+  "title": "Caso Abierto, episodio 1: Dan Cooper",
+  "script": [
+    "El FBI lo buscó 45 años.",
+    "Noviembre de 1971.",
+    "Un pasajero del vuelo Portland-Seattle avisa de que lleva una bomba.",
+    "Pide 200.000 dólares y paracaídas.",
+    "Y los consigue.",
+    "Suelta a los 36 pasajeros y el avión despega otra vez con Cooper dentro.",
+    "En pleno vuelo, salta.",
+    "Nunca más se le vio. Jamás.",
+    "Ni siquiera se llamaba D. B.: fue un error de la prensa.",
+    "En 1980, un niño de 8 años encontró 5.800 dólares del rescate.",
+    "¿Y el resto?",
+    "Nunca ha aparecido.",
+    "En 2016 el FBI dejó de investigarlo.",
+    "¿Qué le pasó a Cooper?",
+    "A, murió en el salto. B, escapó. C, otra cosa.",
+    "Comenta tu letra. El FBI tardó 45 años en rendirse."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "45 AÑOS DE BÚSQUEDA"
+    },
+    {
+      "at": 2.5,
+      "text": "24/11/1971"
+    },
+    {
+      "at": 7.4,
+      "text": "200.000 $"
+    },
+    {
+      "at": 11.3,
+      "text": "36 PASAJEROS LIBRES"
+    },
+    {
+      "at": 16.6,
+      "text": "SALTA"
+    },
+    {
+      "at": 20.8,
+      "text": "NO ERA «D. B.»"
+    },
+    {
+      "at": 25.1,
+      "text": "1980: 5.800 $"
+    },
+    {
+      "at": 32.8,
+      "text": "2016: FIN DE LA BÚSQUEDA"
+    },
+    {
+      "at": 37.1,
+      "text": "A · B · C"
+    },
+    {
+      "at": 40.6,
+      "text": "COMENTA TU LETRA"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 3.0,
+      "kind": "animacion",
+      "visual": "Expediente con sello 'CERRADO' que se abre de golpe; logo de serie 'CASO ABIERTO' pequeño en esquina",
+      "notes": "identidad de serie: misma cortinilla en cada episodio"
+    },
+    {
+      "scene": 2,
+      "seconds": 12.0,
+      "kind": "animacion",
+      "visual": "Interior de avión estilizado; nota entregada a azafata; bolsa de dinero; paracaídas",
+      "notes": "cambio de plano en cada frase; no recrear rostros reales"
+    },
+    {
+      "scene": 3,
+      "seconds": 6.0,
+      "kind": "simulacion",
+      "visual": "Avión en vuelo nocturno; escalera trasera abierta; silueta salta a la lluvia"
+    },
+    {
+      "scene": 4,
+      "seconds": 10.0,
+      "kind": "grafico",
+      "visual": "Línea de tiempo 1971, 1980 (5.800 $), 2016 (FBI cierra)"
+    },
+    {
+      "scene": 5,
+      "seconds": 10.0,
+      "kind": "texto",
+      "visual": "Tres tarjetas grandes A/B/C con iconos; la última se queda en pantalla 2 s",
+      "notes": "pantalla final limpia para captura"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Secuestro del 24-11-1971 en vuelo Portland-Seattle, alias Dan Cooper, amenaza de bomba",
+      "source": "Wikipedia: D. B. Cooper",
+      "url": "https://en.wikipedia.org/wiki/D._B._Cooper"
+    },
+    {
+      "claim": "Rescate de 200.000 dólares y paracaídas; libera a los 36 pasajeros en Seattle",
+      "source": "Wikipedia: D. B. Cooper",
+      "url": "https://en.wikipedia.org/wiki/D._B._Cooper"
+    },
+    {
+      "claim": "El nombre 'D. B.' fue un error de la prensa",
+      "source": "Britannica: D. B. Cooper",
+      "url": "https://britannica.com/biography/D-B-Cooper"
+    },
+    {
+      "claim": "En febrero de 1980 un niño de 8 años encontró unos 5.800 dólares del rescate",
+      "source": "Wikipedia: D. B. Cooper",
+      "url": "https://en.wikipedia.org/wiki/D._B._Cooper"
+    },
+    {
+      "claim": "En julio de 2016 el FBI dejó de investigar activamente el caso (45 años después)",
+      "source": "NPR: FBI is giving up on solving the mystery of D.B. Cooper",
+      "url": "https://www.npr.org/sections/thetwo-way/2016/07/13/485839902/fbi-is-giving-up-on-solving-the-mystery-of-d-b-cooper"
+    }
+  ],
+  "caption": {
+    "text": "Comenta A, B o C: ¿qué le pasó a Dan Cooper?\n\nCaso Abierto, episodio 1. El 24 de noviembre de 1971 un hombre secuestró un avión entre Portland y Seattle, cobró 200.000 dólares y saltó en pleno vuelo. Nunca lo encontraron.\n\nEn 1980 apareció una parte del dinero. En 2016 el FBI dejó de investigarlo activamente. Es uno de los misterios sin resolver más famosos de Estados Unidos.\n\nLas mejores teorías salen en el próximo episodio.",
+    "hashtags": [
+      "#misterios",
+      "#casosinresolver",
+      "#historia",
+      "#dbcooper"
+    ],
+    "alt_text": "Silueta de un hombre con traje y gafas oscuras junto a la escalera trasera de un avión de noche"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

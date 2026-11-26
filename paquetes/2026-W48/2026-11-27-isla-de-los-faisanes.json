@@ -1,0 +1,119 @@
+{
+  "id": "2026-11-27-isla-de-los-faisanes",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "geografia",
+  "title": "La isla que cambia de país cada 6 meses",
+  "script": [
+    "Esta isla cambia de país cada 6 meses.",
+    "Es la isla de los Faisanes, en el río Bidasoa, justo en la frontera entre España y Francia.",
+    "Seis meses.",
+    "De febrero a julio manda España, y de agosto a enero, Francia.",
+    "Es de los dos países, y un convenio de 1901 fija los turnos.",
+    "¿Lo más curioso?",
+    "Aquí se firmó la Paz de los Pirineos, en 1659.",
+    "Ahora, hasta enero, la administra Francia.",
+    "En febrero, española otra vez.",
+    "Sin moverse.",
+    "Cambia de país cada 6 meses."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "CADA 6 MESES"
+    },
+    {
+      "at": 3.2,
+      "text": "ISLA DE LOS FAISANES"
+    },
+    {
+      "at": 10.9,
+      "text": "FEB-JUL: ESPAÑA"
+    },
+    {
+      "at": 15.5,
+      "text": "CONVENIO DE 1901"
+    },
+    {
+      "at": 19.4,
+      "text": "PAZ DE LOS PIRINEOS, 1659"
+    },
+    {
+      "at": 22.9,
+      "text": "AHORA: FRANCIA"
+    },
+    {
+      "at": 27.9,
+      "text": "CADA 6 MESES"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 3.2,
+      "kind": "mapa",
+      "visual": "Isla vista desde arriba; bandera/color que alterna España-Francia en bucle rápido",
+      "notes": "usar colores, no banderas animadas recargadas"
+    },
+    {
+      "scene": 2,
+      "seconds": 6.5,
+      "kind": "mapa",
+      "visual": "Zoom desde la península al Bidasoa y a la isla; rótulo con el nombre",
+      "notes": "cambio de plano a mitad de la frase larga"
+    },
+    {
+      "scene": 3,
+      "seconds": 6.0,
+      "kind": "grafico",
+      "visual": "Calendario circular de 12 meses: feb-jul un color, ago-ene otro"
+    },
+    {
+      "scene": 4,
+      "seconds": 7.0,
+      "kind": "archivo",
+      "visual": "Recreación ilustrada de la firma de 1659 (ilustración propia o archivo con licencia)",
+      "notes": "comprobar licencia de cualquier imagen de archivo"
+    },
+    {
+      "scene": 5,
+      "seconds": 6.0,
+      "kind": "mapa",
+      "visual": "Calendario marcando 27 de noviembre en el color de Francia; vuelta al plano 1 para el loop"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Condominio franco-español: España la administra del 1 feb al 31 jul y Francia del 1 ago al 31 ene",
+      "source": "Moncloa.com (2025)",
+      "url": "https://www.moncloa.com/2025/07/29/isla-espanola-francia-3251297/"
+    },
+    {
+      "claim": "Régimen de turnos fijado por convenio franco-español de 1901",
+      "source": "El Orden Mundial: ¿Cómo se gestiona la isla de los Faisanes?",
+      "url": "https://elordenmundial.com/como-se-gestiona-la-isla-de-los-faisanes-compartida-entre-espana-y-francia/"
+    },
+    {
+      "claim": "En la isla se firmó el Tratado (Paz) de los Pirineos en 1659",
+      "source": "Público: España traspasa a Francia la jurisdicción de la isla",
+      "url": "https://www.publico.es/internacional/espana-traspasa-francia-jurisdiccion-isla-faisanes-cada-seis-meses.html"
+    },
+    {
+      "claim": "Está en el río Bidasoa, frontera entre España y Francia",
+      "source": "El Orden Mundial",
+      "url": "https://elordenmundial.com/como-se-gestiona-la-isla-de-los-faisanes-compartida-entre-espana-y-francia/"
+    }
+  ],
+  "caption": {
+    "text": "Mándaselo a quien diga que las fronteras son fijas.\n\nLa isla de los Faisanes, en el río Bidasoa, es de España y de Francia a la vez: España la administra de febrero a julio y Francia, de agosto a enero. Hasta el 31 de enero le toca a Francia.\n\nEn ella se firmó la Paz de los Pirineos en 1659. Es una de las curiosidades de geografía más raras de España.",
+    "hashtags": [
+      "#geografia",
+      "#curiosidades",
+      "#españa",
+      "#historia"
+    ],
+    "alt_text": "Mapa animado del río Bidasoa con la isla de los Faisanes cambiando de color entre España y Francia"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}
