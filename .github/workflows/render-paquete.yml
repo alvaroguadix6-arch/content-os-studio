@@ -103,6 +103,9 @@ jobs:
           python montaje.py nivel_oculto --narracion "$RUNNER_TEMP/voz" --frames "$RUNNER_TEMP/frames" --out "$RUNNER_TEMP/out/$NAME.mp4"
           python zona_segura.py "$RUNNER_TEMP/out/$NAME.mp4" "$RUNNER_TEMP/out/$NAME-zona-segura.jpg" || true
 
+      - name: Control de calidad (formato, sonoridad, silencios, planos congelados)
+        run: python3 tools/qc_video.py "$RUNNER_TEMP/out/$NAME.mp4" --hoja "$RUNNER_TEMP/out/$NAME-hoja.jpg" --resumen "$GITHUB_STEP_SUMMARY"
+
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: ${{ env.NAME }}
