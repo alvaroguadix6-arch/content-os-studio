@@ -150,9 +150,26 @@ def sfx(v, n):
     return out
 
 
-# −14 LUFS como las apps; después un limitador a −2 dBFS para que el AAC no pase de −1 dBTP (en dos quiz
-# la normalización sola dejó picos de −0,4 dBTP por los «tic» de la cuenta atrás).
-AUDIO_FINAL = "loudnorm=I=-14:TP=-2:LRA=11,aresample=48000,alimiter=limit=0.79:level=0:attack=2:release=60"
+# Audio final: −14 LUFS (lo que usan las apps) y pico real ≤ −1 dBTP.
+#  1) un limitador suave recorta los transitorios («tic», «pop») para que quepa la ganancia;
+#  2) loudnorm en DOS pasadas (mide y aplica una ganancia lineal exacta: el volumen sale en −14);
+#  3) un limitador final a −2 dBFS deja margen para el AAC.
+PRE = "aresample=48000,alimiter=limit=0.56:level=0:attack=3:release=80"
+POST = "aresample=48000,alimiter=limit=0.79:level=0:attack=2:release=60"
+
+
+def audio_final(wav):
+    import re as _re
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", wav, "-af",
+                        PRE + ",loudnorm=I=-14:TP=-2:LRA=11:print_format=json", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    m = _re.search(r"\{[^{}]*\"input_i\"[^{}]*\}", r.stderr)
+    if not m:  # sin medida: normalización de una pasada (también deja el pico controlado)
+        return PRE + ",loudnorm=I=-14:TP=-2:LRA=11," + POST
+    j = json.loads(m.group(0))
+    return (PRE + f",loudnorm=I=-14:TP=-2:LRA=11:measured_I={j['input_i']}:measured_TP={j['input_tp']}"
+            f":measured_LRA={j['input_lra']}:measured_thresh={j['input_thresh']}:offset={j['target_offset']}"
+            ":linear=true," + POST)
 
 
 def main():
@@ -180,7 +197,7 @@ def main():
     write_wav(wav, mix)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-framerate", "30", "-start_number", "0", "-i", os.path.join(a.frames, "f%05d.jpg"),
            "-i", wav, "-c:v", "libx264", "-preset", "slow", "-crf", "21", "-maxrate", "6M", "-bufsize", "12M", "-pix_fmt", "yuv420p",
-           "-c:a", "aac", "-b:a", "192k", "-af", AUDIO_FINAL, "-ar", "48000", "-movflags", "+faststart", "-shortest", a.out]
+           "-c:a", "aac", "-b:a", "192k", "-af", audio_final(wav), "-ar", "48000", "-movflags", "+faststart", "-shortest", a.out]
     subprocess.run(cmd, check=True)
     print("✅ Vídeo listo:", a.out)
 
