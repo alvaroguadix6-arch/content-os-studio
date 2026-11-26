@@ -188,5 +188,5 @@ jobs:
           path: descargas
       - name: Abrir cada archivo descargado
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          command -v ffprobe > /dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null; }
           python3 tools/verificar_descargas.py descargas --resumen "$GITHUB_STEP_SUMMARY"
