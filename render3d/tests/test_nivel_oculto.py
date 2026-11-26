@@ -48,6 +48,21 @@ def test_escenas_rotulos_y_fotogramas():
             assert im.size == (1080, 1920)
 
 
+def test_motivos_de_meteorito():
+    pkg = dict(PKG, script=["Un meteorito le cayó encima.", "Venía del espacio.", "El techo era suyo.",
+                            "Y sobrevivió.", "3,8 kilos del cielo."],
+               visual_brief=[{"scene": 1, "seconds": 9, "kind": "simulacion", "visual": "bola de fuego"},
+                             {"scene": 2, "seconds": 9, "kind": "grafico", "visual": "roca"}],
+               on_screen_text=[{"at": 0, "text": "IMPACTO"}])
+    m = no.beat_motifs(pkg)
+    assert m[0] == "impacto" and m[1] == "meteorito" and m[2] == "casa" and m[4] == "roca", m
+    v = no.make_video(pkg)(no.synthetic_narration(pkg))
+    for f in range(0, int(v.duration * 30), 40):
+        assert v.frame(f).size == (1080, 1920)
+    assert any(k == "boom" for _, k, _ in v.sfx_events())
+    assert no.beat_motifs(PKG) == [None] * len(PKG["script"])   # sin meteorito, sin motivos
+
+
 def test_paquete_sin_guion_falla():
     with tempfile.TemporaryDirectory() as d:
         p = os.path.join(d, "p.json")
