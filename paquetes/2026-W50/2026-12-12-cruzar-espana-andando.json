@@ -1,0 +1,171 @@
+{
+  "id": "2026-12-12-cruzar-espana-andando",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "simulacion",
+  "title": "¿Cuánto se tarda en cruzar España andando?",
+  "script": [
+    "¿Cuánto tardarías en cruzar España andando, de punta a punta?",
+    "El punto más al norte de la península es Estaca de Bares, en A Coruña.",
+    "El más al sur, la Punta de Tarifa, en Cádiz.",
+    "En línea recta, los separan unos 880 kilómetros.",
+    "Andando a 5 kilómetros por hora, son casi 180 horas.",
+    "Caminando 8 horas al día: unos 22 días.",
+    "Y por caminos de verdad, bastantes más.",
+    "¿Te atreverías? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "DE PUNTA A PUNTA"
+    },
+    {
+      "at": 3.53,
+      "text": "ESTACA DE BARES"
+    },
+    {
+      "at": 8.82,
+      "text": "PUNTA DE TARIFA"
+    },
+    {
+      "at": 12.35,
+      "text": "880 KM"
+    },
+    {
+      "at": 18.71,
+      "text": "22 DÍAS"
+    },
+    {
+      "at": 24.0,
+      "text": "¿TE ATREVES?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 3.5294,
+      "kind": "simulacion",
+      "visual": "salto",
+      "escena": {
+        "tipo": "figura",
+        "figura": "salto",
+        "texto": "De punta a punta"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 5.2941,
+      "kind": "mapa",
+      "visual": "Estaca de Bares",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -7.689,
+          43.791
+        ],
+        "etiqueta": "Estaca de Bares",
+        "resaltar": [
+          "A Coruña"
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 3.5294,
+      "kind": "mapa",
+      "visual": "Punta de Tarifa",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -5.61,
+          36.001
+        ],
+        "etiqueta": "Punta de Tarifa",
+        "resaltar": [
+          "Cádiz"
+        ]
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 2.8235,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 880,
+        "unidad": "kilómetros en línea recta",
+        "prefijo": "≈ "
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 3.5294,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 177,
+        "unidad": "horas andando",
+        "duracion": 1.2
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 2.8235,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 22,
+        "unidad": "días de 8 horas"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 2.4706,
+      "kind": "simulacion",
+      "visual": "salto",
+      "escena": {
+        "tipo": "figura",
+        "figura": "salto",
+        "texto": "Por caminos, más"
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.0588,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Estaca de Bares (A Coruña) y la Punta de Tarifa (Cádiz) son los puntos más al norte y al sur de la península",
+      "source": "Instituto Geográfico Nacional: puntos extremos de España",
+      "url": "https://www.ign.es/"
+    },
+    {
+      "claim": "Distancia ortodrómica entre 43,79° N 7,69° O y 36,00° N 5,61° O ≈ 884 km; a 5 km/h ≈ 177 h; a 8 h/día ≈ 22 días (cálculo propio)",
+      "source": "Cálculo con la fórmula del semiverso",
+      "url": "https://en.wikipedia.org/wiki/Haversine_formula"
+    },
+    {
+      "claim": "Punta de Tarifa, punto más meridional de la Europa continental",
+      "source": "Wikipedia: Punta de Tarifa",
+      "url": "https://en.wikipedia.org/wiki/Punta_de_Tarifa"
+    }
+  ],
+  "caption": {
+    "text": "¿Te atreverías?\n\nDe Estaca de Bares (A Coruña) a la Punta de Tarifa (Cádiz) hay unos 880 km en línea recta. A 5 km/h y 8 horas al día, serían unos 22 días. Por caminos reales, bastantes más.",
+    "hashtags": [
+      "#simulacion",
+      "#españa",
+      "#curiosidades",
+      "#senderismo"
+    ],
+    "alt_text": "Mapa de España con los puntos más al norte y al sur"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

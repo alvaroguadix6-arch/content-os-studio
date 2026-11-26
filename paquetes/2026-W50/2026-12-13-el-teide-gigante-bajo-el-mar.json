@@ -1,0 +1,185 @@
+{
+  "id": "2026-12-13-el-teide-gigante-bajo-el-mar",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "ciencia",
+  "title": "El Teide: el tercer volcán más alto del mundo",
+  "script": [
+    "La montaña más alta de España esconde la mitad de su tamaño bajo el mar.",
+    "El Teide, en Tenerife, mide 3.715 metros sobre el nivel del mar.",
+    "Pero su base está en el fondo del océano.",
+    "Medido desde allí, supera los 7.500 metros.",
+    "Eso lo convierte en el tercer volcán más alto del mundo desde su base.",
+    "Solo lo superan dos volcanes de Hawái: el Mauna Kea y el Mauna Loa.",
+    "Y es Patrimonio de la Humanidad desde 2007.",
+    "¿Has subido alguna vez? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "LA MITAD BAJO EL MAR"
+    },
+    {
+      "at": 5.29,
+      "text": "3.715 M"
+    },
+    {
+      "at": 12.71,
+      "text": "+7.500 M"
+    },
+    {
+      "at": 15.18,
+      "text": "3.º DEL MUNDO"
+    },
+    {
+      "at": 25.06,
+      "text": "UNESCO 2007"
+    },
+    {
+      "at": 27.88,
+      "text": "¿HAS SUBIDO?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 5.2941,
+      "kind": "grafico",
+      "visual": "comparacion",
+      "escena": {
+        "tipo": "comparacion",
+        "items": [
+          {
+            "etiqueta": "Sobre el mar",
+            "valor": 3715
+          },
+          {
+            "etiqueta": "Desde el fondo",
+            "valor": 7500,
+            "destacar": true
+          }
+        ],
+        "unidad": "m"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 4.2353,
+      "kind": "mapa",
+      "visual": "El Teide",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -16.642,
+          28.272
+        ],
+        "etiqueta": "El Teide",
+        "resaltar": [
+          "Santa Cruz De Tenerife"
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 3.1765,
+      "kind": "mapa",
+      "visual": "Tenerife",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -16.642,
+          28.272
+        ],
+        "etiqueta": "Tenerife"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 2.4706,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 7500,
+        "unidad": "metros desde el fondo",
+        "prefijo": "+"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 4.9412,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 3,
+        "unidad": "volcán más alto del mundo",
+        "sufijo": ".º"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 4.9412,
+      "kind": "mapa",
+      "visual": "Hawái",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -155.47,
+          19.82
+        ],
+        "etiqueta": "Hawái"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 2.8235,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "2007",
+            "texto": "Parque Nacional del Teide · UNESCO"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.7647,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "El Teide mide 3.715 m sobre el nivel del mar y unos 7.500 m desde el lecho oceánico; tercer volcán más alto desde su base tras Mauna Kea y Mauna Loa",
+      "source": "RTVC: los grandes volcanes de la Macaronesia",
+      "url": "https://rtvc.es/grandes-volcanes-de-la-macaronesia/"
+    },
+    {
+      "claim": "Parque Nacional del Teide, Patrimonio Mundial de la UNESCO desde 2007",
+      "source": "UNESCO World Heritage: Teide National Park",
+      "url": "https://whc.unesco.org/en/list/1258"
+    },
+    {
+      "claim": "Datos del volcán",
+      "source": "Wikipedia: Teide",
+      "url": "https://en.wikipedia.org/wiki/Teide"
+    }
+  ],
+  "caption": {
+    "text": "¿Has subido alguna vez?\n\nEl Teide mide 3.715 metros sobre el nivel del mar, pero desde su base en el fondo del océano supera los 7.500. Es el tercer volcán más alto del mundo medido así, tras el Mauna Kea y el Mauna Loa.",
+    "hashtags": [
+      "#ciencia",
+      "#canarias",
+      "#teide",
+      "#volcanes"
+    ],
+    "alt_text": "Comparación de la altura del Teide sobre el mar y desde el fondo"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "FAMOSOS",
+ "titulo": "¿De dónde era cada genio?",
+ "gancho": [
+  "¿DE DÓNDE ERA",
+  "*CADA GENIO*?"
+ ],
+ "intro": "¿De dónde era cada genio?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#arte",
+  "#historia"
+ ],
+ "preguntas": [
+  {
+   "q": "¿Dónde nació Cervantes?",
+   "prov": "Madrid",
+   "punto": [
+    -3.364,
+    40.482
+   ],
+   "respuesta": "Alcalá de Henares · Madrid",
+   "detalle": "Miguel de Cervantes · 1547",
+   "voz_q": "¿Dónde nació Cervantes?",
+   "voz_a": "¡En Alcalá de Henares!"
+  },
+  {
+   "q": "¿En qué ciudad nació Picasso?",
+   "prov": "Málaga",
+   "punto": [
+    -4.421,
+    36.721
+   ],
+   "respuesta": "Málaga",
+   "detalle": "Pablo Picasso · 1881",
+   "voz_q": "¿En qué ciudad nació Picasso?",
+   "voz_a": "¡En Málaga!"
+  },
+  {
+   "q": "¿De dónde era Dalí?",
+   "prov": "Girona",
+   "punto": [
+    2.96,
+    42.267
+   ],
+   "respuesta": "Figueres · Girona",
+   "detalle": "Salvador Dalí · 1904",
+   "voz_q": "¿De dónde era Dalí?",
+   "voz_a": "¡De Figueres, en Girona!"
+  },
+  {
+   "q": "¿Dónde nació Goya?",
+   "prov": "Zaragoza",
+   "punto": [
+    -1.05,
+    41.348
+   ],
+   "respuesta": "Fuendetodos · Zaragoza",
+   "detalle": "Francisco de Goya · 1746",
+   "voz_q": "¿Dónde nació Goya?",
+   "voz_a": "¡En Fuendetodos, Zaragoza!"
+  },
+  {
+   "q": "¿De dónde era Federico García Lorca?",
+   "prov": "Granada",
+   "punto": [
+    -3.775,
+    37.23
+   ],
+   "respuesta": "Fuente Vaqueros · Granada",
+   "detalle": "García Lorca · 1898",
+   "voz_q": "¿De dónde era Federico García Lorca?",
+   "voz_a": "¡De Fuente Vaqueros, en Granada!"
+  }
+ ],
+ "fuentes": [
+  "Real Academia de la Historia, DB~e: Cervantes, Picasso, Dalí, Goya y García Lorca",
+  "Museo Casa Natal de Picasso (Málaga) y Casa Natal de Goya (Fuendetodos)"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

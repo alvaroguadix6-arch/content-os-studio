@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "FRONTERAS",
+ "titulo": "Fronteras de España: ¿qué provincia es?",
+ "gancho": [
+  "FRONTERAS",
+  "*DE ESPAÑA*"
+ ],
+ "intro": "Fronteras de España. ¿Qué provincia es?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#fronteras",
+  "#geografia"
+ ],
+ "preguntas": [
+  {
+   "q": "¿Qué provincia toca Francia y el mar Cantábrico?",
+   "prov": "Gipuzkoa/Guipúzcoa",
+   "punto": [
+    -1.79,
+    43.33
+   ],
+   "respuesta": "Gipuzkoa",
+   "detalle": "Irún · Hondarribia",
+   "voz_q": "¿Qué provincia toca Francia y el mar Cantábrico?",
+   "voz_a": "¡Gipuzkoa!"
+  },
+  {
+   "q": "¿Qué provincia toca Portugal y el océano Atlántico?",
+   "prov": "Pontevedra",
+   "punto": [
+    -8.87,
+    41.87
+   ],
+   "respuesta": "Pontevedra",
+   "detalle": "A Guarda · desembocadura del Miño",
+   "voz_q": "¿Qué provincia toca Portugal y el océano Atlántico?",
+   "voz_a": "¡Pontevedra!"
+  },
+  {
+   "q": "¿Qué provincia hace frontera con Andorra?",
+   "prov": "Lleida",
+   "punto": [
+    1.47,
+    42.43
+   ],
+   "respuesta": "Lleida",
+   "detalle": "La Seu d'Urgell",
+   "voz_q": "¿Qué provincia hace frontera con Andorra?",
+   "voz_a": "¡Lleida!"
+  },
+  {
+   "q": "¿Qué provincia hace frontera con Gibraltar?",
+   "prov": "Cádiz",
+   "punto": [
+    -5.35,
+    36.16
+   ],
+   "respuesta": "Cádiz",
+   "detalle": "La Línea de la Concepción",
+   "voz_q": "¿Qué provincia hace frontera con Gibraltar?",
+   "voz_a": "¡Cádiz!"
+  },
+  {
+   "q": "¿Qué ciudad española está en África, frente a Gibraltar?",
+   "prov": "Ceuta",
+   "punto": [
+    -5.32,
+    35.89
+   ],
+   "respuesta": "Ceuta",
+   "detalle": "Al otro lado del Estrecho",
+   "voz_q": "¿Qué ciudad española está en África, frente a Gibraltar?",
+   "voz_a": "¡Ceuta!"
+  }
+ ],
+ "fuentes": [
+  "Instituto Geográfico Nacional: límites de España y provincias",
+  "Ministerio de Asuntos Exteriores: Gibraltar y Andorra"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

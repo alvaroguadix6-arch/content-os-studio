@@ -1,0 +1,182 @@
+{
+  "id": "2026-12-16-el-camino-de-santiago-bate-records",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "El Camino de Santiago bate récords",
+  "script": [
+    "Casi medio millón de personas llegaron a Santiago a pie, en bici o a caballo en un solo año.",
+    "Fue en 2024: la Oficina del Peregrino entregó 499.239 compostelas.",
+    "Un récord histórico.",
+    "Un 12 % más que en 2023, que ya había sido récord.",
+    "Casi la mitad eligió el Camino Francés.",
+    "Y más de la mitad vino de fuera de España.",
+    "Y en 2025 se volvió a superar: más de 530.000.",
+    "¿Lo has hecho alguna vez? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "CASI MEDIO MILLÓN"
+    },
+    {
+      "at": 6.71,
+      "text": "499.239"
+    },
+    {
+      "at": 11.29,
+      "text": "+12 %"
+    },
+    {
+      "at": 18.0,
+      "text": "58 % EXTRANJEROS"
+    },
+    {
+      "at": 21.53,
+      "text": "+530.000"
+    },
+    {
+      "at": 25.06,
+      "text": "¿LO HAS HECHO?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 6.7059,
+      "kind": "mapa",
+      "visual": "Santiago de Compostela",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -8.544,
+          42.88
+        ],
+        "etiqueta": "Santiago de Compostela",
+        "resaltar": [
+          "A Coruña"
+        ]
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 3.5294,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 499239,
+        "unidad": "compostelas en 2024"
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 1.0588,
+      "kind": "archivo",
+      "visual": "Récord histórico de peregrinos en Santiago",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Récord histórico de peregrinos en Santiago",
+        "fecha": "31 de diciembre de 2024",
+        "cabecera": "Diario"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 4.2353,
+      "kind": "grafico",
+      "visual": "comparacion",
+      "escena": {
+        "tipo": "comparacion",
+        "items": [
+          {
+            "etiqueta": "2023",
+            "valor": 446039
+          },
+          {
+            "etiqueta": "2024",
+            "valor": 499239,
+            "destacar": true
+          }
+        ]
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 2.4706,
+      "kind": "grafico",
+      "visual": "Camino Francés",
+      "escena": {
+        "tipo": "personas",
+        "resaltar": 47,
+        "etiqueta": "Camino Francés"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 3.5294,
+      "kind": "grafico",
+      "visual": "de fuera de España",
+      "escena": {
+        "tipo": "personas",
+        "resaltar": 58,
+        "etiqueta": "de fuera de España"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 3.5294,
+      "kind": "grafico",
+      "visual": "comparacion",
+      "escena": {
+        "tipo": "comparacion",
+        "items": [
+          {
+            "etiqueta": "2024",
+            "valor": 499239
+          },
+          {
+            "etiqueta": "2025",
+            "valor": 530987,
+            "destacar": true
+          }
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 2.1176,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "En 2024 la Oficina del Peregrino registró 499.239 peregrinos (récord), un 12 % más que en 2023 (446.039)",
+      "source": "El Español (Quincemil)",
+      "url": "https://elespanol.com/quincemil/santiago/20241231/santiago-cierra-record-historico-peregrinos-roza-medio-millon-compostelas/912908878_0.html"
+    },
+    {
+      "claim": "En 2024, el 47 % eligió el Camino Francés y el 58 % vino de fuera de España",
+      "source": "Metropolitano.gal",
+      "url": "https://metropolitano.gal/enfoque/el-camino-de-santiago-cierra-2024-con-un-record-historico-de-peregrinos"
+    },
+    {
+      "claim": "En 2025 se certificaron 530.987 peregrinos, nuevo récord",
+      "source": "ACI Prensa",
+      "url": "https://www.aciprensa.com/noticias/120867/camino-de-santiago-bate-record-de-peregrinos-en-2025-superando-los-500000"
+    }
+  ],
+  "caption": {
+    "text": "¿Lo has hecho alguna vez?\n\nEn 2024 la Oficina del Peregrino de Santiago entregó 499.239 compostelas, un récord histórico y un 12 % más que en 2023. Casi la mitad eligió el Camino Francés y más de la mitad vino de fuera de España. En 2025 se volvió a superar: 530.987.",
+    "hashtags": [
+      "#caminodesantiago",
+      "#españa",
+      "#galicia",
+      "#historia"
+    ],
+    "alt_text": "Mapa con Santiago de Compostela y un contador de peregrinos"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}
