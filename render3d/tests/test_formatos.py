@@ -28,8 +28,8 @@ def test_lote_valida_y_limita():
         except ValueError:
             pass
     try:
-        formatos.lote("islas,castillos,gentilicios,comida,fiestas,monumentos")
-        raise AssertionError("debería limitar a 5")
+        formatos.lote("islas,castillos,gentilicios,comida,fiestas,monumentos,facil_1,facil_2,dificil_1")
+        raise AssertionError("debería limitar a 8")
     except ValueError:
         pass
     try:
@@ -37,6 +37,20 @@ def test_lote_valida_y_limita():
         raise AssertionError("lote vacío")
     except ValueError:
         pass
+
+
+def test_lote_con_paquetes_y_plataformas():
+    paq = sorted(os.listdir(os.path.join(ROOT, "..", "paquetes", "2026-W48")))[0]
+    j = formatos.lote("islas", "", f"paquetes/2026-W48/{paq}")
+    assert [x["formato"] for x in j] == ["quiz", "paquete"], j
+    for mal in ("paquetes/../x.json", "paquetes/2026-W48/no-existe.json", "/etc/passwd"):
+        try:
+            formatos.lote("", "", mal)
+            raise AssertionError(mal)
+        except ValueError:
+            pass
+    txt = formatos.plataformas("Primera línea.\n\nCuerpo.", ["#a", "#b", "#c", "#d", "#e"], "Título del vídeo")
+    assert "INSTAGRAM" in txt and "TIKTOK" in txt and "Título del vídeo #Shorts" in txt
 
 
 def test_quiz_json_completos():
@@ -141,7 +155,7 @@ def test_portada():
 
 if __name__ == "__main__":
     solo = set(sys.argv[1:])  # p. ej. `test_formatos.py rapidas` o nombres de pruebas concretas
-    RAPIDAS = {"test_lote_valida_y_limita", "test_quiz_json_completos", "test_textos_sin_datos_privados",
+    RAPIDAS = {"test_lote_valida_y_limita", "test_lote_con_paquetes_y_plataformas", "test_quiz_json_completos", "test_textos_sin_datos_privados",
                "test_canarias_dentro_de_la_zona", "test_contar_votos_reconoce_y_no_duplica",
                "test_provincias_y_pueblos_bilingues"}
     if "rapidas" in solo:
