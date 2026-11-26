@@ -191,6 +191,22 @@ def test_escenas_con_datos_en_zona_segura():
     assert not malos, malos
 
 
+def test_primer_fotograma_con_contenido():
+    """Retención (fase 2): el primer fotograma de una historia con mapa ya enseña el mapa, no una pantalla vacía."""
+    import numpy as np
+    import nivel_oculto as no
+    pkg = {"id": "prueba-primer-segundo", "title": "x", "pillar": "historia", "format": "reel",
+           "script": ["Bélmez de la Moraleda, un pueblo de Jaén, con una frase algo larga.", "Y una segunda frase de prueba."],
+           "visual_brief": [{"scene": 1, "seconds": 4, "kind": "mapa", "visual": "x",
+                             "escena": {"tipo": "mapa_espana", "punto": [-3.38, 37.73], "etiqueta": "Bélmez", "resaltar": ["Jaén"]}},
+                            {"scene": 2, "seconds": 2, "kind": "texto", "visual": "x"}],
+           "on_screen_text": [], "caption": {"text": "x", "hashtags": ["#a"]}}
+    v = no.make_video(pkg)(no.synthetic_narration(pkg))
+    a = np.asarray(v.frame(0).convert("RGB"), np.float32)
+    zona = a[700:1200, 150:850]
+    assert (zona.max(axis=2) > 90).mean() > 0.15, "el mapa no se ve en el primer fotograma"
+
+
 def test_conquista_diaria_sin_votos_nuevos():
     """La serie es diaria: un episodio sin votos nuevos también se genera y su guion tiene sentido."""
     import shutil

@@ -369,6 +369,22 @@ def make_video(pkg):
                 self.E(d, cx + R * (ox * math.cos(rot) - oy * math.sin(rot)), cy + R * (ox * math.sin(rot) + oy * math.cos(rot)),
                        R * cr, (70, 60, 55))
 
+        # ── cámara (fase 2: primeros segundos y transiciones) ──
+        def camera(self, t, name, lt, u):
+            """Entrada con «golpe» de zoom en el primer segundo (retención), empujón en cada corte y, en los mapas,
+            un acercamiento suave hacia el lugar. Zoom máximo moderado para no sacar nada de la zona segura."""
+            z, cx, cy = super().camera(t, name, lt, u)
+            if t < 0.6:                                   # primer segundo: de 1,12× a la cámara normal (breve)
+                z += 0.10 * (1 - ease_out(t / 0.6))
+            elif lt < 0.3:                                # cada corte: pequeño empujón que se asienta
+                z += 0.04 * (1 - ease_out(lt / 0.3))
+            foco = escenas.foco(self.specs.get(name))
+            if foco:                                      # solo en vertical: en horizontal empujaría rótulos hacia
+                k = 0.30 * smooth(0, 1, u)                # los iconos de la derecha (la zona segura manda)
+                cy = cy + (foco[1] - cy) * k
+                z += 0.04 * smooth(0, 1, u)
+            return z, cx, cy
+
         # ── rótulos fijos (fuera del zoom) ──
         def overlay(self, ov, d, t, name, lt, u):
             card = self.cards.get(name)
