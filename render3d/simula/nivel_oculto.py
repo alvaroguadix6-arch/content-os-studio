@@ -263,10 +263,10 @@ def make_video(pkg):
             self.qmark(img, 540, 820, 260 * back_out(clamp(lt / 0.5)), YEL)
 
         def k_archivo(self, key, img, d, t, lt, u):
-            self.R(d, 190, 560, 890, 1260, (236, 222, 190), radius=18, outline=(90, 60, 30), width=8)
-            self.R(d, 240, 610, 840, 1060, (190, 170, 140), radius=8)
+            self.R(d, 200, 560, 860, 1260, (236, 222, 190), radius=18, outline=(90, 60, 30), width=8)  # x ≤ 862: iconos
+            self.R(d, 250, 610, 810, 1060, (190, 170, 140), radius=8)
             for i in range(5):
-                self.R(d, 240, 1100 + i * 28, 840 - (i % 3) * 120, 1112 + i * 28, (120, 96, 70), radius=4)
+                self.R(d, 250, 1100 + i * 28, 810 - (i % 3) * 120, 1112 + i * 28, (120, 96, 70), radius=4)
             self.glow(img, 540, 830, 120, (255, 230, 170), alpha=60)
             self.qmark(img, 540, 840, 180, (90, 60, 30))
 
