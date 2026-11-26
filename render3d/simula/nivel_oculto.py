@@ -14,7 +14,7 @@ Cada frase del guion es una escena (un corte). El tipo de escena sale del `visua
     PAQUETE=paquetes/2026-W48/x.json python montaje.py nivel_oculto --narracion voz/ --frames frames/ --out x.mp4
 
 Sin voz (vista previa o pruebas): `python nivel_oculto.py sintetica <paquete> <dir>` crea un narracion.json con
-tiempos estimados a 170 palabras por minuto.
+tiempos estimados a 170 palabras por minuto. Portada del reel: `python nivel_oculto.py portada <paquete> portada.jpg ["TÍTULO CORTO"]`.
 """
 from __future__ import annotations
 
@@ -286,6 +286,63 @@ MOOD = MOODS.get((PKG or {}).get("pillar"), "suspense")
 BPM = 84
 
 
+def cover(pkg, out_path, beat=None, title=None):
+    """Portada 1080×1920 para el reel: un fotograma de la propia animación (sin subtítulos), título grande en la
+    zona segura, tarjeta roja con el rótulo principal y la marca. Mismo estilo que el vídeo."""
+    from PIL import Image, ImageDraw, ImageFilter
+    nar = synthetic_narration(pkg)
+    cls = make_video(pkg)
+
+    class Cover(cls):
+        def caption(self, out, t):
+            return out
+
+        def hud(self, out, t):
+            return out
+
+        def overlay(self, ov, d, t, name, lt, u):
+            return False
+
+    v = Cover(nar)
+    kinds, cards = beat_layout(pkg)
+    keys = keys_for(pkg)
+    if beat is None:  # primera escena «visual» (globo, simulación o gráfico), si no la primera
+        beat = next((i for i, k in enumerate(kinds) if k in ("mapa", "simulacion", "grafico")), 0)
+    ln = v.L[keys[beat]]
+    img = v.frame(int((ln["start"] + 0.75 * (ln["end"] - ln["start"])) * 30)).convert("RGBA")
+    shade = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    ImageDraw.Draw(shade).rectangle([0, 0, W, 1920], fill=(0, 0, 0, 70))
+    img.alpha_composite(shade)
+    d = ImageDraw.Draw(img)
+    title = (title or pkg.get("title") or "").upper()
+    words, lines, cur = title.split(), [], ""
+    f = font("Black", 96)
+    for w in words:
+        test = (cur + " " + w).strip()
+        if f.getlength(test) > 860 and cur:
+            lines.append(cur)
+            cur = w
+        else:
+            cur = test
+    lines.append(cur)
+    y = TOP_TEXT - 60  # por debajo de la marca y dentro de la zona segura
+    for i, line in enumerate(lines[:3]):
+        col = YEL if i == len(lines[:3]) - 1 else WHITE
+        d.text((540 + 5, y + 6), line, font=f, fill=(0, 0, 0, 150), anchor="mt")
+        d.text((540, y), line, font=f, fill=col + (255,), anchor="mt")
+        y += 108
+    card = next((c for c in cards if c), None)
+    if card:
+        fc = font("ExtraBold", 66)
+        tw = fc.getlength(card)
+        cy = BOTTOM - 190
+        d.rounded_rectangle([540 - tw / 2 - 40, cy - 58, 540 + tw / 2 + 40, cy + 58], 28, fill=(215, 40, 50, 255))
+        d.text((540, cy), card, font=fc, fill=(255, 255, 255, 255), anchor="mm")
+    out = Video.brand(type("B", (), {"BRAND": "NIVEL OCULTO"})(), img.convert("RGB"))
+    out.save(out_path, quality=92)
+    return out_path
+
+
 def main(argv):
     if len(argv) >= 4 and argv[1] == "guion":
         os.makedirs(os.path.dirname(os.path.abspath(argv[3])), exist_ok=True)
@@ -298,6 +355,9 @@ def main(argv):
         with open(os.path.join(argv[3], "narracion.json"), "w", encoding="utf-8") as fh:
             json.dump(synthetic_narration(load_package(argv[2])), fh, ensure_ascii=False)
         print("narración sintética (sin audio):", argv[3])
+        return 0
+    if len(argv) >= 4 and argv[1] == "portada":
+        print("portada:", cover(load_package(argv[2]), argv[3], title=argv[4] if len(argv) > 4 else None))
         return 0
     if VIDEO is None:
         print("Define PAQUETE=ruta/al/paquete.json", file=sys.stderr)
