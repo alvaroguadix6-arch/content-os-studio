@@ -53,7 +53,7 @@ jobs:
           echo "matriz=$M" >> "$GITHUB_OUTPUT"
           {
             echo "## Lote a renderizar"
-            python3 -c 'import json,sys; [print(f"- {j[\"formato\"]}: {j[\"tema\"]}") for j in json.loads(sys.argv[1])["include"]]' "$M"
+            python3 -c 'import json, sys; print("\n".join("- " + j["formato"] + ": " + j["tema"] for j in json.loads(sys.argv[1])["include"]))' "$M"
             echo
             echo "<details><summary>Temas de quiz disponibles</summary>"
             echo
