@@ -1,0 +1,51 @@
+{
+ "guion": [
+  [
+   "intro",
+   "Cuatro candidatos, dos horas, cinco bloques. Esto es lo que pasó en el último gran debate antes de las elecciones del domingo."
+  ],
+  [
+   "quienes",
+   "Pedro Sánchez, del PSOE. Alberto Núñez Feijóo, del PP. Santiago Abascal, de Vox. Y Ada Colau, de Frente Amplio. Moderó María Casado."
+  ],
+  [
+   "bloques",
+   "Se habló de vivienda, economía, servicios públicos, corrupción y migración."
+  ],
+  [
+   "vivienda",
+   "En vivienda, Colau pidió a Feijóo que concretara cómo construirá el millón de viviendas que promete. Y Sánchez acusó a Abascal de difundir bulos."
+  ],
+  [
+   "economia",
+   "En economía, las pensiones, el ingreso mínimo vital y el precio del alquiler marcaron las diferencias."
+  ],
+  [
+   "resultado",
+   "Uno de los momentos más comentados: Sánchez preguntó a Feijóo y a Abascal si reconocerán el resultado de las elecciones."
+  ],
+  [
+   "cruces",
+   "También le preguntó a Feijóo si le tenía miedo a Abascal. Y Colau preguntó a Abascal qué le debe a Netanyahu."
+  ],
+  [
+   "cierre",
+   "Feijóo cerró el debate con el minuto de oro. Y, como siempre, cada medio da un ganador distinto."
+  ],
+  [
+   "cta",
+   "Y tú, ¿quién crees que ganó el debate? Te leo en los comentarios."
+  ]
+ ],
+ "pausas": {
+  "intro": 0.3,
+  "quienes": 0.2,
+  "bloques": 0.2,
+  "vivienda": 0.2,
+  "economia": 0.2,
+  "resultado": 0.2,
+  "cruces": 0.2,
+  "cierre": 0.2,
+  "cta": 0.0
+ }
+}
