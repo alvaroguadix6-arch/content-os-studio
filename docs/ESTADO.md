@@ -1,4 +1,4 @@
-# Estado de content-os-studio · cierre de la fase 1 (26-11-2026)
+# Estado de content-os-studio · fase 2 en curso (26-11-2026)
 
 Sin datos privados: estadísticas, votos detallados por usuario y enlaces de descarga están en el repo privado
 `instagram-agent` (`docs/CONTINUIDAD.md`).
@@ -13,7 +13,14 @@ Sin datos privados: estadísticas, votos detallados por usuario y enlaces de des
   formato, silencios, planos congelados y negros; filtro de datos privados en paquetes; pruebas en cada PR.
 - **Fase 1**: 24 vídeos producidos y verificados (quiz, retos, Conquista ep. 3, historias, ciencia y misterios).
 
-## Incidencias resueltas en esta fase
+## Fase 2 (desde el 26-11-2026)
+- **Conquista del día**: un solo pedido desde el repo privado → render con todos los controles y un reintento.
+  Respaldo honesto (`.pendiente`): si los votos no llegan, el episodio sale igual y lo dice.
+- **Escenas con datos** (`simula/escenas.py`): mapas reales, cifras, fechas y figuras en lugar de escenas genéricas;
+  prueba de zona segura de todas ellas en cada PR.
+- **Semana 3-9 dic**: 7 quiz de España nuevos y 7 historias con escenas de datos (paquetes W49 y W50).
+
+## Incidencias resueltas en la fase 1
 | problema | causa | solución permanente |
 | --- | --- | --- |
 | Render fallaba al instalar | Python 3.14 en el runner, `blis` sin paquete | Python 3.12 y versiones fijadas |

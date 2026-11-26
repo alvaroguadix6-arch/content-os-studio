@@ -9,6 +9,9 @@ Producción y render gratuito de vídeos verticales (1080×1920, 30 fps) para @n
 consecutiva, también sin votos nuevos (el guion lo cubre: «Hoy el mapa no se ha movido…»). El render del episodio
 debe estar listo para descargar **antes de las 16:00**; si falla, arreglarlo es lo primero (sin relajar el QC).
 Sigue siendo manual (`RENDER`): no se publica nada ni se activa ninguna automatización.
+Lo pide el workflow manual «Conquista del día» del repo privado: sube el CSV agregado (o `votos/epNN.pendiente` si no
+se pudieron leer los comentarios: el episodio sale igual y no se inventa nada) y `render3d/conquista/pedido.json`;
+ese push lanza aquí `conquista-del-dia.yml` (mismo render y controles, con un reintento).
 
 ## Reglas
 - **Repositorio público**: nunca estadísticas privadas, comentarios, nombres de usuario, credenciales ni tokens.
@@ -27,6 +30,7 @@ Sigue siendo manual (`RENDER`): no se publica nada ni se activa ninguna automati
 | `simula/quiz.py` + `quizzes/*.json` | Quiz del mapa de España (y de otros países). Canarias en recuadro abajo a la izquierda. |
 | `conquista/` | «Tu pueblo conquista España»: `contar.py` (votos), `conquista.py` (territorios), `episodio.py` (vídeo), `datos.py` (municipios INE/IGN). |
 | `simula/nivel_oculto.py` | Adaptador de paquetes (historias, ciencia, misterios, simulaciones); escenas por tipo y motivos de meteorito. |
+| `simula/escenas.py` | **Escenas con datos** (fase 2): mapa real de España, globo girado al lugar, contador, comparación, línea de tiempo, 100 personas, relojes, documento y figuras. Se activan con `visual_brief[].escena`; las producciones nuevas deben usarlas en cada frase. |
 | `simula/motor.py` | Base de escenas, subtítulos palabra a palabra y marca. |
 | `simula/montaje.py` | Música, efectos y audio final (−14 LUFS dos pasadas, pico real ≤ −1 dBTP garantizado). |
 | `simula/zona_segura.py` | Zona segura común Reels/TikTok/Shorts y comprobador automático (`Registro`, `fuera_de_zona`). |
@@ -35,7 +39,8 @@ Sigue siendo manual (`RENDER`): no se publica nada ni se activa ninguna automati
 | `tools/qc_video.py`, `tools/qc_lote.py`, `tools/verificar_descargas.py`, `tools/check_paquetes.py` | Calidad y seguridad. |
 
 ## Workflows
-`render-quiz-conquista.yml` (lotes ≤ 8, 4 a la vez; quiz, Conquista y paquetes) · `render-paquete.yml` ·
+`render-quiz-conquista.yml` (lotes ≤ 8, 4 a la vez; quiz, Conquista y paquetes; también reutilizable) ·
+`conquista-del-dia.yml` (lo lanza el pedido del repo privado o a mano con `RENDER`; render + reintento) · `render-paquete.yml` ·
 `qc-video.yml` (QC de una ejecución por `run_id`) · `pruebas-render.yml` (en cada PR) · `fisica.yml`, `render-3d.yml`
 (motores antiguos) · `deploy.yml` (GitHub Pages) · `test.yml`.
 
