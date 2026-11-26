@@ -1,0 +1,79 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "ISLAS",
+ "titulo": "Islas de España: ¿en qué provincia está cada una?",
+ "intro": "Islas de España, esta vez con Canarias y Baleares. ¿Sabes en qué provincia está cada una?",
+ "gancho": [
+  "ISLAS DE",
+  "*ESPAÑA*"
+ ],
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#islas",
+  "#geografia"
+ ],
+ "preguntas": [
+  {
+   "q": "¿En qué provincia están las islas Cíes?",
+   "prov": "Pontevedra",
+   "punto": [
+    -8.905,
+    42.222
+   ],
+   "respuesta": "Pontevedra",
+   "detalle": "Islas Cíes",
+   "voz_q": "¿En qué provincia están las islas Cíes?",
+   "voz_a": "¡Pontevedra!"
+  },
+  {
+   "q": "¿En qué provincia está Menorca?",
+   "prov": "Illes Balears",
+   "punto": [
+    4.1,
+    39.95
+   ],
+   "respuesta": "Illes Balears",
+   "detalle": "Menorca",
+   "voz_q": "¿Y Menorca?",
+   "voz_a": "¡Illes Balears!"
+  },
+  {
+   "q": "¿En qué provincia está La Graciosa?",
+   "prov": "Las Palmas",
+   "punto": [
+    -13.505,
+    29.255
+   ],
+   "respuesta": "Las Palmas",
+   "detalle": "La Graciosa",
+   "voz_q": "¿Dónde está La Graciosa, la octava isla canaria?",
+   "voz_a": "¡Las Palmas!"
+  },
+  {
+   "q": "¿En qué provincia están las islas Columbretes?",
+   "prov": "Castelló/Castellón",
+   "punto": [
+    0.685,
+    39.897
+   ],
+   "respuesta": "Castellón",
+   "detalle": "Islas Columbretes",
+   "voz_q": "¿Y las islas Columbretes?",
+   "voz_a": "¡Castellón!"
+  },
+  {
+   "q": "¿En qué provincia está El Hierro?",
+   "prov": "Santa Cruz De Tenerife",
+   "punto": [
+    -18.0,
+    27.75
+   ],
+   "respuesta": "Santa Cruz de Tenerife",
+   "detalle": "El Hierro",
+   "voz_q": "Última: ¿en qué provincia está El Hierro?",
+   "voz_a": "¡Santa Cruz de Tenerife!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

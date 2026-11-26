@@ -18,6 +18,9 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import zona_segura as ZS  # noqa: E402
+
 W, H, S, FPS = 1080, 1920, 2, 30
 YEL = (255, 206, 60)
 CYAN = (120, 225, 255)
@@ -44,11 +47,19 @@ def back(x):
     return 1 + (c + 1) * (x - 1) ** 3 + c * (x - 1) ** 2
 
 
+# ───── maquetación (zona segura común de Reels, TikTok y Shorts: ver zona_segura.py) ─────
+# arriba: marca (268) · etiqueta y tarjeta de la pregunta (298-546) · cuenta atrás / respuesta (550-675)
+# abajo: mapa entre y=690 e y=1430, sin pasar de x=862 donde están los iconos de la derecha (y > 900)
+BRAND_Y, CARD_Y, CD_Y = 268, 446, 612
+MAP_BOX = (118, 690, 862, 1430)  # x0, y0, x1, y1 del mapa (y su recuadro de Canarias)
+
 # ───── mapa ─────
-LON0, LAT0, K = -9.6, 44.0, 90.0  # proyección equirrectangular (cos 40°)
+LON0, LAT0, K = -9.3014, 43.7924, 71.0  # proyección equirrectangular (cos 40°), ajustada a MAP_BOX
 CX = math.cos(math.radians(40))
-MX, MY = 62, 650
-CAN = dict(lon0=-18.3, lat0=29.6, k=50.0, x=40, y=1450, w=290, h=125)  # recuadro de Canarias
+MX, MY = 118, 690
+# recuadro de Canarias abajo a la izquierda (donde estaría Portugal), entero dentro de la zona segura;
+# antes estaba en y=1450, debajo de la interfaz de las apps
+CAN = dict(lon0=-18.17, lat0=29.42, k=56.8, x=118, y=1300, w=266, h=130)
 
 
 def proj(lon, lat, can=False):
@@ -63,15 +74,16 @@ MAPA = _QCFG.get("mapa")  # None → España con recuadro de Canarias; si no, qu
 
 
 def fit_country(d):
-    """Ajusta la proyección para que el país llene la zona del mapa (x 60–1020, y 640–1560)."""
+    """Ajusta la proyección para que el país llene la zona segura del mapa (MAP_BOX)."""
     global LON0, LAT0, K, CX, MX, MY
     pts = [p for f in d["features"] for poly in f["geometry"]["coordinates"] for p in poly[0]]
     lons, lats = [p[0] for p in pts], [p[1] for p in pts]
     CX = math.cos(math.radians((min(lats) + max(lats)) / 2))
     w, h = (max(lons) - min(lons)) * CX, max(lats) - min(lats)
-    K = min(960 / w, 900 / h)
+    bx0, by0, bx1, by1 = MAP_BOX
+    K = min((bx1 - bx0) / w, (by1 - by0) / h)
     LON0, LAT0 = min(lons), max(lats)
-    MX, MY = 540 - w * K / 2, 1100 - h * K / 2
+    MX, MY = (bx0 + bx1) / 2 - w * K / 2, (by0 + by1) / 2 - h * K / 2
 
 
 def load_map():
@@ -194,6 +206,12 @@ class Video:
             img = img + beam[..., None] * np.array(col)[None, None, :] * 0.5
         return Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).convert("RGBA")
 
+    def fondo_portada(self):
+        """Fondo limpio para la portada: el mapa sin tarjetas, sin textos y sin iluminar respuestas (no hace spoiler)."""
+        img = self.bg(1.0)
+        img.alpha_composite(base_map())
+        return img.convert("RGB")
+
     def current(self, t):
         cur = None
         for i in range(1, 6):
@@ -219,26 +237,29 @@ class Video:
             self.outro(img, d, t)
         else:
             self.question(img, d, t, cur)
-        d.text((540, 1868), "N I V E L   O C U L T O", font=font("ExtraBold", 28), fill=(190, 170, 240), anchor="mm")
+        d.text((540, BRAND_Y), "N I V E L   O C U L T O", font=font("ExtraBold", 26), fill=(190, 170, 240), anchor="mm")
         return img.convert("RGB")
 
     def card(self, img, d, t0, t, label, text, size=58):
         a = back((t - t0) / 0.45)
-        cy = 330 - (1 - a) * 260
+        cy = CARD_Y - (1 - a) * 260
         lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
         dl = ImageDraw.Draw(lay)
-        dl.rounded_rectangle([66, cy - 125 + 10, 1014, cy + 125 + 14], 34, fill=(0, 0, 0, 110))
+        dl.rounded_rectangle([118, cy - 100 + 10, 962, cy + 100 + 14], 34, fill=(0, 0, 0, 110))
         lay = lay.filter(ImageFilter.GaussianBlur(10))
         img.alpha_composite(lay)
-        d.rounded_rectangle([66, cy - 125, 1014, cy + 125], 34, fill=(246, 244, 255), outline=YEL, width=7)
-        lines = wrap(text, font("ExtraBold", size), 860)
+        d.rounded_rectangle([118, cy - 100, 962, cy + 100], 34, fill=(246, 244, 255), outline=YEL, width=7)
+        lines = wrap(text, font("ExtraBold", size), 780)
+        while len(lines) > 3 or (len(lines) * size * 1.18 > 180 and size > 36):
+            size -= 4
+            lines = wrap(text, font("ExtraBold", size), 780)
         lh = size * 1.18
         for k, ln in enumerate(lines):
             d.text((540, cy + (k - (len(lines) - 1) / 2) * lh), ln, font=font("ExtraBold", size), fill=(32, 22, 70), anchor="mm")
         f = font("ExtraBold", 32)
         w = d.textlength(label, font=f) + 60
-        d.rounded_rectangle([540 - w / 2, cy - 150, 540 + w / 2, cy - 98], 26, fill=PINK)
-        d.text((540, cy - 124), label, font=f, fill=(255, 255, 255), anchor="mm")
+        d.rounded_rectangle([540 - w / 2, cy - 148, 540 + w / 2, cy - 96], 26, fill=PINK)
+        d.text((540, cy - 122), label, font=f, fill=(255, 255, 255), anchor="mm")
 
     def gancho(self, img, t):
         """Título gancho a pantalla completa: líneas que entran de golpe (las *marcadas* en amarillo)."""
@@ -248,14 +269,14 @@ class Video:
         lay = Image.new("RGBA", img.size, (0, 0, 0, 0))
         dl = ImageDraw.Draw(lay)
         sizes = []
-        for ln in lines:
+        for ln in lines:  # bajo y=900 están los iconos de la derecha: ancho máximo 644 (centrado entre 218 y 862)
             txt = ln.strip("*")
-            sz = 150
-            while sz > 60 and dl.textlength(txt, font=font("Black", sz)) > 960:
+            sz = 140
+            while sz > 50 and (dl.textlength(txt, font=font("Black", sz)) + 20 > 644 or sz * 1.12 * len(lines) > 720):
                 sz -= 4
             sizes.append(sz)
         total = sum(s * 1.12 for s in sizes)
-        y = 900 - total / 2
+        y = 1060 - total / 2
         for k, (ln, sz) in enumerate(zip(lines, sizes)):
             u = (t - 0.08 - k * 0.22) / 0.32
             if u <= 0:
@@ -280,7 +301,7 @@ class Video:
             img.alpha_composite(_alpha(highlight(names[rng.integers(len(names))]), 0.9))
             self.gancho(img, t)
             f = font("Black", int(96 * a) + 1)
-            d.text((540, 1700), "5 DATOS" if sabias else "5 PREGUNTAS", font=f, fill=YEL, anchor="mm", stroke_width=6, stroke_fill=(30, 16, 70))
+            d.text((540, CD_Y - 40), "5 DATOS" if sabias else "5 PREGUNTAS", font=f, fill=YEL, anchor="mm", stroke_width=6, stroke_fill=(30, 16, 70))
             return
         self.card(img, d, 0.0, t, self.Q.get("etiqueta", "QUIZ DE " + self.Q.get("pais", "ESPAÑA")),
                   self.Q.get("titulo", f"{tema}: ¿cuántas aciertas?"), 60)
@@ -291,8 +312,8 @@ class Video:
         if t > 0.6:
             h = highlight(nm)
             img.alpha_composite(_alpha(h, 0.85))
-        f = font("Black", int(120 * a) + 1)
-        d.text((540, 1700), "5 DATOS" if sabias else "5 PREGUNTAS", font=f, fill=YEL, anchor="mm", stroke_width=6, stroke_fill=(30, 16, 70))
+        f = font("Black", int(96 * a) + 1)
+        d.text((540, CD_Y + 10), "5 DATOS" if sabias else "5 PREGUNTAS", font=f, fill=YEL, anchor="mm", stroke_width=6, stroke_fill=(30, 16, 70))
 
     def outro(self, img, d, t):
         t0 = self.L["outro"]["start"] - 0.1
@@ -301,14 +322,14 @@ class Video:
             return
         self.card(img, d, t0, t, "¿CUÁNTAS HAS ACERTADO?", "Dímelo en los comentarios", 62)
         a = back((t - t0 - 0.3) / 0.5)
-        y = 1690
+        y = CD_Y
         for k, n in enumerate("012345"):
-            x = 540 + (k - 2.5) * 140
-            r = 52 * a
+            x = 540 + (k - 2.5) * 122
+            r = 48 * a
             if r > 1:
                 d.ellipse([x - r, y - r, x + r, y + r], fill=(46, 52, 128), outline=YEL, width=5)
                 d.text((x, y), n, font=font("Black", max(1, int(60 * a))), fill=(255, 255, 255), anchor="mm")
-        d.text((540, 1790), "/ 5", font=font("ExtraBold", 44), fill=(220, 210, 255), anchor="mm")
+        d.text((540, CD_Y + 90), "/ 5", font=font("ExtraBold", 40), fill=(220, 210, 255), anchor="mm", stroke_width=4, stroke_fill=(30, 16, 70))
 
     def map_answer(self, t, i):
         """Mapa con la región iluminada; en países con regiones pequeñas, zoom hacia el punto al revelar."""
@@ -340,7 +361,7 @@ class Video:
         px, py = proj(*q["punto"])
         lay = lay.transform(lay.size, Image.AFFINE, (1 / z, 0, px - px / z, 0, 1 / z, py - py / z), resample=Image.BILINEAR)
         yy = np.arange(H)[:, None]
-        m = np.clip((yy - 600) / 90, 0, 1) * np.clip((1615 - yy) / 90, 0, 1)  # bordes suaves
+        m = np.clip((yy - MAP_BOX[1] + 40) / 60, 0, 1) * np.clip((MAP_BOX[3] + 10 - yy) / 60, 0, 1)  # bordes suaves
         lay.putalpha(Image.fromarray((np.asarray(lay.getchannel("A"), np.float32) * m).astype(np.uint8)))
         return lay
 
@@ -351,10 +372,10 @@ class Video:
         sabias = self.Q.get("modo") == "sabias"
         self.card(img, d, qs, t, f"DATO {i}/5" if sabias else f"PREGUNTA {i}/5", q["q"], 58 if len(q["q"]) < 44 else 52 if len(q["q"]) < 70 else 46)
         # cuenta atrás
-        cy = 540
+        cy = CD_Y
         if t < ans + 0.2 and not sabias:
             a = back((t - qs - 0.2) / 0.4)
-            r = 70 * a
+            r = 56 * a
             if r > 2:
                 d.ellipse([540 - r - 8, cy - r - 8, 540 + r + 8, cy + r + 8], fill=(20, 12, 50))
                 d.ellipse([540 - r, cy - r, 540 + r, cy + r], outline=(70, 62, 140), width=12)
@@ -364,29 +385,33 @@ class Video:
                 d.arc([540 - r, cy - r, 540 + r, cy + r], -90, -90 + 360 * (1 - frac), fill=col, width=12)
                 ph = ((t - qe) * 5 / max(0.1, ans - qe)) % 1 if t >= qe else 0.5
                 sc = 1 + 0.25 * max(0, 1 - ph * 4)
-                d.text((540, cy + 2), str(n), font=font("Black", int(80 * sc * a) + 1), fill=(255, 255, 255), anchor="mm")
+                d.text((540, cy + 2), str(n), font=font("Black", int(66 * sc * a) + 1), fill=(255, 255, 255), anchor="mm")
         # respuesta
         if t >= ans - 0.05:
             u = t - ans + 0.05
             can = not MAPA and q["prov"] in ("Las Palmas", "Santa Cruz De Tenerife")
             px, py = proj(*q["punto"], can=can)
-            by = 1705
+            by = CD_Y  # la respuesta sustituye a la cuenta atrás, encima del mapa
             ln = ease((u - 0.15) / 0.4)
             if ln > 0:  # línea del punto a la caja de la respuesta (en diagonal si la provincia está en un borde)
-                tx, ty = min(max(px, 400), 680), by - 70
+                tx, ty = min(max(px, 400), 680), by + 62
                 d.line([(px, py), (px + (tx - px) * ln, py + (ty - py) * ln)], fill=(255, 240, 190), width=5)
             pr = 15 * back(u / 0.3)
-            d.ellipse([px - pr - 5, py - pr - 5, px + pr + 5, py + pr + 5], fill=(40, 20, 80))
-            d.ellipse([px - pr, py - pr, px + pr, py + pr], fill=(255, 255, 255))
+            with ZS.exento():  # el punto marca el lugar exacto del mapa (puede estar en su borde)
+                d.ellipse([px - pr - 5, py - pr - 5, px + pr + 5, py + pr + 5], fill=(40, 20, 80))
+                d.ellipse([px - pr, py - pr, px + pr, py + pr], fill=(255, 255, 255))
             b = back((u - 0.35) / 0.4)
             if b > 0.02:
-                f1 = font("Black", int(70 * b) + 1)
-                f2 = font("SemiBold", int(38 * b) + 1)
-                w = max(d.textlength(q["respuesta"], font=f1), d.textlength(q["detalle"], font=f2)) + 90
-                bh = 150 * b
+                s1, s2 = 64, 34  # se encoge si la respuesta es larga: la caja nunca pasa de 844 px (zona segura)
+                while s1 > 36 and max(d.textlength(q["respuesta"], font=font("Black", s1)), d.textlength(q["detalle"], font=font("SemiBold", s2))) + 80 > 844:
+                    s1, s2 = s1 - 4, max(24, s2 - 2)
+                f1 = font("Black", int(s1 * b) + 1)
+                f2 = font("SemiBold", int(s2 * b) + 1)
+                w = min(844, max(d.textlength(q["respuesta"], font=f1), d.textlength(q["detalle"], font=f2)) + 80)
+                bh = 124 * b
                 d.rounded_rectangle([540 - w / 2, by - bh / 2, 540 + w / 2, by + bh / 2], 30, fill=YEL, outline=(255, 250, 225), width=5)
-                d.text((540, by - 22 * b), q["respuesta"], font=f1, fill=(30, 18, 60), anchor="mm")
-                d.text((540, by + 42 * b), q["detalle"], font=f2, fill=(70, 50, 100), anchor="mm")
+                d.text((540, by - 20 * b), q["respuesta"], font=f1, fill=(30, 18, 60), anchor="mm")
+                d.text((540, by + 36 * b), q["detalle"], font=f2, fill=(70, 50, 100), anchor="mm")
 
 
 def _alpha(im, a):

@@ -29,8 +29,21 @@ Contenido en `quizzes/<nombre>.json` (`q`, `prov` tal cual aparece en `provincia
 QUIZ=monumentos python quiz.py frames/ narracion/        # fotogramas
 QUIZ=monumentos python montaje.py quiz --narracion narracion/ --frames frames/ --out quiz.mp4
 ```
-La narración se genera con `gravedad/voz.py` (preguntas con pausa de 5 s para la cuenta atrás).
-Listos: monumentos, comida, extremos, naturaleza, fiestas.
+La narración se genera con `gravedad/voz.py` (preguntas con pausa de 5 s para la cuenta atrás):
+`python formatos.py guion-quiz <tema> voz/guion.json`. Temas: `python formatos.py temas` (nuevos: gentilicios,
+castillos e islas, este último con Canarias y Baleares).
+
+### Desde el móvil, en lote: Actions → «Render quiz/conquista»
+Escribe uno o varios temas (`islas,castillos`) y, si quieres, un episodio de Conquista; confirma con `RENDER`.
+Máximo 5 vídeos por ejecución y 2 a la vez. Cada artefacto (7 días) trae el MP4, la portada, `descripcion.txt`,
+`hashtags.txt`, la vista de zona segura y la hoja de control de calidad. Un último trabajo descarga cada
+artefacto y comprueba que los archivos se abren (`tools/verificar_descargas.py`).
+
+### Zonas seguras (Reels, TikTok y Shorts)
+`zona_segura.py` define la zona común (arriba 250 px, abajo 480 px, iconos a la derecha desde x=870 entre
+y=900 e y=1600, 110 px de margen lateral). `formatos.py zonas quiz <tema> voz/` recorre el vídeo y falla si algún
+texto o rótulo queda tapado más de 0,6 s; el workflow lo comprueba antes de montar. El recuadro de Canarias está
+abajo a la izquierda, dentro de la zona. Pruebas: `python3 render3d/tests/test_formatos.py`.
 
 ### Quiz de otros países
 Añade `"mapa": "<pais>"` y `"pais": "<NOMBRE>"` al JSON: usa `quizzes/mapas/<pais>.geojson` (regiones de Natural Earth,

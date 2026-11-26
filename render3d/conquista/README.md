@@ -20,6 +20,15 @@ el líder, el gran salto de la semana, invasiones, rivalidades y el TOP 5, y ter
 
 Nada se inventa: el episodio 1 arranca con el mapa vacío (0 votos) y la demostración va marcada como **EJEMPLO**.
 
+## Votos desde Instagram (automático y privado)
+
+En el repositorio privado, **Actions → «Votos Conquista»** lee (solo GET) los comentarios del último episodio,
+convierte cada autor en una huella con una clave que se descarta (1 voto por cuenta, sin saber quién votó),
+excluye la cuenta de la marca, cuenta con `contar.py` y guarda solo `pueblo,provincia,votos`. Cada episodio se
+cuenta una vez. Con `exportar = sí` sube `temporada1/votos/epNN.csv` aquí; después, **«Render quiz/conquista»**
+con `conquista_episodio = NN` produce el vídeo, la portada y el texto. Ningún comentario ni usuario llega a este
+repositorio público. Si también hay votos de TikTok o YouTube, se suman a mano en el mismo CSV.
+
 ## Episodio a episodio
 
 ```bash
