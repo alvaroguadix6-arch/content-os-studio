@@ -5,6 +5,7 @@ name: Publicar panel en GitHub Pages
 on:
   push:
     branches: [main]
+    paths-ignore: ['render3d/conquista/pedido.json', 'render3d/conquista/temporada1/votos/**']  # pedidos de Conquista: no tocan la web
   workflow_dispatch:
 
 permissions:

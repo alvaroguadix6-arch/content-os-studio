@@ -1,0 +1,79 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "QUESOS",
+ "titulo": "¿De qué provincia es cada queso?",
+ "intro": "Quesos de España. ¿Sabes de qué provincia es cada uno? Cinco preguntas.",
+ "gancho": [
+  "¿DE DÓNDE ES",
+  "ESTE *QUESO*?"
+ ],
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#gastronomia",
+  "#queso"
+ ],
+ "preguntas": [
+  {
+   "q": "¿De qué provincia es el queso de Cabrales?",
+   "prov": "Asturias",
+   "punto": [
+    -4.84,
+    43.3
+   ],
+   "respuesta": "Asturias",
+   "detalle": "Queso de Cabrales",
+   "voz_q": "¿De qué provincia es el queso de Cabrales?",
+   "voz_a": "¡Asturias!"
+  },
+  {
+   "q": "¿De dónde es la Torta del Casar?",
+   "prov": "Cáceres",
+   "punto": [
+    -6.42,
+    39.57
+   ],
+   "respuesta": "Cáceres",
+   "detalle": "Torta del Casar",
+   "voz_q": "¿Y la Torta del Casar?",
+   "voz_a": "¡Cáceres!"
+  },
+  {
+   "q": "¿De qué provincia es el queso Mahón-Menorca?",
+   "prov": "Illes Balears",
+   "punto": [
+    4.27,
+    39.89
+   ],
+   "respuesta": "Illes Balears",
+   "detalle": "Mahón-Menorca",
+   "voz_q": "¿De dónde es el queso Mahón-Menorca?",
+   "voz_a": "¡Illes Balears!"
+  },
+  {
+   "q": "¿De qué provincia es el queso de Valdeón?",
+   "prov": "León",
+   "punto": [
+    -4.97,
+    43.15
+   ],
+   "respuesta": "León",
+   "detalle": "Queso de Valdeón",
+   "voz_q": "¿Y el queso de Valdeón?",
+   "voz_a": "¡León!"
+  },
+  {
+   "q": "¿De dónde es el queso majorero?",
+   "prov": "Las Palmas",
+   "punto": [
+    -14.0,
+    28.4
+   ],
+   "respuesta": "Las Palmas",
+   "detalle": "Majorero · Fuerteventura",
+   "voz_q": "Última: ¿de dónde es el queso majorero?",
+   "voz_a": "¡Las Palmas, de Fuerteventura!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

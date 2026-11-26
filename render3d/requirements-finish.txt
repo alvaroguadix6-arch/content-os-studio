@@ -1,4 +1,10 @@
-piper-tts
-numpy
-scipy
-pillow
+# Montaje final de Render 3D (Python 3.13). Versiones fijadas con paquete precompilado para cp313.
+flatbuffers==25.12.19
+numpy==2.5.5
+onnxruntime==1.32.0
+packaging==26.4
+pathvalidate==3.3.1
+pillow==13.0.0
+piper-tts==1.8.0
+protobuf==7.36.2
+scipy==1.18.1

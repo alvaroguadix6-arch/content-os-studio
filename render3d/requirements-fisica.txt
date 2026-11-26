@@ -1,0 +1,4 @@
+# Física (satisfying). Python 3.12. Versiones fijadas con paquete precompilado para cp312.
+numpy==2.5.5
+pillow==13.0.0
+scipy==1.18.1

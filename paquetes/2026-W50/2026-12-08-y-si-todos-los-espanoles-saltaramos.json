@@ -1,0 +1,162 @@
+{
+  "id": "2026-12-08-y-si-todos-los-espanoles-saltaramos",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "simulacion",
+  "title": "¿Y si todos los españoles saltáramos a la vez?",
+  "script": [
+    "¿Qué pasaría si todos los españoles saltáramos a la vez?",
+    "Somos más de 49 millones.",
+    "Juntos pesamos más de 3.000 millones de kilos.",
+    "Parece mucho. Pero la Tierra pesa unos seis cuatrillones de kilos.",
+    "Al saltar, empujamos el planeta. Se movería menos que el tamaño de un protón.",
+    "Y al caer, lo empujamos de vuelta: todo queda como estaba.",
+    "Eso sí: en algunos estadios, los saltos de los aficionados se han registrado en los sismógrafos.",
+    "¿Lo intentamos? Comenta y avisa a tu pueblo."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "¿Y SI SALTAMOS?"
+    },
+    {
+      "at": 3.53,
+      "text": "49 MILLONES"
+    },
+    {
+      "at": 5.29,
+      "text": "+3.000 MILLONES DE KG"
+    },
+    {
+      "at": 8.12,
+      "text": "6 CUATRILLONES DE KG"
+    },
+    {
+      "at": 12.0,
+      "text": "MENOS QUE UN PROTÓN"
+    },
+    {
+      "at": 20.82,
+      "text": "SISMÓGRAFOS"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 3.53,
+      "kind": "simulacion",
+      "visual": "salto",
+      "escena": {
+        "tipo": "figura",
+        "figura": "salto",
+        "texto": "¿Y si saltamos?"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 1.76,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 49,
+        "unidad": "millones de personas",
+        "duracion": 1.0
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 2.82,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 3000,
+        "unidad": "millones de kilos",
+        "prefijo": "+"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 3.88,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 6,
+        "unidad": "cuatrillones de kilos: la Tierra",
+        "duracion": 1.0
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 4.94,
+      "kind": "simulacion",
+      "visual": "salto",
+      "escena": {
+        "tipo": "figura",
+        "figura": "salto",
+        "texto": "Menos que un protón"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 3.88,
+      "kind": "simulacion",
+      "visual": "salto",
+      "escena": {
+        "tipo": "figura",
+        "figura": "salto"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 5.65,
+      "kind": "mapa",
+      "visual": "Sismógrafos",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -3.7,
+          40.42
+        ],
+        "etiqueta": "Sismógrafos"
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 2.82,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Población de España a 1-1-2025: 49.128.297",
+      "source": "INE: Censo anual de población 2025",
+      "url": "https://www.ine.es/dyngs/Prensa/es/CensoVariables2025.htm"
+    },
+    {
+      "claim": "Masa de la Tierra ≈ 5,97×10^24 kg; el desplazamiento del planeta por un salto masivo es despreciable (cálculo: 3×10^9 kg / 6×10^24 kg × 0,5 m ≈ 3×10^-16 m, menor que un protón ≈ 1,7×10^-15 m)",
+      "source": "HowStuffWorks: What if everyone on Earth jumped at the same time?",
+      "url": "https://science.howstuffworks.com/science-vs-myth/what-if/what-if-everyone-on-earth-jumped-at-same-time.htm"
+    },
+    {
+      "claim": "Saltos de aficionados en estadios registrados por sismógrafos (p. ej. «Beast Quake», Seattle, 2011)",
+      "source": "Live Science: What if everyone on Earth jumped at once?",
+      "url": "https://www.livescience.com/33383-everyone-on-earth-jumping-at-once.html"
+    }
+  ],
+  "caption": {
+    "text": "¿Lo intentamos?\n\nLos más de 49 millones de españoles pesamos juntos más de 3.000 millones de kilos. La Tierra, unos seis cuatrillones. Si saltáramos a la vez, el planeta se movería menos que el tamaño de un protón, y al caer volvería a su sitio.\n\nEso sí, los sismógrafos cercanos podrían notarlo.",
+    "hashtags": [
+      "#simulacion",
+      "#ciencia",
+      "#españa",
+      "#quepasariasi"
+    ],
+    "alt_text": "Fila de personas saltando sobre el planeta Tierra"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

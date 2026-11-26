@@ -1,0 +1,184 @@
+{
+  "id": "2026-12-06-la-frontera-mas-corta-del-mundo",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "curiosidades",
+  "title": "La frontera más corta del mundo es española",
+  "script": [
+    "La frontera terrestre más corta del mundo es española. Y mide unos 85 metros.",
+    "Está en el Peñón de Vélez de la Gomera, frente a la costa de Marruecos.",
+    "España lo controla desde 1564.",
+    "Durante siglos fue una isla pegada a la costa.",
+    "Pero en el siglo XX, la arena acumulada lo unió a tierra firme.",
+    "Y así nació una frontera de unos 85 metros entre España y Marruecos.",
+    "En el peñón no vive población civil: solo hay militares.",
+    "¿Sabías que estaba ahí? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "85 METROS"
+    },
+    {
+      "at": 4.94,
+      "text": "PEÑÓN DE VÉLEZ"
+    },
+    {
+      "at": 10.24,
+      "text": "DESDE 1564"
+    },
+    {
+      "at": 15.18,
+      "text": "SIGLO XX"
+    },
+    {
+      "at": 19.76,
+      "text": "ESPAÑA · MARRUECOS"
+    },
+    {
+      "at": 24.35,
+      "text": "SOLO MILITARES"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 4.94,
+      "kind": "simulacion",
+      "visual": "frontera",
+      "escena": {
+        "tipo": "figura",
+        "figura": "frontera",
+        "texto": "85 metros",
+        "lados": [
+          "Marruecos",
+          "España"
+        ]
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 5.29,
+      "kind": "mapa",
+      "visual": "Peñón de Vélez",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -4.3,
+          35.17
+        ],
+        "etiqueta": "Peñón de Vélez"
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 1.76,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "1564",
+            "texto": "Pasa a manos españolas"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 3.18,
+      "kind": "simulacion",
+      "visual": "frontera",
+      "escena": {
+        "tipo": "figura",
+        "figura": "frontera",
+        "lados": [
+          "Marruecos",
+          "Isla"
+        ]
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 4.59,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "1564",
+            "texto": "Pasa a manos españolas"
+          },
+          {
+            "fecha": "Siglo XX",
+            "texto": "La arena lo une a la costa"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 4.59,
+      "kind": "simulacion",
+      "visual": "frontera",
+      "escena": {
+        "tipo": "figura",
+        "figura": "frontera",
+        "texto": "85 metros",
+        "lados": [
+          "Marruecos",
+          "España"
+        ]
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 3.53,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 0,
+        "unidad": "habitantes civiles",
+        "desde": 0
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.76,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "El istmo del Peñón de Vélez de la Gomera forma una frontera terrestre con Marruecos de unos 85 m, considerada la más corta del mundo",
+      "source": "El Faro de Melilla",
+      "url": "https://elfarodemelilla.es/?p=330744"
+    },
+    {
+      "claim": "Soberanía española desde 1564; el istmo de arena se formó en el siglo XX",
+      "source": "Wikipedia: Peñón de Vélez de la Gomera",
+      "url": "https://en.wikipedia.org/wiki/Pe%C3%B1%C3%B3n_de_V%C3%A9lez_de_la_Gomera"
+    },
+    {
+      "claim": "Sin población civil: solo guarnición militar",
+      "source": "Wikipedia: Peñón de Vélez de la Gomera",
+      "url": "https://en.wikipedia.org/wiki/Pe%C3%B1%C3%B3n_de_V%C3%A9lez_de_la_Gomera"
+    }
+  ],
+  "caption": {
+    "text": "¿Sabías que estaba ahí?\n\nEl Peñón de Vélez de la Gomera es español desde 1564. Era una isla pegada a la costa de Marruecos, pero en el siglo XX la arena lo unió a tierra firme. Así nació una frontera de unos 85 metros, considerada la más corta del mundo.\n\nAllí no vive población civil: solo militares.",
+    "hashtags": [
+      "#curiosidades",
+      "#españa",
+      "#fronteras",
+      "#geografia"
+    ],
+    "alt_text": "Ilustración de un peñón unido a la costa por un istmo de arena con una línea de frontera"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

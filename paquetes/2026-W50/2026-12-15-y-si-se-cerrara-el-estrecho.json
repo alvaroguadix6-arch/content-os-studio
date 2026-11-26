@@ -1,0 +1,179 @@
+{
+  "id": "2026-12-15-y-si-se-cerrara-el-estrecho",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "simulacion",
+  "title": "¿Y si se cerrara el Estrecho de Gibraltar?",
+  "script": [
+    "¿Qué le pasaría al Mediterráneo si se cerrara el Estrecho de Gibraltar?",
+    "El Mediterráneo pierde por evaporación más agua de la que le llega de los ríos y la lluvia.",
+    "Lo que falta entra cada día desde el Atlántico, por el Estrecho.",
+    "Si se cerrara, su nivel bajaría: un estudio calcula que unos 50 centímetros al año.",
+    "Y no es ciencia ficción: hace unos 5,5 millones de años ya pasó.",
+    "El Mediterráneo llegó a perder alrededor del 70 % de su agua.",
+    "Hasta que el Estrecho se volvió a abrir.",
+    "¿Lo sabías? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "¿Y SI SE CIERRA?"
+    },
+    {
+      "at": 4.24,
+      "text": "EVAPORACIÓN"
+    },
+    {
+      "at": 14.82,
+      "text": "−50 CM AL AÑO"
+    },
+    {
+      "at": 20.12,
+      "text": "YA PASÓ"
+    },
+    {
+      "at": 24.71,
+      "text": "70 %"
+    },
+    {
+      "at": 31.76,
+      "text": "¿LO SABÍAS?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 4.2353,
+      "kind": "mapa",
+      "visual": "Estrecho de Gibraltar",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -5.6,
+          36.0
+        ],
+        "etiqueta": "Estrecho de Gibraltar"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 6.3529,
+      "kind": "archivo",
+      "visual": "El Mediterráneo pierde más agua de la que recibe",
+      "escena": {
+        "tipo": "documento",
+        "titular": "El Mediterráneo pierde más agua de la que recibe",
+        "fecha": "Balance de agua",
+        "cabecera": "Ciencia"
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 4.2353,
+      "kind": "simulacion",
+      "visual": "frontera",
+      "escena": {
+        "tipo": "figura",
+        "figura": "frontera",
+        "texto": "Entra el Atlántico",
+        "lados": [
+          "África",
+          "Europa"
+        ]
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 5.2941,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 50,
+        "unidad": "centímetros menos al año",
+        "prefijo": "−"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 4.5882,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "Hace 5,5 millones de años",
+            "texto": "Se cierra el paso"
+          },
+          {
+            "fecha": "Después",
+            "texto": "Se vuelve a abrir"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 4.2353,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 70,
+        "unidad": "del agua perdida",
+        "sufijo": " %"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 2.8235,
+      "kind": "simulacion",
+      "visual": "frontera",
+      "escena": {
+        "tipo": "figura",
+        "figura": "frontera",
+        "texto": "Se vuelve a abrir",
+        "lados": [
+          "África",
+          "Europa"
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.0588,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "El Mediterráneo tiene un balance hídrico negativo compensado por la entrada atlántica por el Estrecho",
+      "source": "Revista Física de la Tierra (UCM)",
+      "url": "https://revistas.ucm.es/index.php/FITE/article/download/FITE0101110043A/11908/12835"
+    },
+    {
+      "claim": "Un estudio en Nature Communications calcula que el bloqueo del paso bajaría el nivel unos 0,5 m/año y que en la crisis salina (≈5,5 Ma) el mar perdió en torno al 70 % del agua",
+      "source": "Excelsior: el Mediterráneo perdió el 70 % de su agua",
+      "url": "https://www.excelsior.com.mx/global/mar-mediterraneo-perdio-70-agua-hace-55-millones-anos/1684952"
+    },
+    {
+      "claim": "Crisis salina del Messiniense y reapertura (inundación zancliense)",
+      "source": "Xataka: el estrecho de Gibraltar hace millones de años",
+      "url": "https://www.xataka.com/ecologia-y-naturaleza/siempre-creimos-que-mediterraneo-se-relleno-catarata-apocaliptica-gibraltar-50-anos-han-matizado"
+    }
+  ],
+  "caption": {
+    "text": "¿Lo sabías?\n\nEl Mediterráneo pierde por evaporación más agua de la que recibe y lo compensa con el Atlántico, por el Estrecho. Si se cerrara, un estudio calcula que bajaría unos 50 cm al año. Hace unos 5,5 millones de años ya ocurrió: perdió en torno al 70 % de su agua.",
+    "hashtags": [
+      "#simulacion",
+      "#ciencia",
+      "#mediterraneo",
+      "#quepasariasi"
+    ],
+    "alt_text": "Estrecho de Gibraltar visto desde el globo"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

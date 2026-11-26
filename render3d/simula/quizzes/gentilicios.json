@@ -1,0 +1,79 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "GENTILICIOS",
+ "titulo": "Gentilicios imposibles: ¿de dónde son?",
+ "intro": "Gentilicios imposibles. ¿Sabes de dónde es cada uno? Cinco preguntas.",
+ "gancho": [
+  "GENTILICIOS",
+  "*IMPOSIBLES*"
+ ],
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#gentilicios",
+  "#curiosidades"
+ ],
+ "preguntas": [
+  {
+   "q": "¿De dónde son los egabrenses?",
+   "prov": "Córdoba",
+   "punto": [
+    -4.442,
+    37.472
+   ],
+   "respuesta": "Cabra · Córdoba",
+   "detalle": "Egabrenses",
+   "voz_q": "¿De dónde son los egabrenses?",
+   "voz_a": "¡De Cabra, en Córdoba!"
+  },
+  {
+   "q": "¿De dónde son los pacenses?",
+   "prov": "Badajoz",
+   "punto": [
+    -6.97,
+    38.879
+   ],
+   "respuesta": "Badajoz",
+   "detalle": "Pacenses",
+   "voz_q": "¿Y los pacenses?",
+   "voz_a": "¡De Badajoz!"
+  },
+  {
+   "q": "¿De dónde son los iliturgitanos?",
+   "prov": "Jaén",
+   "punto": [
+    -4.051,
+    38.039
+   ],
+   "respuesta": "Andújar · Jaén",
+   "detalle": "Iliturgitanos",
+   "voz_q": "¿De dónde son los iliturgitanos?",
+   "voz_a": "¡De Andújar, en Jaén!"
+  },
+  {
+   "q": "¿De dónde son los complutenses?",
+   "prov": "Madrid",
+   "punto": [
+    -3.364,
+    40.482
+   ],
+   "respuesta": "Alcalá de Henares",
+   "detalle": "Complutenses · Madrid",
+   "voz_q": "¿Y los complutenses?",
+   "voz_a": "¡De Alcalá de Henares, en Madrid!"
+  },
+  {
+   "q": "¿De dónde son los onubenses?",
+   "prov": "Huelva",
+   "punto": [
+    -6.945,
+    37.261
+   ],
+   "respuesta": "Huelva",
+   "detalle": "Onubenses",
+   "voz_q": "Última: ¿de dónde son los onubenses?",
+   "voz_a": "¡De Huelva!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

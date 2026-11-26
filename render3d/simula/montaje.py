@@ -150,6 +150,77 @@ def sfx(v, n):
     return out
 
 
+# Audio final: −14 LUFS (lo que usan las apps) y pico real ≤ −1 dBTP.
+#  1) un limitador suave recorta los transitorios («tic», «pop») para que quepa la ganancia;
+#  2) loudnorm en DOS pasadas (mide y aplica una ganancia lineal exacta: el volumen sale en −14);
+#  3) filtro a 16 kHz y limitador sobremuestreado ×4 (se acerca al pico real); y después asegurar_pico() mide el
+#     AAC final y, si pasa de −1 dBTP, recodifica el audio con el límite más bajo.
+PRE = "aresample=48000,alimiter=limit=0.56:level=0:attack=3:release=80"
+POST = "lowpass=f=16000:p=2,aresample=192000,alimiter=limit={lim:.3f}:level=0:attack=2:release=60,aresample=48000"
+TP_MAX = -1.0   # pico real máximo del AAC final (dBTP)
+
+
+def pico_real(path):
+    """Pico real (dBTP) del audio de un archivo, medido como lo mide qc_video.py."""
+    import re as _re
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", path, "-af", "ebur128=peak=true", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    m = _re.findall(r"Peak:\s+(-?[\d.]+) dBFS", r.stderr)
+    return float(m[-1]) if m else None
+
+
+def asegurar_pico(out, wav, tp_max=None):
+    """El AAC puede crear picos entre muestras que el limitador no ve. Mide el resultado y, si pasa de tp_max,
+    recodifica SOLO el audio (el vídeo se copia) con el limitador más bajo. Como mucho 3 intentos."""
+    tp_max = TP_MAX if tp_max is None else tp_max
+    lim = 0.79
+    for intento in range(3):
+        tp = pico_real(out)
+        if tp is None or tp <= tp_max:
+            break
+        lim = max(0.0625, lim * 10 ** (-(tp - tp_max + 0.4) / 20))
+        tmp = out + ".tmp.mp4"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", out, "-i", wav, "-map", "0:v", "-map", "1:a", "-c:v", "copy",
+                        "-c:a", "aac", "-b:a", "192k", "-af", audio_final(wav, lim), "-ar", "48000", "-movflags", "+faststart",
+                        "-shortest", tmp], check=True)
+        os.replace(tmp, out)
+        print(f"pico real {tp:+.1f} dBTP → limitador a {20 * np.log10(lim):.1f} dBFS (intento {intento + 1})")
+    return pico_real(out)
+
+
+def bajar_volumen(out, tp_max=None, intentos=2):
+    """Último recurso (fase 2, fallo del quiz de esquí del 26-11): si bajar el limitador no basta (el pico lo crea el
+    propio códec y no responde de forma proporcional), se escala el audio YA codificado: la ganancia lineal sí baja
+    el pico real en la misma medida. Devuelve el pico final."""
+    tp_max = TP_MAX if tp_max is None else tp_max
+    tp = pico_real(out)
+    for intento in range(intentos):
+        if tp is None or tp <= tp_max:
+            break
+        db = tp_max - tp - 0.3
+        tmp = out + ".vol.mp4"
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", out, "-map", "0:v", "-map", "0:a", "-c:v", "copy",
+                        "-c:a", "aac", "-b:a", "192k", "-af", f"volume={db:.2f}dB", "-movflags", "+faststart", tmp], check=True)
+        os.replace(tmp, out)
+        print(f"pico real {tp:+.1f} dBTP → volumen {db:+.1f} dB (último recurso, intento {intento + 1})")
+        tp = pico_real(out)
+    return tp
+
+
+def audio_final(wav, lim=0.79):
+    import re as _re
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", wav, "-af",
+                        PRE + ",loudnorm=I=-14:TP=-2:LRA=11:print_format=json", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    m = _re.search(r"\{[^{}]*\"input_i\"[^{}]*\}", r.stderr)
+    if not m:  # sin medida: normalización de una pasada (también deja el pico controlado)
+        return PRE + ",loudnorm=I=-14:TP=-2:LRA=11," + POST.format(lim=lim)
+    j = json.loads(m.group(0))
+    return (PRE + f",loudnorm=I=-14:TP=-2:LRA=11:measured_I={j['input_i']}:measured_TP={j['input_tp']}"
+            f":measured_LRA={j['input_lra']}:measured_thresh={j['input_thresh']}:offset={j['target_offset']}"
+            ":linear=true," + POST.format(lim=lim))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")
@@ -175,8 +246,17 @@ def main():
     write_wav(wav, mix)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-framerate", "30", "-start_number", "0", "-i", os.path.join(a.frames, "f%05d.jpg"),
            "-i", wav, "-c:v", "libx264", "-preset", "slow", "-crf", "21", "-maxrate", "6M", "-bufsize", "12M", "-pix_fmt", "yuv420p",
-           "-c:a", "aac", "-b:a", "192k", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-movflags", "+faststart", "-shortest", a.out]
+           "-c:a", "aac", "-b:a", "192k", "-af", audio_final(wav), "-ar", "48000", "-movflags", "+faststart", "-shortest", a.out]
     subprocess.run(cmd, check=True)
+    tp = asegurar_pico(a.out, wav)
+    # Conquista («episodio») queda igual que antes hasta publicar su ep. 4 (petición del usuario): luego se le aplicará
+    # también el último recurso y el fallo estricto.
+    if a.video != "episodio" and tp is not None and tp > TP_MAX:
+        tp = bajar_volumen(a.out)
+    print(f"pico real final: {tp} dBTP")
+    if a.video != "episodio" and (tp is None or tp > TP_MAX):
+        print(f"❌ El pico real ({tp} dBTP) supera {TP_MAX} dBTP: el vídeo NO está listo (control de calidad estricto).")
+        sys.exit(1)
     print("✅ Vídeo listo:", a.out)
 
 

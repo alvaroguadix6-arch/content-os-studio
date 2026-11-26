@@ -1,0 +1,117 @@
+{
+  "id": "2026-12-02-phineas-gage-barra-en-la-cabeza",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "ciencia",
+  "title": "Phineas Gage: una barra de hierro le atravesó la cabeza",
+  "script": [
+    "Una barra de hierro le atravesó la cabeza. Y siguió hablando.",
+    "Vermont, Estados Unidos. 13 de septiembre de 1848.",
+    "Phineas Gage trabaja abriendo paso al ferrocarril con explosivos.",
+    "Una chispa. La carga explota antes de tiempo.",
+    "La barra que usaba para apretar la pólvora sale disparada.",
+    "Más de un metro de largo y seis kilos.",
+    "Le entra por la mejilla izquierda y le sale por lo alto del cráneo.",
+    "Minutos después estaba consciente. Y hablaba.",
+    "Sobrevivió, pero según su médico, ya no era el mismo: había cambiado su carácter.",
+    "Su caso ayudó a entender qué hace la parte frontal del cerebro.",
+    "Vivió casi 12 años más.",
+    "Su cráneo y la barra se conservan hoy en un museo de Harvard."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "1 BARRA · 6 KG"
+    },
+    {
+      "at": 4.0,
+      "text": "13/09/1848"
+    },
+    {
+      "at": 9.0,
+      "text": "¡EXPLOSIÓN!"
+    },
+    {
+      "at": 14.0,
+      "text": "1,1 M · 6 KG"
+    },
+    {
+      "at": 21.0,
+      "text": "CONSCIENTE"
+    },
+    {
+      "at": 25.0,
+      "text": "«YA NO ERA GAGE»"
+    },
+    {
+      "at": 33.0,
+      "text": "MUSEO DE HARVARD"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 5,
+      "kind": "grafico",
+      "visual": "Barra de 1 metro y 6 kg"
+    },
+    {
+      "scene": 2,
+      "seconds": 8,
+      "kind": "mapa",
+      "visual": "Vermont"
+    },
+    {
+      "scene": 3,
+      "seconds": 9,
+      "kind": "animacion",
+      "visual": "Explosión en una obra de ferrocarril, estilo ilustración sin gore"
+    },
+    {
+      "scene": 4,
+      "seconds": 10,
+      "kind": "texto",
+      "visual": "Cambio de carácter y lóbulo frontal"
+    },
+    {
+      "scene": 5,
+      "seconds": 6,
+      "kind": "texto",
+      "visual": "Museo"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Accidente del 13-9-1848 en Cavendish (Vermont) trabajando en la construcción del ferrocarril; la barra de apisonar salió disparada por una explosión prematura",
+      "source": "Wikipedia: Phineas Gage",
+      "url": "https://en.wikipedia.org/wiki/Phineas_Gage"
+    },
+    {
+      "claim": "La barra medía unos 1,1 m (3 pies 7 pulgadas) y pesaba unos 6 kg (13,25 libras); entró por la mejilla izquierda y salió por lo alto del cráneo",
+      "source": "Wikipedia: Phineas Gage",
+      "url": "https://en.wikipedia.org/wiki/Phineas_Gage"
+    },
+    {
+      "claim": "Estaba consciente y hablaba poco después; su médico John Harlow describió cambios en su personalidad",
+      "source": "Wikipedia: Phineas Gage",
+      "url": "https://en.wikipedia.org/wiki/Phineas_Gage"
+    },
+    {
+      "claim": "Murió en 1860, casi 12 años después; su cráneo y la barra están en el Warren Anatomical Museum (Harvard)",
+      "source": "Harvard Countway Library: Warren Anatomical Museum",
+      "url": "https://www.countway.harvard.edu/center-history-medicine/warren-anatomical-museum"
+    }
+  ],
+  "caption": {
+    "text": "Mándaselo a quien diga que ya lo ha visto todo.\n\nEl 13 de septiembre de 1848, en Vermont, una barra de hierro de 1,1 metros y unos seis kilos atravesó la cabeza de Phineas Gage. Sobrevivió y minutos después hablaba.\n\nSu médico contó que su carácter cambió. Su caso es uno de los más famosos de la historia de la neurociencia. El cráneo y la barra están en un museo de Harvard.",
+    "hashtags": [
+      "#ciencia",
+      "#cerebro",
+      "#historia",
+      "#curiosidades"
+    ],
+    "alt_text": "Ilustración de una barra de hierro junto a un cráneo estilizado"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

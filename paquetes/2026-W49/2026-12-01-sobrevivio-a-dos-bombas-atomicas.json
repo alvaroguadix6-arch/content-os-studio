@@ -1,0 +1,108 @@
+{
+  "id": "2026-12-01-sobrevivio-a-dos-bombas-atomicas",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "El hombre que sobrevivió a las dos bombas atómicas",
+  "script": [
+    "Sobrevivió a una bomba atómica. Y tres días después, a otra.",
+    "Se llamaba Tsutomu Yamaguchi y era ingeniero en Nagasaki.",
+    "En agosto de 1945 estaba de viaje de trabajo en Hiroshima.",
+    "6 de agosto. A unos 3 kilómetros de él, explota la bomba.",
+    "Quemaduras, los tímpanos rotos, pero vivo.",
+    "Al día siguiente vuelve a casa. A Nagasaki.",
+    "9 de agosto. Está contándole a su jefe lo que ha visto.",
+    "Y entonces, otro destello.",
+    "Vuelve a sobrevivir.",
+    "Japón no lo reconoció oficialmente como superviviente de las dos bombas hasta 2009.",
+    "Murió en 2010, con 93 años.",
+    "Dos bombas atómicas. Y vivió 64 años más."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "2 BOMBAS"
+    },
+    {
+      "at": 4.0,
+      "text": "TSUTOMU YAMAGUCHI"
+    },
+    {
+      "at": 9.0,
+      "text": "HIROSHIMA · 6/8/1945"
+    },
+    {
+      "at": 17.0,
+      "text": "NAGASAKI · 9/8/1945"
+    },
+    {
+      "at": 26.0,
+      "text": "RECONOCIDO EN 2009"
+    },
+    {
+      "at": 30.0,
+      "text": "93 AÑOS"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 5,
+      "kind": "texto",
+      "visual": "Destello blanco y cifra 2"
+    },
+    {
+      "scene": 2,
+      "seconds": 7,
+      "kind": "mapa",
+      "visual": "Japón: Nagasaki y Hiroshima"
+    },
+    {
+      "scene": 3,
+      "seconds": 9,
+      "kind": "animacion",
+      "visual": "Ciudad y destello lejano, sin imágenes de víctimas"
+    },
+    {
+      "scene": 4,
+      "seconds": 8,
+      "kind": "texto",
+      "visual": "Fechas y reconocimiento"
+    },
+    {
+      "scene": 5,
+      "seconds": 5,
+      "kind": "texto",
+      "visual": "93 años"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Tsutomu Yamaguchi, ingeniero de Mitsubishi de Nagasaki, estaba en Hiroshima por trabajo el 6-8-1945, a unos 3 km del hipocentro, y sufrió quemaduras",
+      "source": "Wikipedia: Tsutomu Yamaguchi",
+      "url": "https://en.wikipedia.org/wiki/Tsutomu_Yamaguchi"
+    },
+    {
+      "claim": "Regresó a Nagasaki y el 9-8-1945 sobrevivió a la segunda bomba mientras hablaba con su supervisor",
+      "source": "Wikipedia: Tsutomu Yamaguchi",
+      "url": "https://en.wikipedia.org/wiki/Tsutomu_Yamaguchi"
+    },
+    {
+      "claim": "Reconocido oficialmente como superviviente de ambas bombas (nijū hibakusha) en 2009; murió el 4-1-2010 a los 93 años",
+      "source": "BBC News, 6-1-2010: 'Man who survived two atomic bombs dies'",
+      "url": "https://news.bbc.co.uk/2/hi/asia-pacific/8442607.stm"
+    }
+  ],
+  "caption": {
+    "text": "Guárdalo: es una de las historias de supervivencia más increíbles del siglo XX.\n\nTsutomu Yamaguchi estaba en Hiroshima el 6 de agosto de 1945 por trabajo. Volvió herido a su casa, en Nagasaki, y el 9 de agosto vivió la segunda bomba. Sobrevivió a las dos.\n\nJapón lo reconoció oficialmente como superviviente de ambas en 2009. Murió en 2010, con 93 años.",
+    "hashtags": [
+      "#historia",
+      "#japon",
+      "#curiosidades",
+      "#segundaguerramundial"
+    ],
+    "alt_text": "Ilustración de una ciudad japonesa con un destello en el horizonte"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

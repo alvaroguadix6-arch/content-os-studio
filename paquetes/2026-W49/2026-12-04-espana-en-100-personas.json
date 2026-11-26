@@ -1,0 +1,181 @@
+{
+  "id": "2026-12-04-espana-en-100-personas",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "curiosidades",
+  "title": "Si España fuera un pueblo de 100 personas",
+  "script": [
+    "Si España fuera un pueblo de cien vecinos, ¿cómo sería?",
+    "Hoy somos más de 49 millones de personas.",
+    "Reducido a cien vecinos, catorce serían menores de dieciséis años.",
+    "Veintiuno tendrían más de sesenta y cuatro.",
+    "Es decir: en España ya hay más mayores que niños.",
+    "Y diecinueve habrían nacido en otro país.",
+    "Casi uno de cada cinco vecinos.",
+    "Son los datos del censo del INE a 1 de enero de 2025.",
+    "¿Cuál te ha sorprendido más? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "100 VECINOS"
+    },
+    {
+      "at": 3.53,
+      "text": "49 MILLONES"
+    },
+    {
+      "at": 6.35,
+      "text": "14 NIÑOS"
+    },
+    {
+      "at": 9.88,
+      "text": "21 MAYORES"
+    },
+    {
+      "at": 15.88,
+      "text": "19 NACIDOS FUERA"
+    },
+    {
+      "at": 25.06,
+      "text": "¿CUÁL TE SORPRENDE?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 3.53,
+      "kind": "grafico",
+      "visual": "vecinos",
+      "escena": {
+        "tipo": "personas",
+        "resaltar": 100,
+        "etiqueta": "vecinos"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 2.82,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 49128297,
+        "unidad": "habitantes"
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 3.53,
+      "kind": "grafico",
+      "visual": "menores de 16",
+      "escena": {
+        "tipo": "personas",
+        "resaltar": 14,
+        "etiqueta": "menores de 16"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 2.47,
+      "kind": "grafico",
+      "visual": "más de 64 años",
+      "escena": {
+        "tipo": "personas",
+        "resaltar": 21,
+        "etiqueta": "más de 64 años"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 3.53,
+      "kind": "grafico",
+      "visual": "comparacion",
+      "escena": {
+        "tipo": "comparacion",
+        "items": [
+          {
+            "etiqueta": "Más de 64 años",
+            "valor": 10178625,
+            "destacar": true
+          },
+          {
+            "etiqueta": "Menores de 16",
+            "valor": 6874902
+          }
+        ]
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 2.47,
+      "kind": "grafico",
+      "visual": "nacidos en otro país",
+      "escena": {
+        "tipo": "personas",
+        "resaltar": 19,
+        "etiqueta": "nacidos en otro país"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 2.12,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 19.3,
+        "unidad": "nacidos fuera de España",
+        "sufijo": " %",
+        "decimales": 1
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 4.59,
+      "kind": "archivo",
+      "visual": "Censo anual de población",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Censo anual de población",
+        "fecha": "1 de enero de 2025",
+        "cabecera": "INE"
+      }
+    },
+    {
+      "scene": 9,
+      "seconds": 2.12,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Población residente en España a 1-1-2025: 49.128.297 personas",
+      "source": "INE: Censo anual de población 2025 (nota de prensa, 2-12-2025)",
+      "url": "https://www.ine.es/dyngs/Prensa/es/CensoVariables2025.htm"
+    },
+    {
+      "claim": "19,3 % nacidos en el extranjero (9.464.210)",
+      "source": "INE: Censo anual de población 2025",
+      "url": "https://www.ine.es/dyngs/Prensa/es/CensoVariables2025.htm"
+    },
+    {
+      "claim": "6.874.902 menores de 16 años (≈14 %) y 10.178.625 mayores de 64 (20,7 %)",
+      "source": "INE: Censo anual de población 2025",
+      "url": "https://www.ine.es/dyngs/Prensa/es/CensoVariables2025.htm"
+    }
+  ],
+  "caption": {
+    "text": "Comenta cuál te ha sorprendido más.\n\nEspaña tiene 49.128.297 habitantes (INE, 1 de enero de 2025). Si fuéramos cien vecinos: 14 tendrían menos de 16 años, 21 más de 64 y 19 habrían nacido en otro país.\n\nYa hay más mayores que niños.",
+    "hashtags": [
+      "#españa",
+      "#curiosidades",
+      "#datos",
+      "#ine"
+    ],
+    "alt_text": "Cuadrícula de cien figuras de personas con algunas resaltadas"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

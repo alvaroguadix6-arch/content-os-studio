@@ -1,0 +1,86 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "PLATOS",
+ "titulo": "¿De dónde es cada plato?",
+ "gancho": [
+  "¿DE DÓNDE ES",
+  "*CADA PLATO*?"
+ ],
+ "intro": "¿De dónde es cada plato?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#gastronomia",
+  "#comida"
+ ],
+ "preguntas": [
+  {
+   "q": "¿De dónde es el salmorejo?",
+   "prov": "Córdoba",
+   "punto": [
+    -4.779,
+    37.888
+   ],
+   "respuesta": "Córdoba",
+   "detalle": "Salmorejo cordobés",
+   "voz_q": "¿De dónde es el salmorejo?",
+   "voz_a": "¡De Córdoba!"
+  },
+  {
+   "q": "¿De dónde es el cocido maragato, que se come al revés?",
+   "prov": "León",
+   "punto": [
+    -6.056,
+    42.458
+   ],
+   "respuesta": "León",
+   "detalle": "Astorga · la Maragatería",
+   "voz_q": "¿De dónde es el cocido maragato, que se come al revés?",
+   "voz_a": "¡De León!"
+  },
+  {
+   "q": "¿De dónde son los calçots?",
+   "prov": "Tarragona",
+   "punto": [
+    1.25,
+    41.286
+   ],
+   "respuesta": "Tarragona",
+   "detalle": "Valls · calçotada",
+   "voz_q": "¿De dónde son los calçots?",
+   "voz_a": "¡De Tarragona!"
+  },
+  {
+   "q": "¿De qué provincia es el ajoblanco?",
+   "prov": "Málaga",
+   "punto": [
+    -4.421,
+    36.721
+   ],
+   "respuesta": "Málaga",
+   "detalle": "Sopa fría de almendra",
+   "voz_q": "¿De qué provincia es el ajoblanco?",
+   "voz_a": "¡Málaga!"
+  },
+  {
+   "q": "¿De dónde son las papas arrugadas?",
+   "prov": [
+    "Las Palmas",
+    "Santa Cruz De Tenerife"
+   ],
+   "punto": [
+    -15.6,
+    28.1
+   ],
+   "respuesta": "Canarias",
+   "detalle": "Con mojo",
+   "voz_q": "¿De dónde son las papas arrugadas?",
+   "voz_a": "¡De Canarias!"
+  }
+ ],
+ "fuentes": [
+  "Turespaña (spain.info): gastronomía de Córdoba, León, Tarragona, Málaga y Canarias",
+  "IGP Calçot de Valls (DOUE)"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

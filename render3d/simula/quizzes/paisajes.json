@@ -1,0 +1,92 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "PAISAJES",
+ "titulo": "Paisajes de España que parecen de otro planeta",
+ "gancho": [
+  "PAISAJES DE",
+  "*OTRO PLANETA*"
+ ],
+ "intro": "Paisajes increíbles. ¿Dónde están?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#paisajes",
+  "#naturaleza"
+ ],
+ "preguntas": [
+  {
+   "q": "¿Dónde está el desierto de las Bardenas Reales?",
+   "prov": "Navarra",
+   "punto": [
+    -1.48,
+    42.17
+   ],
+   "respuesta": "Navarra",
+   "detalle": "Bardenas Reales",
+   "voz_q": "¿Dónde está el desierto de las Bardenas Reales?",
+   "voz_a": "¡En Navarra!"
+  },
+  {
+   "q": "¿Dónde está la playa de las Catedrales?",
+   "prov": "Lugo",
+   "punto": [
+    -7.157,
+    43.554
+   ],
+   "respuesta": "Lugo",
+   "detalle": "Ribadeo",
+   "voz_q": "¿Dónde está la playa de las Catedrales?",
+   "voz_a": "¡En Lugo!"
+  },
+  {
+   "q": "¿Dónde está El Torcal, un bosque de rocas?",
+   "prov": "Málaga",
+   "punto": [
+    -4.545,
+    36.953
+   ],
+   "respuesta": "Málaga",
+   "detalle": "Antequera",
+   "voz_q": "¿Dónde está El Torcal, un bosque de rocas?",
+   "voz_a": "¡En Málaga!"
+  },
+  {
+   "q": "¿Dónde están las lagunas de Ruidera?",
+   "prov": [
+    "Ciudad Real",
+    "Albacete"
+   ],
+   "punto": [
+    -2.85,
+    38.95
+   ],
+   "respuesta": "Ciudad Real y Albacete",
+   "detalle": "Parque Natural",
+   "voz_q": "¿Dónde están las lagunas de Ruidera?",
+   "voz_a": "¡Entre Ciudad Real y Albacete!"
+  },
+  {
+   "q": "¿Dónde está el desierto de los Monegros?",
+   "prov": [
+    "Huesca",
+    "Zaragoza"
+   ],
+   "punto": [
+    -0.35,
+    41.75
+   ],
+   "respuesta": "Huesca y Zaragoza",
+   "detalle": "Los Monegros",
+   "voz_q": "¿Dónde está el desierto de los Monegros?",
+   "voz_a": "¡Entre Huesca y Zaragoza!"
+  }
+ ],
+ "fuentes": [
+  "Gobierno de Navarra: Parque Natural de las Bardenas Reales",
+  "Xunta de Galicia: Monumento Natural Praia das Catedrais",
+  "Junta de Andalucía: Paraje Natural Torcal de Antequera",
+  "Junta de Castilla-La Mancha: Parque Natural de las Lagunas de Ruidera",
+  "Gobierno de Aragón: los Monegros"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

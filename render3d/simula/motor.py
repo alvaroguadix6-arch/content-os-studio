@@ -40,6 +40,10 @@ def norm(w):
 class Video:
     NAME = "video"
     BRAND = None  # p. ej. "NIVEL OCULTO": marca discreta arriba y en el cierre
+    # posiciones dentro de la zona segura común de Reels, TikTok y Shorts (ver zona_segura.py)
+    BRAND_Y = 272   # marca, justo bajo la franja superior que tapan las apps
+    SUB_Y = 350     # línea base de la primera línea de subtítulos
+    SUB_W = 840     # ancho máximo de los subtítulos (110 px de margen a cada lado)
     KEYWORDS: set = set()
     END_HOLD = 0.8
 
@@ -193,7 +197,7 @@ class Video:
             b = abs(math.sin(t * 5 - j * 0.6)) * 26 * k
             self.E(d, cx + (j - 1) * 150 * k, cy - b, 38 * k, (28, 40, 70))
         if self.BRAND:
-            self.text(img, 540, 1450, self.BRAND, 70 * k, YEL, alpha=clamp((t - t0 - 0.3) / 0.4))
+            self.text(img, 540, 1380, self.BRAND, 70 * k, YEL, alpha=clamp((t - t0 - 0.3) / 0.4))
 
     # ───── globo terráqueo ─────
     def _globe_geo(self, R):
@@ -315,13 +319,13 @@ class Video:
         lines, line, lw = [], [], 0.0
         for w in cur:
             ww = fb.getlength(w[0])
-            if line and lw + sp + ww > 900:
+            if line and lw + sp + ww > self.SUB_W:
                 lines.append(line)
                 line, lw = [], 0.0
             line.append(w)
             lw += (sp if len(line) > 1 else 0) + ww
         lines.append(line)
-        y = 250
+        y = self.SUB_Y
         for line in lines:
             widths = [(fb if self.is_key(w) or (a <= t < b + 0.15) else fr).getlength(w) for w, a, b in line]
             total = sum(widths) + sp * (len(line) - 1)
@@ -415,9 +419,10 @@ class Video:
         f = font("ExtraBold", 28)
         txt = " ".join(self.BRAND)
         tw = f.getlength(txt)
-        d.rounded_rectangle([540 - tw / 2 - 22, 118, 540 + tw / 2 + 22, 162], 22, fill=(10, 14, 24, 120))
-        d.text((540, 141), txt, font=f, fill=(255, 255, 255, 215), anchor="mm")
-        d.rectangle([540 - 18, 158, 540 + 18, 162], fill=YEL + (230,))
+        y = self.BRAND_Y
+        d.rounded_rectangle([540 - tw / 2 - 22, y - 23, 540 + tw / 2 + 22, y + 21], 22, fill=(10, 14, 24, 120))
+        d.text((540, y), txt, font=f, fill=(255, 255, 255, 215), anchor="mm")
+        d.rectangle([540 - 18, y + 17, 540 + 18, y + 21], fill=YEL + (230,))
         img.alpha_composite(lay)
         return img.convert("RGB")
 

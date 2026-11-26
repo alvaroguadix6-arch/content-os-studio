@@ -1,0 +1,84 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "CAPITALES",
+ "titulo": "Capitales autonómicas que casi nadie acierta",
+ "gancho": [
+  "CAPITALES",
+  "*TRAMPA*"
+ ],
+ "intro": "Capitales que casi nadie acierta. Cinco comunidades, cinco trampas. ¿Cuántas sacas?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#comunidadesautonomas",
+  "#geografia"
+ ],
+ "preguntas": [
+  {
+   "q": "¿Cuál es la capital de Extremadura?",
+   "prov": "Badajoz",
+   "punto": [
+    -6.344,
+    38.916
+   ],
+   "respuesta": "Mérida",
+   "detalle": "No es Badajoz ni Cáceres",
+   "voz_q": "¿Cuál es la capital de Extremadura?",
+   "voz_a": "¡Mérida!"
+  },
+  {
+   "q": "¿Cuál es la capital de Galicia?",
+   "prov": "A Coruña",
+   "punto": [
+    -8.544,
+    42.88
+   ],
+   "respuesta": "Santiago de Compostela",
+   "detalle": "Sede de la Xunta",
+   "voz_q": "¿Cuál es la capital de Galicia?",
+   "voz_a": "¡Santiago de Compostela!"
+  },
+  {
+   "q": "¿Dónde tiene su sede el Gobierno vasco?",
+   "prov": "Araba/Álava",
+   "punto": [
+    -2.672,
+    42.847
+   ],
+   "respuesta": "Vitoria-Gasteiz",
+   "detalle": "No es Bilbao",
+   "voz_q": "¿Dónde tiene su sede el Gobierno vasco?",
+   "voz_a": "¡Vitoria-Gasteiz!"
+  },
+  {
+   "q": "¿Cuál es la capital de Asturias?",
+   "prov": "Asturias",
+   "punto": [
+    -5.849,
+    43.361
+   ],
+   "respuesta": "Oviedo",
+   "detalle": "No es Gijón",
+   "voz_q": "¿Cuál es la capital de Asturias?",
+   "voz_a": "¡Oviedo!"
+  },
+  {
+   "q": "¿Y la capital de Castilla-La Mancha?",
+   "prov": "Toledo",
+   "punto": [
+    -4.027,
+    39.863
+   ],
+   "respuesta": "Toledo",
+   "detalle": "No es Albacete",
+   "voz_q": "¿Y la capital de Castilla-La Mancha?",
+   "voz_a": "¡Toledo!"
+  }
+ ],
+ "fuentes": [
+  "Estatutos de Autonomía de Extremadura, Galicia y Castilla-La Mancha (BOE)",
+  "Ley 1/1980 del Parlamento Vasco (sede de las instituciones en Vitoria-Gasteiz)",
+  "Estatuto de Autonomía del Principado de Asturias"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

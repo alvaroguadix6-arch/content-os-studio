@@ -1,0 +1,132 @@
+{
+  "id": "2026-11-26-tutankamon-tres-palabras",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "Tutankamón: tres palabras y una maldición que no cuadra",
+  "script": [
+    "1922: miró por un agujero y dijo 3 palabras.",
+    "Egipto. 26 de noviembre de 1922.",
+    "Howard Carter abre un hueco en una puerta sellada del Valle de los Reyes.",
+    "Lord Carnarvon le pregunta si ve algo.",
+    "\"Sí, cosas maravillosas\".",
+    "Era la tumba de Tutankamón.",
+    "Carnarvon muere en abril de 1923.",
+    "Nace la maldición.",
+    "Pero Carter, el que abrió la tumba, vivió hasta 1939.",
+    "¿Y Lady Evelyn?",
+    "Entró con ellos y vivió hasta 1980.",
+    "En 2002, la revista médica BMJ estudió a 25 personas expuestas a la tumba.",
+    "Ninguna diferencia.",
+    "3 palabras. Un siglo de leyenda."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "26/11/1922"
+    },
+    {
+      "at": 5.3,
+      "text": "VALLE DE LOS REYES"
+    },
+    {
+      "at": 12.7,
+      "text": "«COSAS MARAVILLOSAS»"
+    },
+    {
+      "at": 18.0,
+      "text": "¿MALDICIÓN?"
+    },
+    {
+      "at": 19.4,
+      "text": "CARTER: HASTA 1939"
+    },
+    {
+      "at": 24.0,
+      "text": "LADY EVELYN: HASTA 1980"
+    },
+    {
+      "at": 26.5,
+      "text": "BMJ, 2002"
+    },
+    {
+      "at": 32.5,
+      "text": "3 PALABRAS"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 3.3,
+      "kind": "animacion",
+      "visual": "Ojo y mano acercándose a un agujero en una pared de piedra; luz cálida al otro lado",
+      "notes": "corte en el primer frame, nada de intro"
+    },
+    {
+      "scene": 2,
+      "seconds": 7.3,
+      "kind": "mapa",
+      "visual": "Zoom de Egipto al Valle de los Reyes; rótulo de fecha; corte a puerta sellada con el hueco abriéndose",
+      "notes": "cambiar de plano a mitad del beat 3"
+    },
+    {
+      "scene": 3,
+      "seconds": 5.0,
+      "kind": "animacion",
+      "visual": "Siluetas de Carter y Carnarvon; reveal del interior con brillo dorado"
+    },
+    {
+      "scene": 4,
+      "seconds": 7.0,
+      "kind": "texto",
+      "visual": "Titulares de prensa de 1923 recreados (sin imitar cabeceras reales) que se apilan",
+      "notes": "no reproducir periódicos reales"
+    },
+    {
+      "scene": 5,
+      "seconds": 13.0,
+      "kind": "grafico",
+      "visual": "Línea de tiempo: 1922 apertura, 1923 Carnarvon, 1939 Carter, 1980 Lady Evelyn, 2002 estudio BMJ con 25 personas",
+      "notes": "un corte por dato"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Carter se asoma a la tumba el 26-11-1922 y responde 'wonderful things' con Carnarvon presente",
+      "source": "National Geographic: Unmasking Howard Carter",
+      "url": "https://www.nationalgeographic.com/history/article/howard-carter-tomb-tutankhamun"
+    },
+    {
+      "claim": "Carnarvon muere en abril de 1923 y nace la leyenda de la maldición",
+      "source": "Live Science: The Curse of King Tut, Facts & Fable",
+      "url": "https://www.livescience.com/44297-king-tut-curse.html"
+    },
+    {
+      "claim": "Howard Carter muere en 1939",
+      "source": "EBSCO Research Starters: Howard Carter Opens King Tut's Tomb",
+      "url": "https://www.ebsco.com/research-starters/anthropology/howard-carter-opens-king-tuts-tomb"
+    },
+    {
+      "claim": "Lady Evelyn Herbert estuvo en la apertura y murió en 1980",
+      "source": "Nelson MA, The mummy's curse: historical cohort study, BMJ 2002",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC139048"
+    },
+    {
+      "claim": "Estudio BMJ 2002 con 25 personas expuestas sin diferencia significativa de supervivencia",
+      "source": "Nelson MA, BMJ 2002",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC139048"
+    }
+  ],
+  "caption": {
+    "text": "Guárdalo para la próxima vez que alguien te hable de la maldición de Tutankamón.\n\nEl 26 de noviembre de 1922, Howard Carter se asomó por primera vez a la tumba. Carnarvon murió meses después y la prensa hizo el resto.\n\nLos datos cuentan otra historia: Carter vivió hasta 1939 y Lady Evelyn, que también estuvo allí, hasta 1980. En 2002 la revista BMJ estudió a 25 personas expuestas a la tumba y no encontró diferencias.\n\nFuentes en el primer comentario.",
+    "hashtags": [
+      "#historia",
+      "#egipto",
+      "#tutankamon",
+      "#misterios"
+    ],
+    "alt_text": "Recreación animada de la entrada a la tumba de Tutankamón iluminada por una luz tenue"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

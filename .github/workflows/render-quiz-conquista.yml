@@ -1,0 +1,229 @@
+# NIVEL OCULTO · Render en lote: quiz, episodios de «Tu pueblo conquista España» y paquetes (historias, ciencia,
+# misterios, simulaciones) exportados desde instagram-agent. Pensado para 21+ vídeos a la semana.
+#
+# - SOLO manual (Actions → «Render quiz/conquista» → Run workflow) y solo desde main. Escribe RENDER para confirmar.
+# - Hasta 8 vídeos por ejecución y 4 a la vez. Cada vídeo sale con MP4, portada, descripción, hashtags,
+#   textos para Instagram/TikTok/YouTube Shorts (plataformas.txt), vista de zona segura y hoja de control de
+#   calidad, en un artefacto descargable 7 días.
+# - Gratis: runners estándar de un repositorio público. Sin secretos, permiso de solo lectura, no publica nada.
+# - Antes de montar, comprueba que ningún texto ni rótulo cae donde lo tapan Instagram, TikTok o YouTube Shorts.
+# - Al final, un trabajo descarga cada artefacto de esta ejecución y verifica que los archivos se abren bien.
+name: Render quiz/conquista
+
+on:
+  workflow_dispatch:
+    inputs:
+      temas:
+        description: 'Temas de quiz separados por comas (p. ej. islas,castillos,gentilicios). Vacío = ninguno'
+        required: false
+        default: ''
+      conquista_episodio:
+        description: 'Episodio de «Tu pueblo conquista España» (número; vacío = ninguno)'
+        required: false
+        default: ''
+      paquetes:
+        description: 'Paquetes separados por comas (p. ej. paquetes/2026-W49/2026-12-01-x.json). Vacío = ninguno'
+        required: false
+        default: ''
+      confirmar:
+        description: 'Escribe RENDER para confirmar'
+        required: true
+  # También lo llama «Conquista del día» (mismo render y mismos controles; no hay atajos)
+  workflow_call:
+    inputs:
+      temas: {type: string, required: false, default: ''}
+      conquista_episodio: {type: string, required: false, default: ''}
+      paquetes: {type: string, required: false, default: ''}
+      confirmar: {type: string, required: true}
+      intento: {type: string, required: false, default: ''}   # sufijo del artefacto en un reintento
+
+permissions:
+  contents: read
+
+# Sin cola única: varios lotes pueden ir a la vez (repo público, minutos gratis). Cada lote ya limita a 4 máquinas.
+concurrency:
+  group: render-lote-${{ github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  preparar:
+    if: ${{ !github.event.repository.private && github.ref == 'refs/heads/main' && inputs.confirmar == 'RENDER' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      matriz: ${{ steps.lote.outputs.matriz }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Validar la selección (temas y paquetes existentes, sin duplicados, máx. 8 vídeos)
+        id: lote
+        env:
+          TEMAS: ${{ inputs.temas }}
+          EP: ${{ inputs.conquista_episodio }}
+          PAQ: ${{ inputs.paquetes }}
+        working-directory: render3d/simula
+        run: |
+          M=$(python3 formatos.py lote "$TEMAS" "$EP" "$PAQ")
+          # los paquetes también pasan el filtro de datos privados antes de renderizar
+          for f in $(echo "$PAQ" | tr ',' ' '); do python3 ../../tools/check_paquetes.py "../../$f"; done
+          echo "matriz=$M" >> "$GITHUB_OUTPUT"
+          {
+            echo "## Lote a renderizar"
+            python3 -c 'import json, sys; print("\n".join("- " + j["formato"] + ": " + j["tema"] for j in json.loads(sys.argv[1])["include"]))' "$M"
+            echo
+            echo "<details><summary>Temas de quiz disponibles</summary>"
+            echo
+            echo '```'
+            python3 formatos.py temas
+            echo '```'
+            echo "</details>"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  render:
+    needs: preparar
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 4   # 4 máquinas a la vez: 8 vídeos en ~15 min (repo público: minutos gratis)
+      matrix: ${{ fromJSON(needs.preparar.outputs.matriz) }}
+    env:
+      FORMATO: ${{ matrix.formato }}
+      TEMA: ${{ matrix.tema }}
+      ID: ${{ matrix.id }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      # Python fijo: el del sistema del runner cambia (llegó a 3.14 y blis no tiene paquete para esa versión).
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: render3d/requirements-paquete.txt
+
+      - name: Modelo de voz en caché (no se vuelve a descargar en cada máquina)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: kokoro-82m-v1
+
+      - name: Herramientas gratuitas (ffmpeg, Inter, espeak-ng, Kokoro y PyTorch en CPU, versiones fijadas)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-inter espeak-ng > /dev/null
+          python -m pip install -q --upgrade pip
+          python -m pip install -q "torch==2.15.0" --index-url https://download.pytorch.org/whl/cpu \
+            || { echo "::warning::torch 2.15.0+cpu no disponible: se instala la última CPU para Python 3.12"; \
+                 python -m pip install -q torch --index-url https://download.pytorch.org/whl/cpu; }
+          python -m pip install -q --only-binary=:all: --no-binary=docopt -r render3d/requirements-paquete.txt
+
+      - name: Comprobar dependencias y pruebas de formatos
+        run: |
+          python --version
+          ffmpeg -version | head -1
+          ls /usr/share/fonts/opentype/inter/Inter-Black.otf > /dev/null
+          python -c "import numpy, scipy, PIL, soundfile, torch, kokoro, misaki; print('ok dependencias')"
+          # pruebas rápidas (las de zonas seguras se hacen abajo con la voz real de cada vídeo)
+          python render3d/tests/test_formatos.py rapidas
+
+      - name: Voz (Kokoro em_alex)
+        working-directory: render3d/simula
+        run: |
+          mkdir -p "$RUNNER_TEMP/voz" "$RUNNER_TEMP/out/$ID"
+          if [ "$FORMATO" = quiz ]; then
+            python formatos.py guion-quiz "$TEMA" "$RUNNER_TEMP/voz/guion.json"
+            python ../gravedad/voz.py "$RUNNER_TEMP/voz" --guion "$RUNNER_TEMP/voz/guion.json" --motor kokoro --voz em_alex --speed 1.12
+          elif [ "$FORMATO" = paquete ]; then
+            python nivel_oculto.py guion "../../$TEMA" "$RUNNER_TEMP/voz/guion.json"
+            python ../gravedad/voz.py "$RUNNER_TEMP/voz" --guion "$RUNNER_TEMP/voz/guion.json" --motor kokoro --voz em_alex
+          else
+            EP=${TEMA#ep}; EP=$((10#$EP))
+            python ../conquista/episodio.py guion ../conquista/temporada1 "$EP" "$RUNNER_TEMP/voz/guion.json"
+            python ../gravedad/voz.py "$RUNNER_TEMP/voz" --guion "$RUNNER_TEMP/voz/guion.json" --motor kokoro --voz em_alex --speed 1.15
+          fi
+
+      - name: Comprobar zonas seguras (Instagram, TikTok, YouTube Shorts)
+        working-directory: render3d/simula
+        run: |
+          if [ "$FORMATO" = quiz ]; then
+            python formatos.py zonas quiz "$TEMA" "$RUNNER_TEMP/voz"
+          elif [ "$FORMATO" = paquete ]; then
+            python formatos.py zonas paquete "../../$TEMA" "$RUNNER_TEMP/voz"
+          else
+            EP=${TEMA#ep}; EP=$((10#$EP))
+            python formatos.py zonas conquista ../conquista/temporada1 "$EP" "$RUNNER_TEMP/voz"
+          fi
+
+      - name: Fotogramas y montaje (música y efectos)
+        working-directory: render3d/simula
+        run: |
+          OUT="$RUNNER_TEMP/out/$ID"
+          if [ "$FORMATO" = quiz ]; then
+            QUIZ="$TEMA" python quiz.py "$RUNNER_TEMP/frames" "$RUNNER_TEMP/voz"
+            QUIZ="$TEMA" python montaje.py quiz --narracion "$RUNNER_TEMP/voz" --frames "$RUNNER_TEMP/frames" --out "$OUT/$ID.mp4"
+          elif [ "$FORMATO" = paquete ]; then
+            export PAQUETE="$GITHUB_WORKSPACE/$TEMA"
+            python nivel_oculto.py plan "$RUNNER_TEMP/voz"
+            python nivel_oculto.py render "$RUNNER_TEMP/voz" "$RUNNER_TEMP/frames"
+            python montaje.py nivel_oculto --narracion "$RUNNER_TEMP/voz" --frames "$RUNNER_TEMP/frames" --out "$OUT/$ID.mp4"
+          else
+            EP=${TEMA#ep}; EP=$((10#$EP))
+            T="$GITHUB_WORKSPACE/render3d/conquista/temporada1"
+            python ../conquista/episodio.py frames "$T" "$EP" "$RUNNER_TEMP/voz" "$RUNNER_TEMP/frames"
+            CONQ_TEMPORADA="$T" CONQ_EP="$EP" PYTHONPATH="$GITHUB_WORKSPACE/render3d/conquista" \
+              python montaje.py episodio --narracion "$RUNNER_TEMP/voz" --frames "$RUNNER_TEMP/frames" --out "$OUT/$ID.mp4"
+          fi
+          rm -rf "$RUNNER_TEMP/frames"   # libera disco: los fotogramas ya están en el MP4
+          python zona_segura.py "$OUT/$ID.mp4" "$OUT/$ID-zona-segura.jpg" || true
+
+      - name: Portada, descripción y hashtags
+        working-directory: render3d/simula
+        run: |
+          OUT="$RUNNER_TEMP/out/$ID"
+          if [ "$FORMATO" = quiz ]; then
+            python formatos.py portada-auto quiz "$TEMA" "$RUNNER_TEMP/voz" "$OUT/$ID-portada.jpg"
+            python formatos.py texto quiz "$TEMA" "$OUT"
+          elif [ "$FORMATO" = paquete ]; then
+            python nivel_oculto.py portada "../../$TEMA" "$OUT/$ID-portada.jpg" "$(python formatos.py titulo-portada paquete "$TEMA")"
+            python formatos.py texto paquete "$TEMA" "$OUT"
+          else
+            EP=${TEMA#ep}; EP=$((10#$EP))
+            python formatos.py portada-auto conquista ../conquista/temporada1 "$EP" "$RUNNER_TEMP/voz" "$OUT/$ID-portada.jpg"
+            python formatos.py texto conquista ../conquista/temporada1 "$EP" "$OUT"
+            python -c "import sys; sys.path.insert(0, '../conquista'); import conquista; print(conquista.resumen(conquista.estado('../conquista/temporada1', $EP)))" > "$OUT/resumen-votos.txt"
+          fi
+          { echo "### $ID"; echo; echo '```'; cat "$OUT/descripcion.txt"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Control de calidad (formato, sonoridad, silencios, planos congelados)
+        run: python3 tools/qc_video.py "$RUNNER_TEMP/out/$ID/$ID.mp4" --hoja "$RUNNER_TEMP/out/$ID/$ID-hoja.jpg" --resumen "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: ${{ matrix.id }}${{ inputs.intento && format('-intento{0}', inputs.intento) || '' }}
+          path: ${{ runner.temp }}/out/${{ matrix.id }}/
+          retention-days: 7
+          if-no-files-found: error
+
+  verificar-descargas:
+    needs: render
+    if: ${{ always() && needs.render.result != 'skipped' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          path: descargas
+      - name: Abrir cada archivo descargado
+        run: |
+          command -v ffprobe > /dev/null || { sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null; }
+          python3 tools/verificar_descargas.py descargas --resumen "$GITHUB_STEP_SUMMARY"
+          python3 tools/qc_lote.py descargas --resumen "$GITHUB_STEP_SUMMARY"   # tabla única con el QC de todo el lote

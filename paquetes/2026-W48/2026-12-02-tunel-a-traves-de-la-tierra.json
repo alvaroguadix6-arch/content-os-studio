@@ -1,0 +1,115 @@
+{
+  "id": "2026-12-02-tunel-a-traves-de-la-tierra",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "simulacion",
+  "title": "Caer por un túnel que atraviesa la Tierra: 38 minutos, no 42",
+  "script": [
+    "42 minutos fue la respuesta. Estaba mal.",
+    "Imagina un túnel que atraviesa la Tierra de lado a lado.",
+    "Saltas.",
+    "¿Cuánto tardas?",
+    "En 1966 un físico calculó 42 minutos, pero supuso una Tierra igual de densa por dentro que por fuera.",
+    "Error.",
+    "El núcleo pesa mucho más.",
+    "En 2015, Alexander Klotz repitió la cuenta con datos sísmicos reales.",
+    "38 minutos y 11 segundos.",
+    "Bajas acelerando hasta el centro y luego frenas hasta asomarte al otro lado, donde, si nadie te agarra, vuelves a caer.",
+    "Sin aire, claro.",
+    "38 minutos. No 42."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "42 MIN ✗"
+    },
+    {
+      "at": 2.5,
+      "text": "TÚNEL DE LADO A LADO"
+    },
+    {
+      "at": 8.1,
+      "text": "1966: 42 MIN"
+    },
+    {
+      "at": 15.5,
+      "text": "NÚCLEO MÁS DENSO"
+    },
+    {
+      "at": 18.0,
+      "text": "2015: DATOS SÍSMICOS"
+    },
+    {
+      "at": 22.2,
+      "text": "38 MIN 11 S"
+    },
+    {
+      "at": 32.5,
+      "text": "38, NO 42"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 3.5,
+      "kind": "simulacion",
+      "visual": "Persona estilizada al borde de un agujero; '42 MIN' tachado",
+      "notes": "motion inmediato"
+    },
+    {
+      "scene": 2,
+      "seconds": 6.0,
+      "kind": "simulacion",
+      "visual": "Corte transversal de la Tierra con túnel recto polo a polo"
+    },
+    {
+      "scene": 3,
+      "seconds": 7.0,
+      "kind": "simulacion",
+      "visual": "Comparativa: Tierra uniforme vs capas (corteza, manto, núcleo) con densidad por color",
+      "notes": "cambio de plano en 'Error'"
+    },
+    {
+      "scene": 4,
+      "seconds": 6.0,
+      "kind": "grafico",
+      "visual": "Cronómetro corriendo hasta 38:11"
+    },
+    {
+      "scene": 5,
+      "seconds": 11.0,
+      "kind": "simulacion",
+      "visual": "Caída con indicador de velocidad que sube hasta el centro y baja hasta el otro extremo; oscilación de vuelta",
+      "notes": "nota en pantalla pequeña: 'sin rozamiento del aire'"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Con densidad uniforme salen unos 42 min; con el modelo sísmico PREM, 38 min 11 s",
+      "source": "Klotz A. R., The gravity tunnel in a non-uniform Earth, Am. J. Phys. 83, 231 (2015); arXiv:1308.1342",
+      "url": "https://arxiv.org/abs/1308.1342"
+    },
+    {
+      "claim": "El resultado clásico de 42 minutos procede de un artículo de 1966 en la misma revista",
+      "source": "Klotz (2015), referencias; Phys.org (2015)",
+      "url": "https://phys.org/news/2015-03-fall-hole-earth.amp"
+    },
+    {
+      "claim": "El cálculo ignora el rozamiento del aire",
+      "source": "Phys.org (2015)",
+      "url": "https://phys.org/news/2015-03-fall-hole-earth.amp"
+    }
+  ],
+  "caption": {
+    "text": "Guárdalo: la respuesta que te enseñaron era 42 minutos.\n\nSi caes por un túnel que cruza la Tierra, el cálculo clásico de 1966 decía 42 minutos. En 2015, Alexander Klotz rehízo la cuenta con datos sísmicos reales del interior del planeta y le salió 38 minutos y 11 segundos.\n\nSimulación de física sin rozamiento del aire. Fuente en el primer comentario.",
+    "hashtags": [
+      "#ciencia",
+      "#fisica",
+      "#simulacion",
+      "#curiosidades"
+    ],
+    "alt_text": "Simulación de una persona cayendo por un túnel recto que atraviesa el centro de la Tierra"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

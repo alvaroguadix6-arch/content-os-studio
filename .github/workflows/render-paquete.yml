@@ -1,0 +1,136 @@
+# NIVEL OCULTO · Renderiza un paquete exportado desde instagram-agent con la plantilla de simulaciones.
+#
+# - SOLO manual (pestaña Actions → «Render paquete» → Run workflow) y solo desde main. Sin activadores
+#   automáticos: subir un paquete NO lanza ningún render.
+# - Gratis: los runners estándar no tienen coste en repositorios públicos. Si el repositorio fuera privado,
+#   el trabajo se omite y no consume minutos.
+# - Sin secretos. Permiso de solo lectura. Antes de renderizar se valida el paquete (tools/check_paquetes.py).
+# - El MP4 queda como artefacto descargable 7 días. No se publica en ninguna red ni se crea ninguna Release.
+name: Render paquete
+
+on:
+  workflow_dispatch:
+    inputs:
+      paquete:
+        description: 'Ruta del paquete, p. ej. paquetes/2026-W49/2026-12-03-isla-de-los-faisanes.json'
+        required: true
+      confirmar:
+        description: 'Escribe RENDER para confirmar'
+        required: true
+      titulo_portada:
+        description: 'Título corto para la portada (opcional, máx. 40 caracteres)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-paquete-${{ inputs.paquete }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    if: ${{ !github.event.repository.private && github.ref == 'refs/heads/main' && inputs.confirmar == 'RENDER' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Validar ruta y paquete
+        env:
+          PKG: ${{ inputs.paquete }}
+        run: |
+          [[ "$PKG" =~ ^paquetes/[0-9]{4}-W[0-9]{2}/[a-z0-9-]+\.json$ ]] && [ -f "$PKG" ] || { echo "ruta inválida"; exit 1; }
+          python3 tools/check_paquetes.py "$PKG"
+          echo "NAME=$(basename "$PKG" .json)" >> "$GITHUB_ENV"
+
+      # Python fijo: el del sistema del runner cambia (llegó a 3.14 y blis no tiene paquete para esa versión).
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: render3d/requirements-paquete.txt
+
+      - name: Herramientas gratuitas (ffmpeg, Inter, espeak-ng, Kokoro y PyTorch en CPU, versiones fijadas)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-inter espeak-ng > /dev/null
+          python -m pip install -q --upgrade pip
+          # PyTorch solo CPU (sin CUDA). Versión fijada; si el índice dejara de servirla, la última CPU para 3.12.
+          python -m pip install -q "torch==2.15.0" --index-url https://download.pytorch.org/whl/cpu \
+            || { echo "::warning::torch 2.15.0+cpu no disponible: se instala la última CPU para Python 3.12"; \
+                 python -m pip install -q torch --index-url https://download.pytorch.org/whl/cpu; }
+          # Todo lo demás con versiones exactas y SOLO paquetes precompilados (nunca compila; docopt es Python puro).
+          python -m pip install -q --only-binary=:all: --no-binary=docopt -r render3d/requirements-paquete.txt
+
+      - name: Comprobar dependencias antes de renderizar
+        run: |
+          python --version
+          ffmpeg -version | head -1
+          ls /usr/share/fonts/opentype/inter/Inter-ExtraBold.otf /usr/share/fonts/opentype/inter/Inter-Black.otf > /dev/null
+          espeak-ng --version
+          python - <<'PY'
+          import importlib, sys
+          assert sys.version_info[:2] == (3, 12), sys.version
+          for m in ("numpy", "scipy", "PIL", "soundfile", "torch", "kokoro", "misaki"):
+              mod = importlib.import_module(m)
+              print(f"ok {m} {getattr(mod, '__version__', '')}")
+          import torch
+          print("torch", torch.__version__, "· CUDA:", torch.version.cuda)
+          from kokoro import KPipeline
+          p = KPipeline(lang_code="e")                     # descarga el modelo y comprueba espeak para español
+          audio = [a for _, _, a in p("Prueba de voz.", voice="em_alex", speed=1.12)]
+          assert audio and len(audio[0]) > 1000, "la voz no genera audio"
+          print("ok voz em_alex:", sum(len(a) for a in audio), "muestras")
+          PY
+          python render3d/tests/test_nivel_oculto.py
+
+      - name: Voz (Kokoro em_alex, como el resto de vídeos)
+        env:
+          PKG: ${{ inputs.paquete }}
+        working-directory: render3d/simula
+        run: |
+          python nivel_oculto.py guion "../../$PKG" "$RUNNER_TEMP/voz/guion.json"
+          python ../gravedad/voz.py "$RUNNER_TEMP/voz" --guion "$RUNNER_TEMP/voz/guion.json" --motor kokoro --voz em_alex
+
+      - name: Comprobar zonas seguras (Instagram, TikTok, YouTube Shorts)
+        env:
+          PKG: ${{ inputs.paquete }}
+        working-directory: render3d/simula
+        run: python formatos.py zonas paquete "../../$PKG" "$RUNNER_TEMP/voz"
+
+      - name: Plan, fotogramas y montaje
+        env:
+          PAQUETE: ${{ github.workspace }}/${{ inputs.paquete }}
+        working-directory: render3d/simula
+        run: |
+          python nivel_oculto.py plan "$RUNNER_TEMP/voz"
+          python nivel_oculto.py render "$RUNNER_TEMP/voz" "$RUNNER_TEMP/frames"
+          mkdir -p "$RUNNER_TEMP/out"
+          python montaje.py nivel_oculto --narracion "$RUNNER_TEMP/voz" --frames "$RUNNER_TEMP/frames" --out "$RUNNER_TEMP/out/$NAME.mp4"
+          python zona_segura.py "$RUNNER_TEMP/out/$NAME.mp4" "$RUNNER_TEMP/out/$NAME-zona-segura.jpg" || true
+
+      - name: Portada (1080×1920, mismo estilo que el vídeo)
+        env:
+          PKG: ${{ inputs.paquete }}
+          TITULO: ${{ inputs.titulo_portada }}
+        working-directory: render3d/simula
+        run: |
+          if [ ${#TITULO} -gt 40 ]; then echo "título de portada demasiado largo"; exit 1; fi
+          if [ -n "$TITULO" ]; then
+            python nivel_oculto.py portada "../../$PKG" "$RUNNER_TEMP/out/$NAME-portada.jpg" "$TITULO"
+          else
+            python nivel_oculto.py portada "../../$PKG" "$RUNNER_TEMP/out/$NAME-portada.jpg"
+          fi
+
+      - name: Control de calidad (formato, sonoridad, silencios, planos congelados)
+        run: python3 tools/qc_video.py "$RUNNER_TEMP/out/$NAME.mp4" --hoja "$RUNNER_TEMP/out/$NAME-hoja.jpg" --resumen "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: ${{ env.NAME }}
+          path: ${{ runner.temp }}/out/
+          retention-days: 7

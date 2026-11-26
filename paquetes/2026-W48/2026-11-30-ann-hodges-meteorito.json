@@ -1,0 +1,122 @@
+{
+  "id": "2026-11-30-ann-hodges-meteorito",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "ciencia",
+  "title": "La mujer a la que le cayó un meteorito",
+  "script": [
+    "Un meteorito de 3,9 kilos le cayó encima.",
+    "Y sobrevivió.",
+    "Alabama, 30 de noviembre de 1954.",
+    "Ann Hodges duerme la siesta en el sofá de su casa de Sylacauga.",
+    "Crac.",
+    "Venía del espacio.",
+    "Una roca atraviesa el techo, rebota en la radio y le golpea la cadera.",
+    "Solo un moratón.",
+    "Y nada más.",
+    "Es el primer caso documentado de una persona herida por un meteorito.",
+    "Pero lo raro viene después.",
+    "Su casera, Birdie Guy, reclama la piedra.",
+    "¿Su argumento? El techo era suyo.",
+    "Al final, la roca vuelve a Ann Hodges, y otro trozo acaba en el Smithsonian.",
+    "3,9 kilos del cielo. Y casi se los quitan."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "3,9 KG DEL ESPACIO"
+    },
+    {
+      "at": 3.5,
+      "text": "30/11/1954"
+    },
+    {
+      "at": 5.7,
+      "text": "SYLACAUGA, ALABAMA"
+    },
+    {
+      "at": 12.0,
+      "text": "IMPACTO"
+    },
+    {
+      "at": 19.8,
+      "text": "PRIMER CASO DOCUMENTADO"
+    },
+    {
+      "at": 26.1,
+      "text": "LA CASERA LO RECLAMA"
+    },
+    {
+      "at": 36.0,
+      "text": "3,9 KG"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 4.5,
+      "kind": "simulacion",
+      "visual": "Bola de fuego entrando en la atmósfera, cámara siguiéndola hasta un tejado",
+      "notes": "motion en el frame 1"
+    },
+    {
+      "scene": 2,
+      "seconds": 6.0,
+      "kind": "mapa",
+      "visual": "Zoom a Alabama y Sylacauga; salón de 1954 con sofá y radio"
+    },
+    {
+      "scene": 3,
+      "seconds": 7.0,
+      "kind": "simulacion",
+      "visual": "Trayectoria: techo, rebote en la radio, cadera (sin gore, estilo ilustración)",
+      "notes": "cambio de plano dentro de la frase larga"
+    },
+    {
+      "scene": 4,
+      "seconds": 8.0,
+      "kind": "animacion",
+      "visual": "Dos siluetas tirando de la roca; mazo de juez estilizado"
+    },
+    {
+      "scene": 5,
+      "seconds": 8.0,
+      "kind": "grafico",
+      "visual": "Roca dividida: un trozo a la casa, otro con etiqueta 'Smithsonian'; vuelta al meteorito para el loop"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "30-11-1954, Sylacauga (Alabama): meteorito de 3,86 kg (8,5 libras) atraviesa el techo, rebota en la radio y golpea la cadera de Ann Hodges",
+      "source": "Wikipedia: Ann Elizabeth Fowler Hodges",
+      "url": "https://en.wikipedia.org/wiki/Ann_Elizabeth_Fowler_Hodges"
+    },
+    {
+      "claim": "Primer caso conocido de persona herida por un meteorito",
+      "source": "Astronomy.com: Nov. 30, 1954, the first known human injury via a meteorite",
+      "url": "https://www.astronomy.com/today-in-the-history-of-astronomy/nov-30-1954-the-first-known-human-injury-via-a-meteorite/"
+    },
+    {
+      "claim": "La casera, Birdie Guy, reclamó el meteorito; acabó volviendo a los Hodges",
+      "source": "Wikipedia: Ann Elizabeth Fowler Hodges",
+      "url": "https://en.wikipedia.org/wiki/Ann_Elizabeth_Fowler_Hodges"
+    },
+    {
+      "claim": "Otro fragmento de la misma roca se vendió al Smithsonian",
+      "source": "Wikipedia: Sylacauga (meteorite)",
+      "url": "https://en.wikipedia.org/wiki/Sylacauga_(meteorite)"
+    }
+  ],
+  "caption": {
+    "text": "Mándaselo a quien siempre dice \"eso no me va a pasar a mí\".\n\nHoy hace 72 años, el 30 de noviembre de 1954, un meteorito atravesó el techo de Ann Hodges en Alabama y le golpeó la cadera. Es el primer caso documentado de una persona herida por un meteorito.\n\nLo mejor vino después: su casera reclamó la piedra.",
+    "hashtags": [
+      "#ciencia",
+      "#espacio",
+      "#meteorito",
+      "#curiosidades"
+    ],
+    "alt_text": "Animación de un meteorito atravesando el tejado de una casa de los años 50"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

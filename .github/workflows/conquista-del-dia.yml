@@ -1,0 +1,104 @@
+# NIVEL OCULTO · «Conquista del día»: renderiza el episodio de hoy de «Tu pueblo conquista España».
+#
+# - Lo pide el workflow MANUAL «Conquista del día» del repo privado instagram-agent: cuenta los votos, sube aquí el
+#   CSV agregado (o el marcador .pendiente si no se pudieron leer los comentarios) y escribe
+#   render3d/conquista/pedido.json. Ese push es lo único que lanza este workflow: no hay ninguna programación.
+#   También se puede lanzar a mano (Actions → «Conquista del día» → episodio + RENDER).
+# - El render es el mismo «Render quiz/conquista» con TODOS sus controles (zonas seguras, audio, QC, descargas).
+#   Si falla, se reintenta una vez automáticamente (fallos pasajeros de red o de instalación).
+# - Sin secretos, solo lectura, no publica nada. Gratis (repo público).
+name: Conquista del día
+
+on:
+  push:
+    branches: [main]
+    paths: ['render3d/conquista/pedido.json']
+  workflow_dispatch:
+    inputs:
+      episodio:
+        description: 'Episodio a renderizar (número)'
+        required: true
+      confirmar:
+        description: 'Escribe RENDER para confirmar'
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: conquista-del-dia
+  cancel-in-progress: false
+
+jobs:
+  pedido:
+    if: ${{ !github.event.repository.private && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      ep: ${{ steps.p.outputs.ep }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          sparse-checkout: render3d/conquista
+      - name: Leer y validar el pedido
+        id: p
+        env:
+          EVENTO: ${{ github.event_name }}
+          EP_MANUAL: ${{ inputs.episodio }}
+          CONFIRMAR: ${{ inputs.confirmar }}
+        run: |
+          if [ "$EVENTO" = workflow_dispatch ]; then
+            [ "$CONFIRMAR" = RENDER ] || { echo "escribe RENDER para confirmar"; exit 1; }
+            EP="$EP_MANUAL"
+          else
+            EP=$(python3 -I -c 'import json,sys; d=json.load(open(sys.argv[1])); print(int(d["episodio"]))' render3d/conquista/pedido.json)
+          fi
+          [[ "$EP" =~ ^[0-9]{1,2}$ ]] && [ "$EP" -ge 1 ] || { echo "episodio inválido: $EP"; exit 1; }
+          N=$(printf '%02d' "$((10#$EP))")
+          V=render3d/conquista/temporada1/votos
+          if [ -f "$V/ep$N.csv" ]; then estado="votos contados ($(($(wc -l < "$V/ep$N.csv") - 1)) pueblos)"
+          elif [ -f "$V/ep$N.pendiente" ]; then estado="RESPALDO: votos pendientes (se suman en el episodio siguiente; no se inventa nada)"
+          else echo "faltan $V/ep$N.csv o ep$N.pendiente"; exit 1; fi
+          echo "ep=$((10#$EP))" >> "$GITHUB_OUTPUT"
+          { echo "## Conquista del día · episodio $((10#$EP))"; echo; echo "- $estado"; } >> "$GITHUB_STEP_SUMMARY"
+
+  render:
+    needs: pedido
+    permissions:
+      contents: read
+      actions: read
+    uses: ./.github/workflows/render-quiz-conquista.yml
+    with:
+      conquista_episodio: ${{ needs.pedido.outputs.ep }}
+      confirmar: RENDER
+
+  reintento:   # un segundo intento si el primero falla (sin relajar nada: mismos controles)
+    needs: [pedido, render]
+    if: ${{ always() && needs.pedido.result == 'success' && needs.render.result == 'failure' }}
+    permissions:
+      contents: read
+      actions: read
+    uses: ./.github/workflows/render-quiz-conquista.yml
+    with:
+      conquista_episodio: ${{ needs.pedido.outputs.ep }}
+      confirmar: RENDER
+      intento: '2'
+
+  resultado:
+    needs: [pedido, render, reintento]
+    if: ${{ always() && needs.pedido.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Resultado final
+        env:
+          R1: ${{ needs.render.result }}
+          R2: ${{ needs.reintento.result }}
+        run: |
+          if [ "$R1" = success ] || [ "$R2" = success ]; then
+            echo "✅ episodio listo para descargar (artefacto conquista-ep*, 7 días)" | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::error::El episodio no se ha podido renderizar ni en el reintento. Prioridad: revisar el registro y arreglarlo."
+            exit 1
+          fi
