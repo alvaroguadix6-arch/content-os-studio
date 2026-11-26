@@ -32,8 +32,9 @@ on:
 permissions:
   contents: read
 
+# Sin cola única: varios lotes pueden ir a la vez (repo público, minutos gratis). Cada lote ya limita a 4 máquinas.
 concurrency:
-  group: render-quiz-conquista
+  group: render-lote-${{ github.run_id }}
   cancel-in-progress: false
 
 jobs:
