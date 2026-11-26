@@ -28,6 +28,14 @@ on:
       confirmar:
         description: 'Escribe RENDER para confirmar'
         required: true
+  # También lo llama «Conquista del día» (mismo render y mismos controles; no hay atajos)
+  workflow_call:
+    inputs:
+      temas: {type: string, required: false, default: ''}
+      conquista_episodio: {type: string, required: false, default: ''}
+      paquetes: {type: string, required: false, default: ''}
+      confirmar: {type: string, required: true}
+      intento: {type: string, required: false, default: ''}   # sufijo del artefacto en un reintento
 
 permissions:
   contents: read
@@ -194,7 +202,7 @@ jobs:
 
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: ${{ matrix.id }}
+          name: ${{ matrix.id }}${{ inputs.intento && format('-intento{0}', inputs.intento) || '' }}
           path: ${{ runner.temp }}/out/${{ matrix.id }}/
           retention-days: 7
           if-no-files-found: error

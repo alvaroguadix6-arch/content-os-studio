@@ -153,7 +153,10 @@ def guion(st):
         ]
     L = []
     nuevos = st["votos_nuevos"]
-    if nuevos == 0:  # serie diaria: también hay episodio cuando un día no llegan votos
+    if st.get("votos_pendientes"):  # respaldo: no se pudieron leer los comentarios a tiempo (no se inventa nada)
+        L.append(("intro", f"Episodio {letras(ep)}. Los votos de ayer se suman en el próximo episodio: hoy, así está el mapa.",
+                  ["votos", "mapa"]))
+    elif nuevos == 0:  # serie diaria: también hay episodio cuando un día no llegan votos
         L.append(("intro", f"Episodio {letras(ep)}. Hoy el mapa no se ha movido: {letras_m(len(P))} pueblos esperan tu voto.",
                   ["mapa", "voto"]))
     else:

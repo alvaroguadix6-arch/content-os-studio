@@ -41,6 +41,13 @@ def cfg(temporada):
     return c
 
 
+def votos_pendientes(temporada, ep):
+    """True si los votos de este episodio no se pudieron contar a tiempo (marcador epNN.pendiente).
+    No se inventa nada: el episodio sale con el mapa tal como estaba y esos votos se suman en el siguiente."""
+    return os.path.exists(os.path.join(temporada, "votos", f"ep{ep:02d}.pendiente")) and \
+        not os.path.exists(os.path.join(temporada, "votos", f"ep{ep:02d}.csv"))
+
+
 def read_votes(temporada, ep):
     """Lee epNN.csv, reconoce cada pueblo y devuelve {índice_municipio: votos} + lista para revisar."""
     path = os.path.join(temporada, "votos", f"ep{ep:02d}.csv")
@@ -201,6 +208,7 @@ def estado(temporada, ep):
         invasiones=[dict(atacante=a, defensor=d, municipios=n) for (a, d), n in sorted(inv.items(), key=lambda kv: -kv[1])],
         rivalidades=[dict(a=a, b=b, frontera=(a, b) in touching) for a, b in riv[:5]],
         revisar=review.get(ep, []),
+        votos_pendientes=votos_pendientes(temporada, ep),
         _owner_prev=own_prev, _owner_cur=own_cur, _order=order,
     )
 
