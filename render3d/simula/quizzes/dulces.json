@@ -1,0 +1,79 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "DULCES TÍPICOS",
+ "titulo": "¿De qué provincia es cada dulce?",
+ "intro": "Dulces típicos de España. ¿Sabes de qué provincia es cada uno? Cinco preguntas.",
+ "gancho": [
+  "DULCES",
+  "*TÍPICOS*"
+ ],
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#gastronomia",
+  "#dulces"
+ ],
+ "preguntas": [
+  {
+   "q": "¿De dónde es la ensaimada?",
+   "prov": "Illes Balears",
+   "punto": [
+    2.65,
+    39.57
+   ],
+   "respuesta": "Illes Balears",
+   "detalle": "Ensaimada de Mallorca",
+   "voz_q": "¿De dónde es la ensaimada?",
+   "voz_a": "¡De Mallorca, Illes Balears!"
+  },
+  {
+   "q": "¿De qué provincia son las yemas de Santa Teresa?",
+   "prov": "Ávila",
+   "punto": [
+    -4.7,
+    40.66
+   ],
+   "respuesta": "Ávila",
+   "detalle": "Yemas de Santa Teresa",
+   "voz_q": "¿Y las yemas de Santa Teresa?",
+   "voz_a": "¡Ávila!"
+  },
+  {
+   "q": "¿De qué provincia son los polvorones de Estepa?",
+   "prov": "Sevilla",
+   "punto": [
+    -4.88,
+    37.29
+   ],
+   "respuesta": "Sevilla",
+   "detalle": "Polvorones de Estepa",
+   "voz_q": "¿De dónde son los polvorones de Estepa?",
+   "voz_a": "¡Sevilla!"
+  },
+  {
+   "q": "¿De dónde son los sobaos pasiegos?",
+   "prov": "Cantabria",
+   "punto": [
+    -3.85,
+    43.18
+   ],
+   "respuesta": "Cantabria",
+   "detalle": "Sobaos pasiegos",
+   "voz_q": "¿Y los sobaos pasiegos?",
+   "voz_a": "¡Cantabria!"
+  },
+  {
+   "q": "¿De qué provincia es el mazapán más famoso?",
+   "prov": "Toledo",
+   "punto": [
+    -4.02,
+    39.86
+   ],
+   "respuesta": "Toledo",
+   "detalle": "Mazapán de Toledo",
+   "voz_q": "Última: ¿de dónde es el mazapán más famoso de España?",
+   "voz_a": "¡Toledo!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

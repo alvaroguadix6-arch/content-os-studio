@@ -1,0 +1,79 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "PARQUES NACIONALES",
+ "titulo": "¿En qué provincia está cada parque nacional?",
+ "intro": "Parques nacionales de España. ¿Sabes en qué provincia está cada uno? Cinco preguntas.",
+ "gancho": [
+  "PARQUES",
+  "*NACIONALES*"
+ ],
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#naturaleza",
+  "#parquesnacionales"
+ ],
+ "preguntas": [
+  {
+   "q": "¿En qué provincia está el Parque Nacional de Timanfaya?",
+   "prov": "Las Palmas",
+   "punto": [
+    -13.78,
+    29.0
+   ],
+   "respuesta": "Las Palmas",
+   "detalle": "Timanfaya · Lanzarote",
+   "voz_q": "¿En qué provincia está el parque nacional de Timanfaya?",
+   "voz_a": "¡Las Palmas, en Lanzarote!"
+  },
+  {
+   "q": "¿En qué provincia está Monfragüe?",
+   "prov": "Cáceres",
+   "punto": [
+    -6.0,
+    39.85
+   ],
+   "respuesta": "Cáceres",
+   "detalle": "Parque Nacional de Monfragüe",
+   "voz_q": "¿Y Monfragüe?",
+   "voz_a": "¡Cáceres!"
+  },
+  {
+   "q": "¿Dónde están las Tablas de Daimiel?",
+   "prov": "Ciudad Real",
+   "punto": [
+    -3.68,
+    39.13
+   ],
+   "respuesta": "Ciudad Real",
+   "detalle": "Tablas de Daimiel",
+   "voz_q": "¿Dónde están las Tablas de Daimiel?",
+   "voz_a": "¡Ciudad Real!"
+  },
+  {
+   "q": "¿En qué provincia está Aigüestortes i Estany de Sant Maurici?",
+   "prov": "Lleida",
+   "punto": [
+    0.95,
+    42.58
+   ],
+   "respuesta": "Lleida",
+   "detalle": "Aigüestortes",
+   "voz_q": "¿Y Aigüestortes i Estany de Sant Maurici?",
+   "voz_a": "¡Lleida!"
+  },
+  {
+   "q": "¿A qué provincia pertenece el Archipiélago de Cabrera?",
+   "prov": "Illes Balears",
+   "punto": [
+    2.93,
+    39.15
+   ],
+   "respuesta": "Illes Balears",
+   "detalle": "Archipiélago de Cabrera",
+   "voz_q": "Última: ¿de qué provincia es el archipiélago de Cabrera?",
+   "voz_a": "¡Illes Balears!"
+  }
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}
