@@ -1,0 +1,41 @@
+# Pruebas del motor de vídeo antes de fusionar (gratis, solo lectura, sin secretos).
+#
+# Se ejecuta en cada pull request que toque render3d/ o tools/. Comprueba, entre otras cosas, que TODAS las
+# escenas (quiz, Conquista y cada tipo de escena de paquete) quedan dentro de la zona segura de Instagram, TikTok
+# y YouTube Shorts. Así un fallo de maquetación se detecta aquí y no en mitad de un render.
+name: Pruebas del motor de vídeo
+
+on:
+  pull_request:
+    paths: ['render3d/**', 'tools/**', '.github/workflows/pruebas-render.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pruebas-render-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pruebas:
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: render3d/requirements-paquete.txt
+      - name: Dependencias mínimas (sin voz ni PyTorch)
+        run: |
+          ls /usr/share/fonts/opentype/inter/Inter-Black.otf > /dev/null 2>&1 || { sudo apt-get update -qq && sudo apt-get install -y -qq fonts-inter > /dev/null; }
+          python -m pip install -q --only-binary=:all: "numpy==2.5.5" "pillow==13.0.0" "scipy==1.18.1"
+      - name: Pruebas (zonas seguras de todas las escenas, Canarias, votos, textos, portadas)
+        run: |
+          python render3d/tests/test_formatos.py
+          python render3d/tests/test_nivel_oculto.py
