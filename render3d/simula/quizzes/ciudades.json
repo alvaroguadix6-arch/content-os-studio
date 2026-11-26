@@ -1,0 +1,82 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "CIUDADES",
+ "titulo": "Ciudades más grandes que su capital",
+ "gancho": [
+  "MÁS GRANDES",
+  "QUE SU *CAPITAL*"
+ ],
+ "intro": "La capital no siempre es la ciudad más grande. ¿Sabes cuál es? Cinco preguntas.",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#ciudades",
+  "#geografia"
+ ],
+ "preguntas": [
+  {
+   "q": "¿Qué ciudad gallega tiene más habitantes que Santiago y A Coruña?",
+   "prov": "Pontevedra",
+   "punto": [
+    -8.721,
+    42.24
+   ],
+   "respuesta": "Vigo",
+   "detalle": "La más poblada de Galicia",
+   "voz_q": "¿Qué ciudad gallega tiene más habitantes que Santiago y A Coruña?",
+   "voz_a": "¡Vigo!"
+  },
+  {
+   "q": "La ciudad más poblada de Asturias no es Oviedo. ¿Cuál es?",
+   "prov": "Asturias",
+   "punto": [
+    -5.662,
+    43.536
+   ],
+   "respuesta": "Gijón",
+   "detalle": "Más habitantes que Oviedo",
+   "voz_q": "La ciudad más poblada de Asturias no es Oviedo. ¿Cuál es?",
+   "voz_a": "¡Gijón!"
+  },
+  {
+   "q": "En la provincia de Cádiz, ¿qué ciudad supera a la capital?",
+   "prov": "Cádiz",
+   "punto": [
+    -6.137,
+    36.686
+   ],
+   "respuesta": "Jerez de la Frontera",
+   "detalle": "El doble de habitantes que Cádiz",
+   "voz_q": "En la provincia de Cádiz, ¿qué ciudad supera a la capital?",
+   "voz_a": "¡Jerez de la Frontera!"
+  },
+  {
+   "q": "¿Cuál es la ciudad más poblada del País Vasco?",
+   "prov": "Bizkaia/Vizcaya",
+   "punto": [
+    -2.935,
+    43.263
+   ],
+   "respuesta": "Bilbao",
+   "detalle": "Más que Vitoria-Gasteiz",
+   "voz_q": "¿Cuál es la ciudad más poblada del País Vasco?",
+   "voz_a": "¡Bilbao!"
+  },
+  {
+   "q": "¿Y la más poblada de Extremadura? No es Mérida.",
+   "prov": "Badajoz",
+   "punto": [
+    -6.97,
+    38.879
+   ],
+   "respuesta": "Badajoz",
+   "detalle": "Más del doble que Mérida",
+   "voz_q": "¿Y la más poblada de Extremadura? No es Mérida.",
+   "voz_a": "¡Badajoz!"
+  }
+ ],
+ "fuentes": [
+  "INE: cifras oficiales de población de los municipios españoles a 1 de enero de 2025 (RD 1117/2025)"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

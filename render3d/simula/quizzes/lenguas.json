@@ -1,0 +1,86 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "LENGUAS",
+ "titulo": "¿Dónde se habla cada lengua de España?",
+ "gancho": [
+  "¿DÓNDE",
+  "*SE HABLA*?"
+ ],
+ "intro": "En España se hablan más lenguas de las que crees. ¿Sabes dónde? Cinco preguntas.",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#lenguas",
+  "#curiosidades"
+ ],
+ "preguntas": [
+  {
+   "q": "¿Dónde se habla silbando?",
+   "prov": "Santa Cruz De Tenerife",
+   "punto": [
+    -17.23,
+    28.1
+   ],
+   "respuesta": "La Gomera",
+   "detalle": "Silbo gomero · Patrimonio UNESCO",
+   "voz_q": "¿Dónde se habla silbando?",
+   "voz_a": "¡En La Gomera! El silbo gomero."
+  },
+  {
+   "q": "¿En qué provincia se habla aranés?",
+   "prov": "Lleida",
+   "punto": [
+    0.8,
+    42.72
+   ],
+   "respuesta": "Lleida",
+   "detalle": "Val d'Aran",
+   "voz_q": "¿En qué provincia se habla aranés?",
+   "voz_a": "¡Lleida, en el Valle de Arán!"
+  },
+  {
+   "q": "¿Dónde se habla la fala?",
+   "prov": "Cáceres",
+   "punto": [
+    -6.78,
+    40.21
+   ],
+   "respuesta": "Cáceres",
+   "detalle": "Valle de Jálama",
+   "voz_q": "¿Dónde se habla la fala?",
+   "voz_a": "¡En Cáceres, en el valle de Jálama!"
+  },
+  {
+   "q": "¿En qué provincia se conserva el aragonés?",
+   "prov": "Huesca",
+   "punto": [
+    -0.35,
+    42.6
+   ],
+   "respuesta": "Huesca",
+   "detalle": "Pirineo aragonés",
+   "voz_q": "¿En qué provincia se conserva el aragonés?",
+   "voz_a": "¡Huesca!"
+  },
+  {
+   "q": "¿Dónde se habla el bable?",
+   "prov": "Asturias",
+   "punto": [
+    -5.85,
+    43.3
+   ],
+   "respuesta": "Asturias",
+   "detalle": "Asturiano o bable",
+   "voz_q": "¿Dónde se habla el bable?",
+   "voz_a": "¡En Asturias!"
+  }
+ ],
+ "fuentes": [
+  "UNESCO, Patrimonio Cultural Inmaterial: el silbo gomero (2009)",
+  "Llei 35/2010 de l'occità, aranès a l'Aran",
+  "Junta de Extremadura: A Fala, Bien de Interés Cultural (2001)",
+  "Ley 3/2013 de lenguas de Aragón",
+  "Ley 1/1998 de uso y promoción del bable/asturiano"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

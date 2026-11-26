@@ -1,0 +1,86 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "COSTAS",
+ "titulo": "¿Dónde está cada costa de España?",
+ "gancho": [
+  "¿DÓNDE ESTÁ",
+  "*CADA COSTA*?"
+ ],
+ "intro": "Cinco costas de España. ¿Sabes dónde está cada una?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#playas",
+  "#costas"
+ ],
+ "preguntas": [
+  {
+   "q": "¿Dónde está la Costa da Morte?",
+   "prov": "A Coruña",
+   "punto": [
+    -9.05,
+    43.12
+   ],
+   "respuesta": "A Coruña",
+   "detalle": "Costa da Morte · Galicia",
+   "voz_q": "¿Dónde está la Costa da Morte?",
+   "voz_a": "¡En A Coruña!"
+  },
+  {
+   "q": "¿En qué provincia está la Costa Brava?",
+   "prov": "Girona",
+   "punto": [
+    3.12,
+    41.88
+   ],
+   "respuesta": "Girona",
+   "detalle": "Costa Brava",
+   "voz_q": "¿En qué provincia está la Costa Brava?",
+   "voz_a": "¡Girona!"
+  },
+  {
+   "q": "¿Dónde está la Costa Cálida?",
+   "prov": "Murcia",
+   "punto": [
+    -0.8,
+    37.62
+   ],
+   "respuesta": "Murcia",
+   "detalle": "Costa Cálida",
+   "voz_q": "¿Dónde está la Costa Cálida?",
+   "voz_a": "¡En Murcia!"
+  },
+  {
+   "q": "¿En qué provincia está la Costa Daurada?",
+   "prov": "Tarragona",
+   "punto": [
+    1.2,
+    41.08
+   ],
+   "respuesta": "Tarragona",
+   "detalle": "Costa Daurada · Dorada",
+   "voz_q": "¿En qué provincia está la Costa Daurada?",
+   "voz_a": "¡Tarragona!"
+  },
+  {
+   "q": "¿Dónde está la Costa de la Luz?",
+   "prov": [
+    "Cádiz",
+    "Huelva"
+   ],
+   "punto": [
+    -6.25,
+    36.55
+   ],
+   "respuesta": "Cádiz y Huelva",
+   "detalle": "Costa de la Luz",
+   "voz_q": "¿Dónde está la Costa de la Luz?",
+   "voz_a": "¡Entre Cádiz y Huelva!"
+  }
+ ],
+ "fuentes": [
+  "Turespaña (spain.info): costas de España",
+  "Turismo de Galicia, Catalunya, Región de Murcia y Andalucía"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

@@ -1,0 +1,202 @@
+{
+  "id": "2026-12-05-los-ultimos-de-filipinas",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "Los últimos de Filipinas: 337 días en una guerra que ya había terminado",
+  "script": [
+    "Siguieron luchando casi un año en una guerra que ya había terminado.",
+    "Baler, Filipinas, 1898. Un pequeño destacamento español se refugia en la iglesia del pueblo.",
+    "El asedio empieza el 1 de julio de 1898.",
+    "En diciembre, España firma la paz en el Tratado de París y cede Filipinas.",
+    "Pero ellos no se lo creen. Piensan que los avisos son un engaño.",
+    "Resisten con muy poca comida, y la enfermedad del beriberi causa muchas de las bajas.",
+    "En junio de 1899, una noticia de un periódico español convence por fin al teniente Martín Cerezo.",
+    "El 2 de junio se rinden. Habían pasado 337 días.",
+    "A los supervivientes les dejaron volver a España.",
+    "Hoy se les conoce como «los últimos de Filipinas». ¿Conocías su historia?"
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "LA GUERRA YA HABÍA ACABADO"
+    },
+    {
+      "at": 4.24,
+      "text": "BALER · 1898"
+    },
+    {
+      "at": 9.18,
+      "text": "1 DE JULIO DE 1898"
+    },
+    {
+      "at": 12.35,
+      "text": "TRATADO DE PARÍS"
+    },
+    {
+      "at": 21.88,
+      "text": "BERIBERI"
+    },
+    {
+      "at": 33.18,
+      "text": "337 DÍAS"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 4.24,
+      "kind": "simulacion",
+      "visual": "iglesia",
+      "escena": {
+        "tipo": "figura",
+        "figura": "iglesia"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 4.94,
+      "kind": "mapa",
+      "visual": "Baler · Filipinas",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          121.56,
+          15.76
+        ],
+        "etiqueta": "Baler · Filipinas"
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 3.18,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "1 de julio de 1898",
+            "texto": "Empieza el asedio"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 4.94,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "1 de julio de 1898",
+            "texto": "Empieza el asedio"
+          },
+          {
+            "fecha": "10 de diciembre de 1898",
+            "texto": "Tratado de París"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 4.59,
+      "kind": "simulacion",
+      "visual": "iglesia",
+      "escena": {
+        "tipo": "figura",
+        "figura": "iglesia"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 5.29,
+      "kind": "simulacion",
+      "visual": "iglesia",
+      "escena": {
+        "tipo": "figura",
+        "figura": "iglesia"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 6.0,
+      "kind": "archivo",
+      "visual": "Noticias de España que no podían ser falsas",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Noticias de España que no podían ser falsas",
+        "fecha": "Junio de 1899",
+        "cabecera": "Periódico"
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 3.53,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 337,
+        "unidad": "días de asedio"
+      }
+    },
+    {
+      "scene": 9,
+      "seconds": 2.82,
+      "kind": "mapa",
+      "visual": "Vuelta a España",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -3.7,
+          40.42
+        ],
+        "etiqueta": "Vuelta a España"
+      }
+    },
+    {
+      "scene": 10,
+      "seconds": 4.24,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "El sitio de Baler duró 337 días, del 1-7-1898 al 2-6-1899, en la iglesia de Baler",
+      "source": "Wikipedia: Siege of Baler",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Baler"
+    },
+    {
+      "claim": "España cedió Filipinas en el Tratado de París (10-12-1898); los sitiados no creyeron los avisos",
+      "source": "Wikipedia: Siege of Baler",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Baler"
+    },
+    {
+      "claim": "El beriberi causó muchas de las bajas; el teniente Saturnino Martín Cerezo se convenció al leer noticias en periódicos españoles",
+      "source": "Ministerio de Defensa: publicaciones",
+      "url": "https://publicaciones.defensa.gob.es/pprevistas/REVISTAS_PAPEL21214/pubData/SEO/Page_255.html"
+    },
+    {
+      "claim": "Los supervivientes fueron repatriados a España",
+      "source": "El Debate: los héroes de Baler",
+      "url": "https://www.eldebate.com/historia/20220602/heroes-baler_amp.html"
+    }
+  ],
+  "caption": {
+    "text": "¿Conocías su historia?\n\nDel 1 de julio de 1898 al 2 de junio de 1899, un destacamento español resistió 337 días en la iglesia de Baler (Filipinas). En diciembre de 1898 España ya había cedido Filipinas en el Tratado de París, pero ellos creían que los avisos eran un engaño.\n\nHoy se les conoce como «los últimos de Filipinas».",
+    "hashtags": [
+      "#historia",
+      "#españa",
+      "#filipinas",
+      "#historiadeespaña"
+    ],
+    "alt_text": "Ilustración de una iglesia con sacos terreros bajo un cielo rojizo"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

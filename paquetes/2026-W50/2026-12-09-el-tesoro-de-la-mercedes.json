@@ -1,0 +1,194 @@
+{
+  "id": "2026-12-09-el-tesoro-de-la-mercedes",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "El tesoro de la Mercedes: medio millón de monedas que volvieron a España",
+  "script": [
+    "En 2007 apareció en el fondo del mar uno de los mayores tesoros jamás encontrados. Y era español.",
+    "La fragata Nuestra Señora de las Mercedes se hundió en 1804 frente a la costa sur de Portugal.",
+    "La atacaron barcos británicos y explotó.",
+    "Dos siglos después, una empresa estadounidense sacó del fondo casi medio millón de monedas.",
+    "Y se las llevó a Estados Unidos.",
+    "España fue a juicio. Y ganó: los tribunales decidieron que el tesoro era español.",
+    "En 2012, las monedas volvieron a España.",
+    "Hoy se pueden ver en el Museo Nacional de Arqueología Subacuática, en Cartagena.",
+    "¿Sabías esta historia? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "EL TESORO DE LA MERCEDES"
+    },
+    {
+      "at": 6.35,
+      "text": "1804"
+    },
+    {
+      "at": 12.71,
+      "text": "BRITÁNICOS"
+    },
+    {
+      "at": 14.82,
+      "text": "CASI 500.000 MONEDAS"
+    },
+    {
+      "at": 22.24,
+      "text": "ESPAÑA GANA"
+    },
+    {
+      "at": 29.65,
+      "text": "CARTAGENA"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 6.35,
+      "kind": "simulacion",
+      "visual": "monedas",
+      "escena": {
+        "tipo": "figura",
+        "figura": "monedas",
+        "texto": "2007"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 6.35,
+      "kind": "mapa",
+      "visual": "Cabo de Santa María",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -7.9,
+          36.6
+        ],
+        "etiqueta": "Cabo de Santa María"
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 2.12,
+      "kind": "simulacion",
+      "visual": "galeon",
+      "escena": {
+        "tipo": "figura",
+        "figura": "galeon",
+        "hundir": true
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 4.94,
+      "kind": "simulacion",
+      "visual": "monedas",
+      "escena": {
+        "tipo": "figura",
+        "figura": "monedas",
+        "texto": "Casi 500.000 monedas"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 2.47,
+      "kind": "mapa",
+      "visual": "Estados Unidos",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -82.46,
+          27.95
+        ],
+        "etiqueta": "Estados Unidos"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 4.94,
+      "kind": "archivo",
+      "visual": "La justicia da la razón a España: el tesoro es español",
+      "escena": {
+        "tipo": "documento",
+        "titular": "La justicia da la razón a España: el tesoro es español",
+        "fecha": "2012",
+        "cabecera": "Diario"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 2.47,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "1804",
+            "texto": "Se hunde la Mercedes"
+          },
+          {
+            "fecha": "2007",
+            "texto": "Aparece el tesoro"
+          },
+          {
+            "fecha": "2012",
+            "texto": "Vuelve a España"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 4.59,
+      "kind": "mapa",
+      "visual": "Cartagena · ARQVA",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -0.986,
+          37.6
+        ],
+        "etiqueta": "Cartagena · ARQVA",
+        "resaltar": [
+          "Murcia"
+        ]
+      }
+    },
+    {
+      "scene": 9,
+      "seconds": 1.41,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "La fragata Nuestra Señora de las Mercedes fue hundida por la Armada británica el 5-10-1804 frente al sur de Portugal (batalla del cabo de Santa María) tras explotar",
+      "source": "Wikipedia: Spanish frigate Nuestra Señora de las Mercedes",
+      "url": "https://en.wikipedia.org/wiki/Spanish_frigate_Nuestra_Se%C3%B1ora_de_las_Mercedes"
+    },
+    {
+      "claim": "Odyssey Marine Exploration recuperó en 2007 casi 500.000 monedas y las llevó a EE. UU.; los tribunales fallaron a favor de España",
+      "source": "Público",
+      "url": "https://www.publico.es/ciencias/eeuu-obliga-odysseya-devolver-tesoro-mercedes-espana.html"
+    },
+    {
+      "claim": "El tesoro llegó a España en 2012 y se custodia en el Museo Nacional de Arqueología Subacuática (Cartagena)",
+      "source": "La Moncloa: expedición al pecio de la Mercedes",
+      "url": "https://www.lamoncloa.gob.es/lang/en/gobierno/news/paginas/2017/20170817_mercedes.aspx"
+    }
+  ],
+  "caption": {
+    "text": "¿Sabías esta historia?\n\nLa fragata Nuestra Señora de las Mercedes se hundió en 1804 frente a Portugal tras un ataque británico. En 2007 una empresa estadounidense sacó casi medio millón de monedas y se las llevó a Estados Unidos. España ganó el juicio y en 2012 el tesoro volvió.\n\nHoy está en el museo ARQVA de Cartagena.",
+    "hashtags": [
+      "#historia",
+      "#españa",
+      "#tesoro",
+      "#cartagena"
+    ],
+    "alt_text": "Ilustración de un galeón hundiéndose y un montón de monedas de oro"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

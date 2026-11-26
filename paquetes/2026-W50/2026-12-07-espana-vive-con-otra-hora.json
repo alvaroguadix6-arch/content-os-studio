@@ -1,0 +1,205 @@
+{
+  "id": "2026-12-07-espana-vive-con-otra-hora",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "ciencia",
+  "title": "España vive con una hora que no le toca",
+  "script": [
+    "Casi toda España está al oeste de Greenwich. Y aun así tiene la misma hora que Berlín.",
+    "Por geografía, nos tocaría la hora de Londres y de Portugal.",
+    "Pero en marzo de 1940, una orden adelantó los relojes una hora.",
+    "Y ya no se volvió a cambiar.",
+    "Por eso, en verano, el sol está en lo más alto hacia las dos de la tarde.",
+    "Y en Galicia, en junio, se pone pasadas las diez de la noche.",
+    "Hay quien dice que por eso comemos y cenamos tan tarde.",
+    "¿Cambiarías la hora? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "LA HORA EQUIVOCADA"
+    },
+    {
+      "at": 6.0,
+      "text": "LONDRES · PORTUGAL"
+    },
+    {
+      "at": 9.88,
+      "text": "MARZO DE 1940"
+    },
+    {
+      "at": 16.59,
+      "text": "14:00"
+    },
+    {
+      "at": 22.59,
+      "text": "22:00"
+    },
+    {
+      "at": 31.06,
+      "text": "¿LA CAMBIARÍAS?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 6.0,
+      "kind": "mapa",
+      "visual": "Meridiano de Greenwich",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          0.0,
+          39.97
+        ],
+        "etiqueta": "Meridiano de Greenwich",
+        "resaltar": [
+          "Castelló/Castellón"
+        ]
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 3.88,
+      "kind": "grafico",
+      "visual": "reloj",
+      "escena": {
+        "tipo": "reloj",
+        "horas": [
+          [
+            "Londres",
+            "12:00"
+          ],
+          [
+            "Lisboa",
+            "12:00"
+          ]
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 4.24,
+      "kind": "archivo",
+      "visual": "Se adelanta la hora legal sesenta minutos",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Se adelanta la hora legal sesenta minutos",
+        "fecha": "7 de marzo de 1940",
+        "cabecera": "Boletín Oficial"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 2.47,
+      "kind": "grafico",
+      "visual": "reloj",
+      "escena": {
+        "tipo": "reloj",
+        "horas": [
+          [
+            "Londres",
+            "12:00"
+          ],
+          [
+            "España",
+            "13:00"
+          ]
+        ]
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 6.0,
+      "kind": "grafico",
+      "visual": "reloj",
+      "escena": {
+        "tipo": "reloj",
+        "horas": [
+          [
+            "Sol en lo más alto",
+            "12:00"
+          ],
+          [
+            "Reloj en verano",
+            "14:00"
+          ]
+        ]
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 4.59,
+      "kind": "mapa",
+      "visual": "Puesta de sol: 22:00",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -8.41,
+          43.36
+        ],
+        "etiqueta": "Puesta de sol: 22:00",
+        "resaltar": [
+          "A Coruña",
+          "Lugo",
+          "Ourense",
+          "Pontevedra"
+        ]
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 3.88,
+      "kind": "grafico",
+      "visual": "reloj",
+      "escena": {
+        "tipo": "reloj",
+        "horas": [
+          [
+            "Comida",
+            "14:30"
+          ],
+          [
+            "Cena",
+            "21:30"
+          ]
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.41,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Una orden de 7 de marzo de 1940 adelantó la hora legal 60 minutos desde el 16 de marzo; España mantiene la hora de Europa central",
+      "source": "Maldita Ciencia: historia del huso horario de España",
+      "url": "https://maldita.es/malditaciencia/20211119/huso-horario-espana-hora-polonia-portugal/"
+    },
+    {
+      "claim": "El meridiano de Greenwich cruza el este de la península (Castellón); la mayor parte del territorio está al oeste",
+      "source": "NPR: Spain's been in the wrong time zone for seven decades",
+      "url": "https://www.npr.org/sections/parallels/2013/11/30/244995264/spains-been-in-the-wrong-time-zone-for-seven-decades"
+    },
+    {
+      "claim": "En verano el mediodía solar llega hacia las 14:00 y en Galicia el sol se pone después de las 22:00 en junio",
+      "source": "Instituto Geográfico Nacional / Real Observatorio: orto y ocaso",
+      "url": "https://www.ign.es/web/ign/portal/ane-datos-astronomicos"
+    }
+  ],
+  "caption": {
+    "text": "¿Cambiarías la hora?\n\nCasi toda España está al oeste del meridiano de Greenwich, pero desde marzo de 1940 usa la hora de Europa central, la misma que Berlín. Por eso en verano el sol está en lo más alto hacia las dos de la tarde y en Galicia, en junio, se pone pasadas las diez.\n\nHay quien dice que por eso comemos tan tarde.",
+    "hashtags": [
+      "#ciencia",
+      "#españa",
+      "#curiosidades",
+      "#horario"
+    ],
+    "alt_text": "Dos relojes que marcan horas distintas sobre un fondo azul"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}
