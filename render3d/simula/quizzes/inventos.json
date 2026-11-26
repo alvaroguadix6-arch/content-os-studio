@@ -1,0 +1,84 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "INVENTOS",
+ "titulo": "Inventos españoles: ¿de dónde salieron?",
+ "gancho": [
+  "INVENTOS",
+  "*ESPAÑOLES*"
+ ],
+ "intro": "Cosas que usas cada día y que salieron de España. ¿Sabes de dónde? Cinco preguntas.",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#inventos",
+  "#curiosidades"
+ ],
+ "preguntas": [
+  {
+   "q": "¿En qué ciudad nació el Chupa Chups?",
+   "prov": "Barcelona",
+   "punto": [
+    2.17,
+    41.387
+   ],
+   "respuesta": "Barcelona",
+   "detalle": "Enric Bernat · años 50",
+   "voz_q": "¿En qué ciudad nació el Chupa Chups?",
+   "voz_a": "¡En Barcelona!"
+  },
+  {
+   "q": "¿Dónde empezó a fabricarse la fregona?",
+   "prov": "Zaragoza",
+   "punto": [
+    -0.889,
+    41.649
+   ],
+   "respuesta": "Zaragoza",
+   "detalle": "Manuel Jalón · años 50",
+   "voz_q": "¿Dónde empezó a fabricarse la fregona?",
+   "voz_a": "¡En Zaragoza!"
+  },
+  {
+   "q": "¿De dónde era Isaac Peral, el del submarino?",
+   "prov": "Murcia",
+   "punto": [
+    -0.986,
+    37.605
+   ],
+   "respuesta": "Cartagena · Murcia",
+   "detalle": "Submarino Peral · 1888",
+   "voz_q": "¿De dónde era Isaac Peral, el del submarino?",
+   "voz_a": "¡De Cartagena!"
+  },
+  {
+   "q": "Alejandro Finisterre patentó un futbolín en 1937. ¿De dónde era?",
+   "prov": "A Coruña",
+   "punto": [
+    -9.264,
+    42.907
+   ],
+   "respuesta": "Fisterra · A Coruña",
+   "detalle": "Tomó el nombre de su pueblo",
+   "voz_q": "Alejandro Finisterre patentó un futbolín en 1937. ¿De dónde era?",
+   "voz_a": "¡De Fisterra, en A Coruña!"
+  },
+  {
+   "q": "¿De dónde era Torres Quevedo, pionero del mando a distancia?",
+   "prov": "Cantabria",
+   "punto": [
+    -4.02,
+    43.17
+   ],
+   "respuesta": "Cantabria",
+   "detalle": "El telekino · 1903",
+   "voz_q": "¿De dónde era Torres Quevedo, pionero del mando a distancia?",
+   "voz_a": "¡De Cantabria!"
+  }
+ ],
+ "fuentes": [
+  "Oficina Española de Patentes y Marcas (OEPM): inventores españoles",
+  "Telefónica: inventos españoles que cambiaron el mundo",
+  "Real Academia de la Historia, DB~e: Isaac Peral, Leonardo Torres Quevedo, Manuel Jalón Corominas"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

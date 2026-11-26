@@ -1,0 +1,203 @@
+{
+  "id": "2026-12-03-las-caras-de-belmez",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "misterios",
+  "title": "Las caras de Bélmez: el misterio de un suelo de Jaén",
+  "script": [
+    "En 1971 apareció una cara en el suelo de una cocina. Y después, otra.",
+    "Bélmez de la Moraleda, un pueblo de Jaén.",
+    "Según contó María Gómez Cámara, la mancha surgió en el cemento de su cocina en agosto de 1971.",
+    "Picaron el suelo y echaron cemento nuevo. Según la familia, la cara volvió a salir.",
+    "Llegaron curiosos de toda España y la prensa lo bautizó como «las caras de Bélmez».",
+    "Se cortó un trozo del suelo para estudiarlo.",
+    "Hubo investigadores que defendieron que las caras estaban pintadas.",
+    "Otros nunca aceptaron esa explicación.",
+    "María murió en 2004, y en 2013 el pueblo abrió un centro de interpretación sobre las caras.",
+    "¿Fraude o misterio? Te leo en comentarios."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "1971"
+    },
+    {
+      "at": 4.94,
+      "text": "JAÉN"
+    },
+    {
+      "at": 7.76,
+      "text": "AGOSTO DE 1971"
+    },
+    {
+      "at": 14.12,
+      "text": "¿OTRA VEZ?"
+    },
+    {
+      "at": 27.53,
+      "text": "¿PINTURA?"
+    },
+    {
+      "at": 38.47,
+      "text": "¿FRAUDE O MISTERIO?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 4.94,
+      "kind": "simulacion",
+      "visual": "suelo_cara",
+      "escena": {
+        "tipo": "figura",
+        "figura": "suelo_cara"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 2.82,
+      "kind": "mapa",
+      "visual": "Bélmez de la Moraleda",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -3.38,
+          37.73
+        ],
+        "etiqueta": "Bélmez de la Moraleda",
+        "resaltar": [
+          "Jaén"
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 6.35,
+      "kind": "archivo",
+      "visual": "Aparece una cara en el suelo de una cocina de Bélmez",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Aparece una cara en el suelo de una cocina de Bélmez",
+        "fecha": "Agosto de 1971",
+        "cabecera": "Diario"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 5.29,
+      "kind": "simulacion",
+      "visual": "suelo_cara",
+      "escena": {
+        "tipo": "figura",
+        "figura": "suelo_cara"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 5.29,
+      "kind": "archivo",
+      "visual": "Las caras de Bélmez atraen a curiosos de toda España",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Las caras de Bélmez atraen a curiosos de toda España",
+        "fecha": "1971",
+        "cabecera": "Diario"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 2.82,
+      "kind": "simulacion",
+      "visual": "suelo_cara",
+      "escena": {
+        "tipo": "figura",
+        "figura": "suelo_cara"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 3.18,
+      "kind": "archivo",
+      "visual": "Investigadores: las caras estarían pintadas",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Investigadores: las caras estarían pintadas",
+        "fecha": "Años 70",
+        "cabecera": "Revista"
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.76,
+      "kind": "simulacion",
+      "visual": "suelo_cara",
+      "escena": {
+        "tipo": "figura",
+        "figura": "suelo_cara"
+      }
+    },
+    {
+      "scene": 9,
+      "seconds": 6.0,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "1971",
+            "texto": "Aparece la primera cara"
+          },
+          {
+            "fecha": "2004",
+            "texto": "Muere María Gómez Cámara"
+          },
+          {
+            "fecha": "2013",
+            "texto": "Centro de interpretación"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 10,
+      "seconds": 2.47,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Las primeras caras se atribuyen a agosto de 1971, en la cocina de María Gómez Cámara, en Bélmez de la Moraleda (Jaén)",
+      "source": "Wikipedia: Bélmez Faces",
+      "url": "https://en.wikipedia.org/wiki/B%C3%A9lmez_Faces"
+    },
+    {
+      "claim": "Se cortó parte del suelo para estudiarlo; investigadores defendieron que eran pigmentos o pintura",
+      "source": "Escépticos (ARP-SAPC): las caras de Bélmez",
+      "url": "https://escepticos.es/node/3793"
+    },
+    {
+      "claim": "María Gómez Cámara murió en 2004",
+      "source": "Atlas Obscura: Bélmez Faces",
+      "url": "https://www.atlasobscura.com/places/belmez-faces"
+    },
+    {
+      "claim": "Centro de interpretación de las caras de Bélmez, abierto en 2013 con fondos europeos",
+      "source": "Público",
+      "url": "https://www.publico.es/ciencias/ue-financia-centro-sobre-caras-belmez.html"
+    }
+  ],
+  "caption": {
+    "text": "¿Fraude o misterio? Te leo.\n\nEn agosto de 1971, en Bélmez de la Moraleda (Jaén), María Gómez Cámara contó que una cara había aparecido en el suelo de su cocina. Según la familia, volvió a salir después de cambiar el cemento. Hubo investigadores que defendieron que estaban pintadas; otros nunca lo aceptaron.\n\nHoy el pueblo tiene un centro de interpretación sobre las caras.",
+    "hashtags": [
+      "#misterios",
+      "#españa",
+      "#jaen",
+      "#belmez"
+    ],
+    "alt_text": "Ilustración de un suelo de baldosas con una cara difuminada"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

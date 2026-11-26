@@ -28,6 +28,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from motor import CYAN, RED, WHITE, W, YEL, City, Video, back_out, clamp, ease_out, font, norm, render, schedule, smooth  # noqa: E402,F401
 from zona_segura import BOTTOM, TOP_TEXT  # noqa: E402
+import escenas  # noqa: E402
 
 WPM = 170
 ALLOWED_KINDS = {"mapa", "simulacion", "animacion", "archivo", "grafico", "texto"}
@@ -124,7 +125,7 @@ def beat_layout(pkg):
         acc += float(sc.get("seconds", 0))
     kinds = []
     for st in starts:
-        k = next((kd for a, b, kd in bounds if a <= st < b), bounds[-1][2] if bounds else "texto")
+        k = next((kd for a, b, kd in bounds if a <= st + 0.01 < b), bounds[-1][2] if bounds else "texto")
         kinds.append(k if k in ALLOWED_KINDS else "texto")
     cards = [None] * len(script)
     for card in pkg.get("on_screen_text") or []:
@@ -138,6 +139,20 @@ METEOR_RE = re.compile(r"meteor|asteroid|bola de fuego|del espacio", re.I)
 HOUSE_RE = re.compile(r"techo|casa|casera|sof[aá]|siesta", re.I)
 IMPACT_RE = re.compile(r"atraviesa|impacto|crac|golpea|cay[oó] encima", re.I)
 ROCK_RE = re.compile(r"\bkg\b|kilos|roca|piedra|trozo", re.I)
+
+
+def beat_specs(pkg):
+    """Escena con datos (escenas.py) de cada frase, si su bloque del visual_brief la trae y es válida."""
+    starts, _ = estimated_starts(pkg["script"])
+    bounds, acc = [], 0.0
+    for sc in pkg.get("visual_brief") or []:
+        bounds.append((acc, acc + float(sc.get("seconds", 0)), sc.get("escena")))
+        acc += float(sc.get("seconds", 0))
+    out = []
+    for st in starts:
+        spec = next((e for a, b, e in bounds if a <= st + 0.01 < b), bounds[-1][2] if bounds else None)
+        out.append(spec if escenas.valida(spec) else None)
+    return out
 
 
 def beat_motifs(pkg):
@@ -207,6 +222,7 @@ def make_video(pkg):
             self.city = City(seed=7)
             self.numbers = {k: (re.findall(r"\d[\d.,]*", s) or [None])[0] for k, s in zip(keys, pkg["script"])}
             self.motifs = dict(zip(keys, beat_motifs(pkg)))
+            self.specs = dict(zip(keys, beat_specs(pkg)))
             rr = __import__("random").Random(11)
             self.rock = [(a, 1 + rr.uniform(-0.18, 0.14)) for a in [i * 2 * math.pi / 14 for i in range(14)]]
             self.craters = [(rr.uniform(-0.45, 0.4), rr.uniform(-0.4, 0.4), rr.uniform(0.08, 0.17)) for _ in range(5)]
@@ -224,6 +240,10 @@ def make_video(pkg):
         def draw_beat(self, key, img, d, t, lt, u):
             kind = self.kinds.get(key, "texto")
             motif = self.motifs.get(key)
+            spec = self.specs.get(key)
+            if spec:                                   # escena con el dato real (mapa, cifra, fecha…)
+                self.bg(img, kind, top, bottom)
+                return escenas.dibujar(self, spec, img, d, t, lt, u)
             if motif in ("meteorito", "impacto"):
                 self.bg(img, "noche", (4, 6, 22), (24, 30, 70))
                 return self.m_meteorito(key, img, d, t, lt, u, impact=motif == "impacto")

@@ -1,0 +1,84 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "FIESTAS RARAS",
+ "titulo": "Las fiestas más raras de España",
+ "gancho": [
+  "LAS FIESTAS",
+  "MÁS *RARAS*"
+ ],
+ "intro": "Las fiestas más raras de España. ¿Sabes dónde se celebra cada una?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#fiestas",
+  "#tradiciones"
+ ],
+ "preguntas": [
+  {
+   "q": "¿Dónde se lanzan toneladas de tomates en la Tomatina?",
+   "prov": "València/Valencia",
+   "punto": [
+    -0.791,
+    39.42
+   ],
+   "respuesta": "Buñol · Valencia",
+   "detalle": "La Tomatina · agosto",
+   "voz_q": "¿Dónde se lanzan toneladas de tomates en la Tomatina?",
+   "voz_a": "¡En Buñol, Valencia!"
+  },
+  {
+   "q": "¿Dónde un diablo salta por encima de bebés: el Colacho?",
+   "prov": "Burgos",
+   "punto": [
+    -4.059,
+    42.351
+   ],
+   "respuesta": "Castrillo de Murcia · Burgos",
+   "detalle": "El Colacho · Corpus Christi",
+   "voz_q": "¿Dónde un diablo salta por encima de bebés: el Colacho?",
+   "voz_a": "¡En Castrillo de Murcia, Burgos!"
+  },
+  {
+   "q": "¿Dónde se corta la crin a los caballos salvajes: la Rapa das Bestas?",
+   "prov": "Pontevedra",
+   "punto": [
+    -8.433,
+    42.692
+   ],
+   "respuesta": "Sabucedo · Pontevedra",
+   "detalle": "Rapa das Bestas · julio",
+   "voz_q": "¿Dónde se corta la crin a los caballos salvajes: la Rapa das Bestas?",
+   "voz_a": "¡En Sabucedo, Pontevedra!"
+  },
+  {
+   "q": "¿Dónde se corre con escobas ardiendo: los Escobazos?",
+   "prov": "Cáceres",
+   "punto": [
+    -5.659,
+    40.13
+   ],
+   "respuesta": "Jarandilla de la Vera · Cáceres",
+   "detalle": "Los Escobazos · 7 de diciembre",
+   "voz_q": "¿Dónde se corre con escobas ardiendo: los Escobazos?",
+   "voz_a": "¡En Jarandilla de la Vera, Cáceres!"
+  },
+  {
+   "q": "¿Dónde persiguen al Cascamorras para llenarlo de pintura?",
+   "prov": "Granada",
+   "punto": [
+    -2.95,
+    37.4
+   ],
+   "respuesta": "Baza y Guadix · Granada",
+   "detalle": "El Cascamorras · septiembre",
+   "voz_q": "¿Dónde persiguen al Cascamorras para llenarlo de pintura?",
+   "voz_a": "¡Entre Baza y Guadix, en Granada!"
+  }
+ ],
+ "fuentes": [
+  "Turespaña (spain.info): Tomatina, Rapa das Bestas, El Colacho",
+  "Junta de Extremadura: Los Escobazos, Fiesta de Interés Turístico Regional",
+  "Ayuntamientos de Baza y Guadix: el Cascamorras, Fiesta de Interés Turístico Internacional"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}

@@ -161,6 +161,36 @@ def test_zonas_seguras_todas_las_escenas_de_paquete():
     assert not malos, malos
 
 
+def test_escenas_con_datos_en_zona_segura():
+    """Cada escena con datos (escenas.py: mapas reales, cifras, comparaciones, fechas, figuras) se dibuja dentro de
+    la zona segura y sustituye a la escena genérica de su frase."""
+    import nivel_oculto as no
+    import escenas
+    E = [{"tipo": "mapa_espana", "punto": [-3.38, 37.73], "etiqueta": "Bélmez de la Moraleda", "resaltar": ["Jaén"]},
+         {"tipo": "mapa_espana", "punto": [-17.23, 28.10], "etiqueta": "La Gomera"},
+         {"tipo": "mapa_mundo", "punto": [121.56, 15.76], "etiqueta": "Baler · Filipinas"},
+         {"tipo": "contador", "valor": 337, "unidad": "días de asedio"},
+         {"tipo": "comparacion", "items": [{"etiqueta": "Una ciudad muy larga", "valor": 297000, "destacar": True},
+                                           {"etiqueta": "Otra", "valor": 84000}, {"etiqueta": "Tercera", "valor": 150000}]},
+         {"tipo": "linea_tiempo", "hitos": [{"fecha": "1 de julio de 1898", "texto": "Empieza el asedio de la iglesia"},
+                                            {"fecha": "10 de diciembre de 1898", "texto": "Tratado de París"},
+                                            {"fecha": "2 de junio de 1899", "texto": "Se rinden"}]},
+         {"tipo": "personas", "resaltar": 18, "etiqueta": "nacidos en el extranjero"},
+         {"tipo": "reloj", "horas": [["Sol", "12:00"], ["Reloj", "14:00"]]},
+         {"tipo": "documento", "titular": "Aparece una cara en el suelo de una cocina de un pueblo de Jaén", "fecha": "1971"},
+         ] + [{"tipo": "figura", "figura": f, "texto": "85 metros", "lados": ["Marruecos", "España"]} for f in sorted(escenas.FIGURAS)]
+    script = [f"Frase de prueba número {i + 1} con la escena {e['tipo']} y algo más de texto." for i, e in enumerate(E)]
+    starts, total = no.estimated_starts(script)
+    secs = [b - a for a, b in zip(starts, starts[1:] + [total])]
+    pkg = {"id": "prueba-escenas-datos", "title": "x", "pillar": "historia", "format": "reel", "script": script,
+           "visual_brief": [{"scene": i + 1, "seconds": s, "kind": "texto", "visual": "x", "escena": e} for i, (e, s) in enumerate(zip(E, secs))],
+           "on_screen_text": [{"at": a, "text": f"RÓTULO {i}"} for i, a in enumerate(starts)], "caption": {"text": "x", "hashtags": ["#a"]}}
+    assert no.beat_specs(pkg) == E                                     # una escena por frase, ninguna se pierde
+    assert not escenas.valida({"tipo": "figura", "figura": "dragon"}) and not escenas.valida({"tipo": "contador"})
+    malos = ZS.fuera_de_zona(no.make_video(pkg)(no.synthetic_narration(pkg)), paso=0.4, fps=30)
+    assert not malos, malos
+
+
 def test_conquista_diaria_sin_votos_nuevos():
     """La serie es diaria: un episodio sin votos nuevos también se genera y su guion tiene sentido."""
     import shutil

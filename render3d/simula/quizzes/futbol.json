@@ -1,0 +1,82 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "FÚTBOL",
+ "titulo": "¿De dónde es cada equipo?",
+ "gancho": [
+  "¿DE DÓNDE",
+  "ES *TU EQUIPO*?"
+ ],
+ "intro": "¿De dónde es cada equipo? Cinco preguntas que no son tan fáciles.",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#futbol",
+  "#laliga"
+ ],
+ "preguntas": [
+  {
+   "q": "¿De qué provincia es la Real Sociedad?",
+   "prov": "Gipuzkoa/Guipúzcoa",
+   "punto": [
+    -1.981,
+    43.301
+   ],
+   "respuesta": "Gipuzkoa",
+   "detalle": "San Sebastián",
+   "voz_q": "¿De qué provincia es la Real Sociedad?",
+   "voz_a": "¡De Gipuzkoa, de San Sebastián!"
+  },
+  {
+   "q": "¿De dónde es Osasuna?",
+   "prov": "Navarra",
+   "punto": [
+    -1.637,
+    42.796
+   ],
+   "respuesta": "Navarra",
+   "detalle": "Pamplona · El Sadar",
+   "voz_q": "¿De dónde es Osasuna?",
+   "voz_a": "¡De Pamplona, Navarra!"
+  },
+  {
+   "q": "¿En qué ciudad juega el Celta?",
+   "prov": "Pontevedra",
+   "punto": [
+    -8.74,
+    42.212
+   ],
+   "respuesta": "Vigo · Pontevedra",
+   "detalle": "Estadio de Balaídos",
+   "voz_q": "¿En qué ciudad juega el Celta?",
+   "voz_a": "¡En Vigo!"
+  },
+  {
+   "q": "¿De dónde es el Racing?",
+   "prov": "Cantabria",
+   "punto": [
+    -3.805,
+    43.476
+   ],
+   "respuesta": "Santander · Cantabria",
+   "detalle": "Campos de Sport de El Sardinero",
+   "voz_q": "¿De dónde es el Racing?",
+   "voz_a": "¡De Santander!"
+  },
+  {
+   "q": "¿De qué provincia es el Numancia?",
+   "prov": "Soria",
+   "punto": [
+    -2.468,
+    41.766
+   ],
+   "respuesta": "Soria",
+   "detalle": "Estadio Los Pajaritos",
+   "voz_q": "¿De qué provincia es el Numancia?",
+   "voz_a": "¡De Soria!"
+  }
+ ],
+ "fuentes": [
+  "Webs oficiales de los clubes (Real Sociedad, C. A. Osasuna, R. C. Celta, Real Racing Club, C. D. Numancia)"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios."
+}
