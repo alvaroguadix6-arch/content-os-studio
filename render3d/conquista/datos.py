@@ -153,6 +153,12 @@ def index():
 
 
 def prov_code(text: str):
+    if "/" in text:  # nombres bilingües, como los escribe contar.py: «Alacant/Alicante», «València/Valencia»
+        for parte in text.split("/"):
+            pc = prov_code(parte)
+            if pc:
+                return pc
+        return None
     n = norm(text)
     if n in PROV_ALIAS:
         return PROV_ALIAS[n]
@@ -170,6 +176,11 @@ def find(pueblo: str, provincia: str | None = None):
     """Devuelve (índice del municipio, motivo). índice None si no se reconoce o es ambiguo."""
     munis, _ = load()
     cands = index().get(norm(pueblo), [])
+    if not cands and "/" in pueblo:  # «Alcoi/Alcoy»: vale cualquiera de los dos nombres oficiales
+        for parte in pueblo.split("/"):
+            cands = index().get(norm(parte), [])
+            if cands:
+                break
     pc = prov_code(provincia) if provincia else None
     if provincia and pc is None:
         return None, f"provincia no reconocida: «{provincia}»"
