@@ -27,7 +27,9 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 QDIR = os.path.join(HERE, "quizzes")
 CONQ = os.path.join(os.path.dirname(HERE), "conquista")
-MAX_LOTE = 5  # vídeos por ejecución: controla minutos y tamaño de los artefactos
+MAX_LOTE = 8  # vídeos por ejecución (4 máquinas a la vez): un día y medio de publicaciones a 3 al día
+ROOT = os.path.dirname(os.path.dirname(HERE))
+PAQ_RE = re.compile(r"^paquetes/[0-9]{4}-W[0-9]{2}/[a-z0-9-]+\.json$")
 NOMBRE_RE = re.compile(r"^[a-z0-9_]{1,40}$")
 
 
@@ -41,7 +43,7 @@ def temas():
     return out
 
 
-def lote(spec, conquista_ep=""):
+def lote(spec, conquista_ep="", paquetes=""):
     """Convierte la selección del formulario en una lista de trabajos. Lanza ValueError si algo no es válido."""
     disp = {t for t, _, _ in temas()}
     jobs = []
@@ -58,8 +60,15 @@ def lote(spec, conquista_ep=""):
         if not os.path.exists(os.path.join(CONQ, "temporada1", "votos", f"ep{int(ep):02d}.csv")) and int(ep) > 1:
             raise ValueError(f"faltan los votos del episodio {ep} (temporada1/votos/ep{int(ep):02d}.csv)")
         jobs.append({"formato": "conquista", "tema": f"ep{int(ep):02d}", "id": f"conquista-ep{int(ep):02d}"})
+    for raw in [x.strip() for x in (paquetes or "").split(",") if x.strip()]:
+        if not PAQ_RE.match(raw) or not os.path.exists(os.path.join(ROOT, raw)):
+            raise ValueError(f"paquete inválido o inexistente: {raw!r} (formato paquetes/AAAA-Www/id.json)")
+        pid = "paq-" + os.path.basename(raw)[:-5]
+        if any(j["id"] == pid for j in jobs):
+            continue
+        jobs.append({"formato": "paquete", "tema": raw, "id": pid})
     if not jobs:
-        raise ValueError("no hay nada que renderizar: indica temas de quiz o un episodio de Conquista")
+        raise ValueError("no hay nada que renderizar: indica temas de quiz, un episodio de Conquista o paquetes")
     if len(jobs) > MAX_LOTE:
         raise ValueError(f"como mucho {MAX_LOTE} vídeos por ejecución (para no gastar de más)")
     return jobs
@@ -137,10 +146,28 @@ def _tag(s):
     return re.sub(r"[^a-zñ0-9]", "", s)
 
 
-def guardar_texto(texto, tags, d):
+def texto_paquete(path):
+    p = json.load(open(os.path.join(ROOT, path), encoding="utf-8"))
+    c = p.get("caption") or {}
+    texto = (c.get("text") if isinstance(c, dict) else str(c)).replace("Fuentes en el primer comentario.", "").strip()
+    return texto, (c.get("hashtags") if isinstance(c, dict) else None) or ["#curiosidades", "#nivelOculto"]
+
+
+def plataformas(texto, tags, titulo=None):
+    """Mismo vídeo, texto adaptado a cada app (todas aceptan 1080×1920; la zona segura ya es común)."""
+    primera = texto.split("\n")[0].strip()
+    titulo = (titulo or primera).strip()
+    yt = titulo if len(titulo) <= 90 else titulo[:87].rsplit(" ", 1)[0] + "…"
+    return ("INSTAGRAM (Reels)\n" + texto + "\n\n" + " ".join(tags) + "\n\n"
+            "TIKTOK\n" + titulo + "\n" + primera + "\n" + " ".join(tags[:4]) + "\n\n"
+            "YOUTUBE SHORTS\nTítulo: " + yt + " #Shorts\nDescripción:\n" + texto + "\n" + " ".join(tags[:3]) + "\n")
+
+
+def guardar_texto(texto, tags, d, titulo=None):
     os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "descripcion.txt"), "w", encoding="utf-8").write(texto + "\n\n" + " ".join(tags) + "\n")
     open(os.path.join(d, "hashtags.txt"), "w", encoding="utf-8").write(" ".join(tags) + "\n")
+    open(os.path.join(d, "plataformas.txt"), "w", encoding="utf-8").write(plataformas(texto, tags, titulo))
 
 
 # ───── portada ─────
@@ -226,13 +253,20 @@ def main(a):
         for t, tema, pais in temas():
             print(f"{t:24s} {tema} ({pais})")
     elif cmd == "lote":
-        print(json.dumps({"include": lote(a[1], a[2] if len(a) > 2 else "")}, ensure_ascii=False))
+        print(json.dumps({"include": lote(a[1], a[2] if len(a) > 2 else "", a[3] if len(a) > 3 else "")}, ensure_ascii=False))
     elif cmd == "guion-quiz":
         json.dump(guion_quiz(cargar_quiz(a[1])), open(a[2], "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     elif cmd == "texto" and a[1] == "quiz":
-        guardar_texto(*texto_quiz(cargar_quiz(a[2])), a[3])
+        t, sub = titulo_portada("quiz", [a[2]])
+        guardar_texto(*texto_quiz(cargar_quiz(a[2])), a[3], f"{t}: {sub.lower()}")
+    elif cmd == "texto" and a[1] == "paquete":
+        guardar_texto(*texto_paquete(a[2]), a[3], json.load(open(os.path.join(ROOT, a[2]), encoding="utf-8")).get("title"))
+    elif cmd == "titulo-portada":  # titulo-portada paquete <ruta>
+        p = json.load(open(os.path.join(ROOT, a[2]), encoding="utf-8"))
+        t = (p.get("title") or "").split(":")[0].strip()
+        print(t if len(t) <= 42 else (p.get("hook") or {}).get("on_screen", t[:42]))
     elif cmd == "texto" and a[1] == "conquista":
-        guardar_texto(*texto_conquista(a[2], int(a[3])), a[4])
+        guardar_texto(*texto_conquista(a[2], int(a[3])), a[4], f"Tu pueblo conquista España · Episodio {int(a[3])}")
     elif cmd == "fondo":
         video(a[1], a[2:-2], a[-2]).fondo_portada().save(a[-1], quality=92)
     elif cmd == "portada-auto":  # portada-auto quiz <tema> <voz/> <out.jpg> | conquista <temporada> <ep> <voz/> <out.jpg>
