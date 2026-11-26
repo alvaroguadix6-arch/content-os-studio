@@ -98,6 +98,25 @@ def test_zonas_seguras_conquista():
         assert not malos, (ep, malos)
 
 
+def test_contar_votos_reconoce_y_no_duplica():
+    sys.path.insert(0, CONQ)
+    import contar
+    import datos
+    m, p = datos.load()
+    for txt, esperado in (("Jumillaaaa murcia", "Jumilla"), ("SEVILLAAA", "Sevilla"), ("Cádiz capital", "Cádiz"),
+                          ("Alcoy( primeroooo)", "Alcoi/Alcoy"), ("Guadix, Granada", "Guadix")):
+        i, _ = contar.parse(txt)
+        assert i is not None and m[i]["nombre"] == esperado, (txt, i)
+    for txt in ("Villanueva", "jaja qué bueno"):  # ambiguo o sin pueblo: no suma
+        assert contar.parse(txt)[0] is None, txt
+    with tempfile.TemporaryDirectory() as d:
+        src = os.path.join(d, "c.csv")
+        open(src, "w").write("usuario,comentario,red\na1,Guadix Granada,instagram\na1,Baza Granada,instagram\nb2,Guadix,instagram\n")
+        subprocess.run([sys.executable, os.path.join(CONQ, "contar.py"), src, d, "9"], check=True, capture_output=True)
+        out = open(os.path.join(d, "votos", "ep09.csv")).read()
+        assert "Guadix,Granada,2" in out and "Baza" not in out, out   # 1 voto por cuenta: el primero
+
+
 def test_portada():
     with tempfile.TemporaryDirectory() as d:
         os.makedirs(os.path.join(d, "voz"))

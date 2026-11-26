@@ -31,6 +31,8 @@ def parse(text: str):
     """Intenta sacar (pueblo, provincia) de un comentario libre."""
     t = re.sub(r"[\U0001F000-\U0001FFFF☀-➿#@]", " ", text)  # emojis, hashtags, menciones
     t = re.sub(r"\s+", " ", t).strip(" .!¡?¿")
+    t = re.sub(r"(\w)\1{2,}", r"\1", t)                      # letras alargadas: «Jumillaaaa» → «Jumilla»
+    t = re.sub(r"\b(capital|ciudad|city|pueblo)\s*$", "", t, flags=re.I).strip(" ,.-")  # «Cádiz capital»
     cands = []
     m = re.match(r"^(.+?)\s*[\(\[]\s*([^\)\]]+)\s*[\)\]]", t)  # «Guadix (Granada)»
     if m:
@@ -43,6 +45,9 @@ def parse(text: str):
     for k in range(len(words) - 1, 0, -1):  # «guadix granada»: última(s) palabra(s) = provincia
         cands.append((" ".join(words[:k]), " ".join(words[k:])))
     cands.append((t, None))
+    sin_par = re.sub(r"\s*[\(\[][^\)\]]*[\)\]]?", " ", t).strip()  # «Alcoy (primerooo)» → «Alcoy»
+    if sin_par and sin_par != t:
+        cands.append((sin_par, None))
     for p, q in cands:
         p = re.sub(r"^(soy de|desde|de|arriba|vamos|viva|aupa|aúpa|dale)\s+", "", p.strip(), flags=re.I)
         if q:
