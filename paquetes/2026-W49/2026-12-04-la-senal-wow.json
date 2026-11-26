@@ -1,0 +1,107 @@
+{
+  "id": "2026-12-04-la-senal-wow",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "misterios",
+  "title": "La señal «Wow!»: 72 segundos que nunca se repitieron",
+  "script": [
+    "Duró 72 segundos y nunca más se ha vuelto a oír.",
+    "Ohio, 15 de agosto de 1977.",
+    "El radiotelescopio Big Ear escucha el cielo buscando señales de otras civilizaciones.",
+    "Y capta algo. Una señal fortísima, de una frecuencia muy concreta.",
+    "Días después, el astrónomo Jerry Ehman revisa los datos impresos.",
+    "La rodea con un círculo y escribe al lado: «Wow!».",
+    "Se buscó en esa zona del cielo una y otra vez.",
+    "Nada. Nunca volvió a aparecer.",
+    "Hay hipótesis naturales, pero ninguna se ha confirmado.",
+    "72 segundos. Y casi 50 años de preguntas.",
+    "¿Tú qué crees que era? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "72 SEGUNDOS"
+    },
+    {
+      "at": 4.0,
+      "text": "15/08/1977"
+    },
+    {
+      "at": 7.0,
+      "text": "BIG EAR"
+    },
+    {
+      "at": 15.0,
+      "text": "«WOW!»"
+    },
+    {
+      "at": 22.0,
+      "text": "NUNCA MÁS"
+    },
+    {
+      "at": 28.0,
+      "text": "¿QUÉ ERA?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 5,
+      "kind": "grafico",
+      "visual": "Ondas de radio y cifra 72"
+    },
+    {
+      "scene": 2,
+      "seconds": 7,
+      "kind": "mapa",
+      "visual": "Ohio, Estados Unidos"
+    },
+    {
+      "scene": 3,
+      "seconds": 9,
+      "kind": "simulacion",
+      "visual": "Radiotelescopio apuntando al cielo"
+    },
+    {
+      "scene": 4,
+      "seconds": 8,
+      "kind": "texto",
+      "visual": "Hoja impresa con «Wow!»"
+    },
+    {
+      "scene": 5,
+      "seconds": 5,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "El 15-8-1977 el radiotelescopio Big Ear (Universidad Estatal de Ohio) captó una señal de banda estrecha de 72 segundos",
+      "source": "Wikipedia: Wow! signal",
+      "url": "https://en.wikipedia.org/wiki/Wow!_signal"
+    },
+    {
+      "claim": "Jerry Ehman la rodeó en la impresión y escribió «Wow!»; búsquedas posteriores no volvieron a detectarla",
+      "source": "Wikipedia: Wow! signal",
+      "url": "https://en.wikipedia.org/wiki/Wow!_signal"
+    },
+    {
+      "claim": "Se han propuesto explicaciones naturales (p. ej. hidrógeno excitado), sin confirmación definitiva",
+      "source": "Wikipedia: Wow! signal",
+      "url": "https://en.wikipedia.org/wiki/Wow!_signal"
+    }
+  ],
+  "caption": {
+    "text": "Comenta: ¿qué crees que era?\n\nEl 15 de agosto de 1977, el radiotelescopio Big Ear, en Ohio, captó una señal de radio intensa durante 72 segundos. El astrónomo Jerry Ehman la marcó en el papel con un «Wow!». Se volvió a buscar muchas veces en la misma zona del cielo y nunca reapareció.\n\nHay explicaciones naturales propuestas, pero ninguna confirmada.",
+    "hashtags": [
+      "#misterios",
+      "#espacio",
+      "#ciencia",
+      "#astronomia"
+    ],
+    "alt_text": "Ilustración de un radiotelescopio bajo un cielo estrellado"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

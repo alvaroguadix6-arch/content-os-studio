@@ -1,0 +1,102 @@
+{
+  "id": "2026-12-03-hachiko-el-perro-que-espero",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "Hachikō: el perro que esperó casi diez años",
+  "script": [
+    "Esperó a su dueño en la estación casi diez años.",
+    "Tokio, años 20. Hachikō, un perro akita, acompaña cada día al profesor Ueno a la estación de Shibuya.",
+    "Y cada tarde vuelve a buscarlo.",
+    "En mayo de 1925, el profesor muere de repente en el trabajo.",
+    "Nunca vuelve.",
+    "Pero Hachikō sigue yendo a la estación. Todos los días. A la misma hora.",
+    "Así durante casi diez años.",
+    "La gente empieza a conocerlo. En 1934 le hacen una estatua. Y él sigue allí.",
+    "Muere en marzo de 1935.",
+    "Hoy su estatua es uno de los puntos de encuentro más famosos de Tokio.",
+    "Casi diez años esperando. Mándaselo a alguien que te esperaría así."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "CASI 10 AÑOS"
+    },
+    {
+      "at": 4.0,
+      "text": "ESTACIÓN DE SHIBUYA"
+    },
+    {
+      "at": 11.0,
+      "text": "MAYO DE 1925"
+    },
+    {
+      "at": 20.0,
+      "text": "CADA DÍA"
+    },
+    {
+      "at": 24.0,
+      "text": "ESTATUA EN 1934"
+    },
+    {
+      "at": 28.0,
+      "text": "MARZO DE 1935"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 5,
+      "kind": "texto",
+      "visual": "Perro sentado mirando a la entrada de una estación"
+    },
+    {
+      "scene": 2,
+      "seconds": 8,
+      "kind": "mapa",
+      "visual": "Japón: Tokio"
+    },
+    {
+      "scene": 3,
+      "seconds": 10,
+      "kind": "animacion",
+      "visual": "Estación de los años 20, gente pasando"
+    },
+    {
+      "scene": 4,
+      "seconds": 8,
+      "kind": "texto",
+      "visual": "Fechas"
+    },
+    {
+      "scene": 5,
+      "seconds": 5,
+      "kind": "texto",
+      "visual": "Estatua"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Hachikō, akita del profesor Hidesaburō Ueno, lo esperaba en la estación de Shibuya; Ueno murió en mayo de 1925",
+      "source": "Wikipedia: Hachikō",
+      "url": "https://en.wikipedia.org/wiki/Hachik%C5%8D"
+    },
+    {
+      "claim": "Siguió acudiendo a la estación durante unos 9 años y 9 meses, hasta su muerte el 8-3-1935; la primera estatua se inauguró en 1934",
+      "source": "Wikipedia: Hachikō",
+      "url": "https://en.wikipedia.org/wiki/Hachik%C5%8D"
+    }
+  ],
+  "caption": {
+    "text": "Mándaselo a alguien que te esperaría así.\n\nHachikō acompañaba cada día al profesor Hidesaburō Ueno a la estación de Shibuya. En mayo de 1925 el profesor murió en el trabajo y nunca volvió. Hachikō siguió yendo a esperarlo durante casi diez años, hasta su muerte en marzo de 1935.\n\nSu estatua, de 1934, es hoy uno de los puntos de encuentro más conocidos de Tokio.",
+    "hashtags": [
+      "#historia",
+      "#japon",
+      "#perros",
+      "#historiasreales"
+    ],
+    "alt_text": "Ilustración de un perro akita esperando en la entrada de una estación"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}
