@@ -140,6 +140,27 @@ def test_provincias_y_pueblos_bilingues():
     assert i is not None, why
 
 
+def test_zonas_seguras_todas_las_escenas_de_paquete():
+    """Cada tipo de escena de nivel_oculto (mapa, simulación, animación, archivo, gráfico, texto, y los motivos de
+    meteorito) se dibuja dentro de la zona segura. Así un fallo de maquetación se detecta en las pruebas, antes de
+    gastar una máquina de render (en Faisanes se coló el panel de «archivo» hasta x=890)."""
+    import nivel_oculto as no
+    kinds = sorted(no.ALLOWED_KINDS)
+    pkg = {"id": "prueba-escenas", "title": "Prueba de escenas", "pillar": "curiosidades", "format": "reel",
+           "script": [f"Frase de prueba número {i + 1} para la escena {k}, con 1.250 datos." for i, k in enumerate(kinds)],
+           "visual_brief": [{"scene": i + 1, "seconds": 4, "kind": k, "visual": "prueba"} for i, k in enumerate(kinds)],
+           "on_screen_text": [{"at": 4.0 * i, "text": f"RÓTULO DE PRUEBA BASTANTE LARGO {i}"} for i in range(len(kinds))],
+           "caption": {"text": "x", "hashtags": ["#a"]}}
+    v = no.make_video(pkg)(no.synthetic_narration(pkg))
+    assert no.beat_motifs(pkg) == [None] * len(kinds)  # escenas genéricas (los motivos de meteorito van aparte)
+    malos = ZS.fuera_de_zona(v, paso=0.4, fps=30)
+    assert not malos, malos
+    pkg_m = dict(pkg, script=[t.replace("1.250 datos", "un meteorito de 3,8 kilos") for t in pkg["script"]])
+    assert any(no.beat_motifs(pkg_m))                  # y también con los motivos de meteorito
+    malos = ZS.fuera_de_zona(no.make_video(pkg_m)(no.synthetic_narration(pkg_m)), paso=0.4, fps=30)
+    assert not malos, malos
+
+
 def test_portada():
     with tempfile.TemporaryDirectory() as d:
         os.makedirs(os.path.join(d, "voz"))
