@@ -6,7 +6,7 @@
   "pillar": "ciencia",
   "title": "La mujer a la que le cayó un meteorito",
   "script": [
-    "Un meteorito de 3,8 kilos le cayó encima.",
+    "Un meteorito de 3,9 kilos le cayó encima.",
     "Y sobrevivió.",
     "Alabama, 30 de noviembre de 1954.",
     "Ann Hodges duerme la siesta en el sofá de su casa de Sylacauga.",
@@ -20,12 +20,12 @@
     "Su casera, Birdie Guy, reclama la piedra.",
     "¿Su argumento? El techo era suyo.",
     "Al final, la roca vuelve a Ann Hodges, y otro trozo acaba en el Smithsonian.",
-    "3,8 kilos del cielo. Y casi se los quitan."
+    "3,9 kilos del cielo. Y casi se los quitan."
   ],
   "on_screen_text": [
     {
       "at": 0.0,
-      "text": "3,8 KG DEL ESPACIO"
+      "text": "3,9 KG DEL ESPACIO"
     },
     {
       "at": 3.5,
@@ -49,7 +49,7 @@
     },
     {
       "at": 36.0,
-      "text": "3,8 KG"
+      "text": "3,9 KG"
     }
   ],
   "visual_brief": [
@@ -88,7 +88,7 @@
   ],
   "sources": [
     {
-      "claim": "30-11-1954, Sylacauga (Alabama): meteorito de 3,85 kg atraviesa el techo, rebota en la radio y golpea la cadera de Ann Hodges",
+      "claim": "30-11-1954, Sylacauga (Alabama): meteorito de 3,86 kg (8,5 libras) atraviesa el techo, rebota en la radio y golpea la cadera de Ann Hodges",
       "source": "Wikipedia: Ann Elizabeth Fowler Hodges",
       "url": "https://en.wikipedia.org/wiki/Ann_Elizabeth_Fowler_Hodges"
     },
