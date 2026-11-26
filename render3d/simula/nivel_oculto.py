@@ -454,7 +454,7 @@ def cover(pkg, out_path, beat=None, title=None):
         cy = BOTTOM - 190
         d.rounded_rectangle([540 - tw / 2 - 40, cy - 58, 540 + tw / 2 + 40, cy + 58], 28, fill=(215, 40, 50, 255))
         d.text((540, cy), card, font=fc, fill=(255, 255, 255, 255), anchor="mm")
-    out = Video.brand(type("B", (), {"BRAND": "NIVEL OCULTO"})(), img.convert("RGB"))
+    out = Video.brand(type("B", (), {"BRAND": "NIVEL OCULTO", "BRAND_Y": Video.BRAND_Y})(), img.convert("RGB"))
     out.save(out_path, quality=92)
     return out_path
 

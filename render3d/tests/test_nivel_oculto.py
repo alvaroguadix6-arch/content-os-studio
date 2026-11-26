@@ -63,6 +63,14 @@ def test_motivos_de_meteorito():
     assert no.beat_motifs(PKG) == [None] * len(PKG["script"])   # sin meteorito, sin motivos
 
 
+def test_portada_paquete():
+    import tempfile
+    with tempfile.TemporaryDirectory() as d:
+        out = no.cover(PKG, os.path.join(d, "p.jpg"), title="TÍTULO DE PRUEBA")
+        from PIL import Image
+        assert Image.open(out).size == (1080, 1920)
+
+
 def test_paquete_sin_guion_falla():
     with tempfile.TemporaryDirectory() as d:
         p = os.path.join(d, "p.json")

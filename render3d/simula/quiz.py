@@ -270,7 +270,7 @@ class Video:
         dl = ImageDraw.Draw(lay)
         sizes = []
         for ln in lines:  # bajo y=900 están los iconos de la derecha: ancho máximo 644 (centrado entre 218 y 862)
-            txt = ln.strip("*")
+            txt = ln.replace("*", "")
             sz = 140
             while sz > 50 and (dl.textlength(txt, font=font("Black", sz)) + 20 > 644 or sz * 1.12 * len(lines) > 720):
                 sz -= 4
@@ -283,8 +283,8 @@ class Video:
                 y += sz * 1.12
                 continue
             sc = 1 + 0.9 * (1 - back(u)) if u < 1 else 1.0
-            col = YEL if ln.startswith("*") else (255, 255, 255)
-            txt = ln.strip("*")
+            col = YEL if "*" in ln else (255, 255, 255)  # *línea* = en amarillo (el asterisco nunca se pinta)
+            txt = ln.replace("*", "")
             fs = font("Black", max(8, int(sz * sc)))
             shake = 6 * math.sin(t * 60) * max(0, 1 - u) if u < 1 else 0
             dl.text((540 + shake, y + sz * 0.56), txt, font=fs, fill=col, anchor="mm", stroke_width=10, stroke_fill=(24, 10, 60))
