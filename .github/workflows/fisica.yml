@@ -32,11 +32,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 2
+      # Python fijo (el del sistema del runner cambia de versión) y librerías con versión exacta.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: render3d/requirements-fisica.txt
       - name: Herramientas gratuitas (ffmpeg, fuente Inter, NumPy, SciPy, Pillow)
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg fonts-inter > /dev/null
-          pip install -q numpy scipy pillow
+          python -m pip install -q --only-binary=:all: -r render3d/requirements-fisica.txt
       - name: Elegir reglas
         id: pick
         run: |
