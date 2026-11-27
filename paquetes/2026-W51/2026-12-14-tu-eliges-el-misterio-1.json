@@ -1,0 +1,178 @@
+{
+  "id": "2026-12-14-tu-eliges-el-misterio-1",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "misterios",
+  "title": "Tú eliges el misterio #1",
+  "script": [
+    "Esta semana, el misterio lo eliges tú.",
+    "A: la Dama de Elche. ¿Quién era la mujer del busto más famoso de España?",
+    "B: el Códice Calixtino. Lo robaron de la catedral de Santiago y apareció un año después.",
+    "C: el Santo Cáliz de Valencia. ¿Es la copa de la Última Cena?",
+    "Comenta A, B o C.",
+    "Solo vale un voto por cuenta.",
+    "El más votado lo contamos el domingo.",
+    "¿Cuál eliges?"
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "TÚ ELIGES"
+    },
+    {
+      "at": 2.47,
+      "text": "A · DAMA DE ELCHE"
+    },
+    {
+      "at": 7.76,
+      "text": "B · CÓDICE CALIXTINO"
+    },
+    {
+      "at": 13.41,
+      "text": "C · SANTO CÁLIZ"
+    },
+    {
+      "at": 18.0,
+      "text": "COMENTA A, B O C"
+    },
+    {
+      "at": 24.35,
+      "text": "¿CUÁL ELIGES?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 2.4706,
+      "kind": "archivo",
+      "visual": "El misterio lo eliges tú",
+      "escena": {
+        "tipo": "documento",
+        "titular": "El misterio lo eliges tú",
+        "fecha": "Esta semana",
+        "cabecera": "Votación"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 5.2941,
+      "kind": "mapa",
+      "visual": "A · Dama de Elche",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -0.7,
+          38.27
+        ],
+        "etiqueta": "A · Dama de Elche",
+        "resaltar": [
+          "Alacant/Alicante"
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 5.6471,
+      "kind": "mapa",
+      "visual": "B · Códice Calixtino",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -8.545,
+          42.881
+        ],
+        "etiqueta": "B · Códice Calixtino",
+        "resaltar": [
+          "A Coruña"
+        ]
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 4.5882,
+      "kind": "mapa",
+      "visual": "C · Santo Cáliz",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -0.375,
+          39.476
+        ],
+        "etiqueta": "C · Santo Cáliz",
+        "resaltar": [
+          "València/Valencia"
+        ]
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 1.7647,
+      "kind": "archivo",
+      "visual": "Comenta A, B o C",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Comenta A, B o C",
+        "fecha": "Tu voto decide",
+        "cabecera": "Vota"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 2.1176,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 1,
+        "unidad": "voto por cuenta"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 2.4706,
+      "kind": "archivo",
+      "visual": "El más votado, el domingo",
+      "escena": {
+        "tipo": "documento",
+        "titular": "El más votado, el domingo",
+        "fecha": "21:30",
+        "cabecera": "Resultado"
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 0.8,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "La Dama de Elche apareció en 1897 en L'Alcúdia (Elche), pasó al Louvre y volvió a España en 1941; hoy está en el Museo Arqueológico Nacional",
+      "source": "Universidad de Alicante: La Alcudia, la Dama de Elche",
+      "url": "https://web.ua.es/es/laalcudia/la-dama-de-elche.html"
+    },
+    {
+      "claim": "El Códice Calixtino se robó de la catedral de Santiago en julio de 2011 y la policía lo recuperó en julio de 2012 en un garaje",
+      "source": "Consumer: recuperan el Códice Calixtino",
+      "url": "https://www.consumer.es/viajes/recuperan-el-codice-calixtino-robado-de-la-catedral-de-santiago-hace-un-ano.html"
+    },
+    {
+      "claim": "La tradición identifica la copa de ágata del Santo Cáliz de la catedral de Valencia con la de la Última Cena",
+      "source": "Visit Valencia: el Santo Cáliz",
+      "url": "https://www.visitvalencia.com/santocaliz/como-es"
+    }
+  ],
+  "caption": {
+    "text": "Tú eliges el misterio #1\n\nEsta semana decides tú qué misterio contamos:\nA · La Dama de Elche\nB · El robo del Códice Calixtino\nC · El Santo Cáliz de Valencia\n\nComenta A, B o C (vale un voto por cuenta). El más votado, el domingo a las 21:30.",
+    "hashtags": [
+      "#misterios",
+      "#historia",
+      "#españa",
+      "#tueligeselmisterio"
+    ],
+    "alt_text": "Mapa de España con tres misterios marcados: Elche, Santiago y Valencia"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

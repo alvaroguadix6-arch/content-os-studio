@@ -1,0 +1,178 @@
+{
+  "id": "2026-12-18-el-meteorito-de-palencia",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "ciencia",
+  "title": "El meteorito que cayó en Palencia",
+  "script": [
+    "El 4 de enero de 2004, una bola de fuego cruzó el cielo del norte de España.",
+    "Brillaba más que la luna llena y la vieron miles de personas.",
+    "Se rompió en pedazos a unos 28 kilómetros de altura.",
+    "Los fragmentos cayeron en la montaña de Palencia.",
+    "El primero apareció una semana después, cerca de Villalbeto de la Peña.",
+    "En total se recogieron unos 4,6 kilos de meteorito.",
+    "Es una condrita: una roca casi tan antigua como el sistema solar.",
+    "¿Lo viste? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "4 DE ENERO DE 2004"
+    },
+    {
+      "at": 10.24,
+      "text": "28 KM"
+    },
+    {
+      "at": 13.76,
+      "text": "PALENCIA"
+    },
+    {
+      "at": 20.82,
+      "text": "4,6 KG"
+    },
+    {
+      "at": 28.24,
+      "text": "¿LO VISTE?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 6.0,
+      "kind": "mapa",
+      "visual": "4 de enero de 2004",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -4.69,
+          42.62
+        ],
+        "etiqueta": "4 de enero de 2004",
+        "resaltar": [
+          "Palencia"
+        ]
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 4.2353,
+      "kind": "archivo",
+      "visual": "Más brillante que la luna llena",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Más brillante que la luna llena",
+        "fecha": "4 de enero de 2004",
+        "cabecera": "Bólido"
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 3.5294,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 28,
+        "unidad": "km de altura",
+        "prefijo": "≈ "
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 2.8235,
+      "kind": "mapa",
+      "visual": "Montaña palentina",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -4.69,
+          42.62
+        ],
+        "etiqueta": "Montaña palentina",
+        "resaltar": [
+          "Palencia"
+        ]
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 4.2353,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "4 ene 2004",
+            "texto": "El bólido"
+          },
+          {
+            "fecha": "11 ene 2004",
+            "texto": "Primer fragmento"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 3.1765,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 4.6,
+        "unidad": "kilos recuperados",
+        "decimales": 1,
+        "prefijo": "≈ "
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 4.2353,
+      "kind": "archivo",
+      "visual": "Condrita ordinaria L6",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Condrita ordinaria L6",
+        "fecha": "Casi tan antigua como el sistema solar",
+        "cabecera": "Clasificación"
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.0588,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Bólido del 4 de enero de 2004, más brillante que la luna llena, visto por miles de personas en el norte de España, Portugal y Francia",
+      "source": "Museo de la Ciencia de Valladolid",
+      "url": "https://www.museocienciavalladolid.es/wp-content/uploads/2019/05/Pren_Meteorito_Villalbeto.pdf"
+    },
+    {
+      "claim": "Fragmentación principal a unos 28 km; unos 4,6 kg recuperados; primer hallazgo el 11 de enero de 2004",
+      "source": "Llorca et al., Meteoritics & Planetary Science 40 (2005)",
+      "url": "https://aquarid.physics.uwo.ca/research/infrasound/infra_pub/villalbeto.pdf"
+    },
+    {
+      "claim": "Condrita ordinaria L6",
+      "source": "Boletín Geológico y Minero (IGME/CSIC)",
+      "url": "https://bgm.revistas.csic.es/index.php/bgm/article/view/740"
+    }
+  ],
+  "caption": {
+    "text": "¿Lo viste?\n\nEl 4 de enero de 2004 un bólido más brillante que la luna llena cruzó el norte de España. Se rompió a unos 28 km de altura y sus fragmentos cayeron en la montaña palentina, cerca de Villalbeto de la Peña: unos 4,6 kg de meteorito.",
+    "hashtags": [
+      "#ciencia",
+      "#meteorito",
+      "#palencia",
+      "#españa"
+    ],
+    "alt_text": "Mapa de Palencia con el lugar de caída del meteorito"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

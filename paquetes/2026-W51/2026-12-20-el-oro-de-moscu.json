@@ -1,0 +1,183 @@
+{
+  "id": "2026-12-20-el-oro-de-moscu",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "El oro de Moscú: 510 toneladas que salieron de España",
+  "script": [
+    "En octubre de 1936, la mayor parte del oro de España salió en barco rumbo a la Unión Soviética.",
+    "Era del Banco de España y, en plena Guerra Civil, se trasladó a Cartagena.",
+    "Del 22 al 25 de octubre se cargó en cuatro barcos soviéticos.",
+    "Eran unas 510 toneladas de oro.",
+    "Más del 70 % de las reservas del Banco de España.",
+    "Los barcos llegaron a Odesa a principios de noviembre.",
+    "Y desde allí, el oro siguió hasta Moscú.",
+    "¿Habías oído hablar de él? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "EL ORO DE MOSCÚ"
+    },
+    {
+      "at": 6.71,
+      "text": "CARTAGENA"
+    },
+    {
+      "at": 15.88,
+      "text": "510 TONELADAS"
+    },
+    {
+      "at": 18.0,
+      "text": "72,6 %"
+    },
+    {
+      "at": 21.88,
+      "text": "ODESA"
+    },
+    {
+      "at": 27.88,
+      "text": "¿LO SABÍAS?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 6.7059,
+      "kind": "mapa",
+      "visual": "Octubre de 1936",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -3.7,
+          40.42
+        ],
+        "etiqueta": "Octubre de 1936"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 4.9412,
+      "kind": "mapa",
+      "visual": "Cartagena",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -0.986,
+          37.605
+        ],
+        "etiqueta": "Cartagena",
+        "resaltar": [
+          "Murcia"
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 4.2353,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 4,
+        "unidad": "barcos soviéticos"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 2.1176,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 510,
+        "unidad": "toneladas de oro",
+        "prefijo": "≈ "
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 3.8824,
+      "kind": "grafico",
+      "visual": "comparacion",
+      "escena": {
+        "tipo": "comparacion",
+        "items": [
+          {
+            "etiqueta": "Enviado a Moscú",
+            "valor": 72.6,
+            "destacar": true
+          },
+          {
+            "etiqueta": "Resto de reservas",
+            "valor": 27.4
+          }
+        ],
+        "unidad": "%"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 3.1765,
+      "kind": "mapa",
+      "visual": "Odesa",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          30.73,
+          46.48
+        ],
+        "etiqueta": "Odesa"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 2.8235,
+      "kind": "mapa",
+      "visual": "Moscú",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          37.62,
+          55.75
+        ],
+        "etiqueta": "Moscú"
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 2.1176,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Salida de Cartagena entre el 22 y el 25 de octubre de 1936 de unas 510 toneladas de oro en cuatro buques soviéticos",
+      "source": "Fundación Juan March (archivo)",
+      "url": "https://cdndigital.march.es/fedora/objects/linz:R-6793/datastreams/OBJ/content"
+    },
+    {
+      "claim": "El envío fue el 72,6 % de las reservas de oro del Banco de España",
+      "source": "Wikipedia: Moscow gold",
+      "url": "https://en.wikipedia.org/wiki/Moscow_gold"
+    },
+    {
+      "claim": "Llegada a Odesa a principios de noviembre de 1936 y traslado a Moscú",
+      "source": "El oro español en Moscú",
+      "url": "https://vscw.ca/es/node/105"
+    }
+  ],
+  "caption": {
+    "text": "¿Habías oído hablar de él?\n\nEntre el 22 y el 25 de octubre de 1936, en plena Guerra Civil, unas 510 toneladas de oro del Banco de España (el 72,6 % de sus reservas) salieron de Cartagena en cuatro barcos soviéticos hacia Odesa y, de allí, a Moscú.",
+    "hashtags": [
+      "#historia",
+      "#historiadeespaña",
+      "#guerracivil",
+      "#españa"
+    ],
+    "alt_text": "Mapa de Europa con la ruta de Cartagena a Moscú"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

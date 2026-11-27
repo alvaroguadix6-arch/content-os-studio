@@ -1,0 +1,181 @@
+{
+  "id": "2026-12-21-y-si-la-tierra-no-estuviera-inclinada",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "simulacion",
+  "title": "¿Y si la Tierra no estuviera inclinada?",
+  "script": [
+    "Hoy es el día con menos horas de luz del año en España.",
+    "Y todo es culpa de una inclinación.",
+    "El eje de la Tierra está inclinado unos 23,4 grados.",
+    "En Madrid, el día más largo tiene unas 15 horas de luz; el más corto, poco más de 9.",
+    "¿Y si la Tierra estuviera totalmente recta?",
+    "No habría estaciones: ni verano ni invierno.",
+    "El día y la noche durarían unas 12 horas en todo el planeta, todo el año.",
+    "¿Te quedarías sin verano? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "EL DÍA MÁS CORTO"
+    },
+    {
+      "at": 7.06,
+      "text": "23,4°"
+    },
+    {
+      "at": 10.59,
+      "text": "15 H vs 9 H"
+    },
+    {
+      "at": 17.29,
+      "text": "¿Y SI ESTUVIERA RECTA?"
+    },
+    {
+      "at": 22.24,
+      "text": "12 HORAS"
+    },
+    {
+      "at": 27.88,
+      "text": "¿SIN VERANO?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 4.5882,
+      "kind": "mapa",
+      "visual": "21 de diciembre",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -3.7,
+          40.42
+        ],
+        "etiqueta": "21 de diciembre",
+        "resaltar": [
+          "Madrid"
+        ]
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 2.4706,
+      "kind": "mapa",
+      "visual": "La Tierra",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          0.0,
+          20.0
+        ],
+        "etiqueta": "La Tierra"
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 3.5294,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 23.4,
+        "unidad": "grados de inclinación",
+        "decimales": 1
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 6.7059,
+      "kind": "grafico",
+      "visual": "comparacion",
+      "escena": {
+        "tipo": "comparacion",
+        "items": [
+          {
+            "etiqueta": "21 de junio",
+            "valor": 15
+          },
+          {
+            "etiqueta": "21 de diciembre",
+            "valor": 9,
+            "destacar": true
+          }
+        ],
+        "unidad": "horas de luz en Madrid"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 2.4706,
+      "kind": "mapa",
+      "visual": "Eje recto",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          0.0,
+          0.0
+        ],
+        "etiqueta": "Eje recto"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 2.4706,
+      "kind": "archivo",
+      "visual": "Ni verano ni invierno",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Ni verano ni invierno",
+        "fecha": "Simulación",
+        "cabecera": "Sin estaciones"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 5.6471,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 12,
+        "unidad": "horas de luz cada día"
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.7647,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "El solsticio de invierno (21 de diciembre de 2026 en el hemisferio norte) es el día con menos horas de luz",
+      "source": "Instituto Geográfico Nacional / Observatorio Astronómico Nacional",
+      "url": "https://www.ign.es/web/ign/portal/oan-ast-calendario"
+    },
+    {
+      "claim": "La inclinación del eje terrestre es de unos 23,4° y es la causa de las estaciones",
+      "source": "NASA Space Place: What causes the seasons?",
+      "url": "https://spaceplace.nasa.gov/seasons/sp/"
+    },
+    {
+      "claim": "Madrid: unas 15 h de luz en el solsticio de verano y unas 9 h 17 min en el de invierno",
+      "source": "timeanddate: Madrid, salida y puesta del sol",
+      "url": "https://www.timeanddate.com/sun/spain/madrid"
+    }
+  ],
+  "caption": {
+    "text": "¿Te quedarías sin verano?\n\nEl 21 de diciembre es el día más corto del año en España. La culpa es de la inclinación del eje de la Tierra (unos 23,4°). Si estuviera recta, no habría estaciones y el día y la noche durarían unas 12 horas en todas partes.",
+    "hashtags": [
+      "#ciencia",
+      "#simulacion",
+      "#solsticio",
+      "#españa"
+    ],
+    "alt_text": "La Tierra con el eje inclinado y comparación de horas de luz"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

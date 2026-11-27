@@ -1,0 +1,166 @@
+{
+  "id": "2026-12-19-el-tesoro-de-villena",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "misterios",
+  "title": "El tesoro de Villena y su hierro caído del cielo",
+  "script": [
+    "En 1963, en una rambla de Alicante, apareció un tesoro de hace unos 3.000 años.",
+    "Fue en Villena, y lo sacó a la luz el arqueólogo José María Soler.",
+    "Dentro había 59 objetos de oro, plata, hierro y ámbar.",
+    "Entre ellos, 28 brazaletes de oro.",
+    "Pero lo más extraño eran dos piezas de hierro.",
+    "Un estudio propone que ese hierro procede de un meteorito.",
+    "Hoy el tesoro se expone en el museo de Villena.",
+    "¿Quién lo enterraría? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "EL TESORO DE VILLENA"
+    },
+    {
+      "at": 10.24,
+      "text": "59 OBJETOS"
+    },
+    {
+      "at": 13.76,
+      "text": "28 BRAZALETES"
+    },
+    {
+      "at": 19.06,
+      "text": "HIERRO DEL CIELO"
+    },
+    {
+      "at": 26.12,
+      "text": "¿QUIÉN LO ENTERRÓ?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 5.2941,
+      "kind": "mapa",
+      "visual": "Villena",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -0.865,
+          38.635
+        ],
+        "etiqueta": "Villena",
+        "resaltar": [
+          "Alacant/Alicante"
+        ]
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 4.9412,
+      "kind": "archivo",
+      "visual": "Aparece el tesoro de Villena",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Aparece el tesoro de Villena",
+        "fecha": "1 de diciembre de 1963",
+        "cabecera": "Hallazgo"
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 3.5294,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 59,
+        "unidad": "objetos"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 2.1176,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 28,
+        "unidad": "brazaletes de oro"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 3.1765,
+      "kind": "simulacion",
+      "visual": "monedas",
+      "escena": {
+        "tipo": "figura",
+        "figura": "monedas"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 3.5294,
+      "kind": "archivo",
+      "visual": "Hierro de origen meteorítico",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Hierro de origen meteorítico",
+        "fecha": "Trabajos de Prehistoria (CSIC)",
+        "cabecera": "Estudio"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 3.5294,
+      "kind": "mapa",
+      "visual": "Museo de Villena",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -0.865,
+          38.635
+        ],
+        "etiqueta": "Museo de Villena",
+        "resaltar": [
+          "Alacant/Alicante"
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.4118,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Hallado en 1963 en la Rambla del Panadero (Villena) por José María Soler; 59 objetos de oro, plata, hierro y ámbar; uno de los hallazgos más importantes de la Edad del Bronce en Europa",
+      "source": "Wikipedia: Treasure of Villena",
+      "url": "https://en.wikipedia.org/wiki/Treasure_of_Villena"
+    },
+    {
+      "claim": "Incluye 28 brazaletes de oro del tipo Villena-Estremoz",
+      "source": "BOE (declaración de BIC)",
+      "url": "https://www.boe.es/boe/dias/2003/02/26/pdfs/A07798-07802.pdf"
+    },
+    {
+      "claim": "Dos piezas de hierro serían de hierro meteorítico",
+      "source": "Trabajos de Prehistoria (CSIC)",
+      "url": "https://tp.revistas.csic.es/index.php/tp/article/download/929/1111/2025"
+    }
+  ],
+  "caption": {
+    "text": "¿Quién lo enterraría?\n\nEn 1963 apareció en Villena (Alicante) uno de los tesoros más importantes de la Edad del Bronce en Europa: 59 objetos de oro, plata, hierro y ámbar. Y un estudio propone que parte de su hierro vino de un meteorito.",
+    "hashtags": [
+      "#misterios",
+      "#historia",
+      "#alicante",
+      "#arqueologia"
+    ],
+    "alt_text": "Mapa de Alicante con Villena señalada"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

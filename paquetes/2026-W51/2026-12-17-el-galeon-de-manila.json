@@ -1,0 +1,178 @@
+{
+  "id": "2026-12-17-el-galeon-de-manila",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "El Galeón de Manila: 250 años uniendo Asia y América",
+  "script": [
+    "Durante 250 años, un barco español unió Asia y América.",
+    "Era el Galeón de Manila, entre Filipinas y Acapulco, en México.",
+    "La ruta empezó en 1565, cuando Andrés de Urdaneta encontró el camino de vuelta por el Pacífico.",
+    "Ese viaje de vuelta duraba unos cuatro meses.",
+    "Traía seda, porcelana y especias de Asia, a cambio de plata americana.",
+    "Desde México, muchas de esas mercancías seguían hasta España.",
+    "El último galeón navegó en 1815.",
+    "¿Lo conocías? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "250 AÑOS"
+    },
+    {
+      "at": 3.53,
+      "text": "MANILA → ACAPULCO"
+    },
+    {
+      "at": 7.41,
+      "text": "1565"
+    },
+    {
+      "at": 13.41,
+      "text": "≈ 4 MESES"
+    },
+    {
+      "at": 23.65,
+      "text": "1815"
+    },
+    {
+      "at": 25.76,
+      "text": "¿LO CONOCÍAS?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 3.5294,
+      "kind": "mapa",
+      "visual": "Manila",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          120.98,
+          14.6
+        ],
+        "etiqueta": "Manila"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 3.8824,
+      "kind": "mapa",
+      "visual": "Acapulco",
+      "escena": {
+        "tipo": "mapa_mundo",
+        "punto": [
+          -99.88,
+          16.85
+        ],
+        "etiqueta": "Acapulco"
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 6.0,
+      "kind": "archivo",
+      "visual": "Urdaneta encuentra la ruta de vuelta por el Pacífico",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Urdaneta encuentra la ruta de vuelta por el Pacífico",
+        "fecha": "1565",
+        "cabecera": "El tornaviaje"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 2.8235,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 4,
+        "unidad": "meses de travesía",
+        "prefijo": "≈ "
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 4.2353,
+      "kind": "simulacion",
+      "visual": "galeon",
+      "escena": {
+        "tipo": "figura",
+        "figura": "galeon"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 3.1765,
+      "kind": "mapa",
+      "visual": "Sevilla",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -5.99,
+          37.39
+        ],
+        "etiqueta": "Sevilla",
+        "resaltar": [
+          "Sevilla"
+        ]
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 2.1176,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "1565",
+            "texto": "Primer viaje"
+          },
+          {
+            "fecha": "1815",
+            "texto": "Último galeón"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.0588,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "La ruta del Galeón de Manila unió Manila y Acapulco entre 1565 y 1815",
+      "source": "Wikipedia: Manila galleon",
+      "url": "https://en.wikipedia.org/wiki/Manila_galleon"
+    },
+    {
+      "claim": "Urdaneta encontró en 1565 la ruta de vuelta (tornaviaje); su travesía duró algo más de cuatro meses",
+      "source": "Wikipedia: Andrés de Urdaneta",
+      "url": "https://en.wikipedia.org/wiki/Andr%C3%A9s_de_Urdaneta"
+    },
+    {
+      "claim": "Seda, porcelana y especias asiáticas a cambio de plata americana",
+      "source": "South China Morning Post: The China Ship",
+      "url": "https://multimedia.scmp.com/culture/article/spanish-galleon/chapter_01.html"
+    }
+  ],
+  "caption": {
+    "text": "¿Lo conocías?\n\nEntre 1565 y 1815, el Galeón de Manila unió Filipinas y Acapulco (México). Urdaneta encontró la ruta de vuelta por el Pacífico y, durante 250 años, la seda y la porcelana de Asia se cambiaron por plata americana.",
+    "hashtags": [
+      "#historia",
+      "#historiadeespaña",
+      "#españa",
+      "#curiosidades"
+    ],
+    "alt_text": "Mapa del Pacífico entre Manila y Acapulco"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

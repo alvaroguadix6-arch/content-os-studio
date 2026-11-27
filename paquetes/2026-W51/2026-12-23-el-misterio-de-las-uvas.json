@@ -1,0 +1,183 @@
+{
+  "id": "2026-12-23-el-misterio-de-las-uvas",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "curiosidades",
+  "title": "¿Desde cuándo comemos las doce uvas?",
+  "script": [
+    "Cada Nochevieja, millones de españoles se comen doce uvas. Pero, ¿desde cuándo?",
+    "La historia más contada dice que empezó en 1909.",
+    "Ese año hubo tanta uva en Alicante que se vendió como uvas de la suerte.",
+    "Pero hay una pista anterior.",
+    "En 1898, un periódico de Madrid ya anunciaba las uvas de la suerte.",
+    "Y hay periódicos de 1882 que ya hablan de la costumbre.",
+    "Hoy se comen con las campanadas de la Puerta del Sol.",
+    "¿Tú cuántas consigues? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "12 UVAS"
+    },
+    {
+      "at": 4.24,
+      "text": "¿1909?"
+    },
+    {
+      "at": 14.47,
+      "text": "1898"
+    },
+    {
+      "at": 22.94,
+      "text": "PUERTA DEL SOL"
+    },
+    {
+      "at": 26.82,
+      "text": "¿CUÁNTAS CONSIGUES?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 4.2353,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 12,
+        "unidad": "uvas a medianoche"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 3.1765,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "1909",
+            "texto": "La versión más contada"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 5.2941,
+      "kind": "mapa",
+      "visual": "Vinalopó",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -0.77,
+          38.38
+        ],
+        "etiqueta": "Vinalopó",
+        "resaltar": [
+          "Alacant/Alicante"
+        ]
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 1.7647,
+      "kind": "archivo",
+      "visual": "¿Una tradición más antigua?",
+      "escena": {
+        "tipo": "documento",
+        "titular": "¿Una tradición más antigua?",
+        "fecha": "Hemeroteca",
+        "cabecera": "La pista"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 4.5882,
+      "kind": "archivo",
+      "visual": "Las uvas de la suerte",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Las uvas de la suerte",
+        "fecha": "29 de diciembre de 1898",
+        "cabecera": "Prensa de Madrid"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 3.8824,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "1882",
+            "texto": "Primeras menciones"
+          },
+          {
+            "fecha": "1898",
+            "texto": "Anuncio en Madrid"
+          },
+          {
+            "fecha": "1909",
+            "texto": "Gran cosecha en Alicante"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 3.8824,
+      "kind": "mapa",
+      "visual": "Puerta del Sol",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -3.703,
+          40.417
+        ],
+        "etiqueta": "Puerta del Sol",
+        "resaltar": [
+          "Madrid"
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.4118,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Versión más extendida: excedente de uva en Alicante en 1909 vendido como «uvas de la suerte»",
+      "source": "Infobae: la región alicantina donde nacen las uvas",
+      "url": "https://www.infobae.com/espana/2023/12/29/la-region-alicantina-donde-nacen-las-uvas-con-las-que-despedimos-el-ano/"
+    },
+    {
+      "claim": "Anuncio de «Las uvas de la suerte» en la prensa de Madrid el 29 de diciembre de 1898",
+      "source": "The Diplomat in Spain: historia de las doce uvas",
+      "url": "https://thediplomatinspain.com/2024/12/31/historia-de-las-doce-uvas-entre-el-esnobismo-aristocratico-y-la-satira-popular"
+    },
+    {
+      "claim": "Menciones de la costumbre en periódicos de 1882",
+      "source": "El Cronista: el discutido origen de la tradición",
+      "url": "https://www.cronista.com/espana/actualidad-es/las-12-uvas-en-nochevieja-por-que-las-comemos-y-el-discutido-origen-de-esta-tradicion-centenaria"
+    }
+  ],
+  "caption": {
+    "text": "¿Tú cuántas consigues?\n\nSe suele decir que las doce uvas nacieron en 1909 por un excedente de uva en Alicante. Pero en 1898 un periódico de Madrid ya anunciaba «las uvas de la suerte», y hay periódicos de 1882 que hablan de la costumbre.",
+    "hashtags": [
+      "#curiosidades",
+      "#nochevieja",
+      "#españa",
+      "#tradiciones"
+    ],
+    "alt_text": "Doce uvas y la línea del tiempo de la tradición"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

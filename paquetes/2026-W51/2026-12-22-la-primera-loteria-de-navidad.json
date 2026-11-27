@@ -1,0 +1,177 @@
+{
+  "id": "2026-12-22-la-primera-loteria-de-navidad",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "La primera Lotería de Navidad: Cádiz, 1812",
+  "script": [
+    "La Lotería de Navidad nació en plena guerra.",
+    "Fue en Cádiz, en 1812, durante la guerra contra Napoleón.",
+    "El primer sorteo de Navidad se celebró el 18 de diciembre de ese año.",
+    "El primer premio fue para el número 03604.",
+    "Ese mismo año, en Cádiz, se aprobó la primera Constitución española.",
+    "Hoy el sorteo se celebra cada 22 de diciembre.",
+    "Y los números los cantan los niños del colegio de San Ildefonso.",
+    "¿Te ha tocado alguna vez? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "EN PLENA GUERRA"
+    },
+    {
+      "at": 2.82,
+      "text": "CÁDIZ, 1812"
+    },
+    {
+      "at": 11.29,
+      "text": "03604"
+    },
+    {
+      "at": 14.12,
+      "text": "LA PEPA"
+    },
+    {
+      "at": 18.0,
+      "text": "22 DE DICIEMBRE"
+    },
+    {
+      "at": 25.41,
+      "text": "¿TE HA TOCADO?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 2.8235,
+      "kind": "archivo",
+      "visual": "Primer sorteo de Navidad",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Primer sorteo de Navidad",
+        "fecha": "18 de diciembre de 1812",
+        "cabecera": "Lotería"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 3.5294,
+      "kind": "mapa",
+      "visual": "Cádiz",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -6.292,
+          36.527
+        ],
+        "etiqueta": "Cádiz",
+        "resaltar": [
+          "Cádiz"
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 4.9412,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "18 dic 1812",
+            "texto": "Primer sorteo de Navidad"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 2.8235,
+      "kind": "archivo",
+      "visual": "Primer premio: número 03604",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Primer premio: número 03604",
+        "fecha": "1812",
+        "cabecera": "Cádiz"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 3.8824,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "19 mar 1812",
+            "texto": "Constitución de Cádiz"
+          },
+          {
+            "fecha": "18 dic 1812",
+            "texto": "Primer sorteo de Navidad"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 3.1765,
+      "kind": "archivo",
+      "visual": "Cada 22 de diciembre",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Cada 22 de diciembre",
+        "fecha": "Hoy",
+        "cabecera": "Sorteo de Navidad"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 4.2353,
+      "kind": "simulacion",
+      "visual": "monedas",
+      "escena": {
+        "tipo": "figura",
+        "figura": "monedas"
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 2.1176,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "El primer sorteo de Navidad se celebró en Cádiz el 18 de diciembre de 1812",
+      "source": "Loterías y Apuestas del Estado: historia de la Lotería de Navidad",
+      "url": "https://www.loteriasyapuestas.es/es/loteria-nacional/historia-del-juego/historia-de-la-loteria-de-navidad"
+    },
+    {
+      "claim": "El primer premio fue para el número 03604",
+      "source": "Público: cuándo se celebró el primer sorteo",
+      "url": "https://www.publico.es/sociedad/celebro-primer-sorteo-loteria-navidad.html"
+    },
+    {
+      "claim": "La Constitución de Cádiz se promulgó el 19 de marzo de 1812",
+      "source": "Congreso de los Diputados: Constitución de 1812",
+      "url": "https://www.congreso.es/es/cem/const1812"
+    }
+  ],
+  "caption": {
+    "text": "¿Te ha tocado alguna vez?\n\nLa Lotería de Navidad nació en Cádiz en plena guerra contra Napoleón: el primer sorteo de Navidad fue el 18 de diciembre de 1812 y el primer premio, el 03604. Ese mismo año se aprobó allí la Constitución de 1812.",
+    "hashtags": [
+      "#loteriadenavidad",
+      "#historia",
+      "#cadiz",
+      "#navidad"
+    ],
+    "alt_text": "Documento antiguo del primer sorteo de Navidad"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}
