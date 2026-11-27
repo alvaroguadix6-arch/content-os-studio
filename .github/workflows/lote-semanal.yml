@@ -1,0 +1,77 @@
+# NIVEL OCULTO · «Lote semanal»: renderiza los vídeos de una semana (quiz y paquetes) en lotes de ≤ 8.
+#
+# - Lo pide el workflow MANUAL «Producción semanal» del repo privado instagram-agent: exporta los paquetes saneados
+#   y escribe render3d/lote/pedido.json. Ese push es lo único que lo lanza: NO hay ninguna programación.
+#   También se puede lanzar a mano (Actions → «Lote semanal» → RENDER): usa el pedido que haya en main.
+# - Cada lote es el mismo «Render quiz/conquista» con TODOS sus controles (zonas seguras, audio, QC, descargas).
+#   Los lotes van de uno en uno (cada uno ya usa 4 máquinas). Conquista no entra: tiene su flujo diario.
+# - Sin secretos, solo lectura, no publica nada. Gratis (repo público).
+name: Lote semanal
+
+on:
+  push:
+    branches: [main]
+    paths: ['render3d/lote/pedido.json']
+  workflow_dispatch:
+    inputs:
+      confirmar:
+        description: 'Escribe RENDER para confirmar (usa render3d/lote/pedido.json de main)'
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lote-semanal
+  cancel-in-progress: false
+
+jobs:
+  pedido:
+    if: ${{ !github.event.repository.private && github.ref == 'refs/heads/main' && (github.event_name == 'push' || inputs.confirmar == 'RENDER') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      lotes: ${{ steps.p.outputs.lotes }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Leer y validar el pedido
+        id: p
+        run: |
+          L=$(python3 -I tools/pedido_lote.py render3d/lote/pedido.json)
+          echo "lotes=$L" >> "$GITHUB_OUTPUT"
+          python3 -I tools/pedido_lote.py render3d/lote/pedido.json --resumen >> "$GITHUB_STEP_SUMMARY"
+
+  render:
+    needs: pedido
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        lote: ${{ fromJSON(needs.pedido.outputs.lotes) }}
+    permissions:
+      contents: read
+      actions: read
+    uses: ./.github/workflows/render-quiz-conquista.yml
+    with:
+      temas: ${{ matrix.lote.temas }}
+      paquetes: ${{ matrix.lote.paquetes }}
+      confirmar: RENDER
+
+  resultado:
+    needs: [pedido, render]
+    if: ${{ always() && needs.pedido.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Resultado final
+        env:
+          R: ${{ needs.render.result }}
+        run: |
+          if [ "$R" = success ]; then
+            echo "✅ semana renderizada: artefactos de 7 días (el repo privado los copia a su Release)" | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::error::Algún lote ha fallado. Los vídeos buenos se guardan igual; los fallidos se repiten a mano tras revisar el registro."
+            exit 1
+          fi

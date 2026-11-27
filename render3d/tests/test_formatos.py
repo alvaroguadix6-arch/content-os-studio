@@ -275,12 +275,36 @@ def test_portada():
         assert Image.open(out).size == (1080, 1920)
 
 
+def test_pedido_lote_semanal_valida():
+    """El pedido del repo privado solo acepta quiz existentes, paquetes de su semana y ≤ 8 vídeos por lote."""
+    sys.path.insert(0, os.path.join(os.path.dirname(ROOT), "tools"))
+    import pedido_lote as PL
+    raiz = os.path.dirname(ROOT)
+    paq = sorted(f for f in os.listdir(os.path.join(raiz, "paquetes", "2026-W50")) if f.endswith(".json"))[0]
+    ok = PL.validar({"semana": "2026-W50", "lotes": [{"temas": "capitales,rios", "paquetes": f"paquetes/2026-W50/{paq}"}]}, raiz)
+    assert ok == [{"temas": "capitales,rios", "paquetes": f"paquetes/2026-W50/{paq}"}]
+    malos = [{"semana": "x", "lotes": [{"temas": "rios"}]},
+             {"semana": "2026-W50", "lotes": [{"temas": "../x"}]},
+             {"semana": "2026-W50", "lotes": [{"temas": "no_existe"}]},
+             {"semana": "2026-W50", "lotes": [{"temas": "rios"}, {"temas": "rios"}]},
+             {"semana": "2026-W50", "lotes": [{"temas": ",".join(["rios", "capitales", "islas", "castillos", "dulces",
+                                                                       "quesos", "parques", "unesco", "lenguas"])}]},
+             {"semana": "2026-W50", "lotes": [{"paquetes": f"paquetes/2026-W49/{paq}"}]},
+             {"semana": "2026-W50", "lotes": []}]
+    for m in malos:
+        try:
+            PL.validar(m, raiz)
+        except ValueError:
+            continue
+        raise AssertionError(f"debería rechazar {m}")
+
+
 if __name__ == "__main__":
     solo = set(sys.argv[1:])  # p. ej. `test_formatos.py rapidas` o nombres de pruebas concretas
     RAPIDAS = {"test_lote_valida_y_limita", "test_lote_con_paquetes_y_plataformas", "test_quiz_json_completos", "test_textos_sin_datos_privados",
                "test_canarias_dentro_de_la_zona", "test_contar_votos_reconoce_y_no_duplica",
                "test_provincias_y_pueblos_bilingues", "test_conquista_diaria_sin_votos_nuevos",
-               "test_conquista_votos_pendientes_no_inventa"}
+               "test_conquista_votos_pendientes_no_inventa", "test_pedido_lote_semanal_valida"}
     if "rapidas" in solo:
         solo = RAPIDAS
     for name, fn in list(globals().items()):
