@@ -2,17 +2,9 @@
  "semana": "2026-W52",
  "lotes": [
   {
-   "temas": "playas,museos,cuevas,plazas,productos,parques_tematicos,batallas,rodajes",
-   "paquetes": ""
-  },
-  {
-   "temas": "vinos,mercados,rascacielos,carnavales,semana_santa,romanos,festivales",
-   "paquetes": "paquetes/2026-W52/2026-12-24-las-medulas-la-mina-de-oro-de-roma.json"
-  },
-  {
    "temas": "",
-   "paquetes": "paquetes/2026-W52/2026-12-25-el-submarino-de-isaac-peral.json,paquetes/2026-W52/2026-12-26-el-primer-metro-de-madrid.json,paquetes/2026-W52/2026-12-27-atapuerca-el-europeo-mas-antiguo.json"
+   "paquetes": "paquetes/2026-W52/2026-12-25-el-submarino-de-isaac-peral.json"
   }
  ],
- "pedido": "2026-11-27T11:01:06Z"
+ "pedido": "2026-11-27T11:52:53Z"
 }

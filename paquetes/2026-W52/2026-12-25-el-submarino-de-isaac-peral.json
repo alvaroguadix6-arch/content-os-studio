@@ -122,14 +122,14 @@
       "scene": 7,
       "seconds": 3.1765,
       "kind": "mapa",
-      "visual": "Museo Naval de Cartagena",
+      "visual": "Museo Naval",
       "escena": {
         "tipo": "mapa_espana",
         "punto": [
           -0.986,
           37.605
         ],
-        "etiqueta": "Museo Naval de Cartagena",
+        "etiqueta": "Museo Naval",
         "resaltar": [
           "Murcia"
         ]
