@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "NAVIDAD",
+ "titulo": "¿Dónde se celebra cada tradición navideña?",
+ "gancho": [
+  "¿DÓNDE SE CELEBRA",
+  "*ESTA NAVIDAD*?"
+ ],
+ "intro": "¿Dónde se celebra cada tradición navideña?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#navidad",
+  "#tradiciones"
+ ],
+ "fuentes": [
+  "Ayuntamientos de Madrid, Alcoi, Málaga, Barcelona e Ibi",
+  "Fira de Santa Llúcia (Barcelona, desde 1786) · Cabalgata de Reyes de Alcoi"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde suenan las campanadas más famosas?",
+   "prov": "Madrid",
+   "punto": [
+    -3.703,
+    40.417
+   ],
+   "respuesta": "Madrid",
+   "detalle": "Reloj de la Puerta del Sol",
+   "voz_q": "¿Dónde suenan las campanadas más famosas?",
+   "voz_a": "¡Madrid! En la Puerta del Sol."
+  },
+  {
+   "q": "¿Dónde está la cabalgata de Reyes más antigua?",
+   "prov": "Alacant/Alicante",
+   "punto": [
+    -0.474,
+    38.698
+   ],
+   "respuesta": "Alcoy",
+   "detalle": "Alcoi · considerada la más antigua de España",
+   "voz_q": "¿Dónde está la cabalgata de Reyes más antigua de España?",
+   "voz_a": "¡En Alcoy, Alicante!"
+  },
+  {
+   "q": "¿Dónde se baila la fiesta de los Verdiales?",
+   "prov": "Málaga",
+   "punto": [
+    -4.421,
+    36.721
+   ],
+   "respuesta": "Málaga",
+   "detalle": "Cada 28 de diciembre",
+   "voz_q": "¿Dónde se celebra la fiesta de los Verdiales?",
+   "voz_a": "¡Málaga!"
+  },
+  {
+   "q": "¿Dónde está la Fira de Santa Llúcia?",
+   "prov": "Barcelona",
+   "punto": [
+    2.176,
+    41.384
+   ],
+   "respuesta": "Barcelona",
+   "detalle": "Mercado navideño desde 1786",
+   "voz_q": "¿Dónde está la Fira de Santa Llúcia?",
+   "voz_a": "¡Barcelona!"
+  },
+  {
+   "q": "¿Dónde se lanzan harina el día de los Inocentes?",
+   "prov": "Alacant/Alicante",
+   "punto": [
+    -0.645,
+    38.625
+   ],
+   "respuesta": "Ibi",
+   "detalle": "Els Enfarinats · 28 de diciembre",
+   "voz_q": "¿Dónde se pelean con harina el día de los Inocentes?",
+   "voz_a": "¡En Ibi, Alicante!"
+  }
+ ]
+}

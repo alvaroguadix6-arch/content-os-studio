@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "LAGOS",
+ "titulo": "¿En qué provincia está cada lago?",
+ "gancho": [
+  "¿EN QUÉ PROVINCIA",
+  "ESTÁ *CADA LAGO*?"
+ ],
+ "intro": "¿En qué provincia está cada lago?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#naturaleza",
+  "#geografia"
+ ],
+ "fuentes": [
+  "Ministerio para la Transición Ecológica (MITECO): espacios naturales protegidos",
+  "Junta de Castilla y León · Generalitat de Catalunya · Generalitat Valenciana · Junta de Andalucía"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde está el lago de Sanabria?",
+   "prov": "Zamora",
+   "punto": [
+    -6.71,
+    42.12
+   ],
+   "respuesta": "Zamora",
+   "detalle": "El mayor lago glaciar de la península",
+   "voz_q": "¿Dónde está el lago de Sanabria?",
+   "voz_a": "¡Zamora!"
+  },
+  {
+   "q": "¿En qué provincia está el lago de Banyoles?",
+   "prov": "Girona",
+   "punto": [
+    2.755,
+    42.12
+   ],
+   "respuesta": "Girona",
+   "detalle": "El mayor lago de Cataluña",
+   "voz_q": "¿En qué provincia está el lago de Banyoles?",
+   "voz_a": "¡Girona!"
+  },
+  {
+   "q": "¿Dónde está la Albufera?",
+   "prov": "València/Valencia",
+   "punto": [
+    -0.35,
+    39.33
+   ],
+   "respuesta": "Valencia",
+   "detalle": "Arrozales junto al mar",
+   "voz_q": "¿Dónde está la Albufera?",
+   "voz_a": "¡Valencia!"
+  },
+  {
+   "q": "¿Dónde está la laguna de los flamencos de Fuente de Piedra?",
+   "prov": "Málaga",
+   "punto": [
+    -4.75,
+    37.12
+   ],
+   "respuesta": "Málaga",
+   "detalle": "Laguna de Fuente de Piedra",
+   "voz_q": "¿Dónde está la laguna de Fuente de Piedra?",
+   "voz_a": "¡Málaga!"
+  },
+  {
+   "q": "¿En qué provincia está la Laguna Negra?",
+   "prov": "Soria",
+   "punto": [
+    -2.85,
+    41.995
+   ],
+   "respuesta": "Soria",
+   "detalle": "Picos de Urbión",
+   "voz_q": "¿En qué provincia está la Laguna Negra?",
+   "voz_a": "¡Soria!"
+  }
+ ]
+}

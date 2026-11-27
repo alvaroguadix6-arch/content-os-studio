@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "MONASTERIOS",
+ "titulo": "¿Dónde está cada monasterio?",
+ "gancho": [
+  "¿DÓNDE ESTÁ",
+  "*CADA MONASTERIO*?"
+ ],
+ "intro": "¿Dónde está cada monasterio?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#historia",
+  "#patrimonio"
+ ],
+ "fuentes": [
+  "UNESCO, Lista del Patrimonio Mundial (El Escorial, Poblet, Guadalupe)",
+  "Patrimonio Nacional · Abadía de Montserrat · Abadía de Santo Domingo de Silos"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿En qué provincia está El Escorial?",
+   "prov": "Madrid",
+   "punto": [
+    -4.148,
+    40.589
+   ],
+   "respuesta": "Madrid",
+   "detalle": "Mandado construir por Felipe II",
+   "voz_q": "¿En qué provincia está El Escorial?",
+   "voz_a": "¡Madrid!"
+  },
+  {
+   "q": "¿Y el monasterio de Montserrat?",
+   "prov": "Barcelona",
+   "punto": [
+    1.837,
+    41.593
+   ],
+   "respuesta": "Barcelona",
+   "detalle": "Hogar de la Moreneta",
+   "voz_q": "¿Y el monasterio de Montserrat?",
+   "voz_a": "¡Barcelona!"
+  },
+  {
+   "q": "¿Dónde está el monasterio de Poblet?",
+   "prov": "Tarragona",
+   "punto": [
+    1.083,
+    41.381
+   ],
+   "respuesta": "Tarragona",
+   "detalle": "Panteón de los reyes de Aragón",
+   "voz_q": "¿Dónde está el monasterio de Poblet?",
+   "voz_a": "¡Tarragona!"
+  },
+  {
+   "q": "¿En qué provincia está Guadalupe?",
+   "prov": "Cáceres",
+   "punto": [
+    -5.327,
+    39.452
+   ],
+   "respuesta": "Cáceres",
+   "detalle": "Real Monasterio · Patrimonio Mundial",
+   "voz_q": "¿En qué provincia está el monasterio de Guadalupe?",
+   "voz_a": "¡Cáceres!"
+  },
+  {
+   "q": "¿Dónde cantan los monjes de Silos?",
+   "prov": "Burgos",
+   "punto": [
+    -3.42,
+    41.962
+   ],
+   "respuesta": "Burgos",
+   "detalle": "Santo Domingo de Silos · canto gregoriano",
+   "voz_q": "¿Dónde cantan los monjes de Silos?",
+   "voz_a": "¡Burgos!"
+  }
+ ]
+}

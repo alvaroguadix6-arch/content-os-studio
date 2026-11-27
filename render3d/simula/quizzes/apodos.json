@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "APODOS",
+ "titulo": "¿Qué ciudad tiene este apodo?",
+ "gancho": [
+  "¿QUÉ CIUDAD",
+  "TIENE *ESTE APODO*?"
+ ],
+ "intro": "¿Qué ciudad tiene este apodo?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#ciudades",
+  "#cultura"
+ ],
+ "fuentes": [
+  "Diccionario de la lengua española (RAE): «pucelano»",
+  "Ayuntamientos de Barcelona, Valladolid, Cádiz, Donostia/San Sebastián y Córdoba"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Qué ciudad es la Ciudad Condal?",
+   "prov": "Barcelona",
+   "punto": [
+    2.17,
+    41.387
+   ],
+   "respuesta": "Barcelona",
+   "detalle": "Por los antiguos condes de Barcelona",
+   "voz_q": "¿Qué ciudad es la Ciudad Condal?",
+   "voz_a": "¡Barcelona!"
+  },
+  {
+   "q": "¿A qué ciudad llaman Pucela?",
+   "prov": "Valladolid",
+   "punto": [
+    -4.724,
+    41.652
+   ],
+   "respuesta": "Valladolid",
+   "detalle": "Sus vecinos: pucelanos",
+   "voz_q": "¿A qué ciudad llaman Pucela?",
+   "voz_a": "¡Valladolid!"
+  },
+  {
+   "q": "¿Cuál es la Tacita de Plata?",
+   "prov": "Cádiz",
+   "punto": [
+    -6.292,
+    36.527
+   ],
+   "respuesta": "Cádiz",
+   "detalle": "Rodeada de mar casi por completo",
+   "voz_q": "¿Cuál es la Tacita de Plata?",
+   "voz_a": "¡Cádiz!"
+  },
+  {
+   "q": "¿Qué ciudad es la Bella Easo?",
+   "prov": "Gipuzkoa/Guipúzcoa",
+   "punto": [
+    -1.981,
+    43.318
+   ],
+   "respuesta": "San Sebastián",
+   "detalle": "Donostia · bahía de La Concha",
+   "voz_q": "¿Qué ciudad es la Bella Easo?",
+   "voz_a": "¡San Sebastián!"
+  },
+  {
+   "q": "¿Cuál es la Ciudad de los Califas?",
+   "prov": "Córdoba",
+   "punto": [
+    -4.779,
+    37.888
+   ],
+   "respuesta": "Córdoba",
+   "detalle": "Capital del Califato omeya",
+   "voz_q": "¿Y la Ciudad de los Califas?",
+   "voz_a": "¡Córdoba!"
+  }
+ ]
+}

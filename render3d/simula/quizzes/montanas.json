@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "MONTAÑAS",
+ "titulo": "¿En qué provincia está cada pico?",
+ "gancho": [
+  "¿EN QUÉ PROVINCIA",
+  "ESTÁ *CADA PICO*?"
+ ],
+ "intro": "¿En qué provincia está cada pico?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#montaña",
+  "#geografia"
+ ],
+ "fuentes": [
+  "Instituto Geográfico Nacional (IGN), Mapa Topográfico Nacional",
+  "Parques nacionales de Sierra Nevada y Picos de Europa (MITECO)"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde está el pico Almanzor?",
+   "prov": "Ávila",
+   "punto": [
+    -5.297,
+    40.246
+   ],
+   "respuesta": "Ávila",
+   "detalle": "El techo de la sierra de Gredos",
+   "voz_q": "¿Dónde está el pico Almanzor?",
+   "voz_a": "¡Ávila!"
+  },
+  {
+   "q": "¿En qué provincia está el Veleta?",
+   "prov": "Granada",
+   "punto": [
+    -3.366,
+    37.056
+   ],
+   "respuesta": "Granada",
+   "detalle": "Sierra Nevada",
+   "voz_q": "¿En qué provincia está el Veleta?",
+   "voz_a": "¡Granada!"
+  },
+  {
+   "q": "¿Dónde está el Roque de los Muchachos?",
+   "prov": "Santa Cruz De Tenerife",
+   "punto": [
+    -17.885,
+    28.754
+   ],
+   "respuesta": "Santa Cruz de Tenerife",
+   "detalle": "Isla de La Palma · observatorio",
+   "voz_q": "¿Dónde está el Roque de los Muchachos?",
+   "voz_a": "¡Santa Cruz de Tenerife! En la isla de La Palma."
+  },
+  {
+   "q": "¿Dónde está el Naranjo de Bulnes?",
+   "prov": "Asturias",
+   "punto": [
+    -4.814,
+    43.2
+   ],
+   "respuesta": "Asturias",
+   "detalle": "Picu Urriellu · Picos de Europa",
+   "voz_q": "¿Dónde está el Naranjo de Bulnes?",
+   "voz_a": "¡Asturias!"
+  },
+  {
+   "q": "¿Dónde está la sierra de Aitana?",
+   "prov": "Alacant/Alicante",
+   "punto": [
+    -0.264,
+    38.65
+   ],
+   "respuesta": "Alicante",
+   "detalle": "El techo de la provincia",
+   "voz_q": "¿Dónde está la sierra de Aitana?",
+   "voz_a": "¡Alicante!"
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "PUENTES",
+ "titulo": "¿En qué ciudad está cada puente?",
+ "gancho": [
+  "¿DÓNDE ESTÁ",
+  "*CADA PUENTE*?"
+ ],
+ "intro": "¿Dónde está cada puente?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#historia",
+  "#patrimonio"
+ ],
+ "fuentes": [
+  "Ministerio de Transportes: puente de la Constitución de 1812 (2015)",
+  "Ayuntamientos de Sevilla, Alcántara, Córdoba, Besalú y Cádiz"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde está el puente de Triana?",
+   "prov": "Sevilla",
+   "punto": [
+    -6.0,
+    37.386
+   ],
+   "respuesta": "Sevilla",
+   "detalle": "Puente de Isabel II · río Guadalquivir",
+   "voz_q": "¿Dónde está el puente de Triana?",
+   "voz_a": "¡Sevilla!"
+  },
+  {
+   "q": "¿En qué provincia está el puente romano de Alcántara?",
+   "prov": "Cáceres",
+   "punto": [
+    -6.887,
+    39.722
+   ],
+   "respuesta": "Cáceres",
+   "detalle": "Construido en tiempos de Trajano",
+   "voz_q": "¿En qué provincia está el puente romano de Alcántara?",
+   "voz_a": "¡Cáceres!"
+  },
+  {
+   "q": "¿Qué ciudad cruza este puente romano frente a la Mezquita?",
+   "prov": "Córdoba",
+   "punto": [
+    -4.778,
+    37.877
+   ],
+   "respuesta": "Córdoba",
+   "detalle": "Puente romano sobre el Guadalquivir",
+   "voz_q": "¿Qué ciudad tiene un puente romano frente a la Mezquita?",
+   "voz_a": "¡Córdoba!"
+  },
+  {
+   "q": "¿Dónde está el puente medieval de Besalú?",
+   "prov": "Girona",
+   "punto": [
+    2.7,
+    42.199
+   ],
+   "respuesta": "Girona",
+   "detalle": "Sobre el río Fluvià",
+   "voz_q": "¿Dónde está el puente medieval de Besalú?",
+   "voz_a": "¡Girona!"
+  },
+  {
+   "q": "¿Dónde está el puente más largo de España, La Pepa?",
+   "prov": "Cádiz",
+   "punto": [
+    -6.25,
+    36.509
+   ],
+   "respuesta": "Cádiz",
+   "detalle": "Puente de la Constitución de 1812",
+   "voz_q": "¿Dónde está La Pepa, el puente más largo de España?",
+   "voz_a": "¡Cádiz!"
+  }
+ ]
+}

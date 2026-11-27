@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "JAMÓN",
+ "titulo": "¿De dónde es cada jamón?",
+ "gancho": [
+  "¿DE DÓNDE ES",
+  "*CADA JAMÓN*?"
+ ],
+ "intro": "¿De dónde es cada jamón?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#gastronomia",
+  "#jamon"
+ ],
+ "fuentes": [
+  "Ministerio de Agricultura, Pesca y Alimentación: registro de DOP e IGP",
+  "Consejos reguladores de Guijuelo, Trevélez, Teruel, Los Pedroches y Cecina de León"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿De qué provincia es el jamón de Guijuelo?",
+   "prov": "Salamanca",
+   "punto": [
+    -5.676,
+    40.556
+   ],
+   "respuesta": "Salamanca",
+   "detalle": "DOP Guijuelo",
+   "voz_q": "¿De qué provincia es el jamón de Guijuelo?",
+   "voz_a": "¡Salamanca!"
+  },
+  {
+   "q": "¿Dónde se cura el jamón de Trevélez?",
+   "prov": "Granada",
+   "punto": [
+    -3.266,
+    37.0
+   ],
+   "respuesta": "Granada",
+   "detalle": "IGP Jamón de Trevélez · Alpujarra",
+   "voz_q": "¿Dónde se cura el jamón de Trevélez?",
+   "voz_a": "¡Granada!"
+  },
+  {
+   "q": "¿Dónde nació la primera DO de jamón?",
+   "prov": "Teruel",
+   "punto": [
+    -1.106,
+    40.344
+   ],
+   "respuesta": "Teruel",
+   "detalle": "DOP Jamón de Teruel",
+   "voz_q": "¿Dónde nació la primera denominación de origen de jamón?",
+   "voz_a": "¡Teruel!"
+  },
+  {
+   "q": "¿De qué provincia es Los Pedroches?",
+   "prov": "Córdoba",
+   "punto": [
+    -4.848,
+    38.379
+   ],
+   "respuesta": "Córdoba",
+   "detalle": "DOP Los Pedroches · ibérico",
+   "voz_q": "¿De qué provincia es el jamón de Los Pedroches?",
+   "voz_a": "¡Córdoba!"
+  },
+  {
+   "q": "¿Y la cecina más famosa?",
+   "prov": "León",
+   "punto": [
+    -5.567,
+    42.599
+   ],
+   "respuesta": "León",
+   "detalle": "IGP Cecina de León",
+   "voz_q": "¿Y la cecina más famosa?",
+   "voz_a": "¡León!"
+  }
+ ]
+}
