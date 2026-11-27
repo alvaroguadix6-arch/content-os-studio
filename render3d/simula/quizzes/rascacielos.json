@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "RASCACIELOS",
+ "titulo": "¿En qué ciudad está cada rascacielos?",
+ "gancho": [
+  "¿DÓNDE ESTÁ",
+  "*CADA RASCACIELOS*?"
+ ],
+ "intro": "¿En qué ciudad está cada rascacielos?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#arquitectura",
+  "#ciudades"
+ ],
+ "fuentes": [
+  "Ayuntamientos de Madrid, Barcelona, Bilbao, Benidorm y Sevilla",
+  "Council on Tall Buildings and Urban Habitat (CTBUH)"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde está la Torre de Cristal, el edificio más alto de España?",
+   "prov": "Madrid",
+   "punto": [
+    -3.688,
+    40.478
+   ],
+   "respuesta": "Madrid",
+   "detalle": "Cuatro Torres · 249 metros",
+   "voz_q": "¿Dónde está la Torre de Cristal, el edificio más alto de España?",
+   "voz_a": "¡Madrid!"
+  },
+  {
+   "q": "¿En qué ciudad está la Torre Glòries?",
+   "prov": "Barcelona",
+   "punto": [
+    2.189,
+    41.403
+   ],
+   "respuesta": "Barcelona",
+   "detalle": "Antes Torre Agbar",
+   "voz_q": "¿En qué ciudad está la Torre Glòries?",
+   "voz_a": "¡Barcelona!"
+  },
+  {
+   "q": "¿Dónde está la Torre Iberdrola?",
+   "prov": "Bizkaia/Vizcaya",
+   "punto": [
+    -2.936,
+    43.267
+   ],
+   "respuesta": "Bilbao",
+   "detalle": "El más alto del País Vasco",
+   "voz_q": "¿Dónde está la Torre Iberdrola?",
+   "voz_a": "¡Bilbao!"
+  },
+  {
+   "q": "¿Dónde está el rascacielos Intempo, con forma de M?",
+   "prov": "Alacant/Alicante",
+   "punto": [
+    -0.123,
+    38.535
+   ],
+   "respuesta": "Benidorm",
+   "detalle": "Frente a la playa de Poniente",
+   "voz_q": "¿Dónde está el rascacielos Intempo, con forma de M?",
+   "voz_a": "¡Benidorm!"
+  },
+  {
+   "q": "¿Dónde está el rascacielos más alto de Andalucía?",
+   "prov": "Sevilla",
+   "punto": [
+    -6.009,
+    37.393
+   ],
+   "respuesta": "Sevilla",
+   "detalle": "Torre Sevilla",
+   "voz_q": "¿Dónde está el rascacielos más alto de Andalucía?",
+   "voz_a": "¡Sevilla!"
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "CARNAVALES",
+ "titulo": "¿Dónde se celebra cada carnaval?",
+ "gancho": [
+  "¿DÓNDE ES",
+  "*ESTE CARNAVAL*?"
+ ],
+ "intro": "¿Dónde se celebra cada carnaval?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#carnaval",
+  "#fiestas"
+ ],
+ "fuentes": [
+  "Turismo de España (spain.info): carnavales",
+  "Ayuntamientos de Cádiz, Santa Cruz de Tenerife, Águilas, Badajoz y Solsona"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Qué carnaval es famoso por sus chirigotas?",
+   "prov": "Cádiz",
+   "punto": [
+    -6.292,
+    36.527
+   ],
+   "respuesta": "Cádiz",
+   "detalle": "Concurso en el Gran Teatro Falla",
+   "voz_q": "¿Qué carnaval es famoso por sus chirigotas?",
+   "voz_a": "¡Cádiz!"
+  },
+  {
+   "q": "¿Dónde se celebra el carnaval con la elección de la Reina más famosa de Canarias?",
+   "prov": "Santa Cruz De Tenerife",
+   "punto": [
+    -16.25,
+    28.47
+   ],
+   "respuesta": "Santa Cruz de Tenerife",
+   "detalle": "Uno de los más grandes del mundo",
+   "voz_q": "¿Dónde se celebra el carnaval con la elección de la Reina más famosa de Canarias?",
+   "voz_a": "¡Santa Cruz de Tenerife!"
+  },
+  {
+   "q": "¿Dónde sale la Mussona en carnaval?",
+   "prov": "Murcia",
+   "punto": [
+    -1.585,
+    37.406
+   ],
+   "respuesta": "Águilas",
+   "detalle": "Carnaval de Águilas",
+   "voz_q": "¿Dónde sale la Mussona en carnaval?",
+   "voz_a": "¡Águilas!"
+  },
+  {
+   "q": "¿Qué carnaval extremeño es famoso por sus comparsas?",
+   "prov": "Badajoz",
+   "punto": [
+    -6.97,
+    38.88
+   ],
+   "respuesta": "Badajoz",
+   "detalle": "Desfiles de comparsas",
+   "voz_q": "¿Qué carnaval extremeño es famoso por sus comparsas?",
+   "voz_a": "¡Badajoz!"
+  },
+  {
+   "q": "¿Dónde «cuelgan» un burro de muñeco en carnaval?",
+   "prov": "Lleida",
+   "punto": [
+    1.517,
+    41.994
+   ],
+   "respuesta": "Solsona",
+   "detalle": "Carnaval de Solsona",
+   "voz_q": "¿Dónde «cuelgan» un burro de muñeco en carnaval?",
+   "voz_a": "¡Solsona!"
+  }
+ ]
+}

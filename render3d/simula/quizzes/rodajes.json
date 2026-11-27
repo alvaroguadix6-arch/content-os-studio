@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "RODAJES",
+ "titulo": "¿Dónde se rodó cada escena?",
+ "gancho": [
+  "¿DÓNDE SE",
+  "*RODÓ ESTO*?"
+ ],
+ "intro": "¿Dónde se rodó cada escena?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#series",
+  "#cine"
+ ],
+ "fuentes": [
+  "Turismo de España (spain.info): localizaciones de Juego de Tronos",
+  "Junta de Andalucía: Tabernas, cine en el desierto"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde se rodaron los jardines de Dorne de Juego de Tronos?",
+   "prov": "Sevilla",
+   "punto": [
+    -5.991,
+    37.383
+   ],
+   "respuesta": "Sevilla",
+   "detalle": "Real Alcázar",
+   "voz_q": "¿Dónde se rodaron los jardines de Dorne de Juego de Tronos?",
+   "voz_a": "¡Sevilla!"
+  },
+  {
+   "q": "¿Dónde está la escalera de Rocadragón?",
+   "prov": "Bizkaia/Vizcaya",
+   "punto": [
+    -2.785,
+    43.447
+   ],
+   "respuesta": "Bizkaia",
+   "detalle": "San Juan de Gaztelugatxe",
+   "voz_q": "¿Dónde está la escalera de Rocadragón?",
+   "voz_a": "¡Bizkaia!"
+  },
+  {
+   "q": "¿Dónde está el castillo de la Torre de la Alegría?",
+   "prov": "Guadalajara",
+   "punto": [
+    -1.875,
+    40.849
+   ],
+   "respuesta": "Guadalajara",
+   "detalle": "Castillo de Zafra",
+   "voz_q": "¿Dónde está el castillo de la Torre de la Alegría?",
+   "voz_a": "¡Guadalajara!"
+  },
+  {
+   "q": "¿Qué ciudad hizo de Braavos y Desembarco del Rey?",
+   "prov": "Girona",
+   "punto": [
+    2.824,
+    41.986
+   ],
+   "respuesta": "Girona",
+   "detalle": "Su catedral y su casco antiguo",
+   "voz_q": "¿Qué ciudad hizo de Braavos y Desembarco del Rey?",
+   "voz_a": "¡Girona!"
+  },
+  {
+   "q": "¿Dónde está el desierto de los spaghetti western?",
+   "prov": "Almería",
+   "punto": [
+    -2.41,
+    37.04
+   ],
+   "respuesta": "Almería",
+   "detalle": "Desierto de Tabernas",
+   "voz_q": "¿Dónde está el desierto de los spaghetti western?",
+   "voz_a": "¡Almería!"
+  }
+ ]
+}

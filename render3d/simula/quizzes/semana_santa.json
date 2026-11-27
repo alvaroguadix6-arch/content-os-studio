@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "SEMANA SANTA",
+ "titulo": "¿Dónde es cada Semana Santa?",
+ "gancho": [
+  "¿DÓNDE ES",
+  "*ESTA SEMANA SANTA*?"
+ ],
+ "intro": "¿Dónde es cada Semana Santa?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#semanasanta",
+  "#tradiciones"
+ ],
+ "fuentes": [
+  "Turismo de España (spain.info): Semana Santa",
+  "Juntas de cofradías de Sevilla, Málaga, Zamora, Cuenca y Lorca"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde es famosa la Madrugá?",
+   "prov": "Sevilla",
+   "punto": [
+    -5.99,
+    37.39
+   ],
+   "respuesta": "Sevilla",
+   "detalle": "La noche del Jueves al Viernes Santo",
+   "voz_q": "¿Dónde es famosa la Madrugá?",
+   "voz_a": "¡Sevilla!"
+  },
+  {
+   "q": "¿Dónde se llevan los grandes tronos por las calles?",
+   "prov": "Málaga",
+   "punto": [
+    -4.42,
+    36.72
+   ],
+   "respuesta": "Málaga",
+   "detalle": "Tronos portados por hombres de trono",
+   "voz_q": "¿Dónde se llevan los grandes tronos por las calles?",
+   "voz_a": "¡Málaga!"
+  },
+  {
+   "q": "¿Qué Semana Santa castellana es famosa por su silencio y sus tallas?",
+   "prov": "Zamora",
+   "punto": [
+    -5.75,
+    41.5
+   ],
+   "respuesta": "Zamora",
+   "detalle": "Interés Turístico Internacional",
+   "voz_q": "¿Qué Semana Santa castellana es famosa por su silencio y sus tallas?",
+   "voz_a": "¡Zamora!"
+  },
+  {
+   "q": "¿Dónde salen las Turbas?",
+   "prov": "Cuenca",
+   "punto": [
+    -2.13,
+    40.07
+   ],
+   "respuesta": "Cuenca",
+   "detalle": "Camino del Calvario · Viernes Santo",
+   "voz_q": "¿Dónde salen las Turbas?",
+   "voz_a": "¡Cuenca!"
+  },
+  {
+   "q": "¿Dónde la Semana Santa tiene desfiles bíblicos con caballos?",
+   "prov": "Murcia",
+   "punto": [
+    -1.7,
+    37.68
+   ],
+   "respuesta": "Lorca",
+   "detalle": "Desfiles bíblico-pasionales",
+   "voz_q": "¿Dónde la Semana Santa tiene desfiles bíblicos con caballos?",
+   "voz_a": "¡Lorca!"
+  }
+ ]
+}

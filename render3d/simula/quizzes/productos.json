@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "PRODUCTOS",
+ "titulo": "¿De dónde es cada producto?",
+ "gancho": [
+  "¿DE DÓNDE ES",
+  "*CADA PRODUCTO*?"
+ ],
+ "intro": "¿De dónde es cada producto?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#gastronomia",
+  "#campo"
+ ],
+ "fuentes": [
+  "Ministerio de Agricultura, Pesca y Alimentación: DOP e IGP",
+  "Junta de Andalucía · Junta de Extremadura"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Qué provincia produce más fresas de España?",
+   "prov": "Huelva",
+   "punto": [
+    -6.95,
+    37.26
+   ],
+   "respuesta": "Huelva",
+   "detalle": "Casi todas las fresas de España",
+   "voz_q": "¿Qué provincia produce más fresas de España?",
+   "voz_a": "¡Huelva!"
+  },
+  {
+   "q": "¿Dónde está el valle del Jerte, famoso por sus cerezas?",
+   "prov": "Cáceres",
+   "punto": [
+    -5.75,
+    40.22
+   ],
+   "respuesta": "Cáceres",
+   "detalle": "DOP Cereza del Jerte",
+   "voz_q": "¿Dónde está el valle del Jerte, famoso por sus cerezas?",
+   "voz_a": "¡Cáceres!"
+  },
+  {
+   "q": "¿De dónde son los espárragos con IGP más famosos?",
+   "prov": "Navarra",
+   "punto": [
+    -1.65,
+    42.4
+   ],
+   "respuesta": "Navarra",
+   "detalle": "IGP Espárrago de Navarra",
+   "voz_q": "¿De dónde son los espárragos con IGP más famosos?",
+   "voz_a": "¡Navarra!"
+  },
+  {
+   "q": "¿Qué provincia es la tierra de las naranjas?",
+   "prov": "València/Valencia",
+   "punto": [
+    -0.38,
+    39.47
+   ],
+   "respuesta": "Valencia",
+   "detalle": "IGP Cítricos Valencianos",
+   "voz_q": "¿Qué provincia es la tierra de las naranjas?",
+   "voz_a": "¡Valencia!"
+  },
+  {
+   "q": "¿De dónde es el arroz de Calasparra?",
+   "prov": "Murcia",
+   "punto": [
+    -1.7,
+    38.23
+   ],
+   "respuesta": "Murcia",
+   "detalle": "DOP Calasparra",
+   "voz_q": "¿De dónde es el arroz de Calasparra?",
+   "voz_a": "¡Murcia!"
+  }
+ ]
+}

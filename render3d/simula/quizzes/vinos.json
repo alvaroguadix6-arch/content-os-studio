@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "VINOS",
+ "titulo": "¿De dónde es cada vino?",
+ "gancho": [
+  "¿DE DÓNDE ES",
+  "*CADA VINO*?"
+ ],
+ "intro": "¿De dónde es cada vino?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#vino",
+  "#gastronomia"
+ ],
+ "fuentes": [
+  "Ministerio de Agricultura, Pesca y Alimentación: denominaciones de origen de vino",
+  "Consejos reguladores"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿De qué comunidad toma el nombre la DOCa Rioja?",
+   "prov": "La Rioja",
+   "punto": [
+    -2.45,
+    42.47
+   ],
+   "respuesta": "La Rioja",
+   "detalle": "También entra en Álava y Navarra",
+   "voz_q": "¿De qué comunidad toma el nombre la DOCa Rioja?",
+   "voz_a": "¡La Rioja!"
+  },
+  {
+   "q": "¿De dónde es el vino de Jerez?",
+   "prov": "Cádiz",
+   "punto": [
+    -6.14,
+    36.69
+   ],
+   "respuesta": "Cádiz",
+   "detalle": "Jerez de la Frontera",
+   "voz_q": "¿De dónde es el vino de Jerez?",
+   "voz_a": "¡Cádiz!"
+  },
+  {
+   "q": "¿Dónde está la DO Rías Baixas, la del albariño?",
+   "prov": "Pontevedra",
+   "punto": [
+    -8.65,
+    42.43
+   ],
+   "respuesta": "Pontevedra",
+   "detalle": "Rías gallegas",
+   "voz_q": "¿Dónde está la DO Rías Baixas, la del albariño?",
+   "voz_a": "¡Pontevedra!"
+  },
+  {
+   "q": "¿En qué provincia está el Priorat?",
+   "prov": "Tarragona",
+   "punto": [
+    0.83,
+    41.18
+   ],
+   "respuesta": "Tarragona",
+   "detalle": "Una de las dos DOCa de España",
+   "voz_q": "¿En qué provincia está el Priorat?",
+   "voz_a": "¡Tarragona!"
+  },
+  {
+   "q": "¿De dónde es el vino de Toro?",
+   "prov": "Zamora",
+   "punto": [
+    -5.4,
+    41.52
+   ],
+   "respuesta": "Zamora",
+   "detalle": "DO Toro",
+   "voz_q": "¿De dónde es el vino de Toro?",
+   "voz_a": "¡Zamora!"
+  }
+ ]
+}

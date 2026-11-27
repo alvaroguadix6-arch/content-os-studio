@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "MUSEOS",
+ "titulo": "¿En qué ciudad está cada museo?",
+ "gancho": [
+  "¿DÓNDE ESTÁ",
+  "*CADA MUSEO*?"
+ ],
+ "intro": "¿En qué ciudad está cada museo?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#museos",
+  "#arte"
+ ],
+ "fuentes": [
+  "Ministerio de Cultura: Museos Estatales",
+  "Webs oficiales de cada museo"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde está el Museo del Prado?",
+   "prov": "Madrid",
+   "punto": [
+    -3.692,
+    40.414
+   ],
+   "respuesta": "Madrid",
+   "detalle": "Velázquez, Goya y El Bosco",
+   "voz_q": "¿Dónde está el Museo del Prado?",
+   "voz_a": "¡Madrid!"
+  },
+  {
+   "q": "¿Dónde está el Museo Nacional de Arte Romano?",
+   "prov": "Badajoz",
+   "punto": [
+    -6.341,
+    38.916
+   ],
+   "respuesta": "Mérida",
+   "detalle": "Junto al teatro romano",
+   "voz_q": "¿Dónde está el Museo Nacional de Arte Romano?",
+   "voz_a": "¡Mérida!"
+  },
+  {
+   "q": "¿Qué ciudad tiene un museo de arte abstracto en las Casas Colgadas?",
+   "prov": "Cuenca",
+   "punto": [
+    -2.128,
+    40.078
+   ],
+   "respuesta": "Cuenca",
+   "detalle": "Museo de Arte Abstracto Español",
+   "voz_q": "¿Qué ciudad tiene un museo de arte abstracto en las Casas Colgadas?",
+   "voz_a": "¡Cuenca!"
+  },
+  {
+   "q": "¿Dónde está el Museo de la Evolución Humana?",
+   "prov": "Burgos",
+   "punto": [
+    -3.697,
+    42.339
+   ],
+   "respuesta": "Burgos",
+   "detalle": "Los hallazgos de Atapuerca",
+   "voz_q": "¿Dónde está el Museo de la Evolución Humana?",
+   "voz_a": "¡Burgos!"
+  },
+  {
+   "q": "¿Dónde está el Museo Nacional de Escultura?",
+   "prov": "Valladolid",
+   "punto": [
+    -4.722,
+    41.657
+   ],
+   "respuesta": "Valladolid",
+   "detalle": "Colegio de San Gregorio",
+   "voz_q": "¿Dónde está el Museo Nacional de Escultura?",
+   "voz_a": "¡Valladolid!"
+  }
+ ]
+}

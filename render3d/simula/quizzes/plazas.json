@@ -1,0 +1,82 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "PLAZAS Y CALLES",
+ "titulo": "¿En qué ciudad está cada plaza o calle?",
+ "gancho": [
+  "¿EN QUÉ CIUDAD",
+  "ESTÁ *CADA PLAZA*?"
+ ],
+ "intro": "¿En qué ciudad está cada plaza o calle?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#ciudades",
+  "#viajar"
+ ],
+ "fuentes": [
+  "Ayuntamientos de Sevilla, Santiago de Compostela, Barcelona, Salamanca y Málaga"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde está la Plaza de España con sus bancos de azulejos de cada provincia?",
+   "prov": "Sevilla",
+   "punto": [
+    -5.987,
+    37.377
+   ],
+   "respuesta": "Sevilla",
+   "detalle": "Construida para la Exposición de 1929",
+   "voz_q": "¿Dónde está la Plaza de España con sus bancos de azulejos de cada provincia?",
+   "voz_a": "¡Sevilla!"
+  },
+  {
+   "q": "¿Dónde está la plaza del Obradoiro?",
+   "prov": "A Coruña",
+   "punto": [
+    -8.545,
+    42.881
+   ],
+   "respuesta": "Santiago de Compostela",
+   "detalle": "Frente a la catedral",
+   "voz_q": "¿Dónde está la plaza del Obradoiro?",
+   "voz_a": "¡Santiago de Compostela!"
+  },
+  {
+   "q": "¿En qué ciudad está La Rambla?",
+   "prov": "Barcelona",
+   "punto": [
+    2.173,
+    41.381
+   ],
+   "respuesta": "Barcelona",
+   "detalle": "De la plaza de Cataluña al puerto",
+   "voz_q": "¿En qué ciudad está La Rambla?",
+   "voz_a": "¡Barcelona!"
+  },
+  {
+   "q": "¿Dónde está la Plaza Mayor con el medallón de Cervantes?",
+   "prov": "Salamanca",
+   "punto": [
+    -5.664,
+    40.965
+   ],
+   "respuesta": "Salamanca",
+   "detalle": "Barroca, del siglo XVIII",
+   "voz_q": "¿Dónde está la Plaza Mayor con el medallón de Cervantes?",
+   "voz_a": "¡Salamanca!"
+  },
+  {
+   "q": "¿En qué ciudad está la calle Larios?",
+   "prov": "Málaga",
+   "punto": [
+    -4.421,
+    36.719
+   ],
+   "respuesta": "Málaga",
+   "detalle": "La calle más famosa del centro",
+   "voz_q": "¿En qué ciudad está la calle Larios?",
+   "voz_a": "¡Málaga!"
+  }
+ ]
+}

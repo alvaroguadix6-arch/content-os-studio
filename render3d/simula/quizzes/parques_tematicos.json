@@ -1,0 +1,82 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "PARQUES TEMÁTICOS",
+ "titulo": "¿Dónde está cada parque temático?",
+ "gancho": [
+  "¿DÓNDE ESTÁ",
+  "*CADA PARQUE*?"
+ ],
+ "intro": "¿Dónde está cada parque temático?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#ocio",
+  "#viajar"
+ ],
+ "fuentes": [
+  "Webs oficiales de PortAventura World, Terra Mítica, Parque Warner, Isla Mágica y Puy du Fou España"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿En qué provincia está PortAventura?",
+   "prov": "Tarragona",
+   "punto": [
+    1.157,
+    41.087
+   ],
+   "respuesta": "Tarragona",
+   "detalle": "Salou y Vila-seca",
+   "voz_q": "¿En qué provincia está PortAventura?",
+   "voz_a": "¡Tarragona!"
+  },
+  {
+   "q": "¿Dónde está Terra Mítica?",
+   "prov": "Alacant/Alicante",
+   "punto": [
+    -0.17,
+    38.56
+   ],
+   "respuesta": "Alicante",
+   "detalle": "Benidorm",
+   "voz_q": "¿Dónde está Terra Mítica?",
+   "voz_a": "¡Alicante!"
+  },
+  {
+   "q": "¿Dónde está el Parque Warner?",
+   "prov": "Madrid",
+   "punto": [
+    -3.56,
+    40.23
+   ],
+   "respuesta": "Madrid",
+   "detalle": "San Martín de la Vega",
+   "voz_q": "¿Dónde está el Parque Warner?",
+   "voz_a": "¡Madrid!"
+  },
+  {
+   "q": "¿En qué ciudad está Isla Mágica?",
+   "prov": "Sevilla",
+   "punto": [
+    -6.004,
+    37.408
+   ],
+   "respuesta": "Sevilla",
+   "detalle": "En la isla de la Cartuja",
+   "voz_q": "¿En qué ciudad está Isla Mágica?",
+   "voz_a": "¡Sevilla!"
+  },
+  {
+   "q": "¿Dónde está Puy du Fou España?",
+   "prov": "Toledo",
+   "punto": [
+    -4.05,
+    39.86
+   ],
+   "respuesta": "Toledo",
+   "detalle": "Espectáculos de historia de España",
+   "voz_q": "¿Dónde está Puy du Fou España?",
+   "voz_a": "¡Toledo!"
+  }
+ ]
+}

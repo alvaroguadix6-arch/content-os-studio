@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "BATALLAS",
+ "titulo": "¿Dónde fue cada batalla?",
+ "gancho": [
+  "¿DÓNDE FUE",
+  "*CADA BATALLA*?"
+ ],
+ "intro": "¿Dónde fue cada batalla?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#historia",
+  "#historiadeespaña"
+ ],
+ "fuentes": [
+  "Real Academia de la Historia (DB~e)",
+  "Ministerio de Defensa: historia militar"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde fue la batalla de las Navas de Tolosa?",
+   "prov": "Jaén",
+   "punto": [
+    -3.59,
+    38.29
+   ],
+   "respuesta": "Jaén",
+   "detalle": "Año 1212",
+   "voz_q": "¿Dónde fue la batalla de las Navas de Tolosa?",
+   "voz_a": "¡Jaén!"
+  },
+  {
+   "q": "¿Frente a qué costa fue la batalla de Trafalgar?",
+   "prov": "Cádiz",
+   "punto": [
+    -6.03,
+    36.18
+   ],
+   "respuesta": "Cádiz",
+   "detalle": "Año 1805 · cabo de Trafalgar",
+   "voz_q": "¿Frente a qué costa fue la batalla de Trafalgar?",
+   "voz_a": "¡Cádiz!"
+  },
+  {
+   "q": "¿En qué provincia resistió Numancia a Roma?",
+   "prov": "Soria",
+   "punto": [
+    -2.44,
+    41.81
+   ],
+   "respuesta": "Soria",
+   "detalle": "Cayó en el 133 antes de Cristo",
+   "voz_q": "¿En qué provincia resistió Numancia a Roma?",
+   "voz_a": "¡Soria!"
+  },
+  {
+   "q": "¿Dónde fue la batalla de Almansa?",
+   "prov": "Albacete",
+   "punto": [
+    -1.1,
+    38.87
+   ],
+   "respuesta": "Albacete",
+   "detalle": "Año 1707 · guerra de Sucesión",
+   "voz_q": "¿Dónde fue la batalla de Almansa?",
+   "voz_a": "¡Albacete!"
+  },
+  {
+   "q": "¿En qué provincia fue la batalla del Ebro?",
+   "prov": "Tarragona",
+   "punto": [
+    0.45,
+    41.05
+   ],
+   "respuesta": "Tarragona",
+   "detalle": "Año 1938 · Terra Alta",
+   "voz_q": "¿En qué provincia fue la batalla del Ebro?",
+   "voz_a": "¡Tarragona!"
+  }
+ ]
+}

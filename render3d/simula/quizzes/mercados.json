@@ -1,0 +1,82 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "MERCADOS",
+ "titulo": "¿En qué ciudad está cada mercado?",
+ "gancho": [
+  "¿DÓNDE ESTÁ",
+  "*CADA MERCADO*?"
+ ],
+ "intro": "¿En qué ciudad está cada mercado?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#mercados",
+  "#gastronomia"
+ ],
+ "fuentes": [
+  "Ayuntamientos de Barcelona, Madrid, Valencia, Bilbao y Málaga"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde está el mercado de la Boquería?",
+   "prov": "Barcelona",
+   "punto": [
+    2.172,
+    41.382
+   ],
+   "respuesta": "Barcelona",
+   "detalle": "En La Rambla",
+   "voz_q": "¿Dónde está el mercado de la Boquería?",
+   "voz_a": "¡Barcelona!"
+  },
+  {
+   "q": "¿Dónde está el mercado de San Miguel?",
+   "prov": "Madrid",
+   "punto": [
+    -3.709,
+    40.415
+   ],
+   "respuesta": "Madrid",
+   "detalle": "Junto a la Plaza Mayor",
+   "voz_q": "¿Dónde está el mercado de San Miguel?",
+   "voz_a": "¡Madrid!"
+  },
+  {
+   "q": "¿En qué ciudad está el Mercado Central modernista?",
+   "prov": "València/Valencia",
+   "punto": [
+    -0.379,
+    39.474
+   ],
+   "respuesta": "Valencia",
+   "detalle": "Inaugurado en 1928",
+   "voz_q": "¿En qué ciudad está el Mercado Central modernista?",
+   "voz_a": "¡Valencia!"
+  },
+  {
+   "q": "¿Dónde está el mercado de la Ribera, junto a la ría?",
+   "prov": "Bizkaia/Vizcaya",
+   "punto": [
+    -2.925,
+    43.256
+   ],
+   "respuesta": "Bilbao",
+   "detalle": "Mercado cubierto a orillas de la ría",
+   "voz_q": "¿Dónde está el mercado de la Ribera, junto a la ría?",
+   "voz_a": "¡Bilbao!"
+  },
+  {
+   "q": "¿Dónde está el mercado de Atarazanas?",
+   "prov": "Málaga",
+   "punto": [
+    -4.424,
+    36.718
+   ],
+   "respuesta": "Málaga",
+   "detalle": "Con una puerta nazarí",
+   "voz_q": "¿Dónde está el mercado de Atarazanas?",
+   "voz_a": "¡Málaga!"
+  }
+ ]
+}
