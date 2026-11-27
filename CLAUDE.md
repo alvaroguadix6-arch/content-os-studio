@@ -40,7 +40,7 @@ ese push lanza aquí `conquista-del-dia.yml` (mismo render y controles, con un r
 
 ## Workflows
 `render-quiz-conquista.yml` (lotes ≤ 8, 4 a la vez; quiz, Conquista y paquetes; también reutilizable) ·
-`conquista-del-dia.yml` (lo lanza el pedido del repo privado o a mano con `RENDER`; render + reintento) · `render-paquete.yml` ·
+`conquista-del-dia.yml` (lo lanza el pedido del repo privado o a mano con `RENDER`; render + reintento) · `lote-semanal.yml` (lo lanza `render3d/lote/pedido.json` desde «Producción semanal» del repo privado; lotes de ≤ 8 de uno en uno, mismos controles) · `render-paquete.yml` ·
 `qc-video.yml` (QC de una ejecución por `run_id`) · `pruebas-render.yml` (en cada PR) · `fisica.yml`, `render-3d.yml`
 (motores antiguos) · `deploy.yml` (GitHub Pages) · `test.yml`.
 
