@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "PLAYAS",
+ "titulo": "¿En qué provincia está cada playa?",
+ "gancho": [
+  "¿DÓNDE ESTÁ",
+  "*CADA PLAYA*?"
+ ],
+ "intro": "¿En qué provincia está cada playa?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#playas",
+  "#viajar"
+ ],
+ "fuentes": [
+  "Turismo de España (spain.info)",
+  "Parque Nacional de las Islas Atlánticas de Galicia (MITECO)"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde está la playa del Silencio?",
+   "prov": "Asturias",
+   "punto": [
+    -6.32,
+    43.57
+   ],
+   "respuesta": "Asturias",
+   "detalle": "Cudillero · costa occidental",
+   "voz_q": "¿Dónde está la playa del Silencio?",
+   "voz_a": "¡Asturias!"
+  },
+  {
+   "q": "¿Dónde está la playa de Bolonia, con su gran duna?",
+   "prov": "Cádiz",
+   "punto": [
+    -5.77,
+    36.08
+   ],
+   "respuesta": "Cádiz",
+   "detalle": "Tarifa · junto a Baelo Claudia",
+   "voz_q": "¿Dónde está la playa de Bolonia, con su gran duna?",
+   "voz_a": "¡Cádiz!"
+  },
+  {
+   "q": "¿Dónde está la playa de Rodas, en las islas Cíes?",
+   "prov": "Pontevedra",
+   "punto": [
+    -8.9,
+    42.22
+   ],
+   "respuesta": "Pontevedra",
+   "detalle": "Parque Nacional Islas Atlánticas",
+   "voz_q": "¿Dónde está la playa de Rodas, en las islas Cíes?",
+   "voz_a": "¡Pontevedra!"
+  },
+  {
+   "q": "¿Dónde está la playa de Ses Illetes?",
+   "prov": "Illes Balears",
+   "punto": [
+    1.43,
+    38.75
+   ],
+   "respuesta": "Illes Balears",
+   "detalle": "Formentera",
+   "voz_q": "¿Dónde está la playa de Ses Illetes?",
+   "voz_a": "¡Illes Balears!"
+  },
+  {
+   "q": "¿En qué ciudad está la playa de la Malvarrosa?",
+   "prov": "València/Valencia",
+   "punto": [
+    -0.32,
+    39.48
+   ],
+   "respuesta": "Valencia",
+   "detalle": "La playa urbana de Valencia",
+   "voz_q": "¿En qué ciudad está la playa de la Malvarrosa?",
+   "voz_a": "¡Valencia!"
+  }
+ ]
+}

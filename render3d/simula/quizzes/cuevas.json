@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "CUEVAS",
+ "titulo": "¿En qué provincia está cada cueva?",
+ "gancho": [
+  "¿DÓNDE ESTÁ",
+  "*CADA CUEVA*?"
+ ],
+ "intro": "¿En qué provincia está cada cueva?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#cuevas",
+  "#naturaleza"
+ ],
+ "fuentes": [
+  "Instituto Geológico y Minero de España (IGME): lugares de interés geológico",
+  "Webs oficiales de cada cueva"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde está la cueva de El Soplao?",
+   "prov": "Cantabria",
+   "punto": [
+    -4.43,
+    43.3
+   ],
+   "respuesta": "Cantabria",
+   "detalle": "Famosa por sus excéntricas",
+   "voz_q": "¿Dónde está la cueva de El Soplao?",
+   "voz_a": "¡Cantabria!"
+  },
+  {
+   "q": "¿Dónde está la cueva de Nerja?",
+   "prov": "Málaga",
+   "punto": [
+    -3.84,
+    36.76
+   ],
+   "respuesta": "Málaga",
+   "detalle": "Costa del Sol oriental",
+   "voz_q": "¿Dónde está la cueva de Nerja?",
+   "voz_a": "¡Málaga!"
+  },
+  {
+   "q": "¿Dónde están las cuevas del Drach?",
+   "prov": "Illes Balears",
+   "punto": [
+    3.3,
+    39.54
+   ],
+   "respuesta": "Illes Balears",
+   "detalle": "Manacor · Mallorca",
+   "voz_q": "¿Dónde están las cuevas del Drach?",
+   "voz_a": "¡Illes Balears!"
+  },
+  {
+   "q": "¿Dónde están las cuevas de Valporquero?",
+   "prov": "León",
+   "punto": [
+    -5.55,
+    42.9
+   ],
+   "respuesta": "León",
+   "detalle": "Excavadas por el arroyo de Valporquero",
+   "voz_q": "¿Dónde están las cuevas de Valporquero?",
+   "voz_a": "¡León!"
+  },
+  {
+   "q": "¿Dónde está la Gruta de las Maravillas?",
+   "prov": "Huelva",
+   "punto": [
+    -6.56,
+    37.89
+   ],
+   "respuesta": "Huelva",
+   "detalle": "Aracena",
+   "voz_q": "¿Dónde está la Gruta de las Maravillas?",
+   "voz_a": "¡Huelva!"
+  }
+ ]
+}

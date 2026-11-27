@@ -1,0 +1,83 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "NOMBRES ROMANOS",
+ "titulo": "¿Qué ciudad era en tiempos de Roma?",
+ "gancho": [
+  "¿QUÉ CIUDAD",
+  "*ERA EN ROMA*?"
+ ],
+ "intro": "¿Qué ciudad era en tiempos de Roma?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#historia",
+  "#roma"
+ ],
+ "fuentes": [
+  "Real Academia de la Historia",
+  "Museo Nacional de Arte Romano"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Qué ciudad era Hispalis?",
+   "prov": "Sevilla",
+   "punto": [
+    -5.99,
+    37.39
+   ],
+   "respuesta": "Sevilla",
+   "detalle": "Hispalis",
+   "voz_q": "¿Qué ciudad era Hispalis?",
+   "voz_a": "¡Sevilla!"
+  },
+  {
+   "q": "¿Qué ciudad era Emerita Augusta?",
+   "prov": "Badajoz",
+   "punto": [
+    -6.34,
+    38.92
+   ],
+   "respuesta": "Mérida",
+   "detalle": "Capital de Lusitania",
+   "voz_q": "¿Qué ciudad era Emerita Augusta?",
+   "voz_a": "¡Mérida!"
+  },
+  {
+   "q": "¿Qué ciudad era Caesaraugusta?",
+   "prov": "Zaragoza",
+   "punto": [
+    -0.88,
+    41.65
+   ],
+   "respuesta": "Zaragoza",
+   "detalle": "Fundada por Augusto",
+   "voz_q": "¿Qué ciudad era Caesaraugusta?",
+   "voz_a": "¡Zaragoza!"
+  },
+  {
+   "q": "¿Qué ciudad era Gades?",
+   "prov": "Cádiz",
+   "punto": [
+    -6.29,
+    36.53
+   ],
+   "respuesta": "Cádiz",
+   "detalle": "Antes, la Gadir fenicia",
+   "voz_q": "¿Qué ciudad era Gades?",
+   "voz_a": "¡Cádiz!"
+  },
+  {
+   "q": "¿Qué ciudad era Tarraco?",
+   "prov": "Tarragona",
+   "punto": [
+    1.25,
+    41.12
+   ],
+   "respuesta": "Tarragona",
+   "detalle": "Capital de la Tarraconense",
+   "voz_q": "¿Qué ciudad era Tarraco?",
+   "voz_a": "¡Tarragona!"
+  }
+ ]
+}

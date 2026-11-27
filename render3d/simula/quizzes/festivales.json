@@ -1,0 +1,82 @@
+{
+ "etiqueta": "QUIZ DE ESPAÑA",
+ "tema": "FESTIVALES",
+ "titulo": "¿En qué ciudad es cada festival?",
+ "gancho": [
+  "¿DÓNDE ES",
+  "*CADA FESTIVAL*?"
+ ],
+ "intro": "¿En qué ciudad es cada festival?",
+ "hashtags": [
+  "#quiz",
+  "#españa",
+  "#musica",
+  "#festivales"
+ ],
+ "fuentes": [
+  "Webs oficiales de Primavera Sound, Mad Cool, BBK Live, FIB y Resurrection Fest"
+ ],
+ "outro": "¿Cuántas has acertado? Dímelo en los comentarios.",
+ "preguntas": [
+  {
+   "q": "¿Dónde se celebra el Primavera Sound?",
+   "prov": "Barcelona",
+   "punto": [
+    2.22,
+    41.41
+   ],
+   "respuesta": "Barcelona",
+   "detalle": "Parc del Fòrum",
+   "voz_q": "¿Dónde se celebra el Primavera Sound?",
+   "voz_a": "¡Barcelona!"
+  },
+  {
+   "q": "¿En qué ciudad es el Mad Cool?",
+   "prov": "Madrid",
+   "punto": [
+    -3.7,
+    40.35
+   ],
+   "respuesta": "Madrid",
+   "detalle": "Uno de los grandes del verano",
+   "voz_q": "¿En qué ciudad es el Mad Cool?",
+   "voz_a": "¡Madrid!"
+  },
+  {
+   "q": "¿Dónde es el BBK Live?",
+   "prov": "Bizkaia/Vizcaya",
+   "punto": [
+    -2.97,
+    43.27
+   ],
+   "respuesta": "Bilbao",
+   "detalle": "Monte Kobetas",
+   "voz_q": "¿Dónde es el BBK Live?",
+   "voz_a": "¡Bilbao!"
+  },
+  {
+   "q": "¿Dónde se celebra el FIB?",
+   "prov": "Castelló/Castellón",
+   "punto": [
+    0.06,
+    40.06
+   ],
+   "respuesta": "Benicàssim",
+   "detalle": "Festival Internacional de Benicàssim",
+   "voz_q": "¿Dónde se celebra el FIB?",
+   "voz_a": "¡Benicàssim!"
+  },
+  {
+   "q": "¿Dónde es el Resurrection Fest?",
+   "prov": "Lugo",
+   "punto": [
+    -7.59,
+    43.66
+   ],
+   "respuesta": "Viveiro",
+   "detalle": "Festival de metal en la Mariña",
+   "voz_q": "¿Dónde es el Resurrection Fest?",
+   "voz_a": "¡Viveiro!"
+  }
+ ]
+}
