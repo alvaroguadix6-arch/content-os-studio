@@ -1,0 +1,178 @@
+{
+  "id": "2026-12-26-el-primer-metro-de-madrid",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "El primer metro de Madrid: 1919",
+  "script": [
+    "El primer metro de Madrid tenía solo ocho estaciones.",
+    "Lo inauguró el rey Alfonso XIII el 17 de octubre de 1919.",
+    "Iba de Sol a Cuatro Caminos.",
+    "Eran unos tres kilómetros y medio.",
+    "Y el billete costaba 15 céntimos de peseta.",
+    "Hoy la red tiene más de trescientas estaciones.",
+    "Y es una de las más grandes de Europa.",
+    "¿Cuál es tu estación? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "SOLO 8 ESTACIONES"
+    },
+    {
+      "at": 3.18,
+      "text": "17-10-1919"
+    },
+    {
+      "at": 7.41,
+      "text": "SOL → CUATRO CAMINOS"
+    },
+    {
+      "at": 14.47,
+      "text": "+300 ESTACIONES"
+    },
+    {
+      "at": 20.47,
+      "text": "¿TU ESTACIÓN?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 3.1765,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 8,
+        "unidad": "estaciones en 1919"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 4.2353,
+      "kind": "archivo",
+      "visual": "Alfonso XIII inaugura el Metro",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Alfonso XIII inaugura el Metro",
+        "fecha": "17 de octubre de 1919",
+        "cabecera": "Madrid"
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 2.1176,
+      "kind": "mapa",
+      "visual": "Sol → Cuatro Caminos",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -3.703,
+          40.417
+        ],
+        "etiqueta": "Sol → Cuatro Caminos",
+        "resaltar": [
+          "Madrid"
+        ]
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 2.1176,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 3.5,
+        "unidad": "kilómetros",
+        "decimales": 1,
+        "prefijo": "≈ "
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 2.8235,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 15,
+        "unidad": "céntimos el billete"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 2.8235,
+      "kind": "grafico",
+      "visual": "comparacion",
+      "escena": {
+        "tipo": "comparacion",
+        "items": [
+          {
+            "etiqueta": "1919",
+            "valor": 8
+          },
+          {
+            "etiqueta": "Hoy",
+            "valor": 300,
+            "destacar": true
+          }
+        ],
+        "unidad": "estaciones"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 3.1765,
+      "kind": "mapa",
+      "visual": "Metro de Madrid",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -3.703,
+          40.417
+        ],
+        "etiqueta": "Metro de Madrid",
+        "resaltar": [
+          "Madrid"
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.7647,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "El Metro de Madrid se inauguró el 17 de octubre de 1919 con Alfonso XIII: Sol–Cuatro Caminos, 8 estaciones y unos 3,5 km",
+      "source": "Metro de Madrid: historia",
+      "url": "https://www.metromadrid.es/es/quienes-somos/historia"
+    },
+    {
+      "claim": "El billete costaba 15 céntimos de peseta",
+      "source": "Wikipedia: Línea 1 del Metro de Madrid",
+      "url": "https://es.wikipedia.org/wiki/L%C3%ADnea_1_del_Metro_de_Madrid"
+    },
+    {
+      "claim": "La red actual supera las 300 estaciones",
+      "source": "Metro de Madrid: la red en cifras",
+      "url": "https://www.metromadrid.es/es/quienes-somos/metro-en-cifras"
+    }
+  ],
+  "caption": {
+    "text": "¿Cuál es tu estación?\n\nEl 17 de octubre de 1919, Alfonso XIII inauguró el primer metro de Madrid: de Sol a Cuatro Caminos, 8 estaciones y unos 3,5 km. Hoy la red supera las 300 estaciones.",
+    "hashtags": [
+      "#historia",
+      "#madrid",
+      "#metro",
+      "#españa"
+    ],
+    "alt_text": "Mapa de Madrid con la primera línea de metro"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

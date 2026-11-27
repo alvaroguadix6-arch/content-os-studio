@@ -1,0 +1,177 @@
+{
+  "id": "2026-12-24-las-medulas-la-mina-de-oro-de-roma",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "Las Médulas: la mayor mina de oro del Imperio romano",
+  "script": [
+    "Este paisaje de León no lo hizo la naturaleza: lo hicieron los romanos buscando oro.",
+    "Son Las Médulas, en El Bierzo.",
+    "Fue la mayor mina de oro a cielo abierto del Imperio romano.",
+    "Usaban una técnica llamada ruina montium: derrumbar montañas con agua.",
+    "Llevaban el agua por cientos de kilómetros de canales.",
+    "Plinio el Viejo describió la técnica en el siglo I.",
+    "Desde 1997 es Patrimonio de la Humanidad.",
+    "¿Has estado? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "LO HICIERON LOS ROMANOS"
+    },
+    {
+      "at": 5.29,
+      "text": "LAS MÉDULAS"
+    },
+    {
+      "at": 11.65,
+      "text": "RUINA MONTIUM"
+    },
+    {
+      "at": 21.88,
+      "text": "UNESCO 1997"
+    },
+    {
+      "at": 24.35,
+      "text": "¿HAS ESTADO?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 5.2941,
+      "kind": "mapa",
+      "visual": "Las Médulas",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -6.76,
+          42.46
+        ],
+        "etiqueta": "Las Médulas",
+        "resaltar": [
+          "León"
+        ]
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 2.1176,
+      "kind": "mapa",
+      "visual": "El Bierzo",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -6.76,
+          42.46
+        ],
+        "etiqueta": "El Bierzo",
+        "resaltar": [
+          "León"
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 4.2353,
+      "kind": "archivo",
+      "visual": "La mayor mina de oro a cielo abierto del Imperio",
+      "escena": {
+        "tipo": "documento",
+        "titular": "La mayor mina de oro a cielo abierto del Imperio",
+        "fecha": "Siglos I-II",
+        "cabecera": "Roma"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 3.5294,
+      "kind": "archivo",
+      "visual": "Ruina montium: derrumbar montes con agua",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Ruina montium: derrumbar montes con agua",
+        "fecha": "Técnica romana",
+        "cabecera": "Minería"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 3.1765,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 100,
+        "unidad": "kilómetros de canales",
+        "prefijo": "+"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 3.5294,
+      "kind": "archivo",
+      "visual": "Plinio el Viejo describe la ruina montium",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Plinio el Viejo describe la ruina montium",
+        "fecha": "Siglo I",
+        "cabecera": "Historia natural"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 2.4706,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "Siglo I",
+            "texto": "Explotación romana"
+          },
+          {
+            "fecha": "1997",
+            "texto": "Patrimonio de la Humanidad"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.0588,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Las Médulas fueron la mayor mina de oro a cielo abierto del Imperio romano; Patrimonio de la Humanidad desde 1997",
+      "source": "UNESCO World Heritage: Las Médulas",
+      "url": "https://whc.unesco.org/en/list/803"
+    },
+    {
+      "claim": "Técnica de la ruina montium descrita por Plinio el Viejo; red de canales de cientos de kilómetros",
+      "source": "Junta de Castilla y León: Las Médulas",
+      "url": "https://patrimoniocultural.jcyl.es/web/es/espacios-culturales/medulas.html"
+    },
+    {
+      "claim": "Datos del yacimiento",
+      "source": "Wikipedia: Las Médulas",
+      "url": "https://en.wikipedia.org/wiki/Las_M%C3%A9dulas"
+    }
+  ],
+  "caption": {
+    "text": "¿Has estado?\n\nLas Médulas (El Bierzo, León) fueron la mayor mina de oro a cielo abierto del Imperio romano. Derrumbaban montañas con agua (ruina montium). Patrimonio de la Humanidad desde 1997.",
+    "hashtags": [
+      "#historia",
+      "#españa",
+      "#leon",
+      "#patrimonio"
+    ],
+    "alt_text": "Mapa de León con Las Médulas señaladas"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

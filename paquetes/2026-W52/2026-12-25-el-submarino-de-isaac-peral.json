@@ -1,0 +1,173 @@
+{
+  "id": "2026-12-25-el-submarino-de-isaac-peral",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "historia",
+  "title": "El submarino de Isaac Peral",
+  "script": [
+    "En 1888, un marino español botó uno de los primeros submarinos eléctricos del mundo.",
+    "Se llamaba Isaac Peral y era de Cartagena.",
+    "Su submarino se botó el 8 de septiembre de 1888.",
+    "Funcionaba con baterías eléctricas, sin humo que lo delatara.",
+    "En las pruebas llegó a navegar sumergido.",
+    "Pero el proyecto no siguió adelante.",
+    "Hoy puedes verlo en el Museo Naval de Cartagena.",
+    "¿Lo conocías? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "SUBMARINO ELÉCTRICO"
+    },
+    {
+      "at": 4.94,
+      "text": "ISAAC PERAL"
+    },
+    {
+      "at": 7.76,
+      "text": "8 SEP 1888"
+    },
+    {
+      "at": 19.06,
+      "text": "CARTAGENA"
+    },
+    {
+      "at": 22.24,
+      "text": "¿LO CONOCÍAS?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 4.9412,
+      "kind": "archivo",
+      "visual": "Uno de los primeros submarinos eléctricos",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Uno de los primeros submarinos eléctricos",
+        "fecha": "1888",
+        "cabecera": "Isaac Peral"
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 2.8235,
+      "kind": "mapa",
+      "visual": "Cartagena",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -0.986,
+          37.605
+        ],
+        "etiqueta": "Cartagena",
+        "resaltar": [
+          "Murcia"
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 3.5294,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "8 sep 1888",
+            "texto": "Botadura del submarino Peral"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 3.1765,
+      "kind": "archivo",
+      "visual": "Propulsión eléctrica con baterías",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Propulsión eléctrica con baterías",
+        "fecha": "Sin humo",
+        "cabecera": "Innovación"
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 2.4706,
+      "kind": "archivo",
+      "visual": "Navega sumergido en las pruebas",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Navega sumergido en las pruebas",
+        "fecha": "1889-1890",
+        "cabecera": "Pruebas"
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 2.1176,
+      "kind": "archivo",
+      "visual": "El proyecto se abandona",
+      "escena": {
+        "tipo": "documento",
+        "titular": "El proyecto se abandona",
+        "fecha": "1890",
+        "cabecera": "Ministerio de Marina"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 3.1765,
+      "kind": "mapa",
+      "visual": "Museo Naval de Cartagena",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -0.986,
+          37.605
+        ],
+        "etiqueta": "Museo Naval de Cartagena",
+        "resaltar": [
+          "Murcia"
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.0588,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "El submarino Peral, de propulsión eléctrica, se botó el 8 de septiembre de 1888 en Cartagena",
+      "source": "Armada Española: el submarino Peral",
+      "url": "https://armada.defensa.gob.es/"
+    },
+    {
+      "claim": "Realizó pruebas de navegación en inmersión en 1889-1890 y el proyecto no tuvo continuidad",
+      "source": "Wikipedia: Peral (submarine)",
+      "url": "https://en.wikipedia.org/wiki/Peral_(submarine)"
+    },
+    {
+      "claim": "Se expone en el Museo Naval de Cartagena",
+      "source": "Museo Naval de Cartagena",
+      "url": "https://armada.defensa.gob.es/museonaval"
+    }
+  ],
+  "caption": {
+    "text": "¿Lo conocías?\n\nEl 8 de septiembre de 1888 se botó en Cartagena el submarino de Isaac Peral, uno de los primeros submarinos eléctricos del mundo. Hoy está en el Museo Naval de Cartagena.",
+    "hashtags": [
+      "#historia",
+      "#españa",
+      "#cartagena",
+      "#inventos"
+    ],
+    "alt_text": "Mapa de Murcia con Cartagena señalada"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}

@@ -1,0 +1,176 @@
+{
+  "id": "2026-12-27-atapuerca-el-europeo-mas-antiguo",
+  "brand": "nivel-oculto",
+  "language": "es",
+  "format": "reel",
+  "pillar": "ciencia",
+  "title": "Atapuerca: los primeros europeos",
+  "script": [
+    "En una sierra de Burgos están algunos de los europeos más antiguos que se conocen.",
+    "Es la sierra de Atapuerca.",
+    "En la Gran Dolina aparecieron restos de una especie nueva.",
+    "La llamaron Homo antecessor, en 1997.",
+    "Esos restos tienen unos 850.000 años.",
+    "Y en la Sima de los Huesos hay más de 7.000 fósiles humanos.",
+    "Desde el año 2000 es Patrimonio de la Humanidad.",
+    "¿La has visitado? Comenta."
+  ],
+  "on_screen_text": [
+    {
+      "at": 0.0,
+      "text": "LOS PRIMEROS EUROPEOS"
+    },
+    {
+      "at": 5.29,
+      "text": "ATAPUERCA"
+    },
+    {
+      "at": 10.59,
+      "text": "HOMO ANTECESSOR"
+    },
+    {
+      "at": 12.71,
+      "text": "850.000 AÑOS"
+    },
+    {
+      "at": 22.59,
+      "text": "¿LA HAS VISITADO?"
+    }
+  ],
+  "visual_brief": [
+    {
+      "scene": 1,
+      "seconds": 5.2941,
+      "kind": "mapa",
+      "visual": "Atapuerca",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -3.52,
+          42.35
+        ],
+        "etiqueta": "Atapuerca",
+        "resaltar": [
+          "Burgos"
+        ]
+      }
+    },
+    {
+      "scene": 2,
+      "seconds": 1.7647,
+      "kind": "mapa",
+      "visual": "Sierra de Atapuerca",
+      "escena": {
+        "tipo": "mapa_espana",
+        "punto": [
+          -3.52,
+          42.35
+        ],
+        "etiqueta": "Sierra de Atapuerca",
+        "resaltar": [
+          "Burgos"
+        ]
+      }
+    },
+    {
+      "scene": 3,
+      "seconds": 3.5294,
+      "kind": "archivo",
+      "visual": "Aparece una especie humana nueva",
+      "escena": {
+        "tipo": "documento",
+        "titular": "Aparece una especie humana nueva",
+        "fecha": "Gran Dolina",
+        "cabecera": "Atapuerca"
+      }
+    },
+    {
+      "scene": 4,
+      "seconds": 2.1176,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "1997",
+            "texto": "Se describe Homo antecessor"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 5,
+      "seconds": 2.1176,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 850000,
+        "unidad": "años",
+        "prefijo": "≈ "
+      }
+    },
+    {
+      "scene": 6,
+      "seconds": 4.5882,
+      "kind": "grafico",
+      "visual": "contador",
+      "escena": {
+        "tipo": "contador",
+        "valor": 7000,
+        "unidad": "fósiles humanos",
+        "prefijo": "+"
+      }
+    },
+    {
+      "scene": 7,
+      "seconds": 3.1765,
+      "kind": "grafico",
+      "visual": "linea_tiempo",
+      "escena": {
+        "tipo": "linea_tiempo",
+        "hitos": [
+          {
+            "fecha": "2000",
+            "texto": "Patrimonio de la Humanidad"
+          }
+        ]
+      }
+    },
+    {
+      "scene": 8,
+      "seconds": 1.4118,
+      "kind": "texto",
+      "visual": "Pregunta final"
+    }
+  ],
+  "sources": [
+    {
+      "claim": "Homo antecessor se describió en 1997 a partir de restos de la Gran Dolina de unos 850.000 años",
+      "source": "Fundación Atapuerca",
+      "url": "https://www.atapuerca.org/"
+    },
+    {
+      "claim": "La Sima de los Huesos ha dado más de 7.000 fósiles humanos",
+      "source": "Museo de la Evolución Humana",
+      "url": "https://www.museoevolucionhumana.com/"
+    },
+    {
+      "claim": "Yacimientos de la Sierra de Atapuerca, Patrimonio de la Humanidad desde 2000",
+      "source": "UNESCO World Heritage: Atapuerca",
+      "url": "https://whc.unesco.org/en/list/989"
+    }
+  ],
+  "caption": {
+    "text": "¿La has visitado?\n\nEn la sierra de Atapuerca (Burgos) se describió en 1997 una especie humana nueva, Homo antecessor, con restos de unos 850.000 años. Patrimonio de la Humanidad desde el año 2000.",
+    "hashtags": [
+      "#ciencia",
+      "#españa",
+      "#burgos",
+      "#prehistoria"
+    ],
+    "alt_text": "Mapa de Burgos con la sierra de Atapuerca"
+  },
+  "exported_from": "instagram-agent (privado) · export_studio.py"
+}
